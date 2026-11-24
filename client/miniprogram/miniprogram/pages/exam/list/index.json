@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的考试",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 100,
+  "backgroundColor": "#F5F7FA"
+}

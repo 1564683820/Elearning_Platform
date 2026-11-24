@@ -1,0 +1,108 @@
+=== stage=8 TOP30 (by frq ASC) ===
+ID	Word			frq	roots	syns
+19569	dead end                 	0	1	0
+23803	Dec.                     	0	1	0
+21925	death toll               	0	1	0
+16123	day trip                 	0	0	0
+50066	department store         	0	2	0
+90588	dining table             	0	1	0
+90890	dinner table             	0	1	0
+56207	descended                	0	2	0
+17212	DC                       	0	0	0
+21597	dearest                  	0	2	0
+16033	day off                  	0	0	0
+31723	deep-seated              	0	2	0
+15859	day care                 	0	0	0
+6451	dance floor              	0	1	0
+18143	de facto                 	0	4	0
+77107	didn't                   	0	0	0
+57096	desert island            	0	2	0
+52746	dept                     	0	1	0
+21864	death penalty            	0	2	0
+90579	dining room              	0	0	0
+21875	death rate               	0	2	0
+21899	death sentence           	0	3	0
+26517	decision-making          	0	2	0
+21906	death squad              	0	1	0
+21894	death row                	0	1	0
+16329	day-to-day               	0	0	0
+10784	DAT                      	0	0	0
+90873	dinner party             	0	1	0
+14757	daughter-in-law          	0	0	0
+99143	director general         	0	2	0
+
+=== stage=8 TOP30 (by mastery_order ASC) ===
+ID	Word			order	frq	roots	syns
+1122	dab                      	1	13779	0	0
+1955	daddy                    	2	4848	0	0
+2201	daffodil                 	3	17105	0	0
+2615	dahlia                   	4	19215	0	0
+2830	daily                    	5	1483	1	0
+3370	dairy                    	6	5750	0	0
+4567	dam                      	7	4399	0	0
+4686	damage                   	8	1522	0	0
+5232	dame                     	9	16056	0	0
+5543	damned                   	10	9051	1	0
+5568	damning                  	11	20862	1	0
+5646	damp                     	12	5562	0	0
+6202	damsel                   	13	25102	0	0
+6451	dance floor              	14	0	1	0
+6768	dandelion                	15	16227	0	0
+6999	danger                   	16	1546	1	2
+7105	dangerous                	17	1457	1	0
+8633	dare                     	18	3348	0	0
+8801	daring                   	19	9273	1	0
+9382	darken                   	20	8464	1	0
+9396	darkened                 	21	9767	1	0
+9523	darkroom                 	22	17811	0	0
+9595	darling                  	23	6421	2	0
+9696	darn                     	24	12299	0	0
+10283	dash                     	25	6336	0	0
+10389	dashboard                	26	11591	0	0
+10441	dashing                  	27	17888	1	0
+10784	DAT                      	28	0	0	0
+10792	data                     	29	559	0	0
+14757	daughter-in-law          	30	0	0	0
+
+=== stage=8 统计 ===
+Total: 6365
+Has roots: 3948 (62.0%)
+Has synonyms: 10 (0.2%)
+
+=== word_synonyms ===
+  id=6999 danger -> risk (区别)
+  id=6999 danger -> hazard (区别)
+  id=25665 decide -> determine (区别)
+  id=25665 decide -> resolve (区别)
+  id=33235 defend -> protect (区别)
+  id=33235 defend -> guard (区别)
+  id=39347 delay -> postpone (区别)
+  id=39347 delay -> put off (区别)
+  id=43144 demand -> require (区别)
+  id=43144 demand -> request (区别)
+  id=56526 describe -> depict (区别)
+  id=56526 describe -> portray (区别)
+  id=103934 discover -> find (区别)
+  id=103934 discover -> detect (区别)
+  id=104980 discuss -> argue (区别)
+  id=104980 discuss -> debate (区别)
+  id=177734 eager -> keen (区别)
+  id=177734 eager -> enthusiastic (区别)
+  id=194166 effective -> efficient (区别)
+  id=194166 effective -> productive (区别)
+  id=226790 emotion -> feeling (区别)
+  id=226790 emotion -> sentiment (区别)
+  id=242461 enough -> sufficient (区别)
+  id=242461 enough -> adequate (区别)
+  id=320273 famous -> well-known (区别)
+  id=320273 famous -> notorious (区别)
+  id=586899 happen -> occur (区别)
+  id=586899 happen -> take place (区别)
+  id=727164 important -> significant (区别)
+  id=727164 important -> vital (区别)
+  id=1652511 problem -> issue (区别)
+  id=1652511 problem -> trouble (区别)
+  id=2493143 use -> utilize (区别)
+  id=2493143 use -> employ (区别)
+  id=2620620 world -> earth (区别)
+  id=2620620 world -> globe (区别)

@@ -1,0 +1,139 @@
+<view class="page">
+  <!-- 顶部窄条 -->
+  <view class="top-bar">
+    <view class="top-bar-line"></view>
+    <view class="top-bar-row">
+      <view class="top-bar-left">
+        <text class="top-bar-title">我的试卷</text>
+        <text class="top-bar-sub">创建与批改管理</text>
+      </view>
+      <view class="top-bar-add" bindtap="goToCreate">
+        <view class="add-icon-cross"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 班级选择器 — 圆润杂志风格 -->
+  <view class="class-selector-bar">
+    <view class="class-selector" bindtap="openClassPicker">
+      <view class="selector-pin"></view>
+      <text class="selector-label">班级</text>
+      <text class="selector-value">{{currentClassName}}</text>
+      <view class="selector-arrow {{showClassPicker ? 'arrow-up' : ''}}"></view>
+    </view>
+  </view>
+  <!-- 班级选择器下拉 -->
+  <view class="selector-dropdown" wx:if="{{showClassPicker}}">
+    <view
+      class="selector-option {{item.id === currentClassId ? 'option-active' : ''}}"
+      wx:for="{{classes}}" wx:key="id"
+      data-item="{{item}}"
+      bindtap="selectClass"
+    >
+      <text class="option-name">{{item.name}}</text>
+      <view wx:if="{{item.id === currentClassId}}" class="option-check">
+        <view class="check-mark-icon"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计卡片行 Editorial -->
+  <view class="stats-row" wx:if="{{!loading && exams.length > 0}}">
+    <view class="stat-card stat-total">
+      <text class="stat-num">{{stats.total || exams.length}}</text>
+      <text class="stat-lbl">试卷总数</text>
+    </view>
+    <view class="stat-card stat-done">
+      <text class="stat-num">{{stats.graded || 0}}</text>
+      <text class="stat-lbl">批改完成</text>
+    </view>
+    <view class="stat-card stat-waiting">
+      <text class="stat-num">{{stats.pending || 0}}</text>
+      <text class="stat-lbl">待批改</text>
+    </view>
+    <button class="stat-card stat-btn-template" bindtap="goToAnswerSheet">
+      <text class="stat-btn-icon">📋</text>
+      <text class="stat-btn-text">答题卡</text>
+    </button>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+  </view>
+
+  <!-- 空状态 Editorial -->
+  <view class="empty-state" wx:elif="{{!loading && exams.length === 0}}">
+    <view class="empty-art">
+      <view class="empty-doc">
+        <view class="empty-doc-fold"></view>
+        <view class="empty-doc-line"></view>
+        <view class="empty-doc-line short"></view>
+        <view class="empty-doc-line"></view>
+      </view>
+    </view>
+    <text class="empty-title">还没有试卷</text>
+    <text class="empty-desc">点击右上角新建你的第一份试卷</text>
+    <button class="empty-cta" bindtap="goToCreate">新建试卷</button>
+  </view>
+
+  <!-- 试卷列表 -->
+  <scroll-view class="list" scroll-y wx:else>
+    <view
+      class="exam-card"
+      wx:for="{{exams}}" wx:key="id"
+      data-id="{{item.id}}"
+    >
+      <view class="exam-card-top" data-id="{{item.id}}" catchtap="goToDetail">
+        <view class="exam-card-icon">
+          <view class="exam-icon-lines"></view>
+        </view>
+        <view class="exam-card-body">
+          <text class="exam-card-title">{{item.title}}</text>
+          <view class="exam-card-meta">
+            <text class="exam-card-meta-text">{{item.question_count || (item.questions && item.questions.length) || 0}} 题</text>
+            <text class="exam-card-meta-sep">·</text>
+            <text class="exam-card-meta-text">总分 {{item.total_score}}</text>
+            <text class="exam-card-meta-sep">·</text>
+            <text class="exam-card-meta-text">{{currentClassName}}</text>
+          </view>
+        </view>
+        <view class="exam-card-status {{item.status === 'published' ? 'status-done' : 'status-pending'}}">
+          <view class="status-dot {{item.status === 'published' ? 'dot-done' : 'dot-pending'}}"></view>
+          <text>{{item.status === 'published' ? '已发布' : '草稿'}}</text>
+        </view>
+      </view>
+      <!-- 进度信息 -->
+      <view class="exam-card-progress">
+        <view class="progress-track">
+          <view class="progress-fill {{item.submission_count > 0 ? 'fill-done' : 'fill-empty'}}" style="width:{{item.submission_count > 0 ? 100 : 0}}%"></view>
+        </view>
+        <text class="progress-text">
+          <text wx:if="{{item.submission_count > 0 && item.avg_score}}">已提交 {{item.submission_count || 0}} 人 · 平均分 {{item.avg_score}}</text>
+          <text wx:elif="{{item.submission_count > 0}}">已提交 {{item.submission_count || 0}} 人</text>
+          <text wx:else>暂无学生提交</text>
+        </text>
+      </view>
+      <!-- 操作按钮 -->
+      <view class="exam-card-actions">
+        <button class="action-btn action-sheet" data-id="{{item.id}}" data-title="{{item.title}}" catchtap="goToAnswerSheetForExam">
+          <view class="action-sheet-icon">
+            <view class="sheet-icon-arrow"></view>
+          </view>
+          <text>答题卡</text>
+        </button>
+        <button class="action-btn action-report" data-id="{{item.id}}" catchtap="goToReport">
+          <view class="action-report-icon"></view>
+          <text>报告</text>
+        </button>
+        <button class="action-btn action-scan" data-id="{{item.id}}" data-title="{{item.title}}" catchtap="goToScan">
+          <view class="action-scan-icon"></view>
+          <text>批卷</text>
+        </button>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部 TabBar -->
+  <custom-tab-bar activeIndex="1"></custom-tab-bar>
+</view>

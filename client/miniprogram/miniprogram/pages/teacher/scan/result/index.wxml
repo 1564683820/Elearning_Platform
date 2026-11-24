@@ -1,0 +1,131 @@
+<view class="page">
+  <!-- 头部成绩卡 -->
+  <view class="score-card {{pendingCount > 0 ? 'warning' : 'success'}}">
+    <view class="score-top">
+      <text class="student-avatar">{{studentAvatarChar}}</text>
+      <view class="score-info">
+        <text class="student-name">{{studentName}}</text>
+        <text class="score-text">{{score}} / {{maxScore}} 分</text>
+      </view>
+    </view>
+    <view class="score-bottom" wx:if="{{multiMaxScore > 0}}">
+      <text class="multi-label">单选: {{score - multiScore}}/{{maxScore - multiMaxScore}}</text>
+      <text class="multi-divider">|</text>
+      <text class="multi-label">多选: {{multiScore}}/{{multiMaxScore}}</text>
+    </view>
+    <view class="pending-hint" wx:if="{{pendingCount > 0}}">
+      <view class="warn-dot"></view>
+      <text>{{pendingCount}}题待确认</text>
+    </view>
+  </view>
+
+  <!-- 统计 -->
+  <view class="summary-bar">
+    <view class="summary-item correct"><text class="summary-value">{{correctCount}}</text><text class="summary-label">正确</text></view>
+    <view class="summary-item wrong"><text class="summary-value">{{wrongCount}}</text><text class="summary-label">错误</text></view>
+    <view class="summary-item" wx:if="{{summary.uncertain > 0}}"><text class="summary-value warn">{{summary.uncertain}}</text><text class="summary-label">存疑</text></view>
+    <view class="summary-item" wx:if="{{summary.multi > 0}}"><text class="summary-value warn">{{summary.multi}}</text><text class="summary-label">多涂</text></view>
+  </view>
+
+  <!-- 逐题 -->
+  <view class="answers-section">
+    <view class="section-title"><text>逐题详情</text><text class="section-count">{{answers.length}}题</text></view>
+    <view class="answer-item {{item.is_correct ? 'correct' : 'wrong'}} {{item.status === 'uncertain' || item.status === 'light' ? 'warn-bg' : ''}}"
+          wx:for="{{answers}}" wx:key="question_number" data-index="{{index}}">
+      <!-- 题号+状态 -->
+      <view class="answer-header">
+        <view class="answer-left">
+          <text class="answer-number">第{{item.question_number}}题</text>
+          <text class="answer-type {{item.question_type === 'multiple' ? 'multi-type' : ''}}">{{item.question_type === 'multiple' ? '[多选]' : '[单选]'}}</text>
+        </view>
+        <view class="answer-status-tag {{item.is_correct ? 'tag-correct' : 'tag-wrong'}}" wx:if="{{item.status === 'normal' || item.status === 'multi_normal'}}">
+          <view class="{{item.is_correct ? 'check-tiny' : 'cross-tiny'}}"></view>
+        </view>
+        <view class="answer-status-tag tag-pending" wx:elif="{{item.status === 'uncertain' || item.status === 'light'}}">
+          <view class="warn-tiny"></view>
+        </view>
+        <view class="answer-status-tag tag-wrong" wx:else>
+          <view class="cross-tiny"></view>
+        </view>
+      </view>
+
+      <!-- 答案详情 -->
+      <view class="answer-detail">
+        <!-- 单选正常 -->
+        <view class="answer-row" wx:if="{{item.status === 'normal' && item.question_type === 'single'}}">
+          <text class="label">答案:</text><text class="value {{item.is_correct ? 'correct-text' : 'wrong-text'}}">{{item.selected || '-'}}</text>
+          <text class="label" wx:if="{{!item.is_correct}}">  正确:</text><text class="value correct-text" wx:if="{{!item.is_correct}}">{{item.correct || item.correct_answer}}</text>
+          <text class="score-tag">({{item.score}}分)</text>
+        </view>
+        <!-- 单选浅填 -->
+        <view class="answer-row" wx:elif="{{item.status === 'light'}}">
+          <text class="label warn-text">填涂较浅:</text><text class="value">{{item.selected || '-'}}</text>
+          <text class="label"> 正确:</text><text class="value correct-text">{{item.correct || item.correct_answer}}</text>
+        </view>
+        <!-- 单选多选 -->
+        <view class="answer-row" wx:elif="{{item.status === 'multi'}}">
+          <text class="label wrong-text">单选题多选:</text>
+          <text class="value">填涂了 {{item._filledCirclesText}}</text>
+          <text class="hint" bindtap="openConfirm" data-index="{{index}}">[手动确认]</text>
+        </view>
+        <!-- 可能改选 -->
+        <view class="answer-row" wx:elif="{{item.status === 'uncertain'}}">
+          <text class="label warn-text">可能改选:</text><text class="value">系统判定 {{item.selected || '-'}}</text>
+          <text class="hint" bindtap="openConfirm" data-index="{{index}}">[确认]</text>
+        </view>
+        <!-- 未作答 -->
+        <view class="answer-row" wx:elif="{{item.status === 'blank'}}">
+          <text class="label gray-text">未作答</text><text class="label"> 正确:</text><text class="value correct-text">{{item.correct || item.correct_answer}}</text>
+        </view>
+        <!-- 整题涂黑 -->
+        <view class="answer-row" wx:elif="{{item.status === 'all_filled'}}">
+          <text class="label wrong-text">整题涂黑</text>
+          <text class="hint" bindtap="openConfirm" data-index="{{index}}">[手动确认]</text>
+        </view>
+        <!-- 多选全对 -->
+        <view class="answer-row" wx:elif="{{item.status === 'multi_normal'}}">
+          <text class="label">答案:</text><text class="value correct-text">{{item._selectedText}}</text>
+          <text class="correct-flag">全对</text><text class="score-tag">({{item.score}}分)</text>
+        </view>
+        <!-- 多选部分选错 -->
+        <view class="answer-row" wx:elif="{{item.status === 'multi_partial'}}">
+          <text class="label">你选了:</text><text class="value wrong-text">{{item._selectedText}}</text>
+          <text class="label"> 正确:</text><text class="value correct-text">{{item._correctText}}</text>
+          <text class="warn-text">部分选错</text>
+        </view>
+        <!-- 多选漏选 -->
+        <view class="answer-row" wx:elif="{{item.status === 'multi_short'}}">
+          <text class="label">你选了:</text><text class="value wrong-text">{{item._selectedText}}</text>
+          <text class="label"> 漏选:</text><text class="value warn-text">{{item._missedOptions}}</text>
+        </view>
+        <!-- 多选多涂 -->
+        <view class="answer-row" wx:elif="{{item.status === 'multi_excess'}}">
+          <text class="label wrong-text">多涂:</text><text class="value">{{item._selectedText}}</text>
+          <text class="label"> 正确:</text><text class="value correct-text">{{item._correctText}}</text>
+          <text class="hint" bindtap="openConfirm" data-index="{{index}}">[确认]</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 确认弹窗 -->
+  <view class="modal-overlay" wx:if="{{showConfirm}}" bindtap="closeConfirm">
+    <view class="modal-box" catchtap="">
+      <text class="modal-title">确认第{{confirmQuestion && confirmQuestion.question_number}}题答案</text>
+      <view class="modal-options">
+        <view class="modal-option {{selectedOption === opt ? 'selected' : ''}}"
+              wx:for="{{(confirmQuestion && confirmQuestion.options) || ['A','B','C','D']}}" wx:key="*this"
+              data-value="{{item}}" bindtap="onOptionSelect">
+          <text>{{item}}</text>
+          <view class="correct-badge" wx:if="{{item === ((confirmQuestion && confirmQuestion.correct) || (confirmQuestion && confirmQuestion.correct_answer))}}">
+            <view class="check-tiny"></view>
+          </view>
+        </view>
+      </view>
+      <view class="modal-actions">
+        <button class="modal-btn cancel" bindtap="closeConfirm">取消</button>
+        <button class="modal-btn confirm" disabled="{{!selectedOption}}" bindtap="confirmAnswer">确认</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,74 @@
+<!-- 幼儿识词页面 -->
+<view class="child-container">
+  <!-- 状态栏占位 -->
+  <view class="status-bar"></view>
+
+  <!-- 顶部栏 -->
+  <view class="top-bar">
+    <view class="logo-area">
+      <text class="logo-e">E</text>
+      <text class="logo-text">-Learning</text>
+    </view>
+    <view class="phase-btn" catchtap="onOpenPhaseSelector">
+      <text class="phase-btn-text">{{currentPhase}}</text>
+      <text class="phase-arrow">▼</text>
+    </view>
+  </view>
+
+  <scroll-view class="scroll-area" scroll-y>
+    <!-- 单词卡片 -->
+    <view class="word-card">
+      <!-- 字母占位区（图片占位） -->
+      <view class="word-image">
+        <text class="word-letters">{{currentWord.letters}}</text>
+      </view>
+
+      <!-- 单词和释义 -->
+      <view class="word-text-wrap">
+        <text class="word-english">{{currentWord.en}}</text>
+        <text class="word-chinese">{{currentWord.cn}}</text>
+      </view>
+
+      <!-- 底部按钮 -->
+      <view class="word-actions">
+        <!-- 小e语音教读 -->
+        <button class="speak-btn {{isSpeaking ? 'speaking' : ''}}" catchtap="onSpeak">
+          <text class="speak-icon">🔊</text>
+          <text class="speak-label">小e教读</text>
+        </button>
+
+        <!-- 下一个词 -->
+        <button class="next-btn" catchtap="onNextWord">
+          <text class="next-icon">→</text>
+        </button>
+      </view>
+
+      <!-- 轮播指示点 -->
+      <view class="dots-row">
+        <view class="dot-item {{currentIndex === index ? 'active' : ''}}"
+              wx:for="{{wordList}}" wx:key="index"
+              data-index="{{index}}" catchtap="onDotTap"></view>
+      </view>
+    </view>
+
+    <!-- 语音对话气泡 -->
+    <view class="bubbles-area" wx:if="{{speechBubbles.length > 0}}">
+      <view class="bubble" wx:for="{{speechBubbles}}" wx:key="index">
+        <view class="bubble-avatar">🤖</view>
+        <view class="bubble-text">{{item.text}}</view>
+      </view>
+    </view>
+
+    <!-- 底部安全 -->
+    <view class="bottom-safe"></view>
+  </scroll-view>
+
+  <!-- 底部导航 -->
+  <footer-tabs activeIndex="1"></footer-tabs>
+
+  <!-- 阶段选择弹窗 -->
+  <phase-selector visible="{{showPhaseSelector}}"
+                  currentPhase="{{phaseMode.getSavedPhaseIndex()}}"
+                  bind:close="onClosePhaseSelector"
+                  bind:saved="onPhaseSaved"></phase-selector>
+</view>

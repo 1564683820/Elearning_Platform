@@ -1,0 +1,205 @@
+/* ===== 页面 ===== */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #F8FAF9;
+}
+
+/* ===== 导航栏 ===== */
+.nav-bar {
+  background: #FFFFFF;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24rpx 16rpx;
+}
+
+.nav-back {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 20rpx;
+  background: #F1F5F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-arrow {
+  font-size: 36rpx;
+  color: #1A1A2E;
+  line-height: 1;
+}
+
+.nav-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #1A1A2E;
+  letter-spacing: 2rpx;
+}
+
+.nav-placeholder {
+  width: 64rpx;
+  flex-shrink: 0;
+}
+
+/* ===== 滚动区 ===== */
+.scroll-area {
+  flex: 1;
+}
+
+.scroll-inner {
+  padding: 40rpx 32rpx 80rpx;
+}
+
+/* ===== 头像区块 ===== */
+.avatar-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 48rpx;
+}
+
+.avatar-frame {
+  position: relative;
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 50%;
+  background: #E8EDEA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16rpx;
+}
+
+.avatar-img {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 50%;
+}
+
+.avatar-placeholder {
+  font-size: 48rpx;
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.avatar-badge {
+  position: absolute;
+  bottom: 4rpx;
+  right: 4rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #2D7D46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3rpx solid #FFFFFF;
+  box-shadow: 0 2rpx 8rpx rgba(45,125,70,0.25);
+}
+
+.badge-icon {
+  font-size: 24rpx;
+  color: #FFFFFF;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.avatar-hint {
+  font-size: 24rpx;
+  color: #94A3B8;
+}
+
+/* ===== 表单卡片 ===== */
+.form-card {
+  background: #FFFFFF;
+  border-radius: 24rpx;
+  overflow: hidden;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  padding: 32rpx 28rpx;
+  border-bottom: 1rpx solid #F1F5F3;
+}
+
+.field-last {
+  border-bottom: none;
+}
+
+.field-label {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #1A1A2E;
+  width: 120rpx;
+  flex-shrink: 0;
+}
+
+.field-input {
+  flex: 1;
+  text-align: left;
+  font-size: 28rpx;
+  color: #64748B;
+  padding: 0 16rpx;
+}
+
+.field-picker {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16rpx;
+}
+
+.picker-text {
+  font-size: 28rpx;
+  color: #64748B;
+}
+
+.picker-arrow {
+  font-size: 28rpx;
+  color: #CBD5E1;
+  margin-left: 8rpx;
+}
+
+/* ===== 底部提示 ===== */
+.bottom-note {
+  margin-top: 40rpx;
+  padding: 0 8rpx;
+}
+
+.note-text {
+  font-size: 24rpx;
+  color: #CBD5E1;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ===== 底部保存按钮 ===== */
+.save-button {
+  margin: 48rpx auto 0;
+  width: 420rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #2D7D46;
+  border-radius: 44rpx;
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #FFFFFF;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.save-button.disabled {
+  opacity: 0.5;
+}

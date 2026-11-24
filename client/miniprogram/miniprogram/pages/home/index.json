@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "phase-selector": "/components/phase-selector/index"
+  },
+  "navigationBarTitleText": "E-Learning",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black"
+}

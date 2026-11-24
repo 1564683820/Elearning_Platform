@@ -1,0 +1,36 @@
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-overlay" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- 报告内容 -->
+  <block wx:else>
+    <!-- 顶部操作栏：复制报告 + 导出长图 -->
+    <view class="action-bar" wx:if="{{report.content}}">
+      <button class="action-btn copy-btn" bindtap="onCopyReport">复制报告</button>
+      <button class="action-btn export-btn" bindtap="onExportImage">导出长图</button>
+    </view>
+
+    <view class="report-header" wx:if="{{report.title}}">
+      <text class="report-title">{{report.title}}</text>
+      <text class="report-date">{{report.created_at}}</text>
+      <text class="report-desc" wx:if="{{report.exam_name}}">关联: {{report.exam_name}}</text>
+    </view>
+
+    <scroll-view class="report-body" scroll-y>
+      <view class="report-content">
+        <rich-text wx:if="{{reportNodes}}" nodes="{{reportNodes}}" class="report-text"></rich-text>
+        <view class="empty-state" wx:else>
+          <text class="empty-text">暂无内容</text>
+        </view>
+      </view>
+    </scroll-view>
+  </block>
+</view>
+
+<!-- 用于导出长图的隐藏 Canvas -->
+<canvas type="2d" id="exportCanvas"
+  style="width:375px;height:600px;position:fixed;left:100%;top:0;pointer-events:none;">
+</canvas>

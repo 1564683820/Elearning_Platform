@@ -1,0 +1,319 @@
+<view class="page">
+
+  <!-- 顶部 Header -->
+  <view class="header">
+    <view class="header-bg"></view>
+    <view class="header-content">
+
+      <view class="header-text">
+        <text class="header-title">教材点读</text>
+        <text class="header-subtitle">人教版PEP 三~六年级</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- =========================================================== -->
+  <!--  点读 Tab 内容                                                  -->
+  <!-- =========================================================== -->
+  <view class="tab-content {{activeTab === 0 ? 'active' : ''}}">
+
+    <!-- 网络错误提示条 -->
+    <view class="error-bar" wx:if="{{networkError}}" bindtap="onRetry">
+      <text class="error-bar-icon">!</text>
+      <text class="error-bar-text">{{errorMsg || '网络异常，点击重试'}}</text>
+      <text class="error-bar-action">刷新</text>
+    </view>
+
+    <!-- 面包屑导航 -->
+    <view class="breadcrumb" wx:if="{{currentStep > 0}}">
+      <view class="crumb-item" bindtap="goBack" data-step="{{currentStep - 1}}">
+        <text class="crumb-arrow">‹</text>
+        <text class="crumb-label">{{breadcrumb[currentStep - 1]}}</text>
+      </view>
+    </view>
+
+    <!-- 内容区：四级导航 -->
+    <scroll-view class="content" scroll-y enhanced show-scrollbar="{{false}}">
+      <!-- Step 0: 版本选择 -->
+      <view class="step-section" wx:if="{{currentStep === 0}}">
+        <view class="section-title">选择教材版本</view>
+        <view class="card-grid">
+          <view
+            class="version-card {{selectedVersion === item ? 'active' : ''}}"
+            wx:for="{{versions}}"
+            wx:key="item"
+            data-version="{{item}}"
+            bindtap="onSelectVersion"
+          >
+            <view class="card-icon-wrap">
+              <text class="card-icon"></text>
+            </view>
+            <text class="card-name">{{item}}</text>
+            <text class="card-desc">人教版英语教材</text>
+            <view class="card-check" wx:if="{{selectedVersion === item}}">✓</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- Step 1: 年级选择 -->
+      <view class="step-section" wx:if="{{currentStep === 1}}">
+        <view class="section-title">选择年级</view>
+        <view class="card-grid">
+          <view
+            class="grade-card"
+            wx:for="{{grades}}"
+            wx:key="item"
+            data-grade="{{item}}"
+            bindtap="onSelectGrade"
+          >
+            <view class="grade-icon-wrap">
+              <text class="grade-icon">{{gradeIcons[item] || '📘'}}</text>
+            </view>
+            <text class="grade-name">三年级 {{item}}</text>
+            <text class="grade-desc">{{item}} 年级·上册</text>
+            <view class="grade-arrow">›</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- Step 2: 学期选择 -->
+      <view class="step-section" wx:if="{{currentStep === 2}}">
+        <view class="section-title">选择学期</view>
+        <view class="card-grid">
+          <view
+            class="semester-card"
+            wx:for="{{semesters}}"
+            wx:key="item"
+            data-semester="{{item}}"
+            bindtap="onSelectSemester"
+          >
+            <view class="semester-icon-wrap">
+              <text class="semester-icon">{{item === '上' || item === '上册' || item === 'first' ? '📖' : '📚'}}</text>
+            </view>
+            <text class="semester-name">{{semesterLabels[item] || item}}</text>
+            <view class="semester-arrow">›</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- Step 3: 单元列表 -->
+      <view class="step-section" wx:if="{{currentStep === 3}}">
+        <view class="section-title">
+          <text>单元列表</text>
+          <text class="title-sub">共 {{units.length}} 个单元</text>
+        </view>
+        <view class="unit-list">
+          <view
+            class="unit-item"
+            wx:for="{{units}}"
+            wx:key="id"
+            data-unit="{{item.unit_number}}"
+            bindtap="onSelectUnit"
+          >
+            <view class="unit-num-wrap">
+              <text class="unit-num">{{'U' + item.unit_number}}</text>
+            </view>
+            <view class="unit-info">
+              <text class="unit-title">{{item.title}}</text>
+              <text class="unit-pages">共 {{item.page_count}} 页</text>
+            </view>
+            <view class="unit-cover-wrap" wx:if="{{item.cover_image}}">
+              <image class="unit-cover" src="{{item.cover_image}}" mode="aspectFill" />
+            </view>
+            <text class="unit-arrow">›</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <!-- 全屏加载 -->
+    <view class="loading-mask" wx:if="{{loading}}">
+      <view class="loading-dots">
+        <view class="dot"></view>
+        <view class="dot"></view>
+        <view class="dot"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- =========================================================== -->
+  <!--  教材 Tab 内容：上传教材文档                                      -->
+  <!-- =========================================================== -->
+  <view class="tab-content upload-tab {{activeTab === 1 ? 'active' : ''}}">
+
+    <!-- 上传入口卡片 -->
+    <view class="upload-card" bindtap="onUploadTap">
+      <view class="upload-icon-area">
+        <text class="upload-icon"></text>
+      </view>
+      <text class="upload-title">点击上传教材（PDF）</text>
+      <text class="upload-desc">支持 PDF 格式，文件大小不超过 200MB</text>
+    </view>
+
+    <!-- 上传/解析进度 -->
+    <view class="upload-progress-area" wx:if="{{uploading}}">
+      <view class="progress-bar-wrap">
+        <view class="progress-bar" style="width: {{uploadProgress}}%"></view>
+      </view>
+      <text class="progress-text">{{uploadProgress}}%</text>
+    </view>
+
+    <!-- 解析进度详情 -->
+    <view class="parse-progress-area" wx:if="{{parseStage === 'parsing'}}">
+      <view class="parse-stage-label">
+        <text class="parse-stage-icon"></text>
+        <text class="parse-stage-text">正在解析</text>
+      </view>
+      <view class="parse-detail-bar-wrap">
+        <view class="parse-detail-bar" style="width: {{parseProgress > 0 ? (parseProgress - 60) / 30 * 100 : 0}}%"></view>
+      </view>
+      <text class="parse-detail-text" wx:if="{{parseProgressText}}">{{parseProgressText}}</text>
+    </view>
+
+    <!-- 上传状态提示 -->
+    <view class="upload-status {{uploadStatus}}" wx:if="{{uploadStatus === 'done' || uploadStatus === 'error'}}">
+      <text wx:if="{{uploadStatus === 'done' && (!parseStage || parseStage === 'done')}}">上传并解析完成</text>
+      <text wx:elif="{{uploadStatus === 'done' && parseStage === 'parsing'}}">上传成功，后台解析中...</text>
+      <text wx:if="{{uploadStatus === 'error'}}">❌ 上传失败</text>
+    </view>
+
+    <!-- 分隔线 -->
+    <view class="upload-divider">
+      <view class="divider-line"></view>
+      <text class="divider-text">已上传教材</text>
+      <view class="divider-line"></view>
+    </view>
+
+    <!-- 已上传教材列表 -->
+    <scroll-view class="upload-list" scroll-y enhanced show-scrollbar="{{false}}">
+      <view class="upload-list-empty" wx:if="{{uploadedTextbooks.length === 0}}">
+        <text class="empty-icon"></text>
+        <text class="empty-text">还没有上传教材</text>
+        <text class="empty-hint">点击上方区域上传 PDF 教材</text>
+      </view>
+      <view
+        class="upload-item"
+        wx:for="{{uploadedTextbooks}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        data-grade="{{item.grade}}"
+        data-semester="{{item.semester}}"
+        data-parse_status="{{item.parse_status}}"
+        data-item="{{item}}"
+        bindtap="onTapUploadItem"
+      >
+        <view class="upload-item-icon-wrap">
+          <text class="upload-item-icon"></text>
+        </view>
+        <view class="upload-item-info">
+          <text class="upload-item-name">{{item.name}}</text>
+          <view class="upload-item-meta">
+            <text class="upload-item-size">{{item.size}}</text>
+            <text class="upload-item-date">{{item.date}}</text>
+          </view>
+          <view class="upload-item-tags" wx:if="{{item.parse_status === 2}}">
+            <text class="tag tag-audio" wx:if="{{item.audioDone}}">音频</text>
+            <text class="tag tag-anim" wx:if="{{item.animDone}}">动图</text>
+          </view>
+        </view>
+        <view class="upload-item-status {{item.status}}">
+          <text wx:if="{{item.parse_status === 2}}">已完成</text>
+          <text wx:elif="{{item.parse_status === 1}}">解析中</text>
+          <text wx:elif="{{item.parse_status === 3}}">失败</text>
+          <text wx:else>待处理</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- =========================================================== -->
+  <!--  批量操作菜单（底部弹出）                                          -->
+  <!-- =========================================================== -->
+  <view class="batch-menu-mask" wx:if="{{showBatchMenu}}" bindtap="onCloseBatchMenu"></view>
+  <view class="batch-menu {{showBatchMenu ? 'active' : ''}}">
+    <view class="batch-menu-header">
+      <text class="batch-menu-title">{{batchItem ? batchItem.name : '教材操作'}}</text>
+      <text class="batch-menu-close" bindtap="onCloseBatchMenu">✕</text>
+    </view>
+    <view class="batch-menu-body">
+      <!-- 查看阅读 -->
+      <view class="batch-action" bindtap="onBatchView" hover-class="action-hover">
+        <view class="action-icon-wrap" style="background:#4A90D9">
+          <text class="action-icon"></text>
+        </view>
+        <view class="action-info">
+          <text class="action-title">查看阅读</text>
+          <text class="action-desc">进入教材阅读器</text>
+        </view>
+        <text class="action-arrow">›</text>
+      </view>
+
+      <!-- 合成音频 -->
+      <view class="batch-action" bindtap="onBatchTTS" hover-class="action-hover">
+        <view class="action-icon-wrap" style="background:#34C759">
+          <text class="action-icon"></text>
+        </view>
+        <view class="action-info">
+          <text class="action-title">合成音频</text>
+          <text class="action-desc">为所有页面批量预生成 TTS 朗读音频</text>
+        </view>
+        <text class="action-arrow">›</text>
+      </view>
+
+      <!-- 教材动态化（分句分析 + 微动图） -->
+      <view class="batch-action" bindtap="onBatchAnimation" hover-class="action-hover">
+        <view class="action-icon-wrap" style="background:#FF9500">
+          <text class="action-icon"></text>
+        </view>
+        <view class="action-info">
+          <text class="action-title">教材动态化</text>
+          <text class="action-desc">AI 分析分句角色 + 生成角色级微动图</text>
+        </view>
+        <text class="action-arrow">›</text>
+      </view>
+
+      <!-- 删除教材 -->
+      <view class="batch-action batch-action-danger" bindtap="onBatchDelete" hover-class="action-hover">
+        <view class="action-icon-wrap" style="background:#FF3B30">
+          <text class="action-icon"></text>
+        </view>
+        <view class="action-info">
+          <text class="action-title">删除教材</text>
+          <text class="action-desc">删除上传记录及所有解析数据</text>
+        </view>
+        <text class="action-arrow">›</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 批量处理进度弹窗 -->
+  <view class="batch-progress-mask" wx:if="{{batchProcessing}}"></view>
+  <view class="batch-progress-panel" wx:if="{{batchProcessing}}">
+    <view class="batch-progress-header">
+      <text class="batch-progress-title">{{batchProgressTitle}}</text>
+    </view>
+    <view class="batch-progress-body">
+      <view class="batch-progress-icon"></view>
+      <text class="batch-progress-text">{{batchProgressText}}</text>
+      <view class="batch-progress-bar-wrap">
+        <view class="batch-progress-bar" style="width: {{batchProgressPct}}%"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- =========================================================== -->
+  <!--  底部 Tab 栏                                                   -->
+  <!-- =========================================================== -->
+  <view class="bottom-tab-bar">
+    <view
+      class="bottom-tab-item {{activeTab === index ? 'active' : ''}}"
+      wx:for="{{tabItems}}"
+      wx:key="key"
+      data-index="{{index}}"
+      bindtap="onTabChange"
+    >
+      <text class="tab-icon">{{item.icon}}</text>
+      <text class="tab-label">{{item.label}}</text>
+    </view>
+  </view>
+</view>

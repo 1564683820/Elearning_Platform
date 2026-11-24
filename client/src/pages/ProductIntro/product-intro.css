@@ -1,0 +1,94 @@
+/* 产品介绍页样式 */
+html { scroll-behavior: smooth; }
+
+.pi-back-btn {
+  position: fixed; top: 20px; left: 20px; z-index: 1000;
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(26,26,46,0.6); backdrop-filter: blur(12px);
+  color: #fff; font-family: 'Noto Sans SC', sans-serif;
+  font-size: 14px; cursor: pointer;
+  transition: all 0.2s ease;
+}
+.pi-back-btn:hover { background: rgba(26,26,46,0.85); border-color: rgba(91,158,111,0.4); }
+
+.pi-section {
+  min-height: 100vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 80px 48px; background: #0d1b2a; position: relative; overflow: hidden;
+}
+.pi-section::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(15,52,96,0.3) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(91,158,111,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+.pi-scenarios-bg { background: linear-gradient(180deg, #0d1b2a 0%, #111d35 100%); }
+.pi-section-content { position: relative; z-index: 2; max-width: 1100px; width: 100%; }
+
+.pi-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94), transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+.pi-reveal.visible { opacity: 1; transform: translateY(0); }
+.pi-delay-1 { transition-delay: 0.1s; } .pi-delay-2 { transition-delay: 0.2s; }
+.pi-delay-3 { transition-delay: 0.3s; } .pi-delay-4 { transition-delay: 0.4s; }
+.pi-delay-5 { transition-delay: 0.5s; }
+
+.pi-title-section { padding-top: 100px; }
+.pi-title-main { font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 700; color: #fff; text-align: center; margin: 0 0 8px 0; line-height: 1.2; }
+.pi-title-main .pi-green { color: #5B9E6F; font-style: italic; }
+.pi-title-sub { font-family: 'Noto Sans SC', sans-serif; font-size: 18px; color: rgba(255,255,255,0.5); text-align: center; margin: 0 0 60px 0; font-weight: 300; letter-spacing: 4px; }
+.pi-title-divider { width: 60px; height: 3px; background: #5B9E6F; border-radius: 2px; margin: 0 auto; }
+
+.pi-scenario-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 40px; }
+.pi-scenario-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 32px 28px; transition: all 0.35s ease; cursor: default; }
+.pi-scenario-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(91,158,111,0.3); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.2); }
+.pi-scenario-card .pi-scenario-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 16px; }
+.pi-scenario-card h3 { font-family: 'Noto Sans SC', sans-serif; font-size: 17px; font-weight: 600; color: #fff; margin: 0 0 8px 0; }
+.pi-scenario-card p { font-family: 'Noto Sans SC', sans-serif; font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; margin: 0; }
+
+.pi-feature-header { text-align: center; margin-bottom: 48px; }
+.pi-feature-header h2 { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: #fff; margin: 0 0 12px 0; }
+.pi-feature-header h2 i { color: #5B9E6F; margin-right: 8px; }
+.pi-feature-header p { font-family: 'Noto Sans SC', sans-serif; font-size: 15px; color: rgba(255,255,255,0.5); max-width: 500px; margin: 0 auto; }
+
+.pi-prototype-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1000px; margin: 0 auto; }
+.pi-prototype-card { background: rgba(255,255,255,0.03); border-radius: 16px; padding: 24px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); cursor: pointer; }
+.pi-prototype-card:hover { transform: scale(1.04); border-color: rgba(91,158,111,0.3); box-shadow: 0 16px 48px rgba(0,0,0,0.3); background: rgba(255,255,255,0.06); }
+.pi-prototype-card .pi-prototype-title { font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 600; color: #fff; margin: 16px 0 4px 0; text-align: center; }
+.pi-prototype-card .pi-prototype-desc { font-family: 'Noto Sans SC', sans-serif; font-size: 12px; color: rgba(255,255,255,0.45); margin: 0; text-align: center; }
+
+.pi-mockup-phone { width: 100%; max-width: 220px; height: 320px; margin: 0 auto; border-radius: 20px; border: 2px solid rgba(255,255,255,0.12); overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.pi-mockup-phone .pi-mockup-status { height: 24px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; font-size: 10px; color: rgba(255,255,255,0.6); font-family: 'Noto Sans SC', sans-serif; }
+.pi-mockup-phone .pi-mockup-header { height: 36px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: #fff; font-family: 'Noto Sans SC', sans-serif; }
+.pi-mockup-phone .pi-mockup-body { flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.pi-mockup-phone .pi-mockup-body .pi-mock-line { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.1); }
+.pi-mockup-phone .pi-mockup-body .pi-mock-line.pi-wide { width: 90%; }
+.pi-mockup-phone .pi-mockup-body .pi-mock-line.pi-medium { width: 70%; }
+.pi-mockup-phone .pi-mockup-body .pi-mock-line.pi-narrow { width: 50%; }
+.pi-mockup-phone .pi-mockup-body .pi-mock-block { height: 60px; border-radius: 8px; background: rgba(255,255,255,0.08); }
+.pi-mockup-phone .pi-mockup-body .pi-mock-row { display: flex; gap: 8px; }
+.pi-mockup-phone .pi-mockup-body .pi-mock-row .pi-mock-thumb { flex: 1; height: 44px; border-radius: 8px; background: rgba(255,255,255,0.06); }
+.pi-mockup-phone .pi-mockup-body .pi-mock-progress { height: 4px; border-radius: 2px; background: rgba(91,158,111,0.4); width: 60%; }
+.pi-mockup-phone .pi-mockup-body .pi-mock-dot-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; }
+.pi-mockup-phone .pi-mockup-body .pi-mock-dot-grid .pi-mock-dot { aspect-ratio: 1; border-radius: 8px; background: rgba(255,255,255,0.07); }
+.pi-theme-green { background: linear-gradient(145deg,#1a3a2a,#0d2a1a); }
+.pi-theme-blue { background: linear-gradient(145deg,#1a2a4a,#0d1a3a); }
+.pi-theme-amber { background: linear-gradient(145deg,#3a2a1a,#2a1a0d); }
+.pi-theme-teal { background: linear-gradient(145deg,#1a3a3a,#0d2a2a); }
+
+.pi-closing-section { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 48px; background: linear-gradient(180deg,#0d1b2a 0%,#1a1a2e 100%); position: relative; overflow: hidden; }
+.pi-closing-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle,rgba(91,158,111,0.06) 0%,transparent 60%); pointer-events: none; }
+.pi-closing-title { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 700; color: #fff; margin: 0 0 20px 0; position: relative; z-index: 2; }
+.pi-closing-title .pi-green { color: #5B9E6F; font-style: italic; }
+.pi-closing-text { font-family: 'Noto Sans SC', sans-serif; font-size: 16px; color: rgba(255,255,255,0.55); max-width: 520px; line-height: 1.8; margin: 0 0 40px 0; position: relative; z-index: 2; }
+.pi-closing-cta { position: relative; z-index: 2; }
+.pi-closing-cta button { padding: 14px 40px; border-radius: 12px; border: none; background: #5B9E6F; color: #fff; font-family: 'Noto Sans SC', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; letter-spacing: 1px; }
+.pi-closing-cta button:hover { background: #3d7a4e; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(91,158,111,0.3); }
+
+@media (max-width: 768px) {
+  .pi-scenario-grid { grid-template-columns: 1fr; }
+  .pi-prototype-grid { grid-template-columns: 1fr; }
+  .pi-title-main { font-size: 36px; }
+  .pi-feature-header h2 { font-size: 28px; }
+  .pi-closing-title { font-size: 28px; }
+}

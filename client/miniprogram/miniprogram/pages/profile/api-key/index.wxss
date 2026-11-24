@@ -1,0 +1,146 @@
+/* API Key 配置 */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg);
+}
+
+/* Header */
+.custom-header {
+  background: #FFFFFF;
+  border-bottom: 1rpx solid var(--border);
+  flex-shrink: 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16rpx;
+}
+
+.header-btn {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 24rpx;
+  background: var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.header-btn-icon {
+  font-size: 32rpx;
+  color: var(--text-primary);
+}
+
+.header-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1;
+  text-align: center;
+}
+
+.header-spacer {
+  width: 72rpx;
+  flex-shrink: 0;
+}
+
+/* 内容区 */
+.content-scroll {
+  flex: 1;
+  padding: 24rpx 32rpx 60rpx;
+}
+
+/* 分区标题 */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 20rpx;
+}
+
+.section-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* 表单卡片 */
+.form-card {
+  margin-bottom: 20rpx;
+}
+
+.form-label {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12rpx;
+  display: block;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  padding: 18rpx 24rpx;
+  background: #F3F4F6;
+  border-radius: var(--radius-md);
+  border: 2rpx solid transparent;
+  transition: all 0.2s;
+}
+
+.input-row:focus-within {
+  border-color: var(--primary);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 4rpx rgba(91,158,111,0.1);
+}
+
+.form-input {
+  flex: 1;
+  font-size: 26rpx;
+  color: var(--text-primary);
+  min-height: 44rpx;
+}
+
+.eye-btn {
+  padding: 6rpx 10rpx;
+  flex-shrink: 0;
+  font-size: 22rpx;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* 测试按钮 */
+.test-btn {
+  margin-top: 0;
+  border-radius: 24rpx;
+  padding: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+/* 保存按钮 */
+.save-btn {
+  margin-top: 40rpx;
+  border-radius: 28rpx;
+  padding: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: 700;
+}

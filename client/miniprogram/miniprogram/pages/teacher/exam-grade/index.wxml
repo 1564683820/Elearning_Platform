@@ -1,0 +1,67 @@
+<view class="page">
+  <view class="header">
+    <text class="title">批卷</text>
+  </view>
+
+  <view class="exam-tabs">
+    <view class="tab {{activeTab === 'exams' ? 'active' : ''}}" bindtap="switchTab" data-tab="exams">试卷列表</view>
+    <view class="tab {{activeTab === 'submissions' ? 'active' : ''}}" bindtap="switchTab" data-tab="submissions">提交列表</view>
+  </view>
+
+  <!-- 试卷列表 -->
+  <view wx:if="{{activeTab === 'exams'}}">
+    <view class="exam-card" wx:for="{{exams}}" wx:key="id" bindtap="selectExam" data-id="{{item.id}}">
+      <view class="exam-info">
+        <text class="exam-title">{{item.title}}</text>
+        <text class="exam-meta">提交: {{item.submission_count}}人 · 均分: {{item.avg_score || '-'}}</text>
+      </view>
+      <text class="exam-status {{item.status}}">{{item.status === 'published' ? '已发布' : '草稿'}}</text>
+    </view>
+    <view class="empty" wx:if="{{exams.length === 0}}">
+      <text>暂无试卷，请前往管理后台创建</text>
+    </view>
+  </view>
+
+  <!-- 提交列表 -->
+  <view wx:if="{{activeTab === 'submissions' && selectedExamId}}">
+    <view class="sub-header">
+      <text class="section-title">提交列表</text>
+      <text class="back-link" bindtap="backToExams">← 返回</text>
+    </view>
+    <view class="submission-item" wx:for="{{submissions}}" wx:key="id">
+      <view class="sub-info">
+        <text class="sub-name">{{item.student_name}}</text>
+        <text class="sub-score" style="color: {{item.score >= item.total_score * 0.6 ? '#5B9E6F' : '#e74c3c'}}">
+          {{item.score}}/{{item.total_score}}分
+        </text>
+      </view>
+      <button class="review-btn" data-item="{{item}}" bindtap="openReview">
+        {{item.teacher_reviewed ? '已复核' : '复核'}}
+      </button>
+    </view>
+    <view class="empty" wx:if="{{submissions.length === 0}}">
+      <text>暂无提交记录</text>
+    </view>
+  </view>
+  <view wx:if="{{activeTab === 'submissions' && !selectedExamId}}" class="empty">
+    <text>请先在上方选择一个试卷</text>
+  </view>
+
+  <!-- 复核弹窗 -->
+  <view class="modal-mask" wx:if="{{showReview}}" bindtap="closeReview">
+    <view class="modal" catchtap="">
+      <text class="modal-title">复核 - {{reviewStudent}}</text>
+      <text class="modal-score">当前得分: {{reviewScore}}/{{reviewTotal}}</text>
+      <view class="adjust-item" wx:for="{{adjustments}}" wx:key="index">
+        <text class="adjust-label">题目 {{item.index + 1}}</text>
+        <input class="adjust-input" value="{{item.score}}" type="number" data-index="{{index}}" bindinput="onAdjScore" placeholder="调整分数" />
+        <input class="adjust-input" value="{{item.comment}}" data-index="{{index}}" bindinput="onAdjComment" placeholder="评语" />
+      </view>
+      <button class="add-adj" bindtap="addAdjustment">+ 添加调整项</button>
+      <view class="modal-btns">
+        <button class="btn-cancel" bindtap="closeReview">取消</button>
+        <button class="btn-submit" bindtap="submitReview">提交复核</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+.chat-exam-evidence { margin-bottom: 14px; }
+.chat-exam-evidence-title { display: block; font-size: 18px; font-weight: 800; line-height: 1.2; }
+.chat-exam-evidence-metric { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 16px; padding: 8px 0 0; }
+.chat-exam-evidence-metric strong { color: var(--green, #20694f); font-family: "Manrope", "Noto Sans SC", sans-serif; font-size: 28px; font-variant-numeric: tabular-nums; line-height: 1.16; }
+.chat-exam-evidence-metric span { color: var(--muted, #476358); font-size: 13px; font-weight: 650; }

@@ -1,0 +1,7602 @@
+[
+  {
+    "word": "abandon",
+    "synonyms": [
+      {
+        "word": "desert",
+        "tag": "区别",
+        "usage_desc": "abandon 强调彻底放弃控制或责任；desert 强调违背承诺或职责离开"
+      },
+      {
+        "word": "quit",
+        "tag": "区别",
+        "usage_desc": "quit 多指主动停止做某事；abandon 更强调被迫放弃"
+      }
+    ]
+  },
+  {
+    "word": "ability",
+    "synonyms": [
+      {
+        "word": "capacity",
+        "tag": "区别",
+        "usage_desc": "ability 指已具备的技能或能力；capacity 指潜在的可发展能力或容量"
+      },
+      {
+        "word": "capability",
+        "tag": "区别",
+        "usage_desc": "ability 更侧重实际能力；capability 更侧重可能性或潜在能力"
+      }
+    ]
+  },
+  {
+    "word": "accept",
+    "synonyms": [
+      {
+        "word": "receive",
+        "tag": "区别",
+        "usage_desc": "accept 强调主观上愿意接受；receive 单纯指收到（不一定接受）"
+      },
+      {
+        "word": "admit",
+        "tag": "区别",
+        "usage_desc": "accept 用于接受事物；admit 用于承认事实或允许进入"
+      }
+    ]
+  },
+  {
+    "word": "accurate",
+    "synonyms": [
+      {
+        "word": "precise",
+        "tag": "区别",
+        "usage_desc": "accurate 强调与真实值一致（正确性）；precise 强调细节精确（精密度）"
+      },
+      {
+        "word": "exact",
+        "tag": "区别",
+        "usage_desc": "exact 强调数量或事实完全符合；accurate 强调经过努力达到的正确"
+      }
+    ]
+  },
+  {
+    "word": "achieve",
+    "synonyms": [
+      {
+        "word": "accomplish",
+        "tag": "区别",
+        "usage_desc": "achieve 强调经过努力达成的结果；accomplish 强调完成任务的过程"
+      },
+      {
+        "word": "attain",
+        "tag": "区别",
+        "usage_desc": "attain 多指达到目标或理想境界；achieve 使用更广泛"
+      }
+    ]
+  },
+  {
+    "word": "adapt",
+    "synonyms": [
+      {
+        "word": "adjust",
+        "tag": "区别",
+        "usage_desc": "adapt 指较大幅度的改变以适应新环境；adjust 指微调以达到最佳状态"
+      },
+      {
+        "word": "accommodate",
+        "tag": "区别",
+        "usage_desc": "adapt 强调自身改变；accommodate 强调为他人的需求提供便利"
+      }
+    ]
+  },
+  {
+    "word": "admit",
+    "synonyms": [
+      {
+        "word": "confess",
+        "tag": "区别",
+        "usage_desc": "admit 常指不情愿地承认事实；confess 多指正式承认错误或罪行"
+      },
+      {
+        "word": "acknowledge",
+        "tag": "区别",
+        "usage_desc": "acknowledge 强调公开承认某事的真实性；admit 语气较轻"
+      }
+    ]
+  },
+  {
+    "word": "advantage",
+    "synonyms": [
+      {
+        "word": "benefit",
+        "tag": "区别",
+        "usage_desc": "advantage 强调相对优势；benefit 强调利益或好处"
+      },
+      {
+        "word": "merit",
+        "tag": "区别",
+        "usage_desc": "merit 强调内在价值或优点；advantage 强调竞争中的有利条件"
+      }
+    ]
+  },
+  {
+    "word": "argue",
+    "synonyms": [
+      {
+        "word": "debate",
+        "tag": "区别",
+        "usage_desc": "argue 指根据自己的看法争论；debate 指正式、有组织的辩论"
+      },
+      {
+        "word": "dispute",
+        "tag": "区别",
+        "usage_desc": "dispute 强调争执不下、激烈争论；argue 语气较温和"
+      }
+    ]
+  },
+  {
+    "word": "assist",
+    "synonyms": [
+      {
+        "word": "help",
+        "tag": "区别",
+        "usage_desc": "help 最常用，适用范围广；assist 更正式，多指辅助性的协助"
+      },
+      {
+        "word": "aid",
+        "tag": "区别",
+        "usage_desc": "aid 多指用物质或资金援助；assist 强调实际动手帮忙"
+      }
+    ]
+  },
+  {
+    "word": "benefit",
+    "synonyms": [
+      {
+        "word": "profit",
+        "tag": "区别",
+        "usage_desc": "benefit 指广义的好处或利益；profit 多指金钱上的利润"
+      },
+      {
+        "word": "gain",
+        "tag": "区别",
+        "usage_desc": "gain 强调获得的有形或无形收益；benefit 更侧重带来的好处"
+      }
+    ]
+  },
+  {
+    "word": "collect",
+    "synonyms": [
+      {
+        "word": "gather",
+        "tag": "区别",
+        "usage_desc": "collect 指有选择地收集；gather 指把分散的东西聚拢"
+      },
+      {
+        "word": "assemble",
+        "tag": "区别",
+        "usage_desc": "assemble 强调将部件或人聚集在一起；collect 更强调分类收集"
+      }
+    ]
+  },
+  {
+    "word": "complete",
+    "synonyms": [
+      {
+        "word": "finish",
+        "tag": "区别",
+        "usage_desc": "finish 强调动作结束；complete 强调所有部分都已完成"
+      },
+      {
+        "word": "accomplish",
+        "tag": "区别",
+        "usage_desc": "accomplish 强调成功完成有难度的事；complete 更中性"
+      }
+    ]
+  },
+  {
+    "word": "connect",
+    "synonyms": [
+      {
+        "word": "link",
+        "tag": "区别",
+        "usage_desc": "connect 强调直接连接；link 强调链条式或间接关联"
+      },
+      {
+        "word": "attach",
+        "tag": "区别",
+        "usage_desc": "attach 强调将一个物体固定在另一物体上；connect 强调相互连接"
+      }
+    ]
+  },
+  {
+    "word": "consider",
+    "synonyms": [
+      {
+        "word": "regard",
+        "tag": "区别",
+        "usage_desc": "consider 强调经过思考后的看法；regard 强调从某个角度看待"
+      },
+      {
+        "word": "deem",
+        "tag": "区别",
+        "usage_desc": "deem 更正式，强调判断；consider 使用更广泛"
+      }
+    ]
+  },
+  {
+    "word": "continuous",
+    "synonyms": [
+      {
+        "word": "continual",
+        "tag": "区别",
+        "usage_desc": "continuous 强调连续不断（无间隔）；continual 强调频繁重复（可能有间隔）"
+      },
+      {
+        "word": "constant",
+        "tag": "区别",
+        "usage_desc": "constant 强调恒定不变；continuous 强调时间上的连续"
+      }
+    ]
+  },
+  {
+    "word": "correct",
+    "synonyms": [
+      {
+        "word": "right",
+        "tag": "区别",
+        "usage_desc": "correct 更正式，强调符合标准或事实；right 更口语化，强调道德或判断正确"
+      },
+      {
+        "word": "accurate",
+        "tag": "区别",
+        "usage_desc": "accurate 强调精确无误；correct 强调没有错误"
+      }
+    ]
+  },
+  {
+    "word": "create",
+    "synonyms": [
+      {
+        "word": "invent",
+        "tag": "区别",
+        "usage_desc": "create 强调从无到有创造；invent 强调发明原先不存在的东西"
+      },
+      {
+        "word": "produce",
+        "tag": "区别",
+        "usage_desc": "produce 强调制造或产出结果；create 更强调创造性"
+      }
+    ]
+  },
+  {
+    "word": "dab",
+    "synonyms": [
+      {
+        "word": "pat",
+        "tag": "区别",
+        "usage_desc": "dab 轻拍且快速；pat 轻拍并停留，更温柔"
+      },
+      {
+        "word": "touch",
+        "tag": "区别",
+        "usage_desc": "dab 强调少量接触；touch 泛指触碰，不强调力量"
+      }
+    ]
+  },
+  {
+    "word": "daddy",
+    "synonyms": [
+      {
+        "word": "father",
+        "tag": "区别",
+        "usage_desc": "daddy 亲昵口语；father 正式称谓，不带情感色彩"
+      },
+      {
+        "word": "pa",
+        "tag": "区别",
+        "usage_desc": "daddy 更儿童化；pa 较随意，常用于美式口语"
+      }
+    ]
+  },
+  {
+    "word": "daffodil",
+    "synonyms": [
+      {
+        "word": "narcissus",
+        "tag": "区别",
+        "usage_desc": "daffodil 特指黄水仙；narcissus 泛指水仙属，含白水仙"
+      }
+    ]
+  },
+  {
+    "word": "dahlia",
+    "synonyms": [
+      {
+        "word": "flower",
+        "tag": "区别",
+        "usage_desc": "dahlia 专称大丽花属；flower 为泛称，不精确"
+      }
+    ]
+  },
+  {
+    "word": "daily",
+    "synonyms": [
+      {
+        "word": "everyday",
+        "tag": "区别",
+        "usage_desc": "daily 强调每日常规；everyday 强调日常普通，不一定每日"
+      },
+      {
+        "word": "diurnal",
+        "tag": "区别",
+        "usage_desc": "daily 通用；diurnal 科技或正式，指白天的"
+      }
+    ]
+  },
+  {
+    "word": "dairy",
+    "synonyms": [
+      {
+        "word": "creamery",
+        "tag": "区别",
+        "usage_desc": "dairy 泛指乳制品厂或店；creamery 专指奶制品加工或零售点"
+      }
+    ]
+  },
+  {
+    "word": "dam",
+    "synonyms": [
+      {
+        "word": "barrier",
+        "tag": "区别",
+        "usage_desc": "dam 特指水坝；barrier 泛指障碍物，不限于水"
+      },
+      {
+        "word": "block",
+        "tag": "区别",
+        "usage_desc": "dam 用于筑坝拦水；block 强调阻挡通道"
+      }
+    ]
+  },
+  {
+    "word": "damage",
+    "synonyms": [
+      {
+        "word": "harm",
+        "tag": "区别",
+        "usage_desc": "damage 强调对物体或价值的破坏；harm 多指对健康或利益的伤害"
+      },
+      {
+        "word": "injure",
+        "tag": "区别",
+        "usage_desc": "damage 多用于物；injure 多用于生物，尤指身体受伤"
+      }
+    ]
+  },
+  {
+    "word": "dame",
+    "synonyms": [
+      {
+        "word": "lady",
+        "tag": "区别",
+        "usage_desc": "dame 略带幽默或古旧；lady 更正式、礼貌"
+      },
+      {
+        "word": "woman",
+        "tag": "区别",
+        "usage_desc": "dame 英式俚语或戏谑；woman 中性普通用词"
+      }
+    ]
+  },
+  {
+    "word": "damned",
+    "synonyms": [
+      {
+        "word": "cursed",
+        "tag": "区别",
+        "usage_desc": "damned 强调宗教诅咒或极度不满；cursed 多指厄运咒骂"
+      },
+      {
+        "word": "damnable",
+        "tag": "区别",
+        "usage_desc": "damned 可作形容词和副词；damnable 只作形容词，语气稍弱"
+      }
+    ]
+  },
+  {
+    "word": "damning",
+    "synonyms": [
+      {
+        "word": "condemning",
+        "tag": "区别",
+        "usage_desc": "damning 强调证据确凿地定罪；condemning 更泛指向责或判刑"
+      }
+    ]
+  },
+  {
+    "word": "damp",
+    "synonyms": [
+      {
+        "word": "moist",
+        "tag": "区别",
+        "usage_desc": "damp 常指令人不快的潮湿；moist 中性或令人舒适微湿"
+      },
+      {
+        "word": "humid",
+        "tag": "区别",
+        "usage_desc": "damp 多形容物体表面；humid 形容空气中湿度大"
+      }
+    ]
+  },
+  {
+    "word": "damsel",
+    "synonyms": [
+      {
+        "word": "maiden",
+        "tag": "区别",
+        "usage_desc": "damsel 文学古风，弱女子；maiden 中性古语，年轻未婚"
+      }
+    ]
+  },
+  {
+    "word": "dance floor",
+    "synonyms": [
+      {
+        "word": "ballroom",
+        "tag": "区别",
+        "usage_desc": "dance floor 具体跳舞区域；ballroom 指舞厅大厅整体"
+      }
+    ]
+  },
+  {
+    "word": "dandelion",
+    "synonyms": [
+      {
+        "word": "weed",
+        "tag": "区别",
+        "usage_desc": "dandelion 特指蒲公英植物；weed 泛指杂草"
+      }
+    ]
+  },
+  {
+    "word": "danger",
+    "synonyms": [
+      {
+        "word": "risk",
+        "tag": "区别",
+        "usage_desc": "danger 强调客观存在的危险；risk 强调主动承担的风险"
+      },
+      {
+        "word": "hazard",
+        "tag": "区别",
+        "usage_desc": "hazard 多指不可预测的潜在危险；danger 使用最广泛"
+      }
+    ]
+  },
+  {
+    "word": "dangerous",
+    "synonyms": [
+      {
+        "word": "hazardous",
+        "tag": "区别",
+        "usage_desc": "dangerous 通用，威胁明确；hazardous 常指有潜在风险的化工或职业"
+      },
+      {
+        "word": "risky",
+        "tag": "区别",
+        "usage_desc": "dangerous 强调直接危险；risky 强调概率性风险"
+      }
+    ]
+  },
+  {
+    "word": "dare",
+    "synonyms": [
+      {
+        "word": "venture",
+        "tag": "区别",
+        "usage_desc": "dare 表示胆敢做；venture 指冒险尝试"
+      },
+      {
+        "word": "challenge",
+        "tag": "区别",
+        "usage_desc": "dare 作为名词为激将；challenge 作为动词更正式"
+      }
+    ]
+  },
+  {
+    "word": "daring",
+    "synonyms": [
+      {
+        "word": "bold",
+        "tag": "区别",
+        "usage_desc": "daring 强调敢于冒险；bold 强调自信果断，略带鲁莽"
+      },
+      {
+        "word": "audacious",
+        "tag": "区别",
+        "usage_desc": "daring 中性；audacious 含藐视常规之意"
+      }
+    ]
+  },
+  {
+    "word": "darken",
+    "synonyms": [
+      {
+        "word": "dim",
+        "tag": "区别",
+        "usage_desc": "darken 使变暗，彻底；dim 使微暗，未必全黑"
+      },
+      {
+        "word": "shadow",
+        "tag": "区别",
+        "usage_desc": "darken 指亮度下降；shadow 指投下阴影"
+      }
+    ]
+  },
+  {
+    "word": "darkened",
+    "synonyms": [
+      {
+        "word": "dimmed",
+        "tag": "区别",
+        "usage_desc": "darkened 完全变暗；dimmed 光线减弱，仍可辨"
+      }
+    ]
+  },
+  {
+    "word": "darkroom",
+    "synonyms": [
+      {
+        "word": "laboratory",
+        "tag": "区别",
+        "usage_desc": "darkroom 专指摄影暗房；laboratory 泛指实验室"
+      }
+    ]
+  },
+  {
+    "word": "darling",
+    "synonyms": [
+      {
+        "word": "dear",
+        "tag": "区别",
+        "usage_desc": "darling 更亲密昵称；dear 通用性更高"
+      },
+      {
+        "word": "sweetheart",
+        "tag": "区别",
+        "usage_desc": "darling 男女通用；sweetheart 偏女性化或恋爱关系"
+      }
+    ]
+  },
+  {
+    "word": "darn",
+    "synonyms": [
+      {
+        "word": "mend",
+        "tag": "区别",
+        "usage_desc": "darn 专指纺织物织补；mend 泛指修复"
+      }
+    ]
+  },
+  {
+    "word": "dash",
+    "synonyms": [
+      {
+        "word": "rush",
+        "tag": "区别",
+        "usage_desc": "dash 强调短促快速冲刺；rush 强调急切匆忙"
+      },
+      {
+        "word": "sprint",
+        "tag": "区别",
+        "usage_desc": "dash 更口语化；sprint 常指体育短跑"
+      }
+    ]
+  },
+  {
+    "word": "dashboard",
+    "synonyms": [
+      {
+        "word": "instrument panel",
+        "tag": "区别",
+        "usage_desc": "dashboard 汽车通用；instrument panel 专业术语，含飞机等"
+      }
+    ]
+  },
+  {
+    "word": "dashing",
+    "synonyms": [
+      {
+        "word": "bold",
+        "tag": "区别",
+        "usage_desc": "dashing 强调潇洒有闯劲，bold 侧重勇敢大胆，dashing 更带时尚感"
+      },
+      {
+        "word": "lively",
+        "tag": "区别",
+        "usage_desc": "dashing 突出活力与风度，lively 强调活跃生动，dashing 更具冒险色彩"
+      }
+    ]
+  },
+  {
+    "word": "DAT",
+    "synonyms": [
+      {
+        "word": "digital tape",
+        "tag": "区别",
+        "usage_desc": "DAT 是数字录音带缩写，digital tape 泛指数字磁带，DAT 更具体"
+      }
+    ]
+  },
+  {
+    "word": "data",
+    "synonyms": [
+      {
+        "word": "information",
+        "tag": "区别",
+        "usage_desc": "data 是原始素材，information 是加工后有意义的数据"
+      },
+      {
+        "word": "facts",
+        "tag": "区别",
+        "usage_desc": "data 可含数值，facts 强调真实客观的事实陈述"
+      }
+    ]
+  },
+  {
+    "word": "daughter-in-law",
+    "synonyms": [
+      {
+        "word": "in-law",
+        "tag": "区别",
+        "usage_desc": "daughter-in-law 特指儿媳，in-law 泛指姻亲关系，需上下文明确"
+      }
+    ]
+  },
+  {
+    "word": "dawn",
+    "synonyms": [
+      {
+        "word": "daybreak",
+        "tag": "区别",
+        "usage_desc": "dawn 泛指破晓时分，daybreak 更强调天亮的那一刻"
+      },
+      {
+        "word": "sunrise",
+        "tag": "区别",
+        "usage_desc": "dawn 指天亮前，sunrise 特指太阳升起的时刻"
+      }
+    ]
+  },
+  {
+    "word": "day care",
+    "synonyms": [
+      {
+        "word": "childcare",
+        "tag": "区别",
+        "usage_desc": "day care 侧重日间看护，childcare 涵盖所有儿童照料形式"
+      },
+      {
+        "word": "nursery",
+        "tag": "区别",
+        "usage_desc": "day care 泛指日托机构，nursery 特指托儿所，年龄更小"
+      }
+    ]
+  },
+  {
+    "word": "day off",
+    "synonyms": [
+      {
+        "word": "holiday",
+        "tag": "区别",
+        "usage_desc": "day off 指休息一天，holiday 常指法定假日或较长假期"
+      },
+      {
+        "word": "vacation",
+        "tag": "区别",
+        "usage_desc": "day off 是单日假，vacation 多指连续多日休假"
+      }
+    ]
+  },
+  {
+    "word": "day trip",
+    "synonyms": [
+      {
+        "word": "excursion",
+        "tag": "区别",
+        "usage_desc": "day trip 强调当天往返，excursion 短途旅行可更长"
+      },
+      {
+        "word": "outing",
+        "tag": "区别",
+        "usage_desc": "day trip 较正式，outing 更随意，常指郊游"
+      }
+    ]
+  },
+  {
+    "word": "day-to-day",
+    "synonyms": [
+      {
+        "word": "daily",
+        "tag": "区别",
+        "usage_desc": "day-to-day 强调日常工作生活，daily 指每天发生的事"
+      },
+      {
+        "word": "everyday",
+        "tag": "区别",
+        "usage_desc": "day-to-day 侧重持续性，everyday 强调普通平常"
+      }
+    ]
+  },
+  {
+    "word": "daydream",
+    "synonyms": [
+      {
+        "word": "fantasy",
+        "tag": "区别",
+        "usage_desc": "daydream 是清醒时的幻想，fantasy 可指完全虚构的故事"
+      },
+      {
+        "word": "reverie",
+        "tag": "区别",
+        "usage_desc": "daydream 主动做白日梦，reverie 偏重冥想出神"
+      }
+    ]
+  },
+  {
+    "word": "daylight",
+    "synonyms": [
+      {
+        "word": "sunlight",
+        "tag": "区别",
+        "usage_desc": "daylight 指白天的光，sunlight 特指太阳直射光"
+      },
+      {
+        "word": "daytime",
+        "tag": "区别",
+        "usage_desc": "daylight 强调光线，daytime 指时间段"
+      }
+    ]
+  },
+  {
+    "word": "daytime",
+    "synonyms": [
+      {
+        "word": "day",
+        "tag": "区别",
+        "usage_desc": "daytime 专指白昼时段，day 可指一整天或白天"
+      },
+      {
+        "word": "daylight",
+        "tag": "区别",
+        "usage_desc": "daytime 侧重时间，daylight 侧重日光"
+      }
+    ]
+  },
+  {
+    "word": "dazed",
+    "synonyms": [
+      {
+        "word": "confused",
+        "tag": "区别",
+        "usage_desc": "dazed 因撞击或惊讶导致恍惚，confused 思维混乱不清"
+      },
+      {
+        "word": "stunned",
+        "tag": "区别",
+        "usage_desc": "dazed 头昏眼花，stunned 震惊呆住，程度更强"
+      }
+    ]
+  },
+  {
+    "word": "DC",
+    "synonyms": [
+      {
+        "word": "direct current",
+        "tag": "区别",
+        "usage_desc": "DC 是缩写，direct current 是全称，表示直流电"
+      }
+    ]
+  },
+  {
+    "word": "de facto",
+    "synonyms": [
+      {
+        "word": "actual",
+        "tag": "区别",
+        "usage_desc": "de facto 是拉丁词，侧重未经法律认可的事实，actual 单纯指实际存在"
+      },
+      {
+        "word": "practical",
+        "tag": "区别",
+        "usage_desc": "de facto 强调现实状态，practical 侧重实用可行"
+      }
+    ]
+  },
+  {
+    "word": "deacon",
+    "synonyms": [
+      {
+        "word": "minister",
+        "tag": "区别",
+        "usage_desc": "deacon 是教会执事，minister 泛指牧师，地位更高"
+      },
+      {
+        "word": "cleric",
+        "tag": "区别",
+        "usage_desc": "deacon 是特定圣职，cleric 统称神职人员"
+      }
+    ]
+  },
+  {
+    "word": "dead end",
+    "synonyms": [
+      {
+        "word": "impasse",
+        "tag": "区别",
+        "usage_desc": "dead end 字面死胡同，impasse 比喻僵局，更抽象"
+      },
+      {
+        "word": "cul-de-sac",
+        "tag": "区别",
+        "usage_desc": "dead end 通用，cul-de-sac 是法语借词，更正式"
+      }
+    ]
+  },
+  {
+    "word": "deadlocked",
+    "synonyms": [
+      {
+        "word": "stalled",
+        "tag": "区别",
+        "usage_desc": "deadlocked 强调双方互不让步，stalled 仅指暂停无进展"
+      },
+      {
+        "word": "stuck",
+        "tag": "区别",
+        "usage_desc": "deadlocked 正式，stuck 口语化，指卡住无法前进"
+      }
+    ]
+  },
+  {
+    "word": "deadly",
+    "synonyms": [
+      {
+        "word": "lethal",
+        "tag": "区别",
+        "usage_desc": "deadly 可致死也可比喻极度的，lethal 只强调致死性"
+      },
+      {
+        "word": "fatal",
+        "tag": "区别",
+        "usage_desc": "deadly 范围更广，fatal 强调结局致命"
+      }
+    ]
+  },
+  {
+    "word": "deaf",
+    "synonyms": [
+      {
+        "word": "hard of hearing",
+        "tag": "区别",
+        "usage_desc": "deaf 完全听不见，hard of hearing 指听力受损但非全聋"
+      },
+      {
+        "word": "hearing-impaired",
+        "tag": "区别",
+        "usage_desc": "deaf 直接较直白，hearing-impaired 更委婉专业"
+      }
+    ]
+  },
+  {
+    "word": "deafening",
+    "synonyms": [
+      {
+        "word": "ear-splitting",
+        "tag": "区别",
+        "usage_desc": "deafening 极响以致听不见，ear-splitting 强调刺耳"
+      },
+      {
+        "word": "thunderous",
+        "tag": "区别",
+        "usage_desc": "deafening 侧重影响听力，thunderous 形容声音如雷鸣般"
+      }
+    ]
+  },
+  {
+    "word": "deal",
+    "synonyms": [
+      {
+        "word": "transaction",
+        "tag": "区别",
+        "usage_desc": "deal 口语化，transaction 正式，多指商业行为"
+      },
+      {
+        "word": "agreement",
+        "tag": "区别",
+        "usage_desc": "deal 侧重成交，agreement 强调双方共识"
+      }
+    ]
+  },
+  {
+    "word": "dealership",
+    "synonyms": [
+      {
+        "word": "franchise",
+        "tag": "区别",
+        "usage_desc": "dealership 指授权经销店，franchise 侧重特许经营体系"
+      },
+      {
+        "word": "agency",
+        "tag": "区别",
+        "usage_desc": "dealership 常指汽车等，agency 代理范围更广"
+      }
+    ]
+  },
+  {
+    "word": "dealings",
+    "synonyms": [
+      {
+        "word": "transactions",
+        "tag": "区别",
+        "usage_desc": "dealings 多指往来活动，transactions 侧重具体交易"
+      },
+      {
+        "word": "interactions",
+        "tag": "区别",
+        "usage_desc": "dealings 偏商业，interactions 涵盖所有互动"
+      }
+    ]
+  },
+  {
+    "word": "dearest",
+    "synonyms": [
+      {
+        "word": "beloved",
+        "tag": "区别",
+        "usage_desc": "dearest 是最亲爱称呼，beloved 形容词，可作名词"
+      },
+      {
+        "word": "darling",
+        "tag": "区别",
+        "usage_desc": "dearest 更强调关系，darling 是昵称，更口语化"
+      }
+    ]
+  },
+  {
+    "word": "dearly",
+    "synonyms": [
+      {
+        "word": "lovingly",
+        "tag": "区别",
+        "usage_desc": "dearly 侧重情感深切；lovingly 强调充满爱意地表达"
+      },
+      {
+        "word": "expensively",
+        "tag": "区别",
+        "usage_desc": "dearly 指代价高昂或付出很大；expensively 侧重花钱多"
+      }
+    ]
+  },
+  {
+    "word": "death",
+    "synonyms": [
+      {
+        "word": "demise",
+        "tag": "区别",
+        "usage_desc": "death 通用词；demise 较正式，多指生命终止或公司倒闭"
+      },
+      {
+        "word": "passing",
+        "tag": "区别",
+        "usage_desc": "passing 委婉语，隐含自然而逝；death 直白中性"
+      }
+    ]
+  },
+  {
+    "word": "death penalty",
+    "synonyms": [
+      {
+        "word": "capital punishment",
+        "tag": "区别",
+        "usage_desc": "death penalty 更常用；capital punishment 法律术语，指极刑"
+      }
+    ]
+  },
+  {
+    "word": "death rate",
+    "synonyms": [
+      {
+        "word": "mortality rate",
+        "tag": "区别",
+        "usage_desc": "death rate 日常用词；mortality rate 科学统计术语，更正式"
+      }
+    ]
+  },
+  {
+    "word": "death row",
+    "synonyms": [
+      {
+        "word": "death chamber",
+        "tag": "区别",
+        "usage_desc": "death row 指死囚关押区域；death chamber 指执行死刑的房间"
+      }
+    ]
+  },
+  {
+    "word": "death sentence",
+    "synonyms": [
+      {
+        "word": "capital sentence",
+        "tag": "区别",
+        "usage_desc": "death sentence 常用；capital sentence 法律正式术语，指死刑判决"
+      }
+    ]
+  },
+  {
+    "word": "death squad",
+    "synonyms": [
+      {
+        "word": "hit squad",
+        "tag": "区别",
+        "usage_desc": "death squad 常指政治暗杀小组；hit squad 侧重职业刺客团队"
+      }
+    ]
+  },
+  {
+    "word": "death toll",
+    "synonyms": [
+      {
+        "word": "fatality count",
+        "tag": "区别",
+        "usage_desc": "death toll 强调事件总死亡人数；fatality count 多用于事故或疾病统计"
+      }
+    ]
+  },
+  {
+    "word": "debate",
+    "synonyms": [
+      {
+        "word": "discussion",
+        "tag": "区别",
+        "usage_desc": "debate 指有对立观点的正式辩论；discussion 更广泛，可指一般讨论"
+      },
+      {
+        "word": "argument",
+        "tag": "区别",
+        "usage_desc": "argument 强调激烈争执；debate 较结构化，常为正式场合"
+      }
+    ]
+  },
+  {
+    "word": "debit",
+    "synonyms": [
+      {
+        "word": "charge",
+        "tag": "区别",
+        "usage_desc": "debit 会计术语，表示账户借方扣款；charge 通用，指收取费用"
+      },
+      {
+        "word": "deduction",
+        "tag": "区别",
+        "usage_desc": "deduction 强调从总额中扣除；debit 侧重记账方向"
+      }
+    ]
+  },
+  {
+    "word": "debt",
+    "synonyms": [
+      {
+        "word": "obligation",
+        "tag": "区别",
+        "usage_desc": "debt 通常指金钱债务；obligation 可指法律或道义上的责任"
+      },
+      {
+        "word": "liability",
+        "tag": "区别",
+        "usage_desc": "liability 财务术语，包含债务；debt 更具体指欠款"
+      }
+    ]
+  },
+  {
+    "word": "Dec.",
+    "synonyms": [
+      {
+        "word": "December",
+        "tag": "区别",
+        "usage_desc": "Dec. 是缩写；December 全称，两者完全等同，仅有写法区别"
+      }
+    ]
+  },
+  {
+    "word": "decade",
+    "synonyms": [
+      {
+        "word": "ten years",
+        "tag": "区别",
+        "usage_desc": "decade 为正式书面语；ten years 更口语化，表达相同时间长度"
+      }
+    ]
+  },
+  {
+    "word": "decay",
+    "synonyms": [
+      {
+        "word": "rot",
+        "tag": "区别",
+        "usage_desc": "decay 指自然缓慢变质；rot 强调腐烂、发臭，程度更重"
+      },
+      {
+        "word": "decompose",
+        "tag": "区别",
+        "usage_desc": "decompose 科学术语，指分解释放；decay 日常用，含衰退之意"
+      }
+    ]
+  },
+  {
+    "word": "deceased",
+    "synonyms": [
+      {
+        "word": "dead",
+        "tag": "区别",
+        "usage_desc": "deceased 正式、委婉；dead 直白通用，适用场合更广"
+      },
+      {
+        "word": "departed",
+        "tag": "区别",
+        "usage_desc": "departed 语气体贴，常含悼念；deceased 法律或正式文书常用"
+      }
+    ]
+  },
+  {
+    "word": "deceit",
+    "synonyms": [
+      {
+        "word": "deception",
+        "tag": "区别",
+        "usage_desc": "deceit 强调故意欺骗品质；deception 侧重欺骗行为或手段"
+      },
+      {
+        "word": "fraud",
+        "tag": "区别",
+        "usage_desc": "fraud 法律术语，指欺诈罪行；deceit 道德层面，泛指不诚实"
+      }
+    ]
+  },
+  {
+    "word": "deceive",
+    "synonyms": [
+      {
+        "word": "mislead",
+        "tag": "区别",
+        "usage_desc": "deceive 指故意使人相信假话；mislead 强调误导方向或判断"
+      },
+      {
+        "word": "trick",
+        "tag": "区别",
+        "usage_desc": "trick 常用花招或把戏；deceive 更抽象，涵盖欺骗意图"
+      }
+    ]
+  },
+  {
+    "word": "decent",
+    "synonyms": [
+      {
+        "word": "proper",
+        "tag": "区别",
+        "usage_desc": "decent 强调合乎社会标准；proper 侧重符合规则或正确性"
+      },
+      {
+        "word": "respectable",
+        "tag": "区别",
+        "usage_desc": "respectable 指受尊敬、体面；decent 更普通，指过得去"
+      }
+    ]
+  },
+  {
+    "word": "decide",
+    "synonyms": [
+      {
+        "word": "determine",
+        "tag": "区别",
+        "usage_desc": "decide 强调做出选择；determine 强调经过深思熟虑后决定"
+      },
+      {
+        "word": "resolve",
+        "tag": "区别",
+        "usage_desc": "resolve 强调下定决心做某事；decide 语气较弱"
+      }
+    ]
+  },
+  {
+    "word": "decision",
+    "synonyms": [
+      {
+        "word": "judgment",
+        "tag": "区别",
+        "usage_desc": "decision 指经过思考做出选择；judgment 侧重判断力或裁决"
+      },
+      {
+        "word": "choice",
+        "tag": "区别",
+        "usage_desc": "choice 强调从选项中挑选；decision 含决心、结论义"
+      }
+    ]
+  },
+  {
+    "word": "decision-making",
+    "synonyms": [
+      {
+        "word": "problem-solving",
+        "tag": "区别",
+        "usage_desc": "decision-making 侧重选择过程；problem-solving 强调解决难题的方法"
+      }
+    ]
+  },
+  {
+    "word": "deck",
+    "synonyms": [
+      {
+        "word": "platform",
+        "tag": "区别",
+        "usage_desc": "deck 指船、建筑上层台面；platform 泛指任何高出平面结构"
+      },
+      {
+        "word": "porch",
+        "tag": "区别",
+        "usage_desc": "porch 指入口有顶平台；deck 户外木质露台，无顶多见"
+      }
+    ]
+  },
+  {
+    "word": "declare",
+    "synonyms": [
+      {
+        "word": "announce",
+        "tag": "区别",
+        "usage_desc": "declare 正式、权威地公布；announce 普通告知，语气稍弱"
+      },
+      {
+        "word": "proclaim",
+        "tag": "区别",
+        "usage_desc": "proclaim 隆重公开宣告；declare 可法律、个人正式声明"
+      }
+    ]
+  },
+  {
+    "word": "decline",
+    "synonyms": [
+      {
+        "word": "decrease",
+        "tag": "区别",
+        "usage_desc": "decline 指质量、数量下降；decrease 仅强调数量减少"
+      },
+      {
+        "word": "refuse",
+        "tag": "区别",
+        "usage_desc": "refuse 普通拒绝；decline 婉言谢绝，更有礼貌"
+      }
+    ]
+  },
+  {
+    "word": "deconstruct",
+    "synonyms": [
+      {
+        "word": "analyze",
+        "tag": "区别",
+        "usage_desc": "deconstruct 特指解构主义剖析；analyze 一般科学、逻辑分析"
+      }
+    ]
+  },
+  {
+    "word": "decor",
+    "synonyms": [
+      {
+        "word": "decoration",
+        "tag": "区别",
+        "usage_desc": "decor 指整体风格或布置；decoration 侧重具体装饰物或动作"
+      },
+      {
+        "word": "ornamentation",
+        "tag": "区别",
+        "usage_desc": "ornamentation 强调装饰细节；decor 泛指室内装潢"
+      }
+    ]
+  },
+  {
+    "word": "decorate",
+    "synonyms": [
+      {
+        "word": "adorn",
+        "tag": "区别",
+        "usage_desc": "decorate 指装饰整体；adorn 侧重增添美感或华丽装饰"
+      },
+      {
+        "word": "ornament",
+        "tag": "区别",
+        "usage_desc": "ornament 多指用点缀物装饰，强调装饰物本身"
+      }
+    ]
+  },
+  {
+    "word": "decrease",
+    "synonyms": [
+      {
+        "word": "reduce",
+        "tag": "区别",
+        "usage_desc": "decrease 指数量或程度上逐渐减少；reduce 强调人为地使变小"
+      },
+      {
+        "word": "diminish",
+        "tag": "区别",
+        "usage_desc": "diminish 指因外力而变小或削弱，比 decrease 更正式"
+      }
+    ]
+  },
+  {
+    "word": "deduce",
+    "synonyms": [
+      {
+        "word": "infer",
+        "tag": "区别",
+        "usage_desc": "deduce 基于逻辑推理；infer 根据证据或线索推断"
+      },
+      {
+        "word": "conclude",
+        "tag": "区别",
+        "usage_desc": "conclude 强调经过推理后得出结论，语气更确定"
+      }
+    ]
+  },
+  {
+    "word": "deduction",
+    "synonyms": [
+      {
+        "word": "subtraction",
+        "tag": "区别",
+        "usage_desc": "deduction 指扣除或减除；subtraction 专指数学上的减法"
+      },
+      {
+        "word": "inference",
+        "tag": "区别",
+        "usage_desc": "deduction 指演绎推理；inference 泛指任何推断"
+      }
+    ]
+  },
+  {
+    "word": "deed",
+    "synonyms": [
+      {
+        "word": "act",
+        "tag": "区别",
+        "usage_desc": "deed 指有意识的行为或功绩；act 指一般动作或行为"
+      },
+      {
+        "word": "contract",
+        "tag": "区别",
+        "usage_desc": "deed 作为法律文件指契约；contract 强调双方协议"
+      }
+    ]
+  },
+  {
+    "word": "deep-seated",
+    "synonyms": [
+      {
+        "word": "ingrained",
+        "tag": "区别",
+        "usage_desc": "deep-seated 强调深植于内心；ingrained 侧重习惯或观念根深蒂固"
+      },
+      {
+        "word": "entrenched",
+        "tag": "区别",
+        "usage_desc": "entrenched 强调牢固确立难以改变，多用于制度或地位"
+      }
+    ]
+  },
+  {
+    "word": "deepen",
+    "synonyms": [
+      {
+        "word": "intensify",
+        "tag": "区别",
+        "usage_desc": "deepen 指程度或深度增加；intensify 强调强度、烈度增强"
+      },
+      {
+        "word": "strengthen",
+        "tag": "区别",
+        "usage_desc": "strengthen 指使更强固，侧重力量而非深度"
+      }
+    ]
+  },
+  {
+    "word": "deer",
+    "synonyms": [
+      {
+        "word": "hart",
+        "tag": "区别",
+        "usage_desc": "deer 泛指鹿科动物；hart 特指成年雄鹿，尤指红鹿"
+      }
+    ]
+  },
+  {
+    "word": "defeat",
+    "synonyms": [
+      {
+        "word": "beat",
+        "tag": "区别",
+        "usage_desc": "defeat 正式，指击败对手或计划；beat 口语化，强调战胜"
+      },
+      {
+        "word": "conquer",
+        "tag": "区别",
+        "usage_desc": "conquer 强调彻底征服或控制，语气比 defeat 更强"
+      }
+    ]
+  },
+  {
+    "word": "defect",
+    "synonyms": [
+      {
+        "word": "flaw",
+        "tag": "区别",
+        "usage_desc": "defect 指结构性或功能性缺陷；flaw 侧重不完美或瑕疵"
+      },
+      {
+        "word": "fault",
+        "tag": "区别",
+        "usage_desc": "fault 指过错、责任或系统故障，更强调错误"
+      }
+    ]
+  },
+  {
+    "word": "defence",
+    "synonyms": [
+      {
+        "word": "protection",
+        "tag": "区别",
+        "usage_desc": "defence 指防御行动或措施；protection 强调保护免受伤害"
+      },
+      {
+        "word": "safeguard",
+        "tag": "区别",
+        "usage_desc": "safeguard 侧重预防性安全措施，如规章或设备"
+      }
+    ]
+  },
+  {
+    "word": "defend",
+    "synonyms": [
+      {
+        "word": "protect",
+        "tag": "区别",
+        "usage_desc": "defend 强调抵御攻击；protect 强调预先设置保护措施"
+      },
+      {
+        "word": "guard",
+        "tag": "区别",
+        "usage_desc": "guard 强调看守或戒备；defend 强调被动防御"
+      }
+    ]
+  },
+  {
+    "word": "defender",
+    "synonyms": [
+      {
+        "word": "protector",
+        "tag": "区别",
+        "usage_desc": "defender 指积极保卫者；protector 泛指保护者"
+      },
+      {
+        "word": "guardian",
+        "tag": "区别",
+        "usage_desc": "guardian 强调法律上的监护人或有守护责任的人"
+      }
+    ]
+  },
+  {
+    "word": "define",
+    "synonyms": [
+      {
+        "word": "describe",
+        "tag": "区别",
+        "usage_desc": "define 给出精确界定；describe 侧重描绘特征或细节"
+      },
+      {
+        "word": "explain",
+        "tag": "区别",
+        "usage_desc": "explain 是解释原因或含义，比 define 更宽泛"
+      }
+    ]
+  },
+  {
+    "word": "definite",
+    "synonyms": [
+      {
+        "word": "clear",
+        "tag": "区别",
+        "usage_desc": "definite 强调确定无疑；clear 侧重清晰易懂"
+      },
+      {
+        "word": "certain",
+        "tag": "区别",
+        "usage_desc": "certain 强调确信无疑，常指事实或结论"
+      }
+    ]
+  },
+  {
+    "word": "definitely",
+    "synonyms": [
+      {
+        "word": "certainly",
+        "tag": "区别",
+        "usage_desc": "definitely 强调确定无疑；certainly 侧重于肯定回应"
+      },
+      {
+        "word": "absolutely",
+        "tag": "区别",
+        "usage_desc": "absolutely 语气更强，表示完全同意或绝对如此"
+      }
+    ]
+  },
+  {
+    "word": "definition",
+    "synonyms": [
+      {
+        "word": "meaning",
+        "tag": "区别",
+        "usage_desc": "definition 是正式定义；meaning 指词或符号的含义"
+      },
+      {
+        "word": "explanation",
+        "tag": "区别",
+        "usage_desc": "explanation 是详细解释，比 definition 更具描述性"
+      }
+    ]
+  },
+  {
+    "word": "degree",
+    "synonyms": [
+      {
+        "word": "level",
+        "tag": "区别",
+        "usage_desc": "degree 指可度量的等级或程度；level 侧重水平层次"
+      },
+      {
+        "word": "extent",
+        "tag": "区别",
+        "usage_desc": "extent 强调范围、广度，常与 of 连用"
+      }
+    ]
+  },
+  {
+    "word": "delay",
+    "synonyms": [
+      {
+        "word": "postpone",
+        "tag": "区别",
+        "usage_desc": "delay 强调因客观原因推迟；postpone 强调主观决定延后"
+      },
+      {
+        "word": "put off",
+        "tag": "区别",
+        "usage_desc": "put off 是口语化表达；delay 更正式"
+      }
+    ]
+  },
+  {
+    "word": "delegate",
+    "synonyms": [
+      {
+        "word": "representative",
+        "tag": "区别",
+        "usage_desc": "delegate 指受权代表他人；representative 泛指代表团体或个体"
+      },
+      {
+        "word": "deputy",
+        "tag": "区别",
+        "usage_desc": "deputy 指副手或代理，常含临时替代之意"
+      }
+    ]
+  },
+  {
+    "word": "delegation",
+    "synonyms": [
+      {
+        "word": "deputation",
+        "tag": "区别",
+        "usage_desc": "delegation 正式派遣的代表团；deputation 侧重代表群体"
+      },
+      {
+        "word": "mission",
+        "tag": "区别",
+        "usage_desc": "mission 指负有特定任务的外出使团"
+      }
+    ]
+  },
+  {
+    "word": "delete",
+    "synonyms": [
+      {
+        "word": "erase",
+        "tag": "区别",
+        "usage_desc": "delete 多用于数据或文件删除；erase 强调擦除痕迹"
+      },
+      {
+        "word": "remove",
+        "tag": "区别",
+        "usage_desc": "remove 指移走、除去，适用对象更广"
+      }
+    ]
+  },
+  {
+    "word": "deliberate",
+    "synonyms": [
+      {
+        "word": "intentional",
+        "tag": "区别",
+        "usage_desc": "deliberate 强调经过深思后有意为之；intentional 侧重有意图"
+      },
+      {
+        "word": "thoughtful",
+        "tag": "区别",
+        "usage_desc": "thoughtful 指考虑周到的，含有善意"
+      }
+    ]
+  },
+  {
+    "word": "deliberately",
+    "synonyms": [
+      {
+        "word": "intentionally",
+        "tag": "区别",
+        "usage_desc": "deliberately 强调经过考虑故意；intentionally 侧重目的性"
+      },
+      {
+        "word": "purposely",
+        "tag": "区别",
+        "usage_desc": "purposely 强调有特定目的，语气稍弱"
+      }
+    ]
+  },
+  {
+    "word": "deliberation",
+    "synonyms": [
+      {
+        "word": "consideration",
+        "tag": "区别",
+        "usage_desc": "deliberation 指慎重讨论或思考；consideration 泛指考虑"
+      },
+      {
+        "word": "reflection",
+        "tag": "区别",
+        "usage_desc": "reflection 侧重反思或反省，强调内在思索"
+      }
+    ]
+  },
+  {
+    "word": "delicate",
+    "synonyms": [
+      {
+        "word": "fragile",
+        "tag": "区别",
+        "usage_desc": "delicate 指精细易碎或微妙；fragile 强调易受损"
+      },
+      {
+        "word": "subtle",
+        "tag": "区别",
+        "usage_desc": "subtle 指难以察觉的细微差别，与 delicate 的“微妙”义相近"
+      }
+    ]
+  },
+  {
+    "word": "delicious",
+    "synonyms": [
+      {
+        "word": "tasty",
+        "tag": "区别",
+        "usage_desc": "delicious 表示非常美味；tasty 泛指好吃，语气较平淡"
+      },
+      {
+        "word": "savory",
+        "tag": "区别",
+        "usage_desc": "savory 多指咸味或香味浓郁，也可指令人愉悦"
+      }
+    ]
+  },
+  {
+    "word": "delight",
+    "synonyms": [
+      {
+        "word": "pleasure",
+        "tag": "区别",
+        "usage_desc": "delight 指强烈的、短暂的快乐；pleasure 更泛指满足感，程度较轻"
+      },
+      {
+        "word": "joy",
+        "tag": "区别",
+        "usage_desc": "delight 偏重外在事物引发的愉悦；joy 更强调内心深层的喜悦"
+      }
+    ]
+  },
+  {
+    "word": "delightful",
+    "synonyms": [
+      {
+        "word": "pleasing",
+        "tag": "区别",
+        "usage_desc": "delightful 语气更强，令人非常愉快；pleasing 较温和，令人满意"
+      },
+      {
+        "word": "charming",
+        "tag": "区别",
+        "usage_desc": "delightful 强调给感官带来愉悦；charming 侧重迷人、有吸引力"
+      }
+    ]
+  },
+  {
+    "word": "deliver",
+    "synonyms": [
+      {
+        "word": "hand over",
+        "tag": "区别",
+        "usage_desc": "deliver 强调送达目的地；hand over 侧重主动移交/交出"
+      },
+      {
+        "word": "present",
+        "tag": "区别",
+        "usage_desc": "deliver 常指实物递送或发表演讲；present 更正式，多指呈献、介绍"
+      }
+    ]
+  },
+  {
+    "word": "delivery",
+    "synonyms": [
+      {
+        "word": "shipment",
+        "tag": "区别",
+        "usage_desc": "delivery 强调交付的动作；shipment 指运输的货物本身或发运过程"
+      },
+      {
+        "word": "distribution",
+        "tag": "区别",
+        "usage_desc": "delivery 侧重单次送达；distribution 指整体分配、分发的流程"
+      }
+    ]
+  },
+  {
+    "word": "deluxe",
+    "synonyms": [
+      {
+        "word": "luxurious",
+        "tag": "区别",
+        "usage_desc": "deluxe 常指商品等级/配置高；luxurious 强调奢华享受，语气更强"
+      },
+      {
+        "word": "premium",
+        "tag": "区别",
+        "usage_desc": "deluxe 侧重豪华外观；premium 突出优质、高价定位"
+      }
+    ]
+  },
+  {
+    "word": "demand",
+    "synonyms": [
+      {
+        "word": "require",
+        "tag": "区别",
+        "usage_desc": "demand 语气较强，强调强制性要求；require 强调客观需要"
+      },
+      {
+        "word": "request",
+        "tag": "区别",
+        "usage_desc": "request 语气客气礼貌；demand 语气强硬"
+      }
+    ]
+  },
+  {
+    "word": "dementia",
+    "synonyms": [
+      {
+        "word": "senility",
+        "tag": "区别",
+        "usage_desc": "dementia 为医学术语，涵盖多种脑部疾病；senility 常指年老引起的智力衰退，较通俗"
+      }
+    ]
+  },
+  {
+    "word": "demilitarize",
+    "synonyms": [
+      {
+        "word": "disarm",
+        "tag": "区别",
+        "usage_desc": "demilitarize 指撤销军事设施/限制；disarm 侧重解除武装、裁军"
+      },
+      {
+        "word": "deactivate",
+        "tag": "区别",
+        "usage_desc": "demilitarize 针对区域或体系；deactivate 常指使武器/装置失效"
+      }
+    ]
+  },
+  {
+    "word": "Demo",
+    "synonyms": [
+      {
+        "word": "demonstration",
+        "tag": "区别",
+        "usage_desc": "Demo 是口语缩略，更随意；demonstration 正式，可指展示或示威"
+      },
+      {
+        "word": "sample",
+        "tag": "区别",
+        "usage_desc": "Demo 强调功能演示；sample 侧重实物小样或试用品"
+      }
+    ]
+  },
+  {
+    "word": "democracy",
+    "synonyms": [
+      {
+        "word": "republic",
+        "tag": "区别",
+        "usage_desc": "democracy 强调人民主权；republic 强调代议制与非君主制"
+      },
+      {
+        "word": "self-government",
+        "tag": "区别",
+        "usage_desc": "democracy 指制度模式；self-government 侧重自治权，范围可更小"
+      }
+    ]
+  },
+  {
+    "word": "democratic",
+    "synonyms": [
+      {
+        "word": "egalitarian",
+        "tag": "区别",
+        "usage_desc": "democratic 强调制度或原则；egalitarian 侧重平等理念，常指社会关系"
+      },
+      {
+        "word": "popular",
+        "tag": "区别",
+        "usage_desc": "democratic 政治含义强；popular 泛指得民心的、大众化的"
+      }
+    ]
+  },
+  {
+    "word": "demon",
+    "synonyms": [
+      {
+        "word": "fiend",
+        "tag": "区别",
+        "usage_desc": "demon 源自神话，邪恶灵体；fiend 更强调凶残、恶毒的人"
+      },
+      {
+        "word": "devil",
+        "tag": "区别",
+        "usage_desc": "demon 泛指鬼怪；devil 特指撒旦或魔王，宗教色彩更浓"
+      }
+    ]
+  },
+  {
+    "word": "demonstrate",
+    "synonyms": [
+      {
+        "word": "show",
+        "tag": "区别",
+        "usage_desc": "demonstrate 通过操作或证据证明；show 更直观地展示"
+      },
+      {
+        "word": "prove",
+        "tag": "区别",
+        "usage_desc": "demonstrate 侧重演示过程；prove 强调逻辑或事实确证"
+      }
+    ]
+  },
+  {
+    "word": "dense",
+    "synonyms": [
+      {
+        "word": "thick",
+        "tag": "区别",
+        "usage_desc": "dense 强调单位体积内含量高；thick 侧重厚度或浓稠"
+      },
+      {
+        "word": "compact",
+        "tag": "区别",
+        "usage_desc": "dense 可用于人群/雾等；compact 强调紧密排列、小体积"
+      }
+    ]
+  },
+  {
+    "word": "density",
+    "synonyms": [
+      {
+        "word": "concentration",
+        "tag": "区别",
+        "usage_desc": "density 物理术语，单位体积质量；concentration 指溶液或聚集程度"
+      },
+      {
+        "word": "compactness",
+        "tag": "区别",
+        "usage_desc": "density 可量化；compactness 描述紧密状态，较定性"
+      }
+    ]
+  },
+  {
+    "word": "deny",
+    "synonyms": [
+      {
+        "word": "refuse",
+        "tag": "区别",
+        "usage_desc": "deny 强调声明不真实或不给予；refuse 侧重拒绝做某事或接受"
+      },
+      {
+        "word": "reject",
+        "tag": "区别",
+        "usage_desc": "deny 常对指控或请求；reject 多指否决提议或抛弃"
+      }
+    ]
+  },
+  {
+    "word": "deodorant",
+    "synonyms": [
+      {
+        "word": "antiperspirant",
+        "tag": "区别",
+        "usage_desc": "deodorant 主要除臭；antiperspirant 抑制出汗，功能更针对"
+      }
+    ]
+  },
+  {
+    "word": "depart",
+    "synonyms": [
+      {
+        "word": "leave",
+        "tag": "区别",
+        "usage_desc": "depart 较正式，常指按计划离开；leave 更通用，口语化"
+      },
+      {
+        "word": "withdraw",
+        "tag": "区别",
+        "usage_desc": "depart 指离开某地；withdraw 强调退出、撤退，常用于组织或活动"
+      }
+    ]
+  },
+  {
+    "word": "department",
+    "synonyms": [
+      {
+        "word": "division",
+        "tag": "区别",
+        "usage_desc": "department 常指机构内部门；division 可指更大的分支或分割部分"
+      },
+      {
+        "word": "section",
+        "tag": "区别",
+        "usage_desc": "department 规模较大；section 指更小的组或板块"
+      }
+    ]
+  },
+  {
+    "word": "department store",
+    "synonyms": [
+      {
+        "word": "emporium",
+        "tag": "区别",
+        "usage_desc": "department store 为大型零售商店；emporium 偏古雅，泛指大商场"
+      },
+      {
+        "word": "mall",
+        "tag": "区别",
+        "usage_desc": "department store 是单家店；mall 指购物中心，包含多家店铺"
+      }
+    ]
+  },
+  {
+    "word": "departure",
+    "synonyms": [
+      {
+        "word": "exit",
+        "tag": "区别",
+        "usage_desc": "departure 强调离开的动作或时刻；exit 侧重出口或离开的行为"
+      },
+      {
+        "word": "leave-taking",
+        "tag": "区别",
+        "usage_desc": "departure 中性；leave-taking 文学性更强，强调告别仪式"
+      }
+    ]
+  },
+  {
+    "word": "depend",
+    "synonyms": [
+      {
+        "word": "rely",
+        "tag": "区别",
+        "usage_desc": "depend 常接 on，强调信任或依靠；rely 更正式，强调信赖可靠性"
+      },
+      {
+        "word": "count on",
+        "tag": "区别",
+        "usage_desc": "depend 可用于事理因果；count on 侧重主观指望"
+      }
+    ]
+  },
+  {
+    "word": "dependency",
+    "synonyms": [
+      {
+        "word": "colony",
+        "tag": "区别",
+        "usage_desc": "dependency 指附属领土，地位模糊；colony 明确为殖民地，政治经济受控"
+      },
+      {
+        "word": "reliance",
+        "tag": "区别",
+        "usage_desc": "dependency 可指领土或药物依赖；reliance 仅指信赖状态"
+      }
+    ]
+  },
+  {
+    "word": "dependent",
+    "synonyms": [
+      {
+        "word": "reliant",
+        "tag": "区别",
+        "usage_desc": "dependent 强调附属关系；reliant 侧重依靠他人帮助"
+      },
+      {
+        "word": "subordinate",
+        "tag": "区别",
+        "usage_desc": "dependent 可指经济上依赖；subordinate 指等级中从属地位"
+      }
+    ]
+  },
+  {
+    "word": "deplorable",
+    "synonyms": [
+      {
+        "word": "lamentable",
+        "tag": "区别",
+        "usage_desc": "deplorable 强调令人谴责；lamentable 偏重令人惋惜、可悲"
+      },
+      {
+        "word": "regrettable",
+        "tag": "区别",
+        "usage_desc": "deplorable 语气更强烈；regrettable 较温和，表示遗憾"
+      }
+    ]
+  },
+  {
+    "word": "deposit",
+    "synonyms": [
+      {
+        "word": "down payment",
+        "tag": "区别",
+        "usage_desc": "deposit 泛指押金/存放物；down payment 特指分期付款的首付"
+      },
+      {
+        "word": "sediment",
+        "tag": "区别",
+        "usage_desc": "deposit 可指金融或地质；sediment 专指沉积物/沉淀"
+      }
+    ]
+  },
+  {
+    "word": "depress",
+    "synonyms": [
+      {
+        "word": "sadden",
+        "tag": "区别",
+        "usage_desc": "sadden 侧重情绪上的悲伤；depress 更强调心情低落且无力"
+      },
+      {
+        "word": "lower",
+        "tag": "区别",
+        "usage_desc": "lower 指物理或数值上的降低；depress 多用于抽象层面的压制"
+      }
+    ]
+  },
+  {
+    "word": "depressing",
+    "synonyms": [
+      {
+        "word": "gloomy",
+        "tag": "区别",
+        "usage_desc": "gloomy 强调阴沉昏暗的氛围；depressing 侧重令人心情压抑"
+      },
+      {
+        "word": "dreary",
+        "tag": "区别",
+        "usage_desc": "dreary 指单调乏味让人厌倦；depressing 更强调引起消沉"
+      }
+    ]
+  },
+  {
+    "word": "depression",
+    "synonyms": [
+      {
+        "word": "sadness",
+        "tag": "区别",
+        "usage_desc": "sadness 是短暂情绪；depression 指持久且严重的心理状态"
+      },
+      {
+        "word": "recession",
+        "tag": "区别",
+        "usage_desc": "recession 专指经济衰退；depression 程度更重、时间更长"
+      }
+    ]
+  },
+  {
+    "word": "dept",
+    "synonyms": [
+      {
+        "word": "department",
+        "tag": "区别",
+        "usage_desc": "dept 是 department 的缩写，用法完全相同"
+      }
+    ]
+  },
+  {
+    "word": "depth",
+    "synonyms": [
+      {
+        "word": "profundity",
+        "tag": "区别",
+        "usage_desc": "profundity 强调思想深奥；depth 多指物理或抽象深度"
+      },
+      {
+        "word": "deepness",
+        "tag": "区别",
+        "usage_desc": "deepness 多用于物理深度；depth 适用范围更广"
+      }
+    ]
+  },
+  {
+    "word": "deputy",
+    "synonyms": [
+      {
+        "word": "assistant",
+        "tag": "区别",
+        "usage_desc": "assistant 强调辅助角色；deputy 强调被授权代理职务"
+      },
+      {
+        "word": "substitute",
+        "tag": "区别",
+        "usage_desc": "substitute 指临时替换者；deputy 常指长期副职"
+      }
+    ]
+  },
+  {
+    "word": "derail",
+    "synonyms": [
+      {
+        "word": "disrupt",
+        "tag": "区别",
+        "usage_desc": "disrupt 指打断进程；derail 强调使偏离预定轨道"
+      }
+    ]
+  },
+  {
+    "word": "derby",
+    "synonyms": [
+      {
+        "word": "race",
+        "tag": "区别",
+        "usage_desc": "race 泛指任何比赛；derby 特指英国德比马赛或地方赛事"
+      }
+    ]
+  },
+  {
+    "word": "deregulate",
+    "synonyms": [
+      {
+        "word": "liberalize",
+        "tag": "区别",
+        "usage_desc": "liberalize 强调放宽限制；deregulate 专指取消政府管制"
+      },
+      {
+        "word": "decontrol",
+        "tag": "区别",
+        "usage_desc": "decontrol 与 deregulate 近义，但多用于价格或贸易"
+      }
+    ]
+  },
+  {
+    "word": "derive",
+    "synonyms": [
+      {
+        "word": "obtain",
+        "tag": "区别",
+        "usage_desc": "obtain 指直接获取；derive 强调从某来源推断或引出"
+      },
+      {
+        "word": "originate",
+        "tag": "区别",
+        "usage_desc": "originate 强调源头；derive 侧重来源关系"
+      }
+    ]
+  },
+  {
+    "word": "descend",
+    "synonyms": [
+      {
+        "word": "lower",
+        "tag": "区别",
+        "usage_desc": "lower 指使位置下降；descend 强调向下移动的过程"
+      },
+      {
+        "word": "decline",
+        "tag": "区别",
+        "usage_desc": "decline 多指数量或质量下降；descend 指空间或身份的降低"
+      }
+    ]
+  },
+  {
+    "word": "descended",
+    "synonyms": [
+      {
+        "word": "inherited",
+        "tag": "区别",
+        "usage_desc": "inherited 侧重遗传或继承；descended 强调血统或来源的延续"
+      }
+    ]
+  },
+  {
+    "word": "describe",
+    "synonyms": [
+      {
+        "word": "depict",
+        "tag": "区别",
+        "usage_desc": "describe 强调用语言描述；depict 多指用绘画或形象语言描绘"
+      },
+      {
+        "word": "portray",
+        "tag": "区别",
+        "usage_desc": "portray 强调刻画人物或场景的特点；describe 更中性客观"
+      }
+    ]
+  },
+  {
+    "word": "description",
+    "synonyms": [
+      {
+        "word": "account",
+        "tag": "区别",
+        "usage_desc": "account 侧重详细叙述事件；description 更强调特征描绘"
+      },
+      {
+        "word": "portrayal",
+        "tag": "区别",
+        "usage_desc": "portrayal 常用于艺术或形象刻画；description 更客观直接"
+      }
+    ]
+  },
+  {
+    "word": "descriptive",
+    "synonyms": [
+      {
+        "word": "vivid",
+        "tag": "区别",
+        "usage_desc": "vivid 强调生动形象；descriptive 侧重如实描述"
+      },
+      {
+        "word": "detailed",
+        "tag": "区别",
+        "usage_desc": "detailed 强调细致入微；descriptive 侧重说明特征"
+      }
+    ]
+  },
+  {
+    "word": "desert",
+    "synonyms": [
+      {
+        "word": "abandon",
+        "tag": "区别",
+        "usage_desc": "abandon 侧重彻底放弃；desert 强调违背责任或誓言离开"
+      },
+      {
+        "word": "forsake",
+        "tag": "区别",
+        "usage_desc": "forsake 语气更强烈，含永久放弃意味；desert 可用作正式用语"
+      }
+    ]
+  },
+  {
+    "word": "desert island",
+    "synonyms": [
+      {
+        "word": "uninhabited island",
+        "tag": "区别",
+        "usage_desc": "uninhabited island 泛指无人岛；desert island 特指荒凉孤岛"
+      }
+    ]
+  },
+  {
+    "word": "deserve",
+    "synonyms": [
+      {
+        "word": "merit",
+        "tag": "区别",
+        "usage_desc": "merit 强调应得奖赏；deserve 可指应得褒贬"
+      },
+      {
+        "word": "earn",
+        "tag": "区别",
+        "usage_desc": "earn 强调通过努力获得；deserve 侧重内在配得性"
+      }
+    ]
+  },
+  {
+    "word": "deserving",
+    "synonyms": [
+      {
+        "word": "worthy",
+        "tag": "区别",
+        "usage_desc": "worthy 强调有价值；deserving 侧重应得某种待遇"
+      },
+      {
+        "word": "meritorious",
+        "tag": "区别",
+        "usage_desc": "meritorious 多指功绩杰出；deserving 更通用"
+      }
+    ]
+  },
+  {
+    "word": "design",
+    "synonyms": [
+      {
+        "word": "plan",
+        "tag": "区别",
+        "usage_desc": "plan 侧重步骤安排；design 强调创意构思与布局"
+      },
+      {
+        "word": "arrangement",
+        "tag": "区别",
+        "usage_desc": "arrangement 指摆放或安排；design 更富艺术性"
+      }
+    ]
+  },
+  {
+    "word": "desirable",
+    "synonyms": [
+      {
+        "word": "appealing",
+        "tag": "区别",
+        "usage_desc": "appealing 强调吸引人；desirable 侧重值得拥有或追求"
+      },
+      {
+        "word": "attractive",
+        "tag": "区别",
+        "usage_desc": "attractive 多指外表魅力；desirable 范围更广"
+      }
+    ]
+  },
+  {
+    "word": "desire",
+    "synonyms": [
+      {
+        "word": "wish",
+        "tag": "区别",
+        "usage_desc": "wish 多指难以实现的愿望；desire 强调强烈渴望"
+      },
+      {
+        "word": "longing",
+        "tag": "区别",
+        "usage_desc": "longing 含有深切怀念之情；desire 更中性"
+      }
+    ]
+  },
+  {
+    "word": "despair",
+    "synonyms": [
+      {
+        "word": "hopelessness",
+        "tag": "区别",
+        "usage_desc": "hopelessness 强调看不到希望；despair 常伴有放弃情绪"
+      },
+      {
+        "word": "despondency",
+        "tag": "区别",
+        "usage_desc": "despondency 语气较轻；despair 程度更重"
+      }
+    ]
+  },
+  {
+    "word": "desperate",
+    "synonyms": [
+      {
+        "word": "frantic",
+        "tag": "区别",
+        "usage_desc": "frantic 强调慌乱失控；desperate 侧重绝望中的铤而走险"
+      },
+      {
+        "word": "hopeless",
+        "tag": "区别",
+        "usage_desc": "hopeless 指无望；desperate 还含急切或极端之意"
+      }
+    ]
+  },
+  {
+    "word": "desperation",
+    "synonyms": [
+      {
+        "word": "anguish",
+        "tag": "区别",
+        "usage_desc": "anguish 强调身心剧痛；desperation 侧重绝望中的孤注一掷"
+      },
+      {
+        "word": "despair",
+        "tag": "区别",
+        "usage_desc": "despair 是静止状态；desperation 更显冲动行为"
+      }
+    ]
+  },
+  {
+    "word": "despise",
+    "synonyms": [
+      {
+        "word": "scorn",
+        "tag": "区别",
+        "usage_desc": "scorn 强调轻蔑和拒绝；despise 侧重极度厌恶"
+      },
+      {
+        "word": "disdain",
+        "tag": "区别",
+        "usage_desc": "disdain 含有傲慢态度；despise 更强烈的主观反感"
+      }
+    ]
+  },
+  {
+    "word": "despite",
+    "synonyms": [
+      {
+        "word": "contempt",
+        "tag": "区别",
+        "usage_desc": "contempt 强调蔑视、瞧不起；despite 侧重憎恨或恶意"
+      },
+      {
+        "word": "disdain",
+        "tag": "区别",
+        "usage_desc": "disdain 强调不屑一顾；despite 更含敌意"
+      }
+    ]
+  },
+  {
+    "word": "destabilize",
+    "synonyms": [
+      {
+        "word": "undermine",
+        "tag": "区别",
+        "usage_desc": "undermine 指暗中破坏基础；destabilize 指使系统或局面动摇"
+      },
+      {
+        "word": "weaken",
+        "tag": "区别",
+        "usage_desc": "weaken 泛指削弱力量；destabilize 特指破坏稳定性"
+      }
+    ]
+  },
+  {
+    "word": "destination",
+    "synonyms": [
+      {
+        "word": "goal",
+        "tag": "区别",
+        "usage_desc": "goal 强调抽象目标；destination 更指具体地点或终点"
+      },
+      {
+        "word": "terminus",
+        "tag": "区别",
+        "usage_desc": "terminus 特指交通线路终点；destination 更通用的目的地"
+      }
+    ]
+  },
+  {
+    "word": "destined",
+    "synonyms": [
+      {
+        "word": "fated",
+        "tag": "区别",
+        "usage_desc": "fated 强调命运预先决定；destined 常含注定之意"
+      },
+      {
+        "word": "doomed",
+        "tag": "区别",
+        "usage_desc": "doomed 多指厄运或不可避免的失败；destined 中性偏义"
+      }
+    ]
+  },
+  {
+    "word": "destroy",
+    "synonyms": [
+      {
+        "word": "demolish",
+        "tag": "区别",
+        "usage_desc": "demolish 多指拆除建筑物；destroy 泛用范围更广"
+      },
+      {
+        "word": "annihilate",
+        "tag": "区别",
+        "usage_desc": "annihilate 强调彻底毁灭；destroy 程度可轻可重"
+      }
+    ]
+  },
+  {
+    "word": "destroyer",
+    "synonyms": [
+      {
+        "word": "wrecker",
+        "tag": "区别",
+        "usage_desc": "wrecker 侧重拆毁或破坏行为；destroyer 泛指破坏者或军舰"
+      },
+      {
+        "word": "demolisher",
+        "tag": "区别",
+        "usage_desc": "demolisher 强调彻底摧毁；destroyer 用途更广"
+      }
+    ]
+  },
+  {
+    "word": "destruction",
+    "synonyms": [
+      {
+        "word": "ruin",
+        "tag": "区别",
+        "usage_desc": "ruin 指毁坏后无法修复；destruction 强调破坏过程或结果"
+      },
+      {
+        "word": "devastation",
+        "tag": "区别",
+        "usage_desc": "devastation 侧重荒芜、夷为平地；destruction 更通用"
+      }
+    ]
+  },
+  {
+    "word": "destructive",
+    "synonyms": [
+      {
+        "word": "harmful",
+        "tag": "区别",
+        "usage_desc": "harmful 泛指有害；destructive 强调造成严重破坏"
+      },
+      {
+        "word": "damaging",
+        "tag": "区别",
+        "usage_desc": "damaging 侧重造成损害；destructive 程度更重"
+      }
+    ]
+  },
+  {
+    "word": "detachment",
+    "synonyms": [
+      {
+        "word": "separation",
+        "tag": "区别",
+        "usage_desc": "separation 指物理分离；detachment 可指情感超脱"
+      },
+      {
+        "word": "indifference",
+        "tag": "区别",
+        "usage_desc": "indifference 强调冷漠；detachment 更中性客观"
+      }
+    ]
+  },
+  {
+    "word": "detail",
+    "synonyms": [
+      {
+        "word": "particular",
+        "tag": "区别",
+        "usage_desc": "particular 侧重具体个案；detail 强调细微组成部分"
+      },
+      {
+        "word": "specific",
+        "tag": "区别",
+        "usage_desc": "specific 指明确信息；detail 更侧重细节本身"
+      }
+    ]
+  },
+  {
+    "word": "detainee",
+    "synonyms": [
+      {
+        "word": "prisoner",
+        "tag": "区别",
+        "usage_desc": "prisoner 泛指囚犯；detainee 特指被临时拘留者"
+      },
+      {
+        "word": "captive",
+        "tag": "区别",
+        "usage_desc": "captive 指被俘虏的人；detainee 多为法律程序中的拘留"
+      }
+    ]
+  },
+  {
+    "word": "detect",
+    "synonyms": [
+      {
+        "word": "discover",
+        "tag": "区别",
+        "usage_desc": "discover 指首次发现未知事物；detect 强调通过探查发现"
+      },
+      {
+        "word": "uncover",
+        "tag": "区别",
+        "usage_desc": "uncover 指揭开隐藏之物；detect 更依赖感官或仪器"
+      }
+    ]
+  },
+  {
+    "word": "detection",
+    "synonyms": [
+      {
+        "word": "discovery",
+        "tag": "区别",
+        "usage_desc": "discovery 强调新发现；detection 侧重探查与识别"
+      },
+      {
+        "word": "revelation",
+        "tag": "区别",
+        "usage_desc": "revelation 指揭露秘密；detection 更客观技术性"
+      }
+    ]
+  },
+  {
+    "word": "detente",
+    "synonyms": [
+      {
+        "word": "rapprochement",
+        "tag": "区别",
+        "usage_desc": "rapprochement 指恢复友好关系；detente 侧重紧张缓解"
+      },
+      {
+        "word": "relaxation",
+        "tag": "区别",
+        "usage_desc": "relaxation 泛指缓和；detente 专门用于国际关系"
+      }
+    ]
+  },
+  {
+    "word": "detention",
+    "synonyms": [
+      {
+        "word": "imprisonment",
+        "tag": "区别",
+        "usage_desc": "imprisonment 指正式监禁；detention 多为临时拘留"
+      },
+      {
+        "word": "custody",
+        "tag": "区别",
+        "usage_desc": "custody 强调看管状态；detention 侧重限制自由"
+      }
+    ]
+  },
+  {
+    "word": "determination",
+    "synonyms": [
+      {
+        "word": "resolution",
+        "tag": "区别",
+        "usage_desc": "resolution 指坚决的决定；determination 强调持之以恒的毅力"
+      },
+      {
+        "word": "resolve",
+        "tag": "区别",
+        "usage_desc": "resolve 侧重坚定的信念；determination 更主动行动力"
+      }
+    ]
+  },
+  {
+    "word": "determine",
+    "synonyms": [
+      {
+        "word": "decide",
+        "tag": "区别",
+        "usage_desc": "decide 指做出选择；determine 含决心或查明之意"
+      },
+      {
+        "word": "settle",
+        "tag": "区别",
+        "usage_desc": "settle 强调最终解决；determine 更偏确定结果"
+      }
+    ]
+  },
+  {
+    "word": "determined",
+    "synonyms": [
+      {
+        "word": "resolute",
+        "tag": "区别",
+        "usage_desc": "resolute 强调果断坚定；determined 更体现下决心后的状态"
+      },
+      {
+        "word": "steadfast",
+        "tag": "区别",
+        "usage_desc": "steadfast 侧重不动摇；determined 含主动奋斗之意"
+      }
+    ]
+  },
+  {
+    "word": "deterrence",
+    "synonyms": [
+      {
+        "word": "prevention",
+        "tag": "区别",
+        "usage_desc": "prevention 泛指阻止发生；deterrence 通过威慑来制止"
+      },
+      {
+        "word": "discouragement",
+        "tag": "区别",
+        "usage_desc": "discouragement 强调使人气馁；deterrence 侧重威胁性阻止"
+      }
+    ]
+  },
+  {
+    "word": "detox",
+    "synonyms": [
+      {
+        "word": "rehab",
+        "tag": "区别",
+        "usage_desc": "rehab 包含整体康复治疗；detox 侧重排毒过程"
+      },
+      {
+        "word": "detoxification",
+        "tag": "区别",
+        "usage_desc": "detoxification 为正式名词；detox 更口语化"
+      }
+    ]
+  },
+  {
+    "word": "detractor",
+    "synonyms": [
+      {
+        "word": "critic",
+        "tag": "区别",
+        "usage_desc": "critic 指客观批评者；detractor 含贬低、诋毁之意"
+      },
+      {
+        "word": "disparager",
+        "tag": "区别",
+        "usage_desc": "disparager 强调轻视贬低；detractor 侧重恶意攻击"
+      }
+    ]
+  },
+  {
+    "word": "devalue",
+    "synonyms": [
+      {
+        "word": "depreciate",
+        "tag": "区别",
+        "usage_desc": "depreciate 多指货币或资产贬值；devalue 常指人为降低价值"
+      },
+      {
+        "word": "downgrade",
+        "tag": "区别",
+        "usage_desc": "downgrade 指降级或降低评价；devalue 更侧重价值本身"
+      }
+    ]
+  },
+  {
+    "word": "devastated",
+    "synonyms": [
+      {
+        "word": "ruined",
+        "tag": "区别",
+        "usage_desc": "ruined 指毁坏至无法恢复；devastated 强调彻底荒芜或精神打击"
+      },
+      {
+        "word": "destroyed",
+        "tag": "区别",
+        "usage_desc": "destroyed 泛指破坏；devastated 程度更重更彻底"
+      }
+    ]
+  },
+  {
+    "word": "developer",
+    "synonyms": [
+      {
+        "word": "builder",
+        "tag": "区别",
+        "usage_desc": "builder 强调建造实体；developer 可指软件或房地产开发者"
+      },
+      {
+        "word": "creator",
+        "tag": "区别",
+        "usage_desc": "creator 侧重从无到有；developer 更注重后续开发完善"
+      }
+    ]
+  },
+  {
+    "word": "developing",
+    "synonyms": [
+      {
+        "word": "emerging",
+        "tag": "区别",
+        "usage_desc": "emerging 指刚出现、新兴的；developing 强调正处在发展过程中"
+      },
+      {
+        "word": "growing",
+        "tag": "区别",
+        "usage_desc": "growing 侧重规模或数量增长；developing 更全面进步"
+      }
+    ]
+  },
+  {
+    "word": "developmental",
+    "synonyms": [
+      {
+        "word": "evolutionary",
+        "tag": "区别",
+        "usage_desc": "developmental强调生长阶段，evolutionary强调物种进化过程"
+      },
+      {
+        "word": "progressive",
+        "tag": "区别",
+        "usage_desc": "progressive指逐步向前，developmental侧重发育和成长"
+      }
+    ]
+  },
+  {
+    "word": "device",
+    "synonyms": [
+      {
+        "word": "appliance",
+        "tag": "区别",
+        "usage_desc": "appliance常指家用器具，device泛指任何用途的装置"
+      },
+      {
+        "word": "gadget",
+        "tag": "区别",
+        "usage_desc": "gadget指小巧新颖的工具，device更正式且可包括大型设备"
+      }
+    ]
+  },
+  {
+    "word": "devil",
+    "synonyms": [
+      {
+        "word": "demon",
+        "tag": "区别",
+        "usage_desc": "demon强调超自然邪灵，devil常指邪恶化身"
+      },
+      {
+        "word": "fiend",
+        "tag": "区别",
+        "usage_desc": "fiend侧重极其残忍的人或魔，devil更泛指魔鬼"
+      }
+    ]
+  },
+  {
+    "word": "devise",
+    "synonyms": [
+      {
+        "word": "invent",
+        "tag": "区别",
+        "usage_desc": "invent强调创造出新事物，devise侧重构思方案或计划"
+      },
+      {
+        "word": "design",
+        "tag": "区别",
+        "usage_desc": "design更注重外观或结构设计，devise包含策略性策划"
+      }
+    ]
+  },
+  {
+    "word": "devolution",
+    "synonyms": [
+      {
+        "word": "delegation",
+        "tag": "区别",
+        "usage_desc": "delegation指授权代理人，devolution强调权力下放给下级"
+      },
+      {
+        "word": "transfer",
+        "tag": "区别",
+        "usage_desc": "transfer泛指移交，devolution特指权力或职责的转移"
+      }
+    ]
+  },
+  {
+    "word": "devote",
+    "synonyms": [
+      {
+        "word": "dedicate",
+        "tag": "区别",
+        "usage_desc": "dedicate强调庄严奉献，devote侧重全力投入时间精力"
+      },
+      {
+        "word": "commit",
+        "tag": "区别",
+        "usage_desc": "commit指作出承诺或保证，devote更强调实际付诸行动"
+      }
+    ]
+  },
+  {
+    "word": "dew",
+    "synonyms": [
+      {
+        "word": "moisture",
+        "tag": "区别",
+        "usage_desc": "moisture泛指潮湿的水分，dew特指夜间凝结的露水"
+      },
+      {
+        "word": "condensation",
+        "tag": "区别",
+        "usage_desc": "condensation指气体变液体的过程，dew是其结果"
+      }
+    ]
+  },
+  {
+    "word": "diabetic",
+    "synonyms": [
+      {
+        "word": "insulin-dependent",
+        "tag": "区别",
+        "usage_desc": "diabetic泛指糖尿病患者，insulin-dependent特指依赖胰岛素治疗"
+      }
+    ]
+  },
+  {
+    "word": "diagram",
+    "synonyms": [
+      {
+        "word": "chart",
+        "tag": "区别",
+        "usage_desc": "chart强调数据或信息的图形展示，diagram侧重结构或流程说明"
+      },
+      {
+        "word": "graph",
+        "tag": "区别",
+        "usage_desc": "graph通常展示数学函数关系，diagram更宽泛"
+      }
+    ]
+  },
+  {
+    "word": "dial",
+    "synonyms": [
+      {
+        "word": "call",
+        "tag": "区别",
+        "usage_desc": "call泛指打电话，dial特指拨号操作"
+      },
+      {
+        "word": "ring",
+        "tag": "区别",
+        "usage_desc": "ring强调发出铃声，dial侧重输入号码的动作"
+      }
+    ]
+  },
+  {
+    "word": "dialect",
+    "synonyms": [
+      {
+        "word": "vernacular",
+        "tag": "区别",
+        "usage_desc": "vernacular指本地日常用语，dialect强调地域变体"
+      },
+      {
+        "word": "patois",
+        "tag": "区别",
+        "usage_desc": "patois常指非标准地方话，dialect更中性"
+      }
+    ]
+  },
+  {
+    "word": "dialog",
+    "synonyms": [
+      {
+        "word": "conversation",
+        "tag": "区别",
+        "usage_desc": "conversation泛指随意交谈，dialog常指正式或文学对话"
+      },
+      {
+        "word": "discussion",
+        "tag": "区别",
+        "usage_desc": "discussion侧重观点交换，dialog强调双向交流"
+      }
+    ]
+  },
+  {
+    "word": "diameter",
+    "synonyms": [
+      {
+        "word": "width",
+        "tag": "区别",
+        "usage_desc": "width指横向尺寸，diameter特指圆或球体的直径"
+      },
+      {
+        "word": "span",
+        "tag": "区别",
+        "usage_desc": "span指跨越距离，diameter是精确的几何术语"
+      }
+    ]
+  },
+  {
+    "word": "diamond",
+    "synonyms": [
+      {
+        "word": "gem",
+        "tag": "区别",
+        "usage_desc": "gem泛指珍贵宝石，diamond特指钻石"
+      },
+      {
+        "word": "jewel",
+        "tag": "区别",
+        "usage_desc": "jewel指镶嵌的珠宝，diamond是矿物名称"
+      }
+    ]
+  },
+  {
+    "word": "diaper",
+    "synonyms": [
+      {
+        "word": "nappy",
+        "tag": "区别",
+        "usage_desc": "nappy为英式用语，diaper为美式"
+      },
+      {
+        "word": "napkin",
+        "tag": "区别",
+        "usage_desc": "napkin可指尿布（旧式）或餐巾，diaper专指婴儿尿布"
+      }
+    ]
+  },
+  {
+    "word": "diaphragm",
+    "synonyms": [
+      {
+        "word": "membrane",
+        "tag": "区别",
+        "usage_desc": "membrane泛指生物膜，diaphragm特指横隔膜或相机光圈"
+      },
+      {
+        "word": "septum",
+        "tag": "区别",
+        "usage_desc": "septum指分隔两腔的壁，diaphragm是其中一种"
+      }
+    ]
+  },
+  {
+    "word": "diarrhoea",
+    "synonyms": [
+      {
+        "word": "looseness",
+        "tag": "区别",
+        "usage_desc": "looseness为口语化说法，diarrhoea是医学术语"
+      },
+      {
+        "word": "dysentery",
+        "tag": "区别",
+        "usage_desc": "dysentery特指痢疾伴血便，diarrhoea泛指腹泻"
+      }
+    ]
+  },
+  {
+    "word": "diary",
+    "synonyms": [
+      {
+        "word": "journal",
+        "tag": "区别",
+        "usage_desc": "journal侧重定期记录见解，diary侧重每日生活记事"
+      },
+      {
+        "word": "log",
+        "tag": "区别",
+        "usage_desc": "log指航海或工作日志，diary更个人化"
+      }
+    ]
+  },
+  {
+    "word": "dice",
+    "synonyms": [
+      {
+        "word": "die",
+        "tag": "区别",
+        "usage_desc": "die是dice的单数形式，dice常作复数使用"
+      },
+      {
+        "word": "cube",
+        "tag": "区别",
+        "usage_desc": "cube指立方体，dice特指游戏用骰子"
+      }
+    ]
+  },
+  {
+    "word": "dictate",
+    "synonyms": [
+      {
+        "word": "command",
+        "tag": "区别",
+        "usage_desc": "command强调权威指令，dictate侧重口授或强制命令"
+      },
+      {
+        "word": "order",
+        "tag": "区别",
+        "usage_desc": "order更通用，dictate含有不容反驳意味"
+      }
+    ]
+  },
+  {
+    "word": "dictation",
+    "synonyms": [
+      {
+        "word": "transcription",
+        "tag": "区别",
+        "usage_desc": "transcription指转写为文字，dictation强调听写过程"
+      },
+      {
+        "word": "note-taking",
+        "tag": "区别",
+        "usage_desc": "note-taking是记笔记，dictation常为教学测试形式"
+      }
+    ]
+  },
+  {
+    "word": "dictatorial",
+    "synonyms": [
+      {
+        "word": "autocratic",
+        "tag": "区别",
+        "usage_desc": "autocratic强调个人专断，dictatorial侧重独裁体制"
+      },
+      {
+        "word": "authoritarian",
+        "tag": "区别",
+        "usage_desc": "authoritarian强调服从权威，dictatorial更绝对"
+      }
+    ]
+  },
+  {
+    "word": "dictatorship",
+    "synonyms": [
+      {
+        "word": "autocracy",
+        "tag": "区别",
+        "usage_desc": "autocracy指一人统治的政体，dictatorship强调独裁权力"
+      },
+      {
+        "word": "tyranny",
+        "tag": "区别",
+        "usage_desc": "tyranny侧重暴虐统治，dictatorship是中性制度术语"
+      }
+    ]
+  },
+  {
+    "word": "didn't",
+    "synonyms": [
+      {
+        "word": "did not",
+        "tag": "区别",
+        "usage_desc": "didn't是缩略形式，did not为完整写法，含义相同"
+      }
+    ]
+  },
+  {
+    "word": "diet",
+    "synonyms": [
+      {
+        "word": "regimen",
+        "tag": "区别",
+        "usage_desc": "regimen指严格饮食计划，diet泛指日常饮食"
+      },
+      {
+        "word": "nutrition",
+        "tag": "区别",
+        "usage_desc": "nutrition强调营养成分，diet更侧重食物种类"
+      }
+    ]
+  },
+  {
+    "word": "differ",
+    "synonyms": [
+      {
+        "word": "vary",
+        "tag": "区别",
+        "usage_desc": "differ指存在差异；vary强调变化或多样性"
+      },
+      {
+        "word": "diverge",
+        "tag": "区别",
+        "usage_desc": "differ泛指不同；diverge指分叉或意见分歧"
+      }
+    ]
+  },
+  {
+    "word": "difference",
+    "synonyms": [
+      {
+        "word": "discrepancy",
+        "tag": "区别",
+        "usage_desc": "difference泛指差异；discrepancy强调不一致或矛盾"
+      },
+      {
+        "word": "distinction",
+        "tag": "区别",
+        "usage_desc": "difference侧重不同；distinction突出区别或独特特征"
+      }
+    ]
+  },
+  {
+    "word": "differential",
+    "synonyms": [
+      {
+        "word": "distinctive",
+        "tag": "区别",
+        "usage_desc": "differential指有差别的；distinctive强调独特识别性"
+      },
+      {
+        "word": "discriminative",
+        "tag": "区别",
+        "usage_desc": "differential侧重差异本身；discriminative强调辨别能力"
+      }
+    ]
+  },
+  {
+    "word": "difficulty",
+    "synonyms": [
+      {
+        "word": "trouble",
+        "tag": "区别",
+        "usage_desc": "difficulty泛指困难；trouble强调麻烦或困扰"
+      },
+      {
+        "word": "hardship",
+        "tag": "区别",
+        "usage_desc": "difficulty较中性；hardship侧重艰苦磨难"
+      }
+    ]
+  },
+  {
+    "word": "digest",
+    "synonyms": [
+      {
+        "word": "assimilate",
+        "tag": "区别",
+        "usage_desc": "digest指消化吸收；assimilate强调融入同化"
+      },
+      {
+        "word": "absorb",
+        "tag": "区别",
+        "usage_desc": "digest更复杂；absorb指简单吸取，不强调转化"
+      }
+    ]
+  },
+  {
+    "word": "digger",
+    "synonyms": [
+      {
+        "word": "excavator",
+        "tag": "区别",
+        "usage_desc": "digger泛指挖掘者/机；excavator特指大型挖掘设备"
+      },
+      {
+        "word": "miner",
+        "tag": "区别",
+        "usage_desc": "digger可指任何挖掘；miner专指矿工"
+      }
+    ]
+  },
+  {
+    "word": "digital",
+    "synonyms": [
+      {
+        "word": "numeric",
+        "tag": "区别",
+        "usage_desc": "digital强调数字技术；numeric指数值的，不涉电子"
+      },
+      {
+        "word": "electronic",
+        "tag": "区别",
+        "usage_desc": "digital侧重数字形式；electronic强调电路电子"
+      }
+    ]
+  },
+  {
+    "word": "diligent",
+    "synonyms": [
+      {
+        "word": "industrious",
+        "tag": "区别",
+        "usage_desc": "diligent指认真细致；industrious侧重勤奋勤劳"
+      },
+      {
+        "word": "hardworking",
+        "tag": "区别",
+        "usage_desc": "diligent更正式；hardworking口语常用，强调努力"
+      }
+    ]
+  },
+  {
+    "word": "dill",
+    "synonyms": [
+      {
+        "word": "herb",
+        "tag": "区别",
+        "usage_desc": "dill是莳萝专名；herb泛指香草植物"
+      }
+    ]
+  },
+  {
+    "word": "dim",
+    "synonyms": [
+      {
+        "word": "dark",
+        "tag": "区别",
+        "usage_desc": "dim指光线不足暗淡；dark强调无光黑暗"
+      },
+      {
+        "word": "faint",
+        "tag": "区别",
+        "usage_desc": "dim多指视觉；faint可指声音、光线微弱模糊"
+      }
+    ]
+  },
+  {
+    "word": "dimension",
+    "synonyms": [
+      {
+        "word": "measurement",
+        "tag": "区别",
+        "usage_desc": "dimension指维度或尺寸；measurement指测量数值"
+      },
+      {
+        "word": "size",
+        "tag": "区别",
+        "usage_desc": "dimension更抽象；size强调具体大小量级"
+      }
+    ]
+  },
+  {
+    "word": "diner",
+    "synonyms": [
+      {
+        "word": "customer",
+        "tag": "区别",
+        "usage_desc": "diner仅指就餐者；customer泛指任何顾客"
+      },
+      {
+        "word": "patron",
+        "tag": "区别",
+        "usage_desc": "diner中性；patron含经常光顾之意"
+      }
+    ]
+  },
+  {
+    "word": "dinghy",
+    "synonyms": [
+      {
+        "word": "boat",
+        "tag": "区别",
+        "usage_desc": "dinghy特指小艇/橡皮筏；boat泛指各类船只"
+      },
+      {
+        "word": "raft",
+        "tag": "区别",
+        "usage_desc": "dinghy有船型结构；raft为简单筏子"
+      }
+    ]
+  },
+  {
+    "word": "dining room",
+    "synonyms": [
+      {
+        "word": "dining hall",
+        "tag": "区别",
+        "usage_desc": "dining room指家中餐厅；dining hall指公共大餐厅"
+      },
+      {
+        "word": "canteen",
+        "tag": "区别",
+        "usage_desc": "dining room偏私人；canteen多指单位食堂"
+      }
+    ]
+  },
+  {
+    "word": "dining table",
+    "synonyms": [
+      {
+        "word": "kitchen table",
+        "tag": "区别",
+        "usage_desc": "dining table正式餐桌；kitchen table更随意家常"
+      },
+      {
+        "word": "breakfast table",
+        "tag": "区别",
+        "usage_desc": "dining table较大；breakfast table小型早餐桌"
+      }
+    ]
+  },
+  {
+    "word": "dinner party",
+    "synonyms": [
+      {
+        "word": "banquet",
+        "tag": "区别",
+        "usage_desc": "dinner party小型晚宴；banquet正式大型宴会"
+      },
+      {
+        "word": "feast",
+        "tag": "区别",
+        "usage_desc": "dinner party强调社交；feast侧重丰盛食物"
+      }
+    ]
+  },
+  {
+    "word": "dinner table",
+    "synonyms": [
+      {
+        "word": "dining table",
+        "tag": "区别",
+        "usage_desc": "dinner table与dining table基本同义"
+      },
+      {
+        "word": "kitchen table",
+        "tag": "区别",
+        "usage_desc": "dinner table较正式；kitchen table日常使用"
+      }
+    ]
+  },
+  {
+    "word": "diocese",
+    "synonyms": [
+      {
+        "word": "bishopric",
+        "tag": "区别",
+        "usage_desc": "diocese指教区范围；bishopric指主教职位或辖区"
+      },
+      {
+        "word": "see",
+        "tag": "区别",
+        "usage_desc": "diocese行政区域；see侧重主教座所在地"
+      }
+    ]
+  },
+  {
+    "word": "dip",
+    "synonyms": [
+      {
+        "word": "immerse",
+        "tag": "区别",
+        "usage_desc": "dip短暂浸入；immerse完全浸没时间长"
+      },
+      {
+        "word": "plunge",
+        "tag": "区别",
+        "usage_desc": "dip动作轻柔；plunge突然猛力投入"
+      }
+    ]
+  },
+  {
+    "word": "direct",
+    "synonyms": [
+      {
+        "word": "straight",
+        "tag": "区别",
+        "usage_desc": "direct指直接不绕弯；straight强调笔直路线"
+      },
+      {
+        "word": "immediate",
+        "tag": "区别",
+        "usage_desc": "direct侧重直接性；immediate强调时间上立即"
+      }
+    ]
+  },
+  {
+    "word": "direction",
+    "synonyms": [
+      {
+        "word": "orientation",
+        "tag": "区别",
+        "usage_desc": "direction指方向/指示；orientation侧重定位定向"
+      },
+      {
+        "word": "guidance",
+        "tag": "区别",
+        "usage_desc": "direction多指指令；guidance强调指导过程"
+      }
+    ]
+  },
+  {
+    "word": "directive",
+    "synonyms": [
+      {
+        "word": "instruction",
+        "tag": "区别",
+        "usage_desc": "directive官方命令；instruction具体操作说明"
+      },
+      {
+        "word": "order",
+        "tag": "区别",
+        "usage_desc": "directive较正式；order语气更强，强制性"
+      }
+    ]
+  },
+  {
+    "word": "directly",
+    "synonyms": [
+      {
+        "word": "straight",
+        "tag": "区别",
+        "usage_desc": "directly指直接地；straight强调笔直方向"
+      },
+      {
+        "word": "immediately",
+        "tag": "区别",
+        "usage_desc": "directly可表立即；immediately专指时间紧迫"
+      }
+    ]
+  },
+  {
+    "word": "director",
+    "synonyms": [
+      {
+        "word": "manager",
+        "tag": "区别",
+        "usage_desc": "director高层决策；manager侧重日常管理"
+      },
+      {
+        "word": "supervisor",
+        "tag": "区别",
+        "usage_desc": "director职位更高；supervisor直接监督下属"
+      }
+    ]
+  },
+  {
+    "word": "director general",
+    "synonyms": [
+      {
+        "word": "chief",
+        "tag": "区别",
+        "usage_desc": "director general为总局长；chief泛指首领"
+      },
+      {
+        "word": "head",
+        "tag": "区别",
+        "usage_desc": "director general正式头衔；head通用负责人"
+      }
+    ]
+  },
+  {
+    "word": "directorate",
+    "synonyms": [
+      {
+        "word": "board",
+        "tag": "区别",
+        "usage_desc": "directorate 指理事会或董事会整体；board 更常用指公司董事会成员"
+      },
+      {
+        "word": "council",
+        "tag": "区别",
+        "usage_desc": "directorate 侧重管理职责；council 多指咨询或行政机构"
+      }
+    ]
+  },
+  {
+    "word": "dirt",
+    "synonyms": [
+      {
+        "word": "soil",
+        "tag": "区别",
+        "usage_desc": "dirt 泛指污物或泥土；soil 特指可种植的土壤"
+      },
+      {
+        "word": "grime",
+        "tag": "区别",
+        "usage_desc": "dirt 范围更广；grime 特指长期积累的顽固污垢"
+      }
+    ]
+  },
+  {
+    "word": "dirty trick",
+    "synonyms": [
+      {
+        "word": "foul play",
+        "tag": "区别",
+        "usage_desc": "dirty trick 强调不道德的手段；foul play 侧重违反规则的行为"
+      },
+      {
+        "word": "underhanded act",
+        "tag": "区别",
+        "usage_desc": "dirty trick 口语化；underhanded act 更正式，强调隐蔽欺骗"
+      }
+    ]
+  },
+  {
+    "word": "disable",
+    "synonyms": [
+      {
+        "word": "cripple",
+        "tag": "区别",
+        "usage_desc": "disable 使功能丧失；cripple 语气更重，常指严重残废"
+      },
+      {
+        "word": "impair",
+        "tag": "区别",
+        "usage_desc": "disable 强调完全失效；impair 指部分削弱或损害"
+      }
+    ]
+  },
+  {
+    "word": "disadvantage",
+    "synonyms": [
+      {
+        "word": "drawback",
+        "tag": "区别",
+        "usage_desc": "disadvantage 侧重不利条件；drawback 强调缺点或障碍"
+      },
+      {
+        "word": "handicap",
+        "tag": "区别",
+        "usage_desc": "disadvantage 泛指；handicap 指阻碍成功的固有劣势"
+      }
+    ]
+  },
+  {
+    "word": "disadvantaged",
+    "synonyms": [
+      {
+        "word": "underprivileged",
+        "tag": "区别",
+        "usage_desc": "disadvantaged 强调生活条件差；underprivileged 侧重缺乏特权"
+      },
+      {
+        "word": "deprived",
+        "tag": "区别",
+        "usage_desc": "disadvantaged 相对温和；deprived 指基本需求被剥夺"
+      }
+    ]
+  },
+  {
+    "word": "disaffected",
+    "synonyms": [
+      {
+        "word": "discontented",
+        "tag": "区别",
+        "usage_desc": "disaffected 强调对权威不满而疏远；discontented 指一般的不满情绪"
+      },
+      {
+        "word": "alienated",
+        "tag": "区别",
+        "usage_desc": "disaffected 含不忠意味；alienated 侧重被孤立或格格不入"
+      }
+    ]
+  },
+  {
+    "word": "disagree",
+    "synonyms": [
+      {
+        "word": "differ",
+        "tag": "区别",
+        "usage_desc": "disagree 直接表示意见冲突；differ 语气更温和，指观点不同"
+      },
+      {
+        "word": "dissent",
+        "tag": "区别",
+        "usage_desc": "disagree 日常用语；dissent 常指正式或公开的反对"
+      }
+    ]
+  },
+  {
+    "word": "disappear",
+    "synonyms": [
+      {
+        "word": "vanish",
+        "tag": "区别",
+        "usage_desc": "disappear 泛指消失；vanish 强调突然或神秘地不见"
+      },
+      {
+        "word": "fade",
+        "tag": "区别",
+        "usage_desc": "disappear 可瞬间；fade 指逐渐变淡消失"
+      }
+    ]
+  },
+  {
+    "word": "disappoint",
+    "synonyms": [
+      {
+        "word": "let down",
+        "tag": "区别",
+        "usage_desc": "disappoint 使期望落空；let down 更口语化，强调辜负信任"
+      },
+      {
+        "word": "disillusion",
+        "tag": "区别",
+        "usage_desc": "disappoint 侧重情绪；disillusion 指打破美好幻想"
+      }
+    ]
+  },
+  {
+    "word": "disappointed",
+    "synonyms": [
+      {
+        "word": "disheartened",
+        "tag": "区别",
+        "usage_desc": "disappointed 因期望落空；disheartened 侧重失去信心和勇气"
+      },
+      {
+        "word": "discouraged",
+        "tag": "区别",
+        "usage_desc": "disappointed 较短暂；discouraged 强调受挫而气馁"
+      }
+    ]
+  },
+  {
+    "word": "disappointing",
+    "synonyms": [
+      {
+        "word": "disheartening",
+        "tag": "区别",
+        "usage_desc": "disappointing 结果令人失望；disheartening 打击士气"
+      },
+      {
+        "word": "discouraging",
+        "tag": "区别",
+        "usage_desc": "disappointing 侧重于感受；discouraging 使人失去动力"
+      }
+    ]
+  },
+  {
+    "word": "disapprove",
+    "synonyms": [
+      {
+        "word": "object",
+        "tag": "区别",
+        "usage_desc": "disapprove 偏重道德判断；object 侧重直接提出反对意见"
+      },
+      {
+        "word": "frown upon",
+        "tag": "区别",
+        "usage_desc": "disapprove 较正式；frown upon 更形象，表示不赞同的表情"
+      }
+    ]
+  },
+  {
+    "word": "disarmament",
+    "synonyms": [
+      {
+        "word": "demilitarization",
+        "tag": "区别",
+        "usage_desc": "disarmament 指裁减军备；demilitarization 指非军事化转型"
+      },
+      {
+        "word": "arms control",
+        "tag": "区别",
+        "usage_desc": "disarmament 强调解除武器；arms control 侧重限制与监管"
+      }
+    ]
+  },
+  {
+    "word": "disaster",
+    "synonyms": [
+      {
+        "word": "catastrophe",
+        "tag": "区别",
+        "usage_desc": "disaster 泛指灾难；catastrophe 强调巨大破坏与悲惨结局"
+      },
+      {
+        "word": "calamity",
+        "tag": "区别",
+        "usage_desc": "disaster 较常用；calamity 指个人或群体遭受的严重不幸"
+      }
+    ]
+  },
+  {
+    "word": "disbelief",
+    "synonyms": [
+      {
+        "word": "skepticism",
+        "tag": "区别",
+        "usage_desc": "disbelief 强调不相信；skepticism 指怀疑、审慎的态度"
+      },
+      {
+        "word": "incredulity",
+        "tag": "区别",
+        "usage_desc": "disbelief 常见；incredulity 指因惊讶而难以置信"
+      }
+    ]
+  },
+  {
+    "word": "discard",
+    "synonyms": [
+      {
+        "word": "throw away",
+        "tag": "区别",
+        "usage_desc": "discard 指因无用而抛弃；throw away 口语化，强调扔掉"
+      },
+      {
+        "word": "abandon",
+        "tag": "区别",
+        "usage_desc": "discard 抛物理物品；abandon 更抽象，放弃控制或责任"
+      }
+    ]
+  },
+  {
+    "word": "discharge",
+    "synonyms": [
+      {
+        "word": "release",
+        "tag": "区别",
+        "usage_desc": "discharge 可指解雇或释放；release 强调解除束缚"
+      },
+      {
+        "word": "dismiss",
+        "tag": "区别",
+        "usage_desc": "discharge 常指正式解雇；dismiss 更常用，可指打发走"
+      }
+    ]
+  },
+  {
+    "word": "disciplinary",
+    "synonyms": [
+      {
+        "word": "punitive",
+        "tag": "区别",
+        "usage_desc": "disciplinary 侧重纪律教育；punitive 强调惩罚性质"
+      },
+      {
+        "word": "corrective",
+        "tag": "区别",
+        "usage_desc": "disciplinary 包含惩戒；corrective 侧重纠正错误行为"
+      }
+    ]
+  },
+  {
+    "word": "discipline",
+    "synonyms": [
+      {
+        "word": "order",
+        "tag": "区别",
+        "usage_desc": "discipline 指自律或训练形成的秩序；order 强调有条理状态"
+      },
+      {
+        "word": "regulation",
+        "tag": "区别",
+        "usage_desc": "discipline 侧重内在约束；regulation 指外部规章"
+      }
+    ]
+  },
+  {
+    "word": "disclose",
+    "synonyms": [
+      {
+        "word": "reveal",
+        "tag": "区别",
+        "usage_desc": "disclose 侧重公开机密；reveal 强调显示原本隐藏的事物"
+      },
+      {
+        "word": "expose",
+        "tag": "区别",
+        "usage_desc": "disclose 中性；expose 常指揭露负面或丑闻"
+      }
+    ]
+  },
+  {
+    "word": "disconcerting",
+    "synonyms": [
+      {
+        "word": "unsettling",
+        "tag": "区别",
+        "usage_desc": "disconcerting 使慌乱不安；unsettling 强调打破平静"
+      },
+      {
+        "word": "disturbing",
+        "tag": "区别",
+        "usage_desc": "disconcerting 侧重心理困惑；disturbing 引起焦虑或不适"
+      }
+    ]
+  },
+  {
+    "word": "discontinue",
+    "synonyms": [
+      {
+        "word": "stop",
+        "tag": "区别",
+        "usage_desc": "discontinue 较正式，常指终止服务或生产；stop 最通用"
+      },
+      {
+        "word": "terminate",
+        "tag": "区别",
+        "usage_desc": "discontinue 可能暂时；terminate 强调彻底结束"
+      }
+    ]
+  },
+  {
+    "word": "discount",
+    "synonyms": [
+      {
+        "word": "reduction",
+        "tag": "区别",
+        "usage_desc": "discount 指价格折让；reduction 泛指数量或价格减少"
+      },
+      {
+        "word": "rebate",
+        "tag": "区别",
+        "usage_desc": "discount 直接扣减；rebate 指事后返还部分款项"
+      }
+    ]
+  },
+  {
+    "word": "discourage",
+    "synonyms": [
+      {
+        "word": "deter",
+        "tag": "区别",
+        "usage_desc": "discourage 使失去信心；deter 强调通过威慑阻止行动"
+      },
+      {
+        "word": "dishearten",
+        "tag": "区别",
+        "usage_desc": "discourage 侧重打消念头；dishearten 侧重打击士气"
+      }
+    ]
+  },
+  {
+    "word": "discover",
+    "synonyms": [
+      {
+        "word": "find",
+        "tag": "区别",
+        "usage_desc": "discover 强调发现原先存在但不为人知的事物；find 强调找到某物"
+      },
+      {
+        "word": "detect",
+        "tag": "区别",
+        "usage_desc": "detect 强调通过细心观察或仪器发现；discover 更广泛"
+      }
+    ]
+  },
+  {
+    "word": "discovery",
+    "synonyms": [
+      {
+        "word": "finding",
+        "tag": "区别",
+        "usage_desc": "finding 强调找到的结果或结论；discovery 强调首次发现或揭示新事物"
+      },
+      {
+        "word": "detection",
+        "tag": "区别",
+        "usage_desc": "detection 侧重通过探查发现隐藏或不易察觉的事物；discovery 更广泛"
+      }
+    ]
+  },
+  {
+    "word": "discrimination",
+    "synonyms": [
+      {
+        "word": "prejudice",
+        "tag": "区别",
+        "usage_desc": "prejudice 指先入为主的偏见；discrimination 指基于类别的区别对待"
+      },
+      {
+        "word": "bias",
+        "tag": "区别",
+        "usage_desc": "bias 强调个人倾向性；discrimination 更侧重行为上的不公对待"
+      }
+    ]
+  },
+  {
+    "word": "discuss",
+    "synonyms": [
+      {
+        "word": "argue",
+        "tag": "区别",
+        "usage_desc": "discuss 强调友好讨论交换意见；argue 强调争论各自观点"
+      },
+      {
+        "word": "debate",
+        "tag": "区别",
+        "usage_desc": "debate 强调正式辩论；discuss 更随意"
+      }
+    ]
+  },
+  {
+    "word": "discussion",
+    "synonyms": [
+      {
+        "word": "debate",
+        "tag": "区别",
+        "usage_desc": "debate 强调对立观点交锋；discussion 更泛指交换意见，不一定对立"
+      },
+      {
+        "word": "conversation",
+        "tag": "区别",
+        "usage_desc": "conversation 较为随意；discussion 通常更有目的性或正式"
+      }
+    ]
+  },
+  {
+    "word": "disease",
+    "synonyms": [
+      {
+        "word": "illness",
+        "tag": "区别",
+        "usage_desc": "illness 侧重患病状态或身体不适；disease 多指具体病种或医学诊断"
+      },
+      {
+        "word": "sickness",
+        "tag": "区别",
+        "usage_desc": "sickness 较通用，可指晕车等；disease 更专业，常用于病理学"
+      }
+    ]
+  },
+  {
+    "word": "diseased",
+    "synonyms": [
+      {
+        "word": "sick",
+        "tag": "区别",
+        "usage_desc": "sick 泛指身体不适；diseased 强调已经感染或患有疾病"
+      },
+      {
+        "word": "ill",
+        "tag": "区别",
+        "usage_desc": "ill 较正式，指生病状态；diseased 更强调病态或病变"
+      }
+    ]
+  },
+  {
+    "word": "disenchanted",
+    "synonyms": [
+      {
+        "word": "disillusioned",
+        "tag": "区别",
+        "usage_desc": "disillusioned 强调因看清真相而醒悟；disenchanted 侧重幻想破灭后的失望"
+      },
+      {
+        "word": "disappointed",
+        "tag": "区别",
+        "usage_desc": "disappointed 指期望落空而失落；disenchanted 更强调理想幻灭"
+      }
+    ]
+  },
+  {
+    "word": "disgraced",
+    "synonyms": [
+      {
+        "word": "shamed",
+        "tag": "区别",
+        "usage_desc": "shamed 强调内心感到羞耻；disgraced 更侧重名誉受损、丢脸"
+      },
+      {
+        "word": "humiliated",
+        "tag": "区别",
+        "usage_desc": "humiliated 强调当众受辱；disgraced 强调失去体面或荣誉"
+      }
+    ]
+  },
+  {
+    "word": "disgraceful",
+    "synonyms": [
+      {
+        "word": "shameful",
+        "tag": "区别",
+        "usage_desc": "shameful 强调令人感到羞耻；disgraceful 更强调行为丧失体面"
+      },
+      {
+        "word": "dishonorable",
+        "tag": "区别",
+        "usage_desc": "dishonorable 侧重违背道德或名誉；disgraceful 侧重行为可耻丢脸"
+      }
+    ]
+  },
+  {
+    "word": "disgruntled",
+    "synonyms": [
+      {
+        "word": "dissatisfied",
+        "tag": "区别",
+        "usage_desc": "dissatisfied 单纯不满意；disgruntled 带有怨恨或恼怒情绪"
+      },
+      {
+        "word": "discontented",
+        "tag": "区别",
+        "usage_desc": "discontented 指不满足现状；disgruntled 更强调牢骚满腹"
+      }
+    ]
+  },
+  {
+    "word": "disguise",
+    "synonyms": [
+      {
+        "word": "camouflage",
+        "tag": "区别",
+        "usage_desc": "camouflage 多指军事伪装；disguise 指改变外表或身份以隐瞒"
+      },
+      {
+        "word": "conceal",
+        "tag": "区别",
+        "usage_desc": "conceal 侧重隐藏事物；disguise 侧重通过伪装掩盖真实"
+      }
+    ]
+  },
+  {
+    "word": "disgust",
+    "synonyms": [
+      {
+        "word": "revulsion",
+        "tag": "区别",
+        "usage_desc": "revulsion 语气更强，表示强烈反感；disgust 侧重恶心或厌恶"
+      },
+      {
+        "word": "loathing",
+        "tag": "区别",
+        "usage_desc": "loathing 表示憎恶、极度厌恶；disgust 程度稍轻"
+      }
+    ]
+  },
+  {
+    "word": "dishonest",
+    "synonyms": [
+      {
+        "word": "deceitful",
+        "tag": "区别",
+        "usage_desc": "deceitful 侧重通过欺骗获得利益；dishonest 泛指不诚实"
+      },
+      {
+        "word": "untruthful",
+        "tag": "区别",
+        "usage_desc": "untruthful 强调说谎；dishonest 涵盖偷窃、欺诈等行为"
+      }
+    ]
+  },
+  {
+    "word": "dishonestly",
+    "synonyms": [
+      {
+        "word": "deceitfully",
+        "tag": "区别",
+        "usage_desc": "deceitfully 强调欺骗性行为；dishonestly 泛指以不诚实方式"
+      },
+      {
+        "word": "untruthfully",
+        "tag": "区别",
+        "usage_desc": "untruthfully 侧重言语不真实；dishonestly 涵盖更广"
+      }
+    ]
+  },
+  {
+    "word": "dishonesty",
+    "synonyms": [
+      {
+        "word": "deceit",
+        "tag": "区别",
+        "usage_desc": "deceit 指欺骗行为或手段；dishonesty 指品格上的不诚实"
+      },
+      {
+        "word": "fraud",
+        "tag": "区别",
+        "usage_desc": "fraud 特指法律上的诈骗；dishonesty 范围更广"
+      }
+    ]
+  },
+  {
+    "word": "dishonour",
+    "synonyms": [
+      {
+        "word": "disgrace",
+        "tag": "区别",
+        "usage_desc": "disgrace 强调丢脸、失去尊重；dishonour 侧重丧失荣誉或体面"
+      },
+      {
+        "word": "shame",
+        "tag": "区别",
+        "usage_desc": "shame 指羞耻感；dishonour 指名誉受损的事实"
+      }
+    ]
+  },
+  {
+    "word": "dishwasher",
+    "synonyms": [
+      {
+        "word": "dishwashing machine",
+        "tag": "区别",
+        "usage_desc": "dishwasher 为常用缩略；dishwashing machine 为完整描述，用法相同"
+      }
+    ]
+  },
+  {
+    "word": "disk",
+    "synonyms": [
+      {
+        "word": "disc",
+        "tag": "区别",
+        "usage_desc": "disc 为英式拼写，意义相同；disk 为美式拼写"
+      },
+      {
+        "word": "platter",
+        "tag": "区别",
+        "usage_desc": "platter 特指硬盘内部的盘片；disk 泛指圆形存储介质"
+      }
+    ]
+  },
+  {
+    "word": "dislike",
+    "synonyms": [
+      {
+        "word": "hate",
+        "tag": "区别",
+        "usage_desc": "hate 语气强烈，表示憎恨；dislike 语气较弱，仅指不喜欢"
+      },
+      {
+        "word": "loathe",
+        "tag": "区别",
+        "usage_desc": "loathe 表示极度厌恶，程度强于 dislike"
+      }
+    ]
+  },
+  {
+    "word": "dismiss",
+    "synonyms": [
+      {
+        "word": "fire",
+        "tag": "区别",
+        "usage_desc": "fire 为口语化解雇；dismiss 较正式，可用于解职或解散"
+      },
+      {
+        "word": "sack",
+        "tag": "区别",
+        "usage_desc": "sack 为英式口语解雇；dismiss 更通用正式"
+      }
+    ]
+  },
+  {
+    "word": "dismissive",
+    "synonyms": [
+      {
+        "word": "contemptuous",
+        "tag": "区别",
+        "usage_desc": "contemptuous 强调鄙视态度；dismissive 更强调不屑理会"
+      },
+      {
+        "word": "disdainful",
+        "tag": "区别",
+        "usage_desc": "disdainful 侧重高傲轻视；dismissive 侧重不予重视"
+      }
+    ]
+  },
+  {
+    "word": "disorder",
+    "synonyms": [
+      {
+        "word": "chaos",
+        "tag": "区别",
+        "usage_desc": "chaos 强调极度混乱、无秩序；disorder 侧重于缺乏条理"
+      },
+      {
+        "word": "mess",
+        "tag": "区别",
+        "usage_desc": "mess 指凌乱的状态；disorder 涵盖更广的混乱概念"
+      }
+    ]
+  },
+  {
+    "word": "disorganized",
+    "synonyms": [
+      {
+        "word": "chaotic",
+        "tag": "区别",
+        "usage_desc": "chaotic 强调完全无序；disorganized 指缺乏组织安排"
+      },
+      {
+        "word": "messy",
+        "tag": "区别",
+        "usage_desc": "messy 侧重脏乱；disorganized 侧重计划或结构混乱"
+      }
+    ]
+  },
+  {
+    "word": "dispersed",
+    "synonyms": [
+      {
+        "word": "scattered",
+        "tag": "区别",
+        "usage_desc": "scattered 强调零散分布；dispersed 强调被驱散或分散过程"
+      },
+      {
+        "word": "spread",
+        "tag": "区别",
+        "usage_desc": "spread 强调扩散或铺开；dispersed 更强调分离、不集中"
+      }
+    ]
+  },
+  {
+    "word": "display",
+    "synonyms": [
+      {
+        "word": "show",
+        "tag": "区别",
+        "usage_desc": "show 泛指展示；display 更强调陈列、炫耀或系统展示"
+      },
+      {
+        "word": "exhibit",
+        "tag": "区别",
+        "usage_desc": "exhibit 多用于展览会等正式场合；display 也可用于技术界面显示"
+      }
+    ]
+  },
+  {
+    "word": "displease",
+    "synonyms": [
+      {
+        "word": "annoy",
+        "tag": "区别",
+        "usage_desc": "annoy 指轻微打扰使恼火；displease 较正式，指引起不满"
+      },
+      {
+        "word": "upset",
+        "tag": "区别",
+        "usage_desc": "upset 侧重使心烦意乱；displease 侧重使不高兴"
+      }
+    ]
+  },
+  {
+    "word": "displeasure",
+    "synonyms": [
+      {
+        "word": "annoyance",
+        "tag": "区别",
+        "usage_desc": "displeasure 语气较强，指强烈不满；annoyance 程度较轻，指烦恼、恼怒"
+      },
+      {
+        "word": "dissatisfaction",
+        "tag": "区别",
+        "usage_desc": "dissatisfaction 侧重期望未满足；displeasure 侧重情绪上的不悦"
+      }
+    ]
+  },
+  {
+    "word": "disposal",
+    "synonyms": [
+      {
+        "word": "removal",
+        "tag": "区别",
+        "usage_desc": "disposal 强调处理掉或安排；removal 强调移走、清除"
+      },
+      {
+        "word": "arrangement",
+        "tag": "区别",
+        "usage_desc": "arrangement 侧重布局或安排；disposal 更侧重处置或处理"
+      }
+    ]
+  },
+  {
+    "word": "dispose",
+    "synonyms": [
+      {
+        "word": "arrange",
+        "tag": "区别",
+        "usage_desc": "dispose 侧重有条理地放置；arrange 强调按计划或顺序安排"
+      },
+      {
+        "word": "deal with",
+        "tag": "区别",
+        "usage_desc": "deal with 泛指处理事务；dispose 常指最终解决或处理掉"
+      }
+    ]
+  },
+  {
+    "word": "dispute",
+    "synonyms": [
+      {
+        "word": "argue",
+        "tag": "区别",
+        "usage_desc": "argue 强调用理由辩驳；dispute 更侧重双方争执、分歧"
+      },
+      {
+        "word": "debate",
+        "tag": "区别",
+        "usage_desc": "debate 常指正式、有组织的讨论；dispute 可指激烈争吵"
+      }
+    ]
+  },
+  {
+    "word": "disqualify",
+    "synonyms": [
+      {
+        "word": "debarr",
+        "tag": "区别",
+        "usage_desc": "disqualify 指取消资格或权利；debarr 强调阻止、禁止"
+      },
+      {
+        "word": "disbar",
+        "tag": "区别",
+        "usage_desc": "disbar 特指吊销律师资格；disqualify 适用范围更广"
+      }
+    ]
+  },
+  {
+    "word": "disquiet",
+    "synonyms": [
+      {
+        "word": "anxiety",
+        "tag": "区别",
+        "usage_desc": "anxiety 侧重持续的不安与担忧；disquiet 强调内心不平静、骚动"
+      },
+      {
+        "word": "unease",
+        "tag": "区别",
+        "usage_desc": "unease 泛指不自在；disquiet 更正式，指轻度焦虑"
+      }
+    ]
+  },
+  {
+    "word": "dissatisfied",
+    "synonyms": [
+      {
+        "word": "unhappy",
+        "tag": "区别",
+        "usage_desc": "unhappy 泛指不快乐；dissatisfied 特指对某事不满"
+      },
+      {
+        "word": "discontented",
+        "tag": "区别",
+        "usage_desc": "discontented 强调长期不满；dissatisfied 可指即时不满"
+      }
+    ]
+  },
+  {
+    "word": "dissatisfy",
+    "synonyms": [
+      {
+        "word": "displease",
+        "tag": "区别",
+        "usage_desc": "displease 侧重引起不悦；dissatisfy 强调未满足期望"
+      },
+      {
+        "word": "discontent",
+        "tag": "区别",
+        "usage_desc": "discontent 作为动词较罕见；dissatisfy 更常用"
+      }
+    ]
+  },
+  {
+    "word": "dissolve",
+    "synonyms": [
+      {
+        "word": "melt",
+        "tag": "区别",
+        "usage_desc": "melt 多指固体受热熔化；dissolve 指物质在液体中溶解"
+      },
+      {
+        "word": "disband",
+        "tag": "区别",
+        "usage_desc": "disband 指组织解散；dissolve 可指法律上解除或溶解"
+      }
+    ]
+  },
+  {
+    "word": "distance",
+    "synonyms": [
+      {
+        "word": "length",
+        "tag": "区别",
+        "usage_desc": "length 指两点间测得的长度；distance 更强调空间或时间上的间隔"
+      },
+      {
+        "word": "gap",
+        "tag": "区别",
+        "usage_desc": "gap 常指缺口或差距；distance 更中性"
+      }
+    ]
+  },
+  {
+    "word": "distant",
+    "synonyms": [
+      {
+        "word": "far",
+        "tag": "区别",
+        "usage_desc": "far 更口语化，指空间远；distant 可指时间或关系疏远"
+      },
+      {
+        "word": "remote",
+        "tag": "区别",
+        "usage_desc": "remote 强调偏僻、隔离；distant 泛指远距离"
+      }
+    ]
+  },
+  {
+    "word": "distaste",
+    "synonyms": [
+      {
+        "word": "dislike",
+        "tag": "区别",
+        "usage_desc": "dislike 泛指不喜欢；distaste 语气更强，带有厌恶感"
+      },
+      {
+        "word": "aversion",
+        "tag": "区别",
+        "usage_desc": "aversion 强调强烈排斥；distaste 程度稍轻"
+      }
+    ]
+  },
+  {
+    "word": "distillery",
+    "synonyms": [
+      {
+        "word": "brewery",
+        "tag": "区别",
+        "usage_desc": "brewery 指啤酒厂；distillery 指蒸馏酒厂，如威士忌"
+      },
+      {
+        "word": "refinery",
+        "tag": "区别",
+        "usage_desc": "refinery 指精炼厂（如石油）；distillery 专指酿酒蒸馏"
+      }
+    ]
+  },
+  {
+    "word": "distinct",
+    "synonyms": [
+      {
+        "word": "clear",
+        "tag": "区别",
+        "usage_desc": "clear 强调清晰易懂；distinct 强调易于辨认、有明显区别"
+      },
+      {
+        "word": "different",
+        "tag": "区别",
+        "usage_desc": "different 泛指不同；distinct 强调本质上的差别"
+      }
+    ]
+  },
+  {
+    "word": "distinction",
+    "synonyms": [
+      {
+        "word": "difference",
+        "tag": "区别",
+        "usage_desc": "difference 泛指差异；distinction 侧重细微或重要的区分"
+      },
+      {
+        "word": "differentiation",
+        "tag": "区别",
+        "usage_desc": "differentiation 指区分过程；distinction 指区分结果或荣誉"
+      }
+    ]
+  },
+  {
+    "word": "distinguish",
+    "synonyms": [
+      {
+        "word": "discern",
+        "tag": "区别",
+        "usage_desc": "discern 强调用感官或才智识别；distinguish 侧重区分不同点"
+      },
+      {
+        "word": "differentiate",
+        "tag": "区别",
+        "usage_desc": "differentiate 常指找出差异；distinguish 还可指使著名"
+      }
+    ]
+  },
+  {
+    "word": "distress",
+    "synonyms": [
+      {
+        "word": "suffering",
+        "tag": "区别",
+        "usage_desc": "suffering 泛指痛苦；distress 强调精神或肉体上的极度苦恼"
+      },
+      {
+        "word": "anguish",
+        "tag": "区别",
+        "usage_desc": "anguish 语气更强，指剧烈痛苦；distress 程度稍轻"
+      }
+    ]
+  },
+  {
+    "word": "distribute",
+    "synonyms": [
+      {
+        "word": "allocate",
+        "tag": "区别",
+        "usage_desc": "allocate 强调分配资源或任务；distribute 更侧重分发、散布"
+      },
+      {
+        "word": "dispense",
+        "tag": "区别",
+        "usage_desc": "dispense 常指按需发放；distribute 范围更广"
+      }
+    ]
+  },
+  {
+    "word": "distributed",
+    "synonyms": [
+      {
+        "word": "dispersed",
+        "tag": "区别",
+        "usage_desc": "dispersed 强调散开、分散；distributed 侧重按计划分配或分布"
+      },
+      {
+        "word": "spread",
+        "tag": "区别",
+        "usage_desc": "spread 指展开或扩散；distributed 更正式，常指系统结构"
+      }
+    ]
+  },
+  {
+    "word": "distribution",
+    "synonyms": [
+      {
+        "word": "allocation",
+        "tag": "区别",
+        "usage_desc": "allocation 强调配给；distribution 涵盖分配、散布及统计分布"
+      },
+      {
+        "word": "dispersion",
+        "tag": "区别",
+        "usage_desc": "dispersion 强调散开程度；distribution 更侧重分布模式"
+      }
+    ]
+  },
+  {
+    "word": "distributor",
+    "synonyms": [
+      {
+        "word": "dealer",
+        "tag": "区别",
+        "usage_desc": "dealer 指零售商或经销商；distributor 指批发商或分配者"
+      },
+      {
+        "word": "supplier",
+        "tag": "区别",
+        "usage_desc": "supplier 强调提供商品；distributor 强调分发与流通"
+      }
+    ]
+  },
+  {
+    "word": "district",
+    "synonyms": [
+      {
+        "word": "region",
+        "tag": "区别",
+        "usage_desc": "region 范围更大，多为自然或行政区域；district 通常指较小行政分区"
+      },
+      {
+        "word": "area",
+        "tag": "区别",
+        "usage_desc": "area 泛指任何区域；district 更有行政管理含义"
+      }
+    ]
+  },
+  {
+    "word": "District Attorney",
+    "synonyms": [
+      {
+        "word": "prosecutor",
+        "tag": "区别",
+        "usage_desc": "prosecutor 统称公诉人；District Attorney 是美国特定地方检察官头衔"
+      },
+      {
+        "word": "State's Attorney",
+        "tag": "区别",
+        "usage_desc": "State's Attorney 为州级检察官；District Attorney 多用于县级"
+      }
+    ]
+  },
+  {
+    "word": "distrust",
+    "synonyms": [
+      {
+        "word": "mistrust",
+        "tag": "区别",
+        "usage_desc": "mistrust 更常见，侧重缺乏信任；distrust 语气更强，带怀疑"
+      },
+      {
+        "word": "suspicion",
+        "tag": "区别",
+        "usage_desc": "suspicion 指怀疑或猜疑；distrust 是名词或动词，指不信任"
+      }
+    ]
+  },
+  {
+    "word": "disturb",
+    "synonyms": [
+      {
+        "word": "bother",
+        "tag": "区别",
+        "usage_desc": "bother 更口语化，指打扰；disturb 更正式，可指扰乱平静"
+      },
+      {
+        "word": "interrupt",
+        "tag": "区别",
+        "usage_desc": "interrupt 强调打断进程；disturb 侧重造成不安或混乱"
+      }
+    ]
+  },
+  {
+    "word": "disturbed",
+    "synonyms": [
+      {
+        "word": "upset",
+        "tag": "区别",
+        "usage_desc": "disturbed 强调内心混乱、焦虑；upset 更侧重情绪不安或失望"
+      },
+      {
+        "word": "agitated",
+        "tag": "区别",
+        "usage_desc": "agitated 指外在的躁动不安；disturbed 多指内在心理失衡"
+      }
+    ]
+  },
+  {
+    "word": "disused",
+    "synonyms": [
+      {
+        "word": "abandoned",
+        "tag": "区别",
+        "usage_desc": "disused 强调不再使用但可能完好；abandoned 指被遗弃、无人照管"
+      }
+    ]
+  },
+  {
+    "word": "ditch",
+    "synonyms": [
+      {
+        "word": "trench",
+        "tag": "区别",
+        "usage_desc": "ditch 常用于路边排水沟；trench 多指狭长的战壕或沟渠"
+      },
+      {
+        "word": "canal",
+        "tag": "区别",
+        "usage_desc": "canal 指人工运河，比 ditch 宽大且用于通航"
+      }
+    ]
+  },
+  {
+    "word": "dither",
+    "synonyms": [
+      {
+        "word": "hesitate",
+        "tag": "区别",
+        "usage_desc": "dither 强调因紧张或犹豫而发抖；hesitate 侧重行动上的迟疑"
+      },
+      {
+        "word": "waver",
+        "tag": "区别",
+        "usage_desc": "dither 带发抖动作；waver 指意志或决心动摇"
+      }
+    ]
+  },
+  {
+    "word": "diuretic",
+    "synonyms": [
+      {
+        "word": "water pill",
+        "tag": "区别",
+        "usage_desc": "diuretic 为医学术语；water pill 为口语化俗称"
+      }
+    ]
+  },
+  {
+    "word": "dive",
+    "synonyms": [
+      {
+        "word": "plunge",
+        "tag": "区别",
+        "usage_desc": "dive 常指头朝下入水；plunge 可指任何猛冲或陷入"
+      },
+      {
+        "word": "jump",
+        "tag": "区别",
+        "usage_desc": "dive 强调俯冲动作；jump 只是跳起落下，未必入水"
+      }
+    ]
+  },
+  {
+    "word": "diverse",
+    "synonyms": [
+      {
+        "word": "varied",
+        "tag": "区别",
+        "usage_desc": "diverse 强调种类繁多、差异明显；varied 多指内容丰富多样"
+      },
+      {
+        "word": "different",
+        "tag": "区别",
+        "usage_desc": "different 泛指不一样；diverse 更强调多样性"
+      }
+    ]
+  },
+  {
+    "word": "diverting",
+    "synonyms": [
+      {
+        "word": "entertaining",
+        "tag": "区别",
+        "usage_desc": "diverting 侧重转移注意力带来愉悦；entertaining 强调娱乐、逗乐"
+      },
+      {
+        "word": "amusing",
+        "tag": "区别",
+        "usage_desc": "amusing 更偏有趣好笑；diverting 偏轻松消遣"
+      }
+    ]
+  },
+  {
+    "word": "divide",
+    "synonyms": [
+      {
+        "word": "separate",
+        "tag": "区别",
+        "usage_desc": "divide 常指按类别或整体分割；separate 指把原本相连的分开"
+      },
+      {
+        "word": "split",
+        "tag": "区别",
+        "usage_desc": "split 多指纵向或急剧分裂；divide 较中性"
+      }
+    ]
+  },
+  {
+    "word": "diving",
+    "synonyms": [
+      {
+        "word": "underwater swimming",
+        "tag": "区别",
+        "usage_desc": "diving 强调下潜动作；underwater swimming 泛指水下游动"
+      }
+    ]
+  },
+  {
+    "word": "divinity",
+    "synonyms": [
+      {
+        "word": "godhead",
+        "tag": "区别",
+        "usage_desc": "divinity 泛指神性或神；godhead 特指上帝或神格"
+      },
+      {
+        "word": "deity",
+        "tag": "区别",
+        "usage_desc": "deity 指具体的神祇；divinity 更抽象"
+      }
+    ]
+  },
+  {
+    "word": "division",
+    "synonyms": [
+      {
+        "word": "split",
+        "tag": "区别",
+        "usage_desc": "division 强调组织或整体分成部分；split 侧重分裂行为"
+      },
+      {
+        "word": "section",
+        "tag": "区别",
+        "usage_desc": "section 指部分或部门；division 常指大部门或分区"
+      }
+    ]
+  },
+  {
+    "word": "divisive",
+    "synonyms": [
+      {
+        "word": "polarizing",
+        "tag": "区别",
+        "usage_desc": "divisive 强调造成不和与分裂；polarizing 指使人们走向对立极端"
+      }
+    ]
+  },
+  {
+    "word": "divorce",
+    "synonyms": [
+      {
+        "word": "separate",
+        "tag": "区别",
+        "usage_desc": "divorce 特指法律上的离婚；separate 可指夫妻分居或一般分离"
+      },
+      {
+        "word": "split",
+        "tag": "区别",
+        "usage_desc": "split 口语化，指关系破裂；divorce 更正式"
+      }
+    ]
+  },
+  {
+    "word": "DIY",
+    "synonyms": [
+      {
+        "word": "self-assembly",
+        "tag": "区别",
+        "usage_desc": "DIY 指自己动手制作或修理；self-assembly 特指需自行组装的商品"
+      }
+    ]
+  },
+  {
+    "word": "DNA",
+    "synonyms": [
+      {
+        "word": "genetic code",
+        "tag": "区别",
+        "usage_desc": "DNA 是脱氧核糖核酸缩写；genetic code 指遗传密码，范围稍广"
+      }
+    ]
+  },
+  {
+    "word": "dock",
+    "synonyms": [
+      {
+        "word": "pier",
+        "tag": "区别",
+        "usage_desc": "dock 指船坞或码头兼修船；pier 多指凸式码头供停靠"
+      },
+      {
+        "word": "wharf",
+        "tag": "区别",
+        "usage_desc": "wharf 指岸边装卸货平台；dock 可泛指港口设施"
+      }
+    ]
+  },
+  {
+    "word": "dockland",
+    "synonyms": [
+      {
+        "word": "harbor area",
+        "tag": "区别",
+        "usage_desc": "dockland 特指码头区及周边；harbor area 泛指港口区域"
+      }
+    ]
+  },
+  {
+    "word": "doctorate",
+    "synonyms": [
+      {
+        "word": "PhD",
+        "tag": "区别",
+        "usage_desc": "doctorate 泛指博士头衔；PhD 特指哲学博士，最常见的一种"
+      }
+    ]
+  },
+  {
+    "word": "document",
+    "synonyms": [
+      {
+        "word": "paper",
+        "tag": "区别",
+        "usage_desc": "document 可指任何书面或电子文件；paper 多指纸质论文或文件"
+      },
+      {
+        "word": "record",
+        "tag": "区别",
+        "usage_desc": "record 强调证据性记录；document 更通用"
+      }
+    ]
+  },
+  {
+    "word": "dodgy",
+    "synonyms": [
+      {
+        "word": "shady",
+        "tag": "区别",
+        "usage_desc": "dodgy 指可疑、不靠谱；shady 指阴暗、不光明正大"
+      },
+      {
+        "word": "risky",
+        "tag": "区别",
+        "usage_desc": "risky 侧重有风险；dodgy 更偏欺诈或不可靠"
+      }
+    ]
+  },
+  {
+    "word": "doesn't",
+    "synonyms": [],
+    "usage_desc": "无合适同义词，此为否定助动词缩写"
+  },
+  {
+    "word": "dogfish",
+    "synonyms": [
+      {
+        "word": "shark",
+        "tag": "区别",
+        "usage_desc": "dogfish 是小型鲨鱼的一种；shark 泛称鲨鱼"
+      }
+    ]
+  },
+  {
+    "word": "dolly",
+    "synonyms": [
+      {
+        "word": "doll",
+        "tag": "区别",
+        "usage_desc": "dolly 为儿童对洋娃娃的昵称；doll 是标准用词"
+      },
+      {
+        "word": "cart",
+        "tag": "区别",
+        "usage_desc": "dolly 指摄影移动车；cart 泛指手推车"
+      }
+    ]
+  },
+  {
+    "word": "domestic",
+    "synonyms": [
+      {
+        "word": "household",
+        "tag": "区别",
+        "usage_desc": "domestic 可指家庭或国内；household 仅指家庭、家用的"
+      },
+      {
+        "word": "tame",
+        "tag": "区别",
+        "usage_desc": "domestic 指驯养动物；tame 强调性格温顺"
+      }
+    ]
+  },
+  {
+    "word": "dominate",
+    "synonyms": [
+      {
+        "word": "control",
+        "tag": "区别",
+        "usage_desc": "dominate 强调压倒性优势或权威；control 侧重直接掌控或管理"
+      },
+      {
+        "word": "prevail",
+        "tag": "区别",
+        "usage_desc": "prevail 指在竞争或争论中胜出；dominate 更强调持续支配地位"
+      }
+    ]
+  },
+  {
+    "word": "domino",
+    "synonyms": [
+      {
+        "word": "mask",
+        "tag": "区别",
+        "usage_desc": "domino 常指化装舞会面具；mask 泛指任何遮盖面部的物品"
+      }
+    ]
+  },
+  {
+    "word": "don't",
+    "synonyms": [
+      {
+        "word": "prohibition",
+        "tag": "区别",
+        "usage_desc": "don't 是口语否定式；prohibition 是正式名词，指禁止行为或规定"
+      }
+    ]
+  },
+  {
+    "word": "done",
+    "synonyms": [
+      {
+        "word": "finished",
+        "tag": "区别",
+        "usage_desc": "done 常指任务完成的状态；finished 更强调过程结束且不再进行"
+      },
+      {
+        "word": "completed",
+        "tag": "区别",
+        "usage_desc": "completed 侧重所有步骤均已执行完毕；done 更口语化"
+      }
+    ]
+  },
+  {
+    "word": "donkey",
+    "synonyms": [
+      {
+        "word": "ass",
+        "tag": "区别",
+        "usage_desc": "donkey 是标准称呼；ass 较口语化，有时含贬义或指愚蠢之人"
+      },
+      {
+        "word": "mule",
+        "tag": "区别",
+        "usage_desc": "mule 是马和驴的杂交种；donkey 纯种驴，体型较小"
+      }
+    ]
+  },
+  {
+    "word": "doorbell",
+    "synonyms": [
+      {
+        "word": "bell",
+        "tag": "区别",
+        "usage_desc": "doorbell 特指门上的铃；bell 泛指任何钟或铃"
+      }
+    ]
+  },
+  {
+    "word": "doorstep",
+    "synonyms": [
+      {
+        "word": "step",
+        "tag": "区别",
+        "usage_desc": "doorstep 特指门口的台阶；step 泛指任何梯级或步阶"
+      }
+    ]
+  },
+  {
+    "word": "doorway",
+    "synonyms": [
+      {
+        "word": "door",
+        "tag": "区别",
+        "usage_desc": "doorway 指门口所在的空间；door 指可开合的门板本身"
+      },
+      {
+        "word": "entrance",
+        "tag": "区别",
+        "usage_desc": "entrance 强调进入的通道或入口；doorway 更具体指门洞"
+      }
+    ]
+  },
+  {
+    "word": "dope",
+    "synonyms": [
+      {
+        "word": "drug",
+        "tag": "区别",
+        "usage_desc": "dope 口语化，常指毒品或兴奋剂；drug 是正式医学术语"
+      },
+      {
+        "word": "fool",
+        "tag": "区别",
+        "usage_desc": "dope 作名词指笨蛋时较俚语化；fool 更通用，语气较轻"
+      }
+    ]
+  },
+  {
+    "word": "dorm",
+    "synonyms": [
+      {
+        "word": "dormitory",
+        "tag": "区别",
+        "usage_desc": "dorm 是 dormitory 的缩写，口语常用；dormitory 更正式"
+      },
+      {
+        "word": "hall",
+        "tag": "区别",
+        "usage_desc": "hall 常指集体宿舍大楼；dorm 侧重房间设施"
+      }
+    ]
+  },
+  {
+    "word": "dormitory",
+    "synonyms": [
+      {
+        "word": "dorm",
+        "tag": "区别",
+        "usage_desc": "dormitory 是完整形式；dorm 为缩略口语词"
+      },
+      {
+        "word": "residence",
+        "tag": "区别",
+        "usage_desc": "residence 泛指居住地；dormitory 特指学生或工人集体宿舍"
+      }
+    ]
+  },
+  {
+    "word": "dosage",
+    "synonyms": [
+      {
+        "word": "dose",
+        "tag": "区别",
+        "usage_desc": "dosage 指用药的量和频率规范；dose 单指一次服用量"
+      },
+      {
+        "word": "quantity",
+        "tag": "区别",
+        "usage_desc": "quantity 泛指数量；dosage 侧重医疗配比"
+      }
+    ]
+  },
+  {
+    "word": "dose",
+    "synonyms": [
+      {
+        "word": "dosage",
+        "tag": "区别",
+        "usage_desc": "dose 常指单次剂量；dosage 强调规定用量和疗程"
+      },
+      {
+        "word": "portion",
+        "tag": "区别",
+        "usage_desc": "portion 指分配的一部分；dose 特指药品服用量"
+      }
+    ]
+  },
+  {
+    "word": "dot",
+    "synonyms": [
+      {
+        "word": "point",
+        "tag": "区别",
+        "usage_desc": "dot 强调小的圆形点；point 指几何中的点或抽象位置"
+      },
+      {
+        "word": "spot",
+        "tag": "区别",
+        "usage_desc": "spot 可指污点或地点；dot 更侧重形状符号"
+      }
+    ]
+  },
+  {
+    "word": "dotted",
+    "synonyms": [
+      {
+        "word": "spotted",
+        "tag": "区别",
+        "usage_desc": "dotted 指均匀分布的小圆点图案；spotted 常指大小不均的斑点"
+      },
+      {
+        "word": "speckled",
+        "tag": "区别",
+        "usage_desc": "speckled 指细小的色斑；dotted 特指规则点状"
+      }
+    ]
+  },
+  {
+    "word": "double cream",
+    "synonyms": [
+      {
+        "word": "heavy cream",
+        "tag": "区别",
+        "usage_desc": "double cream 英式高脂奶油；heavy cream 美式称呼，脂肪含量略低"
+      }
+    ]
+  },
+  {
+    "word": "double standard",
+    "synonyms": [
+      {
+        "word": "hypocrisy",
+        "tag": "区别",
+        "usage_desc": "double standard 指不公平的两套标准；hypocrisy 强调言行不一虚伪"
+      }
+    ]
+  },
+  {
+    "word": "doublespeak",
+    "synonyms": [
+      {
+        "word": "jargon",
+        "tag": "区别",
+        "usage_desc": "doublespeak 有意模糊误导；jargon 专业术语，不一定含欺骗"
+      },
+      {
+        "word": "gobbledygook",
+        "tag": "区别",
+        "usage_desc": "gobbledygook 指冗长费解之言；doublespeak 更侧重政治性谎言"
+      }
+    ]
+  },
+  {
+    "word": "doubly",
+    "synonyms": [
+      {
+        "word": "twice",
+        "tag": "区别",
+        "usage_desc": "doubly 强调程度加倍或双重性质；twice 仅指数值两倍"
+      },
+      {
+        "word": "twofold",
+        "tag": "区别",
+        "usage_desc": "twofold 指数量或因素增加一倍；doubly 更抽象"
+      }
+    ]
+  },
+  {
+    "word": "doubt",
+    "synonyms": [
+      {
+        "word": "uncertainty",
+        "tag": "区别",
+        "usage_desc": "doubt 指主观怀疑不敢确信；uncertainty 客观情况不明"
+      },
+      {
+        "word": "skepticism",
+        "tag": "区别",
+        "usage_desc": "skepticism 是哲学性质疑；doubt 日常用语"
+      }
+    ]
+  },
+  {
+    "word": "doubtful",
+    "synonyms": [
+      {
+        "word": "uncertain",
+        "tag": "区别",
+        "usage_desc": "doubtful 侧重主观怀疑；uncertain 强调结果未定"
+      },
+      {
+        "word": "dubious",
+        "tag": "区别",
+        "usage_desc": "dubious 含可疑或不正当之意；doubtful 更中性"
+      }
+    ]
+  },
+  {
+    "word": "doubtless",
+    "synonyms": [
+      {
+        "word": "undoubtedly",
+        "tag": "区别",
+        "usage_desc": "doubtless 语气较强，表示确信无疑；undoubtedly 常用于正式文体"
+      },
+      {
+        "word": "certainly",
+        "tag": "区别",
+        "usage_desc": "certainly 强调肯定事实；doubtless 稍带修辞色彩"
+      }
+    ]
+  },
+  {
+    "word": "dough",
+    "synonyms": [
+      {
+        "word": "paste",
+        "tag": "区别",
+        "usage_desc": "dough 特指生面团，含酵母；paste 指糊状混合物，如膏或酱"
+      },
+      {
+        "word": "batter",
+        "tag": "区别",
+        "usage_desc": "batter 是稀面糊，需烘烤或油炸；dough 较硬可塑形"
+      }
+    ]
+  },
+  {
+    "word": "doughnut",
+    "synonyms": [
+      {
+        "word": "donut",
+        "tag": "区别",
+        "usage_desc": "doughnut 是标准拼写；donut 为美式简化拼法"
+      },
+      {
+        "word": "ring",
+        "tag": "区别",
+        "usage_desc": "ring 指环状物；doughnut 特指油炸甜圈"
+      }
+    ]
+  },
+  {
+    "word": "down payment",
+    "synonyms": [
+      {
+        "word": "deposit",
+        "tag": "区别",
+        "usage_desc": "down payment 指分期付款首付；deposit 泛指押金或保证金"
+      }
+    ]
+  },
+  {
+    "word": "down stairs",
+    "synonyms": [
+      {
+        "word": "descend",
+        "tag": "区别",
+        "usage_desc": "descend 侧重正式向下移动；down stairs 更口语化指下楼动作"
+      },
+      {
+        "word": "go down",
+        "tag": "区别",
+        "usage_desc": "go down 泛指向下走，down stairs 特指沿楼梯下楼"
+      }
+    ]
+  },
+  {
+    "word": "down under",
+    "synonyms": [
+      {
+        "word": "Australia",
+        "tag": "区别",
+        "usage_desc": "Australia 为正式国名；down under 是口语昵称"
+      },
+      {
+        "word": "Antipodes",
+        "tag": "区别",
+        "usage_desc": "Antipodes 指地球正对面；down under 常特指南半球国家"
+      }
+    ]
+  },
+  {
+    "word": "downfall",
+    "synonyms": [
+      {
+        "word": "ruin",
+        "tag": "区别",
+        "usage_desc": "ruin 强调彻底毁坏；downfall 侧重突然衰落或灭亡"
+      },
+      {
+        "word": "downpour",
+        "tag": "区别",
+        "usage_desc": "downpour 特指倾盆大雨；downfall 指大雨时略显陈旧"
+      }
+    ]
+  },
+  {
+    "word": "downgrade",
+    "synonyms": [
+      {
+        "word": "demote",
+        "tag": "区别",
+        "usage_desc": "demote 特指职位降级；downgrade 可泛指降低等级或质量"
+      },
+      {
+        "word": "reduce",
+        "tag": "区别",
+        "usage_desc": "reduce 侧重数量或程度减少；downgrade 强调等级或重要性下降"
+      }
+    ]
+  },
+  {
+    "word": "downhill",
+    "synonyms": [
+      {
+        "word": "declining",
+        "tag": "区别",
+        "usage_desc": "declining 形容逐渐下降趋势；downhill 强调方向性下坡"
+      },
+      {
+        "word": "descending",
+        "tag": "区别",
+        "usage_desc": "descending 指具体向下移动；downhill 可比喻衰退"
+      }
+    ]
+  },
+  {
+    "word": "Downing Street",
+    "synonyms": [
+      {
+        "word": "British government",
+        "tag": "区别",
+        "usage_desc": "British government 泛指英国政府；Downing Street 特指首相官邸及决策中心"
+      },
+      {
+        "word": "Whitehall",
+        "tag": "区别",
+        "usage_desc": "Whitehall 指英国行政机构；Downing Street 更侧重首相权威"
+      }
+    ]
+  },
+  {
+    "word": "downright",
+    "synonyms": [
+      {
+        "word": "absolute",
+        "tag": "区别",
+        "usage_desc": "absolute 强调绝对性；downright 更偏向直接、彻头彻尾的修辞"
+      },
+      {
+        "word": "complete",
+        "tag": "区别",
+        "usage_desc": "complete 侧重完整性；downright 常带贬义或强调语气"
+      }
+    ]
+  },
+  {
+    "word": "downside",
+    "synonyms": [
+      {
+        "word": "drawback",
+        "tag": "区别",
+        "usage_desc": "drawback 指具体缺陷或障碍；downside 强调事物的负面侧面"
+      },
+      {
+        "word": "disadvantage",
+        "tag": "区别",
+        "usage_desc": "disadvantage 泛指不利条件；downside 更口语化"
+      }
+    ]
+  },
+  {
+    "word": "downstairs",
+    "synonyms": [
+      {
+        "word": "below",
+        "tag": "区别",
+        "usage_desc": "below 泛指下方位置；downstairs 特指楼下楼层"
+      },
+      {
+        "word": "lower floor",
+        "tag": "区别",
+        "usage_desc": "lower floor 强调楼层较低；downstairs 更常用作副词"
+      }
+    ]
+  },
+  {
+    "word": "downstream",
+    "synonyms": [
+      {
+        "word": "downriver",
+        "tag": "区别",
+        "usage_desc": "downriver 特指河流下游方向；downstream 可泛指水流方向"
+      },
+      {
+        "word": "with the current",
+        "tag": "区别",
+        "usage_desc": "with the current 强调顺流而行；downstream 更静态位置"
+      }
+    ]
+  },
+  {
+    "word": "downward",
+    "synonyms": [
+      {
+        "word": "descending",
+        "tag": "区别",
+        "usage_desc": "descending 强调逐步下降动作；downward 侧重方向性形容词"
+      },
+      {
+        "word": "falling",
+        "tag": "区别",
+        "usage_desc": "falling 可指突然坠落；downward 更平稳的向下趋势"
+      }
+    ]
+  },
+  {
+    "word": "downwards",
+    "synonyms": [
+      {
+        "word": "down",
+        "tag": "区别",
+        "usage_desc": "down 更口语简洁；downwards 更正式强调方向过程"
+      },
+      {
+        "word": "downward",
+        "tag": "区别",
+        "usage_desc": "downward 形容词；downwards 副词形式"
+      }
+    ]
+  },
+  {
+    "word": "dowse",
+    "synonyms": [
+      {
+        "word": "divine",
+        "tag": "区别",
+        "usage_desc": "divine 泛指用超自然方式探测；dowse 特指用占卜棒找水"
+      },
+      {
+        "word": "probe",
+        "tag": "区别",
+        "usage_desc": "probe 指仔细探查；dowse 带有神秘色彩"
+      }
+    ]
+  },
+  {
+    "word": "dozen",
+    "synonyms": [
+      {
+        "word": "twelve",
+        "tag": "区别",
+        "usage_desc": "twelve 是基数词；dozen 是计数量词，常用于口语"
+      }
+    ]
+  },
+  {
+    "word": "draft",
+    "synonyms": [
+      {
+        "word": "sketch",
+        "tag": "区别",
+        "usage_desc": "sketch 指粗略草图；draft 指初步文字草稿"
+      },
+      {
+        "word": "outline",
+        "tag": "区别",
+        "usage_desc": "outline 侧重要点框架；draft 可包含完整内容"
+      }
+    ]
+  },
+  {
+    "word": "drag",
+    "synonyms": [
+      {
+        "word": "pull",
+        "tag": "区别",
+        "usage_desc": "pull 泛指拉的动作；drag 强调阻力大、缓慢费力"
+      },
+      {
+        "word": "haul",
+        "tag": "区别",
+        "usage_desc": "haul 指用力拖运重物；drag 可指拖拉蔓延"
+      }
+    ]
+  },
+  {
+    "word": "dragon",
+    "synonyms": [
+      {
+        "word": "mythical creature",
+        "tag": "区别",
+        "usage_desc": "mythical creature 泛指神话生物；dragon 是特定传说形象"
+      },
+      {
+        "word": "monster",
+        "tag": "区别",
+        "usage_desc": "monster 指恐怖怪物；dragon 常带有威严或吉祥色彩"
+      }
+    ]
+  },
+  {
+    "word": "dragoon",
+    "synonyms": [
+      {
+        "word": "cavalryman",
+        "tag": "区别",
+        "usage_desc": "cavalryman 泛指骑兵；dragoon 特指龙骑兵（步兵兼马背）"
+      },
+      {
+        "word": "coerce",
+        "tag": "区别",
+        "usage_desc": "coerce 强调强迫行为；dragoon 作为动词有武力逼迫之意"
+      }
+    ]
+  },
+  {
+    "word": "drain",
+    "synonyms": [
+      {
+        "word": "empty",
+        "tag": "区别",
+        "usage_desc": "empty 更泛指清空；drain 强调液体通过管道流出"
+      },
+      {
+        "word": "deplete",
+        "tag": "区别",
+        "usage_desc": "deplete 侧重资源耗尽；drain 可指精力慢慢消耗"
+      }
+    ]
+  },
+  {
+    "word": "drama",
+    "synonyms": [
+      {
+        "word": "play",
+        "tag": "区别",
+        "usage_desc": "play 特指舞台剧本；drama 可涵盖戏剧艺术整体"
+      },
+      {
+        "word": "theater",
+        "tag": "区别",
+        "usage_desc": "theater 指戏剧产业或场所；drama 更偏文学形式"
+      }
+    ]
+  },
+  {
+    "word": "dramatic",
+    "synonyms": [
+      {
+        "word": "theatrical",
+        "tag": "区别",
+        "usage_desc": "theatrical 指夸张表演风格；dramatic 强调戏剧性效果"
+      },
+      {
+        "word": "striking",
+        "tag": "区别",
+        "usage_desc": "striking 指引人注目；dramatic 带有情感冲击"
+      }
+    ]
+  },
+  {
+    "word": "dramatist",
+    "synonyms": [
+      {
+        "word": "playwright",
+        "tag": "区别",
+        "usage_desc": "playwright 专指创作剧本的作家；dramatist 更正式"
+      },
+      {
+        "word": "scriptwriter",
+        "tag": "区别",
+        "usage_desc": "scriptwriter 可写电影/广播剧本；dramatist 侧重舞台剧"
+      }
+    ]
+  },
+  {
+    "word": "drape",
+    "synonyms": [
+      {
+        "word": "curtain",
+        "tag": "区别",
+        "usage_desc": "curtain 特指窗帘；drape 指垂挂装饰布料"
+      },
+      {
+        "word": "cover",
+        "tag": "区别",
+        "usage_desc": "cover 泛指遮盖；drape 强调披上并形成褶皱"
+      }
+    ]
+  },
+  {
+    "word": "draper",
+    "synonyms": [
+      {
+        "word": "clothier",
+        "tag": "区别",
+        "usage_desc": "clothier 指服装商人；draper 传统上专营纺织品"
+      },
+      {
+        "word": "textile merchant",
+        "tag": "区别",
+        "usage_desc": "textile merchant 范围更广；draper 多见于英式旧称"
+      }
+    ]
+  },
+  {
+    "word": "draught",
+    "synonyms": [
+      {
+        "word": "breeze",
+        "tag": "区别",
+        "usage_desc": "breeze 指微风；draught 强调室内穿堂冷风"
+      },
+      {
+        "word": "sketch",
+        "tag": "区别",
+        "usage_desc": "sketch 为草稿；draught 是英式拼写，含义相同"
+      }
+    ]
+  },
+  {
+    "word": "drawer",
+    "synonyms": [
+      {
+        "word": "till",
+        "tag": "区别",
+        "usage_desc": "drawer泛指可滑动的存储空间；till特指收银抽屉，用法更窄"
+      },
+      {
+        "word": "compartment",
+        "tag": "区别",
+        "usage_desc": "drawer是抽屉式隔间；compartment泛指分隔的格子，不限于推拉"
+      }
+    ]
+  },
+  {
+    "word": "drawing",
+    "synonyms": [
+      {
+        "word": "sketch",
+        "tag": "区别",
+        "usage_desc": "drawing侧重线条描绘的完整画；sketch指快速勾勒的草图"
+      },
+      {
+        "word": "illustration",
+        "tag": "区别",
+        "usage_desc": "drawing泛指绘画作品；illustration多用于书籍或说明性配图"
+      }
+    ]
+  },
+  {
+    "word": "drawing board",
+    "synonyms": [
+      {
+        "word": "drafting table",
+        "tag": "区别",
+        "usage_desc": "drawing board是便携画板；drafting table是带倾斜功能的绘图桌"
+      },
+      {
+        "word": "planning board",
+        "tag": "区别",
+        "usage_desc": "drawing board专用于绘图；planning board泛指规划用的板子"
+      }
+    ]
+  },
+  {
+    "word": "drawing room",
+    "synonyms": [
+      {
+        "word": "living room",
+        "tag": "区别",
+        "usage_desc": "drawing room较正式旧式；living room是现代常用词"
+      },
+      {
+        "word": "parlor",
+        "tag": "区别",
+        "usage_desc": "drawing room用于接待；parlor多指家中会客室，稍正式"
+      }
+    ]
+  },
+  {
+    "word": "drawn",
+    "synonyms": [
+      {
+        "word": "strained",
+        "tag": "区别",
+        "usage_desc": "drawn形容面部因疲惫拉长；strained强调紧张或压力导致的扭曲"
+      },
+      {
+        "word": "tired",
+        "tag": "区别",
+        "usage_desc": "drawn侧重外貌的憔悴；tired泛指疲劳状态"
+      }
+    ]
+  },
+  {
+    "word": "drawn-out",
+    "synonyms": [
+      {
+        "word": "prolonged",
+        "tag": "区别",
+        "usage_desc": "drawn-out强调超出必要长；prolonged指时间被刻意延长"
+      },
+      {
+        "word": "lengthy",
+        "tag": "区别",
+        "usage_desc": "drawn-out多含贬义冗长；lengthy中性，仅指长度大"
+      }
+    ]
+  },
+  {
+    "word": "dread",
+    "synonyms": [
+      {
+        "word": "fear",
+        "tag": "区别",
+        "usage_desc": "dread是对即将发生的事的强烈不安；fear是更普遍害怕"
+      },
+      {
+        "word": "terror",
+        "tag": "区别",
+        "usage_desc": "dread偏忧虑；terror指极度惊骇"
+      }
+    ]
+  },
+  {
+    "word": "dreaded",
+    "synonyms": [
+      {
+        "word": "fearsome",
+        "tag": "区别",
+        "usage_desc": "dreaded强调被害怕的感觉；fearsome指本身令人恐惧"
+      },
+      {
+        "word": "formidable",
+        "tag": "区别",
+        "usage_desc": "dreaded侧重畏惧；formidable侧重强大令人敬畏"
+      }
+    ]
+  },
+  {
+    "word": "dream",
+    "synonyms": [
+      {
+        "word": "fantasy",
+        "tag": "区别",
+        "usage_desc": "dream可指睡眠梦或愿望；fantasy偏虚构幻想"
+      },
+      {
+        "word": "ambition",
+        "tag": "区别",
+        "usage_desc": "dream较空想；ambition指需努力的志向"
+      }
+    ]
+  },
+  {
+    "word": "dreamer",
+    "synonyms": [
+      {
+        "word": "visionary",
+        "tag": "区别",
+        "usage_desc": "dreamer常指不切实际；visionary含褒义有远见"
+      },
+      {
+        "word": "idealist",
+        "tag": "区别",
+        "usage_desc": "dreamer偏空想；idealist坚持理想主义"
+      }
+    ]
+  },
+  {
+    "word": "dreamy",
+    "synonyms": [
+      {
+        "word": "unrealistic",
+        "tag": "区别",
+        "usage_desc": "dreamy形容沉浸幻想；unrealistic指不切实际"
+      },
+      {
+        "word": "whimsical",
+        "tag": "区别",
+        "usage_desc": "dreamy偏梦幻；whimsical指异想天开且古怪"
+      }
+    ]
+  },
+  {
+    "word": "dredge",
+    "synonyms": [
+      {
+        "word": "excavate",
+        "tag": "区别",
+        "usage_desc": "dredge专指水下挖泥；excavate指陆地挖掘"
+      },
+      {
+        "word": "scrape",
+        "tag": "区别",
+        "usage_desc": "dredge用设备疏浚；scrape指刮除表面"
+      }
+    ]
+  },
+  {
+    "word": "dressing gown",
+    "synonyms": [
+      {
+        "word": "robe",
+        "tag": "区别",
+        "usage_desc": "dressing gown居家宽松外衣；robe多指长袍，用途更广"
+      },
+      {
+        "word": "bathrobe",
+        "tag": "区别",
+        "usage_desc": "dressing gown一般穿着；bathrobe特指浴后吸水袍"
+      }
+    ]
+  },
+  {
+    "word": "dressing room",
+    "synonyms": [
+      {
+        "word": "changing room",
+        "tag": "区别",
+        "usage_desc": "dressing room多用于剧院房间；changing room通用更衣室"
+      },
+      {
+        "word": "locker room",
+        "tag": "区别",
+        "usage_desc": "dressing room不带储物柜；locker room配备储物柜"
+      }
+    ]
+  },
+  {
+    "word": "dressing table",
+    "synonyms": [
+      {
+        "word": "vanity table",
+        "tag": "区别",
+        "usage_desc": "dressing table带抽屉镜子；vanity table多指带镜化妆台"
+      },
+      {
+        "word": "makeup table",
+        "tag": "区别",
+        "usage_desc": "dressing table更全面；makeup table侧重化妆功能"
+      }
+    ]
+  },
+  {
+    "word": "dried",
+    "synonyms": [
+      {
+        "word": "dehydrated",
+        "tag": "区别",
+        "usage_desc": "dried通用弄干；dehydrated多指食物或身体失去水分"
+      },
+      {
+        "word": "desiccated",
+        "tag": "区别",
+        "usage_desc": "dried程度较轻；desiccated强调极度干燥"
+      }
+    ]
+  },
+  {
+    "word": "drift",
+    "synonyms": [
+      {
+        "word": "float",
+        "tag": "区别",
+        "usage_desc": "drift受风或水流推动；float浮在液体表面不动"
+      },
+      {
+        "word": "waft",
+        "tag": "区别",
+        "usage_desc": "drift较慢移动；waft指轻柔飘动"
+      }
+    ]
+  },
+  {
+    "word": "drill",
+    "synonyms": [
+      {
+        "word": "bore",
+        "tag": "区别",
+        "usage_desc": "drill用旋转钻头钻孔；bore强调打孔的动作"
+      },
+      {
+        "word": "train",
+        "tag": "区别",
+        "usage_desc": "drill指反复操练；train系统培养技能"
+      }
+    ]
+  },
+  {
+    "word": "drinker",
+    "synonyms": [
+      {
+        "word": "alcoholic",
+        "tag": "区别",
+        "usage_desc": "drinker中性词；alcoholic贬义且指酗酒成瘾者"
+      },
+      {
+        "word": "tippler",
+        "tag": "区别",
+        "usage_desc": "drinker泛指饮者；tippler指常小酌的人"
+      }
+    ]
+  },
+  {
+    "word": "drinking water",
+    "synonyms": [
+      {
+        "word": "potable water",
+        "tag": "区别",
+        "usage_desc": "drinking water日常用语；potable water专业术语"
+      },
+      {
+        "word": "tap water",
+        "tag": "区别",
+        "usage_desc": "drinking water泛指可饮用；tap water特指自来水"
+      }
+    ]
+  },
+  {
+    "word": "drip",
+    "synonyms": [
+      {
+        "word": "dribble",
+        "tag": "区别",
+        "usage_desc": "drip指一滴一滴落下；dribble指少量液体缓慢流出"
+      },
+      {
+        "word": "trickle",
+        "tag": "区别",
+        "usage_desc": "drip垂直滴落；trickle沿表面缓慢流动"
+      }
+    ]
+  },
+  {
+    "word": "drive-in",
+    "synonyms": [
+      {
+        "word": "drive-through",
+        "tag": "区别",
+        "usage_desc": "drive-in停车在场地看/吃；drive-through开车经过取物"
+      },
+      {
+        "word": "drive-up",
+        "tag": "区别",
+        "usage_desc": "drive-in含娱乐设施；drive-up仅指到窗口服务"
+      }
+    ]
+  },
+  {
+    "word": "driveway",
+    "synonyms": [
+      {
+        "word": "lane",
+        "tag": "区别",
+        "usage_desc": "driveway私宅通往车库的车道；lane指窄路或小巷"
+      },
+      {
+        "word": "road",
+        "tag": "区别",
+        "usage_desc": "driveway私有；road公共道路"
+      }
+    ]
+  },
+  {
+    "word": "driving licence",
+    "synonyms": [
+      {
+        "word": "driver's license",
+        "tag": "区别",
+        "usage_desc": "driving licence英式；driver's license美式拼写"
+      },
+      {
+        "word": "driver's permit",
+        "tag": "区别",
+        "usage_desc": "driving licence正式驾照；driver's permit多指学习驾照"
+      }
+    ]
+  },
+  {
+    "word": "drop",
+    "synonyms": [
+      {
+        "word": "fall",
+        "tag": "区别",
+        "usage_desc": "drop是主动松开使下落；fall强调因重力被动下落"
+      },
+      {
+        "word": "drip",
+        "tag": "区别",
+        "usage_desc": "drop作滴下时可互换；drip更强调一滴一滴地落下"
+      }
+    ]
+  },
+  {
+    "word": "droppings",
+    "synonyms": [
+      {
+        "word": "excrement",
+        "tag": "区别",
+        "usage_desc": "excrement泛指排泄物，范围更广；droppings特指禽兽粪便。"
+      },
+      {
+        "word": "manure",
+        "tag": "区别",
+        "usage_desc": "manure强调用作肥料的粪便；droppings不一定用作肥料。"
+      }
+    ]
+  },
+  {
+    "word": "drought",
+    "synonyms": [
+      {
+        "word": "dry spell",
+        "tag": "区别",
+        "usage_desc": "dry spell指短期无雨期；drought可指长期严重干旱。"
+      },
+      {
+        "word": "shortage",
+        "tag": "区别",
+        "usage_desc": "shortage泛指缺乏任何资源；drought特指缺水。"
+      }
+    ]
+  },
+  {
+    "word": "droves",
+    "synonyms": [
+      {
+        "word": "crowd",
+        "tag": "区别",
+        "usage_desc": "crowd普通词，人群；droves常指移动中的一大群，有‘成群结队’感。"
+      },
+      {
+        "word": "throng",
+        "tag": "区别",
+        "usage_desc": "throng强调拥挤密集的人群；droves侧重于数量多且流动。"
+      }
+    ]
+  },
+  {
+    "word": "drown",
+    "synonyms": [
+      {
+        "word": "submerge",
+        "tag": "区别",
+        "usage_desc": "submerge指浸入水中；drown特指因溺水而死亡。"
+      },
+      {
+        "word": "flood",
+        "tag": "区别",
+        "usage_desc": "flood指水淹没大片区域；drown侧重人或动物被水淹没致死。"
+      }
+    ]
+  },
+  {
+    "word": "drug",
+    "synonyms": [
+      {
+        "word": "medicine",
+        "tag": "区别",
+        "usage_desc": "medicine泛指治疗药物；drug还指麻醉品、毒品。"
+      },
+      {
+        "word": "narcotic",
+        "tag": "区别",
+        "usage_desc": "narcotic特指麻醉或致幻药品；drug范围更广。"
+      }
+    ]
+  },
+  {
+    "word": "drugstore",
+    "synonyms": [
+      {
+        "word": "pharmacy",
+        "tag": "区别",
+        "usage_desc": "pharmacy侧重配药售药；drugstore在美还卖杂货日用品。"
+      },
+      {
+        "word": "chemist's",
+        "tag": "区别",
+        "usage_desc": "chemist's英式用语，与pharmacy类似；drugstore为美式。"
+      }
+    ]
+  },
+  {
+    "word": "druid",
+    "synonyms": [
+      {
+        "word": "priest",
+        "tag": "区别",
+        "usage_desc": "priest泛指宗教祭司；druid特指古代凯尔特祭司。"
+      },
+      {
+        "word": "sorcerer",
+        "tag": "区别",
+        "usage_desc": "sorcerer强调使用魔法；druid侧重自然崇拜与祭祀。"
+      }
+    ]
+  },
+  {
+    "word": "drum",
+    "synonyms": [
+      {
+        "word": "bongo",
+        "tag": "区别",
+        "usage_desc": "bongo指拉丁小鼓，双手击打；drum为鼓类统称。"
+      },
+      {
+        "word": "tom-tom",
+        "tag": "区别",
+        "usage_desc": "tom-tom指印第安鼓或桶鼓；drum包含更多类型。"
+      }
+    ]
+  },
+  {
+    "word": "drunk",
+    "synonyms": [
+      {
+        "word": "intoxicated",
+        "tag": "区别",
+        "usage_desc": "intoxicated更正式，可用于药物；drunk专指醉酒。"
+      },
+      {
+        "word": "inebriated",
+        "tag": "区别",
+        "usage_desc": "inebriated语气较文雅；drunk更口语化。"
+      }
+    ]
+  },
+  {
+    "word": "drunken",
+    "synonyms": [
+      {
+        "word": "intoxicated",
+        "tag": "区别",
+        "usage_desc": "intoxicated正式；drunken常作定语，强调醉酒状态。"
+      },
+      {
+        "word": "inebriated",
+        "tag": "区别",
+        "usage_desc": "inebriated书面用词；drunken更常见于描述行为。"
+      }
+    ]
+  },
+  {
+    "word": "dryer",
+    "synonyms": [
+      {
+        "word": "tumble dryer",
+        "tag": "区别",
+        "usage_desc": "tumble dryer特指滚筒干衣机；dryer可指任何干燥设备。"
+      },
+      {
+        "word": "dehydrator",
+        "tag": "区别",
+        "usage_desc": "dehydrator常用于食物脱水；dryer多指衣物烘干。"
+      }
+    ]
+  },
+  {
+    "word": "duchess",
+    "synonyms": [
+      {
+        "word": "countess",
+        "tag": "区别",
+        "usage_desc": "countess女伯爵，爵位低于公爵夫人；duchess公爵夫人爵位更高。"
+      },
+      {
+        "word": "baroness",
+        "tag": "区别",
+        "usage_desc": "baroness女男爵，等级最低；duchess为最高级之一。"
+      }
+    ]
+  },
+  {
+    "word": "duchy",
+    "synonyms": [
+      {
+        "word": "dukedom",
+        "tag": "区别",
+        "usage_desc": "dukedom与duchy基本同义，更强调公爵头衔；duchy侧重领地。"
+      },
+      {
+        "word": "principality",
+        "tag": "区别",
+        "usage_desc": "principality指公国或侯国；duchy特指公爵领地。"
+      }
+    ]
+  },
+  {
+    "word": "duck",
+    "synonyms": [
+      {
+        "word": "waterfowl",
+        "tag": "区别",
+        "usage_desc": "waterfowl泛指水鸟；duck特指鸭科鸟类。"
+      },
+      {
+        "word": "fowl",
+        "tag": "区别",
+        "usage_desc": "fowl包括鸡鸭等家禽；duck是其中一种。"
+      }
+    ]
+  },
+  {
+    "word": "dud",
+    "synonyms": [
+      {
+        "word": "failure",
+        "tag": "区别",
+        "usage_desc": "failure泛指失败；dud强调彻底无用或失效的东西。"
+      },
+      {
+        "word": "flop",
+        "tag": "区别",
+        "usage_desc": "flop常指演出或计划失败；dud可用于物品、弹药等。"
+      }
+    ]
+  },
+  {
+    "word": "dude",
+    "synonyms": [
+      {
+        "word": "dandy",
+        "tag": "区别",
+        "usage_desc": "dandy讲究外表时髦；dude可中性指‘家伙’，也含花花公子意。"
+      },
+      {
+        "word": "fop",
+        "tag": "区别",
+        "usage_desc": "fop贬义更重，过分注重穿着；dude语气较轻。"
+      }
+    ]
+  },
+  {
+    "word": "due",
+    "synonyms": [
+      {
+        "word": "pending",
+        "tag": "区别",
+        "usage_desc": "pending指待处理或即将到来；due强调到期应支付或发生。"
+      },
+      {
+        "word": "owed",
+        "tag": "区别",
+        "usage_desc": "owed指欠款或应得；due更突出约定时间。"
+      }
+    ]
+  },
+  {
+    "word": "duff",
+    "synonyms": [
+      {
+        "word": "rubbish",
+        "tag": "区别",
+        "usage_desc": "rubbish泛指垃圾；duff指无用的东西，语气更口语化。"
+      },
+      {
+        "word": "trash",
+        "tag": "区别",
+        "usage_desc": "trash美式垃圾；duff还可指水果布丁，需根据语境。"
+      }
+    ]
+  },
+  {
+    "word": "dull",
+    "synonyms": [
+      {
+        "word": "blunt",
+        "tag": "区别",
+        "usage_desc": "blunt仅指刀刃钝；dull还可表示无趣、阴暗等。"
+      },
+      {
+        "word": "boring",
+        "tag": "区别",
+        "usage_desc": "boring只形容乏味；dull含义更丰富。"
+      }
+    ]
+  },
+  {
+    "word": "dumb",
+    "synonyms": [
+      {
+        "word": "mute",
+        "tag": "区别",
+        "usage_desc": "mute指不能说话，常为医学或技术用词；dumb较口语化且可能含贬义。"
+      },
+      {
+        "word": "speechless",
+        "tag": "区别",
+        "usage_desc": "speechless指一时说不出话；dumb可指长期失语。"
+      }
+    ]
+  },
+  {
+    "word": "dump",
+    "synonyms": [
+      {
+        "word": "landfill",
+        "tag": "区别",
+        "usage_desc": "landfill指卫生填埋场；dump泛指垃圾场，较粗放。"
+      },
+      {
+        "word": "garbage dump",
+        "tag": "区别",
+        "usage_desc": "garbage dump与dump基本同义，更具体指生活垃圾场。"
+      }
+    ]
+  },
+  {
+    "word": "dung",
+    "synonyms": [
+      {
+        "word": "manure",
+        "tag": "区别",
+        "usage_desc": "manure强调作肥料；dung泛指动物粪便。"
+      },
+      {
+        "word": "fertilizer",
+        "tag": "区别",
+        "usage_desc": "fertilizer范围更广，包括化学肥料；dung专指粪肥。"
+      }
+    ]
+  },
+  {
+    "word": "dunno",
+    "synonyms": [
+      {
+        "word": "don't know",
+        "tag": "区别",
+        "usage_desc": "don't know标准表达；dunno为口语缩略形式，更随便。"
+      },
+      {
+        "word": "uncertain",
+        "tag": "区别",
+        "usage_desc": "uncertain表示不确定；dunno直接说不知道。"
+      }
+    ]
+  },
+  {
+    "word": "duo",
+    "synonyms": [
+      {
+        "word": "duet",
+        "tag": "区别",
+        "usage_desc": "duet特指二重唱或二重奏；duo泛指两人组合。"
+      },
+      {
+        "word": "pair",
+        "tag": "区别",
+        "usage_desc": "pair指任何一对；duo多用于表演或搭档。"
+      }
+    ]
+  },
+  {
+    "word": "durable",
+    "synonyms": [
+      {
+        "word": "long-lasting",
+        "tag": "区别",
+        "usage_desc": "long-lasting强调持续时间久；durable更侧重抗磨损耐用。"
+      },
+      {
+        "word": "sturdy",
+        "tag": "区别",
+        "usage_desc": "sturdy指结构坚固；durable还包含耐用的属性。"
+      }
+    ]
+  },
+  {
+    "word": "duration",
+    "synonyms": [
+      {
+        "word": "length",
+        "tag": "区别",
+        "usage_desc": "duration强调持续的时间长度；length泛指长度，更抽象。"
+      },
+      {
+        "word": "period",
+        "tag": "区别",
+        "usage_desc": "duration指具体持续时间；period指一段时间段，可带起止。"
+      }
+    ]
+  },
+  {
+    "word": "dusk",
+    "synonyms": [
+      {
+        "word": "twilight",
+        "tag": "区别",
+        "usage_desc": "dusk专指黄昏时分；twilight指日出前或日落后的微光期。"
+      },
+      {
+        "word": "nightfall",
+        "tag": "区别",
+        "usage_desc": "dusk强调暮色；nightfall强调夜幕降临的时刻。"
+      }
+    ]
+  },
+  {
+    "word": "dust",
+    "synonyms": [
+      {
+        "word": "dirt",
+        "tag": "区别",
+        "usage_desc": "dust为细小微粒灰尘；dirt泛指泥土污垢，颗粒较大。"
+      },
+      {
+        "word": "grime",
+        "tag": "区别",
+        "usage_desc": "dust是浮尘；grime指积久难除的黑垢。"
+      }
+    ]
+  },
+  {
+    "word": "duty",
+    "synonyms": [
+      {
+        "word": "obligation",
+        "tag": "区别",
+        "usage_desc": "duty侧重道义或职责；obligation强调法律或契约约束。"
+      },
+      {
+        "word": "responsibility",
+        "tag": "区别",
+        "usage_desc": "duty更具体；responsibility范围更广，含对后果的担当。"
+      }
+    ]
+  },
+  {
+    "word": "duty-free",
+    "synonyms": [
+      {
+        "word": "tax-free",
+        "tag": "区别",
+        "usage_desc": "duty-free专指免关税；tax-free泛指免各种税。"
+      },
+      {
+        "word": "exempt",
+        "tag": "区别",
+        "usage_desc": "duty-free形容词；exempt作形容词强调被免除资格。"
+      }
+    ]
+  },
+  {
+    "word": "duvet",
+    "synonyms": [
+      {
+        "word": "comforter",
+        "tag": "区别",
+        "usage_desc": "duvet英式，填充羽绒；comforter美式，填充化纤等。"
+      },
+      {
+        "word": "quilt",
+        "tag": "区别",
+        "usage_desc": "duvet通常无被套；quilt为绗缝薄被。"
+      }
+    ]
+  },
+  {
+    "word": "dwelling",
+    "synonyms": [
+      {
+        "word": "residence",
+        "tag": "区别",
+        "usage_desc": "dwelling较正式泛指住处；residence强调合法居住地。"
+      },
+      {
+        "word": "home",
+        "tag": "区别",
+        "usage_desc": "dwelling侧重建筑；home带感情色彩，指家庭归属。"
+      }
+    ]
+  },
+  {
+    "word": "dye",
+    "synonyms": [
+      {
+        "word": "stain",
+        "tag": "区别",
+        "usage_desc": "dye为染色染料；stain可指染色剂，也指污渍。"
+      },
+      {
+        "word": "pigment",
+        "tag": "区别",
+        "usage_desc": "dye多用于纺织；pigment指色素，不溶于水。"
+      }
+    ]
+  },
+  {
+    "word": "dying",
+    "synonyms": [
+      {
+        "word": "mortal",
+        "tag": "区别",
+        "usage_desc": "dying强调正在垂死；mortal指终有一死，非正在发生。"
+      },
+      {
+        "word": "terminal",
+        "tag": "区别",
+        "usage_desc": "dying通用；terminal特指疾病晚期，不可治愈。"
+      }
+    ]
+  },
+  {
+    "word": "dyke",
+    "synonyms": [
+      {
+        "word": "dam",
+        "tag": "区别",
+        "usage_desc": "dyke多为排水堤；dam拦水蓄水，更高大。"
+      },
+      {
+        "word": "levee",
+        "tag": "区别",
+        "usage_desc": "dyke常见于荷兰；levee指河堤防洪。"
+      }
+    ]
+  },
+  {
+    "word": "dynamic",
+    "synonyms": [
+      {
+        "word": "energetic",
+        "tag": "区别",
+        "usage_desc": "dynamic强调变化与活力；energetic侧重精力充沛。"
+      },
+      {
+        "word": "active",
+        "tag": "区别",
+        "usage_desc": "dynamic有动态含义；active强调活跃参与的状态。"
+      }
+    ]
+  },
+  {
+    "word": "dynamism",
+    "synonyms": [
+      {
+        "word": "vitality",
+        "tag": "区别",
+        "usage_desc": "dynamism指推动力；vitality指生命力、生机。"
+      },
+      {
+        "word": "energy",
+        "tag": "区别",
+        "usage_desc": "dynamism侧重变革动力；energy泛指能量、干劲。"
+      }
+    ]
+  },
+  {
+    "word": "dynamite",
+    "synonyms": [
+      {
+        "word": "explosive",
+        "tag": "区别",
+        "usage_desc": "dynamite特指一种炸药；explosive泛指所有爆炸物。"
+      },
+      {
+        "word": "TNT",
+        "tag": "区别",
+        "usage_desc": "dynamite含硝酸甘油；TNT是梯恩梯，成分不同。"
+      }
+    ]
+  },
+  {
+    "word": "e.g.",
+    "synonyms": [
+      {
+        "word": "for example",
+        "tag": "区别",
+        "usage_desc": "e.g.为拉丁缩写，正式；for example口语通用。"
+      },
+      {
+        "word": "for instance",
+        "tag": "区别",
+        "usage_desc": "e.g.常用于列举；for instance强调举例说明。"
+      }
+    ]
+  },
+  {
+    "word": "eager",
+    "synonyms": [
+      {
+        "word": "keen",
+        "tag": "区别",
+        "usage_desc": "eager 强调因期待而急切；keen 强调因兴趣而热衷"
+      },
+      {
+        "word": "enthusiastic",
+        "tag": "区别",
+        "usage_desc": "enthusiastic 语气最强，充满热情；eager 语气较弱"
+      }
+    ]
+  },
+  {
+    "word": "eagle",
+    "synonyms": [
+      {
+        "word": "hawk",
+        "tag": "区别",
+        "usage_desc": "eagle体型大，翅宽；hawk体型小，敏捷掠食。"
+      },
+      {
+        "word": "raptor",
+        "tag": "区别",
+        "usage_desc": "eagle是猛禽一种；raptor泛指所有猛禽。"
+      }
+    ]
+  },
+  {
+    "word": "earliest",
+    "synonyms": [
+      {
+        "word": "first",
+        "tag": "区别",
+        "usage_desc": "earliest强调时间最早；first强调顺序第一。"
+      },
+      {
+        "word": "initial",
+        "tag": "区别",
+        "usage_desc": "earliest侧重相对时间；initial指序列起始阶段。"
+      }
+    ]
+  },
+  {
+    "word": "earmark",
+    "synonyms": [
+      {
+        "word": "characteristic",
+        "tag": "区别",
+        "usage_desc": "earmark指独特标记；characteristic泛指显著特征。"
+      },
+      {
+        "word": "hallmark",
+        "tag": "区别",
+        "usage_desc": "earmark比喻性；hallmark强调优质或典型标志。"
+      }
+    ]
+  },
+  {
+    "word": "earn",
+    "synonyms": [
+      {
+        "word": "gain",
+        "tag": "区别",
+        "usage_desc": "earn强调劳动所得；gain泛指获得利益，不一定付出。"
+      },
+      {
+        "word": "obtain",
+        "tag": "区别",
+        "usage_desc": "earn更具体；obtain中性，指通过努力或机会取得。"
+      }
+    ]
+  },
+  {
+    "word": "earner",
+    "synonyms": [
+      {
+        "word": "breadwinner",
+        "tag": "区别",
+        "usage_desc": "earner泛指赚钱者；breadwinner强调养家糊口的人。"
+      },
+      {
+        "word": "worker",
+        "tag": "区别",
+        "usage_desc": "earner侧重收入来源；worker泛指劳动者。"
+      }
+    ]
+  },
+  {
+    "word": "earnest",
+    "synonyms": [
+      {
+        "word": "sincere",
+        "tag": "区别",
+        "usage_desc": "earnest强调热切认真；sincere侧重于真诚不虚伪。"
+      },
+      {
+        "word": "serious",
+        "tag": "区别",
+        "usage_desc": "earnest带积极投入感；serious强调严肃不轻率。"
+      }
+    ]
+  },
+  {
+    "word": "earthquake",
+    "synonyms": [
+      {
+        "word": "tremor",
+        "tag": "区别",
+        "usage_desc": "earthquake正式；tremor指轻微震动。"
+      },
+      {
+        "word": "quake",
+        "tag": "区别",
+        "usage_desc": "earthquake标准词；quake为口语缩略。"
+      }
+    ]
+  },
+  {
+    "word": "ease",
+    "synonyms": [
+      {
+        "word": "comfort",
+        "tag": "区别",
+        "usage_desc": "ease指安逸无压力；comfort强调舒适自在。"
+      },
+      {
+        "word": "relief",
+        "tag": "区别",
+        "usage_desc": "ease侧重状态；relief指从痛苦中解脱出来。"
+      }
+    ]
+  },
+  {
+    "word": "easily",
+    "synonyms": [
+      {
+        "word": "effortlessly",
+        "tag": "区别",
+        "usage_desc": "easily通用；effortlessly强调毫不费力。"
+      },
+      {
+        "word": "readily",
+        "tag": "区别",
+        "usage_desc": "easily侧重难度低；readily侧重速度快、愿意做。"
+      }
+    ]
+  },
+  {
+    "word": "eastern",
+    "synonyms": [
+      {
+        "word": "east",
+        "tag": "区别",
+        "usage_desc": "eastern作定语，如eastern region；east也可作形容词，更直接。"
+      },
+      {
+        "word": "oriental",
+        "tag": "区别",
+        "usage_desc": "eastern单纯方位；oriental常与亚洲文化关联，较旧派。"
+      }
+    ]
+  },
+  {
+    "word": "easy-going",
+    "synonyms": [
+      {
+        "word": "relaxed",
+        "tag": "区别",
+        "usage_desc": "easy-going指性格随和；relaxed指外在状态轻松。"
+      },
+      {
+        "word": "laid-back",
+        "tag": "区别",
+        "usage_desc": "easy-going正式；laid-back口语化，更随性。"
+      }
+    ]
+  },
+  {
+    "word": "eater",
+    "synonyms": [
+      {
+        "word": "consumer",
+        "tag": "区别",
+        "usage_desc": "eater 特指进食的人或动物；consumer 泛指消费任何东西"
+      },
+      {
+        "word": "devourer",
+        "tag": "区别",
+        "usage_desc": "devourer 强调狼吞虎咽；eater 中性指进食者"
+      }
+    ]
+  },
+  {
+    "word": "ebullient",
+    "synonyms": [
+      {
+        "word": "enthusiastic",
+        "tag": "区别",
+        "usage_desc": "ebullient 热情似沸腾，情感外露；enthusiastic 更常见，热情而积极"
+      },
+      {
+        "word": "exuberant",
+        "tag": "区别",
+        "usage_desc": "exuberant 强调活力充沛、精力旺盛；ebullient 侧重情感高涨"
+      }
+    ]
+  },
+  {
+    "word": "ecclesiastical",
+    "synonyms": [
+      {
+        "word": "clerical",
+        "tag": "区别",
+        "usage_desc": "ecclesiastical 指教会组织与事务；clerical 侧重神职人员"
+      },
+      {
+        "word": "churchly",
+        "tag": "区别",
+        "usage_desc": "churchly 强调与教堂建筑或仪式相关；ecclesiastical 更正式"
+      }
+    ]
+  },
+  {
+    "word": "echelon",
+    "synonyms": [
+      {
+        "word": "level",
+        "tag": "区别",
+        "usage_desc": "echelon 常指军事或组织的梯队；level 泛指标志性层次"
+      },
+      {
+        "word": "rank",
+        "tag": "区别",
+        "usage_desc": "rank 强调等级顺序；echelon 侧重梯次排列的结构"
+      }
+    ]
+  },
+  {
+    "word": "echo",
+    "synonyms": [
+      {
+        "word": "reverberation",
+        "tag": "区别",
+        "usage_desc": "echo 指声音反射后清晰重复；reverberation 指回响持续震荡"
+      },
+      {
+        "word": "repeat",
+        "tag": "区别",
+        "usage_desc": "repeat 泛指重复动作或话语；echo 专指声音反射"
+      }
+    ]
+  },
+  {
+    "word": "economic",
+    "synonyms": [
+      {
+        "word": "financial",
+        "tag": "区别",
+        "usage_desc": "economic 涉及整体经济体系；financial 侧重金融与资金"
+      },
+      {
+        "word": "monetary",
+        "tag": "区别",
+        "usage_desc": "monetary 专指货币与政策；economic 范围更广"
+      }
+    ]
+  },
+  {
+    "word": "economical",
+    "synonyms": [
+      {
+        "word": "frugal",
+        "tag": "区别",
+        "usage_desc": "economical 强调节省资源、合理利用；frugal 指生活节俭"
+      },
+      {
+        "word": "thrifty",
+        "tag": "区别",
+        "usage_desc": "thrifty 善于精打细算；economical 更侧重经济性"
+      }
+    ]
+  },
+  {
+    "word": "economics",
+    "synonyms": [
+      {
+        "word": "economic science",
+        "tag": "区别",
+        "usage_desc": "economics 是学科名称；economic science 更正式书面用语"
+      }
+    ]
+  },
+  {
+    "word": "economy",
+    "synonyms": [
+      {
+        "word": "system",
+        "tag": "区别",
+        "usage_desc": "economy 指经济体系或制度；system 泛指任何系统"
+      },
+      {
+        "word": "thrift",
+        "tag": "区别",
+        "usage_desc": "economy 表示节约时与 thrift 同义；thrift 更侧重节俭美德"
+      }
+    ]
+  },
+  {
+    "word": "ecu",
+    "synonyms": [
+      {
+        "word": "monetary unit",
+        "tag": "区别",
+        "usage_desc": "ecu 特指欧洲货币单位；monetary unit 泛指任何货币单位"
+      }
+    ]
+  },
+  {
+    "word": "eczema",
+    "synonyms": [
+      {
+        "word": "dermatitis",
+        "tag": "区别",
+        "usage_desc": "eczema 是特定慢性湿疹；dermatitis 泛指一切皮肤炎症"
+      },
+      {
+        "word": "rash",
+        "tag": "区别",
+        "usage_desc": "rash 指皮肤上的红疹；eczema 常有瘙痒、渗液等特征"
+      }
+    ]
+  },
+  {
+    "word": "edge",
+    "synonyms": [
+      {
+        "word": "border",
+        "tag": "区别",
+        "usage_desc": "edge 指物体尖锐或边缘处；border 强调边界线"
+      },
+      {
+        "word": "advantage",
+        "tag": "区别",
+        "usage_desc": "edge 表示优势时口语化；advantage 更正式常用"
+      }
+    ]
+  },
+  {
+    "word": "edged",
+    "synonyms": [
+      {
+        "word": "sharp",
+        "tag": "区别",
+        "usage_desc": "edged 指有刃的；sharp 强调锋利度"
+      },
+      {
+        "word": "bladed",
+        "tag": "区别",
+        "usage_desc": "bladed 指带有叶片状刃；edged 更通用"
+      }
+    ]
+  },
+  {
+    "word": "edgy",
+    "synonyms": [
+      {
+        "word": "nervous",
+        "tag": "区别",
+        "usage_desc": "edgy 形容紧张不安、易激惹；nervous 指内心焦虑"
+      },
+      {
+        "word": "irritable",
+        "tag": "区别",
+        "usage_desc": "edgy 带有尖刻急躁；irritable 强调易怒"
+      }
+    ]
+  },
+  {
+    "word": "edition",
+    "synonyms": [
+      {
+        "word": "version",
+        "tag": "区别",
+        "usage_desc": "edition 指书籍的版次；version 泛指不同形式或版本"
+      },
+      {
+        "word": "issue",
+        "tag": "区别",
+        "usage_desc": "issue 指出版物期号；edition 强调内容修订"
+      }
+    ]
+  },
+  {
+    "word": "editor",
+    "synonyms": [
+      {
+        "word": "compiler",
+        "tag": "区别",
+        "usage_desc": "editor 负责审改内容；compiler 侧重搜集汇编资料"
+      },
+      {
+        "word": "redactor",
+        "tag": "区别",
+        "usage_desc": "redactor 强调修订文字；editor 职责更全面"
+      }
+    ]
+  },
+  {
+    "word": "editorial",
+    "synonyms": [
+      {
+        "word": "commentary",
+        "tag": "区别",
+        "usage_desc": "editorial 代表报社观点；commentary 分析评论"
+      },
+      {
+        "word": "opinion piece",
+        "tag": "区别",
+        "usage_desc": "opinion piece 个人署名观点；editorial 机构立场"
+      }
+    ]
+  },
+  {
+    "word": "educate",
+    "synonyms": [
+      {
+        "word": "teach",
+        "tag": "区别",
+        "usage_desc": "educate 侧重全面培养；teach 指传授具体知识技能"
+      },
+      {
+        "word": "instruct",
+        "tag": "区别",
+        "usage_desc": "instruct 强调系统指导；educate 更重育人"
+      }
+    ]
+  },
+  {
+    "word": "education",
+    "synonyms": [
+      {
+        "word": "schooling",
+        "tag": "区别",
+        "usage_desc": "education 广义教育；schooling 专指学校教育"
+      },
+      {
+        "word": "instruction",
+        "tag": "区别",
+        "usage_desc": "instruction 侧重教学训练；education 包含人格培养"
+      }
+    ]
+  },
+  {
+    "word": "edwardian",
+    "synonyms": [
+      {
+        "word": "period",
+        "tag": "区别",
+        "usage_desc": "edwardian 特指爱德华七世时代；period 泛指任何历史时期风格"
+      }
+    ]
+  },
+  {
+    "word": "eel",
+    "synonyms": [
+      {
+        "word": "moray",
+        "tag": "区别",
+        "usage_desc": "eel 广义鳗鱼；moray 特指海鳝科"
+      },
+      {
+        "word": "conger",
+        "tag": "区别",
+        "usage_desc": "conger 指康吉鳗；eel 包括淡水与海水种类"
+      }
+    ]
+  },
+  {
+    "word": "effect",
+    "synonyms": [
+      {
+        "word": "result",
+        "tag": "区别",
+        "usage_desc": "effect 强调直接因果结果；result 泛指一切结果"
+      },
+      {
+        "word": "outcome",
+        "tag": "区别",
+        "usage_desc": "outcome 侧重最终结局；effect 包含影响效果"
+      }
+    ]
+  },
+  {
+    "word": "effective",
+    "synonyms": [
+      {
+        "word": "efficient",
+        "tag": "区别",
+        "usage_desc": "effective 强调能达到预期效果；efficient 强调高效、省时省力"
+      },
+      {
+        "word": "productive",
+        "tag": "区别",
+        "usage_desc": "productive 强调产出丰富；effective 强调效果显著"
+      }
+    ]
+  },
+  {
+    "word": "efficiency",
+    "synonyms": [
+      {
+        "word": "effectiveness",
+        "tag": "区别",
+        "usage_desc": "efficiency 投入产出比高；effectiveness 侧重达成目标程度"
+      },
+      {
+        "word": "productivity",
+        "tag": "区别",
+        "usage_desc": "productivity 指生产率；efficiency 包括资源利用率"
+      }
+    ]
+  },
+  {
+    "word": "efficient",
+    "synonyms": [
+      {
+        "word": "effective",
+        "tag": "区别",
+        "usage_desc": "efficient 高效省时省力；effective 强调有效达到目的"
+      },
+      {
+        "word": "productive",
+        "tag": "区别",
+        "usage_desc": "productive 产出多；efficient 更重过程效率"
+      }
+    ]
+  },
+  {
+    "word": "effort",
+    "synonyms": [
+      {
+        "word": "endeavor",
+        "tag": "区别",
+        "usage_desc": "effort 一般性努力；endeavor 指持续不懈的尝试"
+      },
+      {
+        "word": "exertion",
+        "tag": "区别",
+        "usage_desc": "exertion 强调体力或精神上的用力；effort 更通用"
+      }
+    ]
+  },
+  {
+    "word": "effortless",
+    "synonyms": [
+      {
+        "word": "easy",
+        "tag": "区别",
+        "usage_desc": "easy 泛指不费力；effortless 强调看似不费劲，实际可能熟练所致"
+      },
+      {
+        "word": "simple",
+        "tag": "区别",
+        "usage_desc": "simple 指不复杂；effortless 侧重动作本身轻松流畅"
+      }
+    ]
+  },
+  {
+    "word": "eh",
+    "synonyms": [
+      {
+        "word": "huh",
+        "tag": "区别",
+        "usage_desc": "eh 表疑问或征求同意，较中性；huh 更随意，常表疑惑"
+      }
+    ]
+  },
+  {
+    "word": "eighteen",
+    "synonyms": [
+      {
+        "word": "18",
+        "tag": "区别",
+        "usage_desc": "无实质区别，eighteen 为英文单词，18 为数字符号"
+      }
+    ]
+  },
+  {
+    "word": "eighteenth",
+    "synonyms": [
+      {
+        "word": "18th",
+        "tag": "区别",
+        "usage_desc": "eighteenth 为序数词；18th 为数字缩写，用法相同"
+      }
+    ]
+  },
+  {
+    "word": "eightieth",
+    "synonyms": [
+      {
+        "word": "80th",
+        "tag": "区别",
+        "usage_desc": "eightieth 为序数词；80th 为数字缩写，用法相同"
+      }
+    ]
+  },
+  {
+    "word": "eighty",
+    "synonyms": [
+      {
+        "word": "80",
+        "tag": "区别",
+        "usage_desc": "eighty 为英文单词；80 为数字符号，无实质区别"
+      }
+    ]
+  },
+  {
+    "word": "elaborate",
+    "synonyms": [
+      {
+        "word": "detailed",
+        "tag": "区别",
+        "usage_desc": "detailed 侧重包含细节；elaborate 强调精心设计、复杂周到"
+      },
+      {
+        "word": "intricate",
+        "tag": "区别",
+        "usage_desc": "intricate 指结构复杂难解；elaborate 侧重计划或制作的用心"
+      }
+    ]
+  },
+  {
+    "word": "elastic",
+    "synonyms": [
+      {
+        "word": "flexible",
+        "tag": "区别",
+        "usage_desc": "flexible 指易弯曲或可变通；elastic 强调受力后能恢复原状"
+      },
+      {
+        "word": "stretchy",
+        "tag": "区别",
+        "usage_desc": "stretchy 口语化，指可拉伸；elastic 更正式，兼有弹性与伸缩性"
+      }
+    ]
+  },
+  {
+    "word": "elbow",
+    "synonyms": [
+      {
+        "word": "nudge",
+        "tag": "区别",
+        "usage_desc": "nudge 轻推引起注意；elbow 用肘部推挤，力度更强"
+      }
+    ]
+  },
+  {
+    "word": "elder",
+    "synonyms": [
+      {
+        "word": "older",
+        "tag": "区别",
+        "usage_desc": "older 泛指年龄较大；elder 多用于家庭成员或辈分，表长幼关系"
+      },
+      {
+        "word": "senior",
+        "tag": "区别",
+        "usage_desc": "senior 强调地位或资历高；elder 侧重年龄更老"
+      }
+    ]
+  },
+  {
+    "word": "elderly",
+    "synonyms": [
+      {
+        "word": "aged",
+        "tag": "区别",
+        "usage_desc": "aged 语气更正式，强调年老；elderly 较委婉，指年迈但健康"
+      },
+      {
+        "word": "old",
+        "tag": "区别",
+        "usage_desc": "old 直接指年龄大；elderly 更温和，常用于形容老人"
+      }
+    ]
+  },
+  {
+    "word": "eldest",
+    "synonyms": [
+      {
+        "word": "oldest",
+        "tag": "区别",
+        "usage_desc": "oldest 通用最年长；eldest 特指子女或兄弟中排行第一"
+      },
+      {
+        "word": "firstborn",
+        "tag": "区别",
+        "usage_desc": "firstborn 强调第一个出生的孩子；eldest 侧重年龄最大"
+      }
+    ]
+  },
+  {
+    "word": "elect",
+    "synonyms": [
+      {
+        "word": "choose",
+        "tag": "区别",
+        "usage_desc": "choose 普通选择；elect 特指投票选举，更正式"
+      },
+      {
+        "word": "select",
+        "tag": "区别",
+        "usage_desc": "select 从多中精心挑选；elect 强调通过程序选出"
+      }
+    ]
+  },
+  {
+    "word": "election",
+    "synonyms": [
+      {
+        "word": "vote",
+        "tag": "区别",
+        "usage_desc": "vote 指投票行为；election 指整个选举过程或活动"
+      },
+      {
+        "word": "poll",
+        "tag": "区别",
+        "usage_desc": "poll 常指民意调查或投票计数；election 更正式指选举"
+      }
+    ]
+  },
+  {
+    "word": "elector",
+    "synonyms": [
+      {
+        "word": "voter",
+        "tag": "区别",
+        "usage_desc": "voter 泛指投票人；elector 较正式，尤指有选举权的公民"
+      },
+      {
+        "word": "constituent",
+        "tag": "区别",
+        "usage_desc": "constituent 指选区选民；elector 强调选举权利本身"
+      }
+    ]
+  },
+  {
+    "word": "electoral",
+    "synonyms": [
+      {
+        "word": "voting",
+        "tag": "区别",
+        "usage_desc": "voting 侧重投票行为；electoral 指与选举制度或程序相关"
+      },
+      {
+        "word": "election",
+        "tag": "区别",
+        "usage_desc": "election 是名词；electoral 是形容词，修饰选举相关"
+      }
+    ]
+  },
+  {
+    "word": "electric",
+    "synonyms": [
+      {
+        "word": "electrical",
+        "tag": "区别",
+        "usage_desc": "electrical 泛指与电有关的学科或设备；electric 多用于具体带电物品"
+      },
+      {
+        "word": "powered",
+        "tag": "区别",
+        "usage_desc": "powered 强调由能源驱动；electric 特指用电作为能源"
+      }
+    ]
+  },
+  {
+    "word": "emotion",
+    "synonyms": [
+      {
+        "word": "feeling",
+        "tag": "区别",
+        "usage_desc": "emotion 指较强烈的感情反应；feeling 泛指一切感觉和感受"
+      },
+      {
+        "word": "sentiment",
+        "tag": "区别",
+        "usage_desc": "sentiment 多指带有思想成分的情感；emotion 更强调本能反应"
+      }
+    ]
+  },
+  {
+    "word": "enough",
+    "synonyms": [
+      {
+        "word": "sufficient",
+        "tag": "区别",
+        "usage_desc": "enough 较口语化；sufficient 较正式，多用于书面"
+      },
+      {
+        "word": "adequate",
+        "tag": "区别",
+        "usage_desc": "adequate 强调刚够或勉强够；enough 强调正好满足需求"
+      }
+    ]
+  },
+  {
+    "word": "famous",
+    "synonyms": [
+      {
+        "word": "well-known",
+        "tag": "区别",
+        "usage_desc": "famous 强调名声大、广为人知；well-known 语气较弱，指众所周知"
+      },
+      {
+        "word": "notorious",
+        "tag": "区别",
+        "usage_desc": "notorious 强调臭名昭著的坏名声；famous 是中性或褒义"
+      }
+    ]
+  },
+  {
+    "word": "happen",
+    "synonyms": [
+      {
+        "word": "occur",
+        "tag": "区别",
+        "usage_desc": "happen 多用偶然发生；occur 可用计划或偶发事件，更正式"
+      },
+      {
+        "word": "take place",
+        "tag": "区别",
+        "usage_desc": "take place 多指有计划地发生；happen 强调偶然性"
+      }
+    ]
+  },
+  {
+    "word": "important",
+    "synonyms": [
+      {
+        "word": "significant",
+        "tag": "区别",
+        "usage_desc": "important 最常用；significant 强调有重大意义或影响"
+      },
+      {
+        "word": "vital",
+        "tag": "区别",
+        "usage_desc": "vital 强调必不可少、至关重要；important 程度较轻"
+      }
+    ]
+  },
+  {
+    "word": "problem",
+    "synonyms": [
+      {
+        "word": "issue",
+        "tag": "区别",
+        "usage_desc": "problem 强调需要解决的难题；issue 强调有争议的话题"
+      },
+      {
+        "word": "trouble",
+        "tag": "区别",
+        "usage_desc": "trouble 强调困扰或麻烦；problem 更客观"
+      }
+    ]
+  },
+  {
+    "word": "use",
+    "synonyms": [
+      {
+        "word": "utilize",
+        "tag": "区别",
+        "usage_desc": "use 最常用；utilize 强调有效利用某物发挥最大作用"
+      },
+      {
+        "word": "employ",
+        "tag": "区别",
+        "usage_desc": "employ 较正式，强调运用方法或手段；use 最口语化"
+      }
+    ]
+  },
+  {
+    "word": "world",
+    "synonyms": [
+      {
+        "word": "earth",
+        "tag": "区别",
+        "usage_desc": "world 强调人类社会或领域；earth 强调星球或地面"
+      },
+      {
+        "word": "globe",
+        "tag": "区别",
+        "usage_desc": "globe 强调地球的球体形状；world 更侧重抽象的概念"
+      }
+    ]
+  }
+]

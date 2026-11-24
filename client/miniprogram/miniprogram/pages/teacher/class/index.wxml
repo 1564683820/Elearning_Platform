@@ -1,0 +1,119 @@
+<view class="page">
+  <!-- 顶部窄条 -->
+  <view class="top-bar">
+    <view class="top-bar-line"></view>
+    <view class="top-bar-row">
+      <view class="top-bar-left">
+        <text class="top-bar-title">班级管理</text>
+        <text class="top-bar-sub">管理班级与学生花名册</text>
+      </view>
+      <view class="top-bar-add" bindtap="openCreate">
+        <view class="add-icon-cross"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+  </view>
+
+  <!-- 空状态 Editorial -->
+  <view class="empty-state" wx:elif="{{classes.length === 0}}">
+    <view class="empty-art">
+      <view class="empty-shelf">
+        <view class="empty-book empty-book-1"></view>
+        <view class="empty-book empty-book-2"></view>
+        <view class="empty-book empty-book-3"></view>
+      </view>
+    </view>
+    <text class="empty-title">还没有班级</text>
+    <text class="empty-desc">点击右上角按钮创建你的第一个班级</text>
+    <button class="empty-cta" bindtap="openCreate">新建班级</button>
+  </view>
+
+  <!-- 班级列表 — 杂志卡片 -->
+  <scroll-view class="list" scroll-y wx:else>
+    <view class="class-card" wx:for="{{classes}}" wx:key="id" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="goToClass">
+      <view class="class-card-inner">
+        <view class="class-card-icon" style="background:linear-gradient(135deg,#2C5F2D,#97BC62)">
+          <text class="class-card-initial">{{item.name.slice(0, 1)}}</text>
+        </view>
+        <view class="class-card-body">
+          <text class="class-card-name">{{item.name}}</text>
+          <view class="class-card-meta">
+            <text class="class-card-meta-text">学生 {{item.student_count || 0}} 人</text>
+            <view class="class-card-dot"></view>
+            <text class="class-card-meta-text">2026 学年</text>
+          </view>
+          <view class="class-card-badge {{item.student_count > 0 ? 'badge-done' : 'badge-empty'}}">
+            <view class="badge-indicator {{item.student_count > 0 ? 'indicator-do' : 'indicator-pe'}}"></view>
+            <text wx:if="{{item.student_count > 0}}">花名册已导入</text>
+            <text wx:else>未导入花名册</text>
+          </view>
+        </view>
+        <view class="class-card-arrow"></view>
+      </view>
+      <button class="class-card-import" catchtap="openCreate" wx:if="{{item.student_count === 0}}">
+        导入花名册
+      </button>
+    </view>
+  </scroll-view>
+
+  <!-- 新建班级弹窗 -->
+  <view class="modal {{showCreateDialog ? 'modal-show' : ''}}" bindtap="closeCreate">
+    <view class="modal-sheet" catchtap="">
+      <!-- 装饰头部 -->
+      <view class="create-top">
+        <view class="create-leaf"></view>
+        <view class="create-top-inner">
+          <text class="create-en-label">NEW CLASS</text>
+          <text class="create-title">新建班级</text>
+        </view>
+        <view class="modal-close" bindtap="closeCreate">
+          <view class="close-icon"></view>
+        </view>
+      </view>
+      <!-- 主体输入区 -->
+      <view class="create-body">
+        <view class="create-writing-area">
+          <text class="create-write-label">班级名称</text>
+          <view class="create-input-wrap">
+            <input class="create-input" placeholder="如：五年级3班" model:value="{{newClassName}}" />
+          </view>
+          <view class="create-input-foot">
+            <text class="create-hint">创建一个新班级来管理学生</text>
+            <text class="create-counter">{{newClassName.length}}/32</text>
+          </view>
+        </view>
+      </view>
+      <button class="create-btn" bindtap="confirmCreate">确认创建</button>
+    </view>
+  </view>
+
+  <!-- 删除确认弹窗 -->
+  <view class="modal {{showDeleteDialog ? 'modal-show' : ''}}" bindtap="closeDelete">
+    <view class="modal-sheet" catchtap="">
+      <view class="modal-handle"></view>
+      <view class="modal-header">
+        <text class="modal-title" style="color:#C73A3A">删除班级</text>
+        <button class="modal-close" bindtap="closeDelete">
+          <view class="close-icon"></view>
+        </button>
+      </view>
+      <view class="modal-body">
+        <view class="modal-warn-bar">
+          <view class="modal-warn-icon"></view>
+          <text class="modal-warn-text">删除后班级数据不可恢复</text>
+        </view>
+        <text class="modal-label" style="margin-top:16rpx">请输入班级名称确认删除：</text>
+        <view class="modal-confirm-name">{{deleteTarget && deleteTarget.name}}</view>
+        <input class="modal-input" placeholder="输入班级名称以确认" value="{{deleteConfirmName}}" bindinput="onDeleteConfirmInput" />
+      </view>
+      <button class="modal-btn modal-btn-danger" bindtap="doDelete">确认删除</button>
+    </view>
+  </view>
+
+  <!-- 底部 TabBar -->
+  <custom-tab-bar activeIndex="0"></custom-tab-bar>
+</view>

@@ -1,0 +1,104 @@
+# elearn-milvus-rag-setup - E-Learning Milvus RAG 部署配置
+# Milvus 向量数据库 + etcd + MinIO + Attu 管理界面 + Redis 缓存
+# MySQL 使用本地 Windows 服务（不需要 Docker）
+
+services:
+  # Redis 缓存
+  redis:
+    image: redis:7-alpine
+    container_name: elearn-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    environment:
+      REDIS_PASSWORD: "${REDIS_PASSWORD:?Set REDIS_PASSWORD in server/.env}"
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD:?Set REDIS_PASSWORD in server/.env}"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", 'test "$$(REDISCLI_AUTH="$$REDIS_PASSWORD" redis-cli ping)" = PONG']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Milvus 元数据存储 (etcd)
+  milvus-etcd:
+    image: quay.io/coreos/etcd:v3.5.5
+    container_name: elearn-milvus-etcd
+    restart: unless-stopped
+    environment:
+      ETCD_AUTO_COMPACTION_MODE: revision
+      ETCD_AUTO_COMPACTION_RETENTION: "1000"
+      ETCD_QUOTA_BACKEND_BYTES: "4294967296"
+      ETCD_SNAPSHOT_COUNT: "50000"
+    volumes:
+      - etcd_data:/etcd
+    command: etcd -advertise-client-urls=http://127.0.0.1:2379 -listen-client-urls http://0.0.0.0:2379 --data-dir /etcd
+    healthcheck:
+      test: ["CMD", "etcdctl", "endpoint", "health"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  # Milvus 对象存储 (MinIO)
+  milvus-minio:
+    image: minio/minio:RELEASE.2024-05-28T17-19-04Z
+    container_name: elearn-milvus-minio
+    restart: unless-stopped
+    environment:
+      MINIO_ROOT_USER: "${MINIO_ROOT_USER:?Set MINIO_ROOT_USER in server/.env}"
+      MINIO_ROOT_PASSWORD: "${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in server/.env}"
+    volumes:
+      - minio_data:/minio_data
+    command: minio server /minio_data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  # Milvus 向量数据库
+  milvus:
+    image: milvusdb/milvus:v2.5.14
+    container_name: elearn-milvus
+    restart: unless-stopped
+    command: ["milvus", "run", "standalone"]
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    environment:
+      ETCD_ENDPOINTS: milvus-etcd:2379
+      MINIO_ADDRESS: milvus-minio:9000
+      MINIO_ACCESS_KEY: "${MINIO_ROOT_USER:?Set MINIO_ROOT_USER in server/.env}"
+      MINIO_SECRET_KEY: "${MINIO_ROOT_PASSWORD:?Set MINIO_ROOT_PASSWORD in server/.env}"
+    volumes:
+      - milvus_data:/var/lib/milvus
+    depends_on:
+      milvus-etcd:
+        condition: service_started
+      milvus-minio:
+        condition: service_started
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  # Attu - Milvus Web 管理界面
+  attu:
+    image: zilliz/attu:v2.5.11
+    container_name: elearn-milvus-attu
+    restart: unless-stopped
+    ports:
+      - "18000:3000"
+    environment:
+      MILVUS_URL: milvus:19530
+    depends_on:
+      milvus:
+        condition: service_started
+
+volumes:
+  redis_data:
+  etcd_data:
+  minio_data:
+  milvus_data:

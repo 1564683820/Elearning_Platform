@@ -1,0 +1,10 @@
+{
+  "name": "elearning-h5",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build"
+  }
+}

@@ -1,0 +1,210 @@
+<!-- 小e - 智能助手 -->
+<view class="page">
+  <!-- 渐变Header + Tab -->
+  <view class="chat-header" style="padding-top: {{navBarTop}}px;">
+    <view class="header-top" style="height: {{navBarHeight}}px;">
+      <text class="header-sparkle"></text>
+      <view class="header-center">
+        <text class="header-title">智能对话</text>
+        <text class="header-subtitle">AI 驱动的情景练习与知识问答</text>
+      </view>
+    </view>
+    <view class="header-tabs">
+      <view class="header-tab {{activeTab === index ? 'active' : ''}}"
+            wx:for="{{tabs}}" wx:key="index"
+            data-index="{{index}}" bindtap="onTabChange">
+        <text class="tab-icon">{{item.icon}}</text>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ===== Tab 0: 情景对话（模式选择 + 场景选择 + 进入对话） ===== -->
+
+  <scroll-view scroll-y class="tab-content" style="height: calc(100vh - {{headerHeight}}px);" wx:if="{{activeTab === 0}}">
+    <view class="dialogue-entry">
+      <!-- 步骤指示器 -->
+      <view class="step-indicator">
+        <view class="step-dot {{selectedMode ? 'step-done' : 'step-active'}}">1</view>
+        <view class="step-line {{selectedMode ? 'step-line-done' : ''}}"></view>
+        <view class="step-dot {{selectedScene ? 'step-done' : (selectedMode ? 'step-active' : '')}}">2</view>
+        <view class="step-line {{selectedScene ? 'step-line-done' : ''}}"></view>
+        <view class="step-dot {{selectedMode && selectedScene ? 'step-active' : ''}}">3</view>
+      </view>
+
+      <!-- 步骤1: 选择对话方式 -->
+      <view class="dialogue-section">
+        <text class="section-label">选择对话方式</text>
+        <view class="mode-selector">
+          <view class="mode-card {{selectedMode === 'realtime' ? 'mode-card-active' : ''}}" data-mode="realtime" bindtap="onSelectMode">
+            <view class="mode-card-top">
+              <text class="mode-icon">🎤</text>
+              <view class="mode-check {{selectedMode === 'realtime' ? 'mode-checked' : ''}}">
+                <text class="mode-check-icon" wx:if="{{selectedMode === 'realtime'}}">✓</text>
+              </view>
+            </view>
+            <text class="mode-name">实时语音对话</text>
+            <text class="mode-desc">按住说话，与小e实时英语对练，沉浸式语音互动</text>
+          </view>
+          <view class="mode-card {{selectedMode === 'text' ? 'mode-card-active' : ''}}" data-mode="text" bindtap="onSelectMode">
+            <view class="mode-card-top">
+              <text class="mode-icon">💬</text>
+              <view class="mode-check {{selectedMode === 'text' ? 'mode-checked' : ''}}">
+                <text class="mode-check-icon" wx:if="{{selectedMode === 'text'}}">✓</text>
+              </view>
+            </view>
+            <text class="mode-name">文字场景对话</text>
+            <text class="mode-desc">选择场景，与小e进行文字角色扮演，逐步提升语感</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 步骤2: 选择场景 -->
+      <view class="dialogue-section">
+        <text class="section-label">选择场景</text>
+        <view class="scenario-grid">
+          <view class="scene-card {{selectedScene && selectedScene.id === item.id ? 'scene-card-active' : ''}}"
+                wx:for="{{scenarioPresets}}" wx:key="id"
+                data-id="{{item.id}}" data-name="{{item.name}}" data-icon="{{item.icon}}" bindtap="onSelectScene">
+            <text class="scene-card-icon">{{item.icon}}</text>
+            <text class="scene-card-name">{{item.name}}</text>
+            <view class="scene-card-check" wx:if="{{selectedScene && selectedScene.id === item.id}}">
+              <text class="scene-check-icon">✓</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 麦克风测试（折叠面板） -->
+      <view class="dialogue-section">
+        <view class="mic-test-toggle" bindtap="onToggleMicTest">
+          <text class="mic-test-toggle-icon">🎙️</text>
+          <text class="mic-test-toggle-text">麦克风测试</text>
+          <text class="mic-test-toggle-arrow {{micTestVisible ? 'arrow-up' : ''}}">▾</text>
+        </view>
+        <view class="mic-test-panel" wx:if="{{micTestVisible}}">
+          <view class="mic-test-text-box">
+            <text class="mic-test-label">请朗读以下内容测试麦克风：</text>
+            <text class="mic-test-sentence">Life is like a box of chocolates, you never know what you're gonna get.</text>
+          </view>
+          <view class="mic-test-actions">
+            <view class="mic-test-btn {{micTestRecording ? 'btn-recording' : 'btn-record'}}"
+                  bindtap="{{micTestRecording ? 'stopMicTestRecord' : 'startMicTestRecord'}}">
+              <text class="mic-test-btn-icon">{{micTestRecording ? '⏹' : '🎤'}}</text>
+              <text class="mic-test-btn-label">{{micTestRecording ? '停止录音' : '开始录音'}}</text>
+            </view>
+            <view class="mic-test-btn btn-play {{micTestPlaying ? 'playing' : ''}}"
+                  wx:if="{{micTestTempPath && !micTestRecording}}"
+                  bindtap="playMicTestAudio">
+              <text class="mic-test-btn-icon">{{micTestPlaying ? '⏹' : '▶'}}</text>
+              <text class="mic-test-btn-label">{{micTestPlaying ? '停止' : '回放'}}</text>
+            </view>
+          </view>
+          <view class="mic-test-tip" wx:if="{{micTestTempPath && !micTestRecording && !micTestPlaying}}">
+            <text class="mic-test-tip-text">✅ 麦克风正常工作，录音已生成。</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 步骤3: 进入对话 -->
+      <view class="dialogue-section enter-section">
+        <view class="enter-btn {{selectedMode && selectedScene ? '' : 'enter-btn-disabled'}}" bindtap="onEnterDialogue">
+          <text class="enter-btn-text">{{selectedMode && selectedScene ? '开始 ' + (selectedMode === 'realtime' ? '语音' : '文字') + '对话' : '请选择方式和场景'}}</text>
+          <text class="enter-btn-arrow">→</text>
+        </view>
+      </view>
+    </view>
+    <view style="height: 40rpx;"></view>
+  </scroll-view>
+
+  <!-- ===== Tab 1: 智能问答 ===== -->
+  <scroll-view scroll-y class="chat-scroll tab-content" style="height: calc(100vh - {{headerHeight}}px - {{inputBarHeight}}px);" scroll-into-view="{{scrollToId}}" scroll-with-animation enhanced show-scrollbar="{{false}}" wx:if="{{activeTab === 1}}">
+    <view class="chat-list">
+      <view class="msg-row {{item.role === 'ai' ? 'msg-ai' : 'msg-user'}}"
+            wx:for="{{messages}}" wx:key="index">
+        <!-- 正在思考气泡 -->
+        <view class="msg-bubble bubble-ai thinking-bubble" wx:if="{{item.thinking}}">
+          <text class="thinking-label">小e正在思考</text>
+          <view class="thinking-dots">
+            <view class="thinking-dot"></view>
+            <view class="thinking-dot"></view>
+            <view class="thinking-dot"></view>
+          </view>
+        </view>
+        <!-- 普通 AI 气泡（Markdown 渲染） -->
+        <view class="msg-bubble bubble-ai" wx:elif="{{!item.thinking && item.role === 'ai'}}">
+          <rich-text class="md-content" nodes="{{item.contentHtml || item.content}}" />
+          <text class="stream-cursor" wx:if="{{index === messages.length - 1 && sending}}">|</text>
+        </view>
+        <!-- 用户气泡（纯文本） -->
+        <view class="msg-bubble bubble-user" wx:else>
+          <text user-select>{{item.content}}</text>
+        </view>
+      </view>
+    </view>
+    <view id="msg-bottom"></view>
+  </scroll-view>
+
+  <!-- ===== Tab 2: 智能翻译 ===== -->
+  <scroll-view scroll-y class="translate-scroll tab-content" style="height: calc(100vh - {{headerHeight}}px);" wx:if="{{activeTab === 2}}">
+    <!-- 翻译方向 -->
+    <view class="direction-row">
+      <view class="direction-label {{direction === 'zh2en' ? 'active' : ''}}" bindtap="onDirectionChange" data-dir="zh2en">中 → 英</view>
+      <view class="direction-switch" bindtap="onToggleDirection">
+        <text class="switch-icon">⇄</text>
+      </view>
+      <view class="direction-label {{direction === 'en2zh' ? 'active' : ''}}" bindtap="onDirectionChange" data-dir="en2zh">英 → 中</view>
+    </view>
+
+    <!-- 输入区 -->
+    <view class="translate-card input-card card">
+      <text class="card-label">{{direction === 'zh2en' ? '输入中文' : '输入英文'}}</text>
+      <textarea class="translate-textarea" placeholder="输入要翻译的内容..."
+                value="{{inputText}}" bindinput="onTranslateInput" maxlength="5000" />
+      <view class="input-toolbar">
+        <view class="toolbar-btn" bindtap="onImageTranslate">
+          <text class="toolbar-icon">🖼</text>
+          <text class="toolbar-btn-text">选择图片</text>
+        </view>
+        <text class="char-count">{{charCount}}/5000</text>
+        <view class="btn-primary translate-btn" bindtap="onTranslate">
+          <text>🌐</text>
+          <text>翻译</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 输出区 -->
+    <view class="translate-card output-card card" wx:if="{{translated}}">
+      <view class="output-header">
+        <view class="output-status-wrap">
+          <text class="output-check">✓</text>
+          <text class="output-status">翻译完成</text>
+        </view>
+        <view class="copy-btn" bindtap="onCopy">
+          <text class="copy-icon">📋</text>
+          <text class="copy-text">复制</text>
+        </view>
+      </view>
+      <text user-select class="output-text">{{outputText}}</text>
+    </view>
+
+    <view style="height: 40rpx;"></view>
+  </scroll-view>
+
+  <!-- 输入栏（仅智能问答时显示） -->
+  <view class="input-bar" wx:if="{{activeTab === 1}}">
+    <view class="input-wrap">
+      <input class="chat-input" placeholder="{{sending ? '小e正在回复中...' : '输入你想了解的知识点...'}}"
+             value="{{inputValue}}" bindinput="onInput"
+             disabled="{{sending}}"
+             confirm-type="send" bindconfirm="onSend" />
+    </view>
+    <view class="add-btn" bindtap="onAddAttachment">
+      <text class="add-icon">+</text>
+    </view>
+    <view class="send-btn {{sending ? 'send-disabled' : ''}}" bindtap="onSend">
+      <text class="send-icon">{{sending ? '…' : '➤'}}</text>
+    </view>
+  </view>
+</view>

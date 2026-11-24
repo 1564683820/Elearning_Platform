@@ -1,0 +1,102 @@
+<view class="page">
+  <!-- 加载 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+  </view>
+
+  <block wx:else>
+    <!-- 核心指标 -->
+    <view class="stats-grid">
+      <view class="stat-card primary"><text class="stat-value">{{avgScore}}</text><text class="stat-label">平均分</text></view>
+      <view class="stat-card success"><text class="stat-value">{{maxScore}}</text><text class="stat-label">最高分</text></view>
+      <view class="stat-card danger"><text class="stat-value">{{minScore}}</text><text class="stat-label">最低分</text></view>
+      <view class="stat-card"><text class="stat-value">{{gradedStudents}}/{{totalStudents}}</text><text class="stat-label">已批改</text></view>
+    </view>
+
+    <!-- 得分率 -->
+    <view class="rate-bar" wx:if="{{multiScoreRate > 0 || singleScoreRate > 0}}">
+      <view class="rate-item">
+        <text class="rate-label">单选得分率</text>
+        <view class="rate-track"><view class="rate-fill single" style="width: {{singleScoreRate}}%"></view></view>
+        <text class="rate-value">{{singleScoreRate}}%</text>
+      </view>
+      <view class="rate-item" wx:if="{{multiScoreRate > 0}}">
+        <text class="rate-label">多选得分率</text>
+        <view class="rate-track"><view class="rate-fill multi" style="width: {{multiScoreRate}}%"></view></view>
+        <text class="rate-value">{{multiScoreRate}}%</text>
+      </view>
+    </view>
+
+    <!-- 成绩分布图 -->
+    <view class="chart-card" wx:if="{{distribution.length > 0}}">
+      <canvas id="distributionChart" class="chart-canvas" type="2d"></canvas>
+    </view>
+
+    <!-- 各题正确率 -->
+    <view class="chart-card" wx:if="{{questionAccuracy.length > 0}}">
+      <canvas id="accuracyChart" class="chart-canvas" type="2d"></canvas>
+    </view>
+
+    <!-- 高频错题TOP5 -->
+    <view class="section-card" wx:if="{{topWrongQuestions.length > 0}}">
+      <view class="section-card-title">高频错题 TOP{{topWrongQuestions.length}}</view>
+      <view class="wrong-item" wx:for="{{topWrongQuestions}}" wx:key="question_number"
+            data-question-number="{{item.question_number || item.number}}" bindtap="onQuestionTap">
+        <text class="wrong-rank">{{index + 1}}</text>
+        <view class="wrong-info">
+          <text class="wrong-question">第{{item.question_number || item.number}}题 <text class="wrong-type {{item.question_type === 'multiple' ? 'multi' : ''}}">{{item.question_type === 'multiple' ? '[多选]' : '[单选]'}}</text></text>
+          <text class="wrong-error-count">{{item.error_count || item.wrong_count || 0}}人做错</text>
+        </view>
+        <text class="wrong-rate {{(item.error_rate || item.rate || 0) >= 0.7 ? 'danger' : 'warn'}}">{{Math.round((item.error_rate || item.rate || 0) * 100)}}%</text>
+      </view>
+    </view>
+
+    <!-- 多选错误类型 -->
+    <view class="section-card" wx:if="{{multiErrorStats}}">
+      <view class="section-card-title">多选错误类型分布</view>
+      <view class="multi-stats">
+        <view class="multi-stat-item" wx:if="{{multiErrorStats.multi_partial || multiErrorStats.partial}}">
+          <text class="multi-stat-label">部分选错</text><text class="multi-stat-value warn">{{multiErrorStats.multi_partial || multiErrorStats.partial || 0}}</text>
+        </view>
+        <view class="multi-stat-item" wx:if="{{multiErrorStats.multi_short || multiErrorStats.short}}">
+          <text class="multi-stat-label">漏选</text><text class="multi-stat-value warn">{{multiErrorStats.multi_short || multiErrorStats.short || 0}}</text>
+        </view>
+        <view class="multi-stat-item" wx:if="{{multiErrorStats.multi_excess || multiErrorStats.excess}}">
+          <text class="multi-stat-label">多涂</text><text class="multi-stat-value danger">{{multiErrorStats.multi_excess || multiErrorStats.excess || 0}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 学生成绩列表 -->
+    <view class="section-card" wx:if="{{studentScores.length > 0}}">
+      <view class="section-card-title">学生个人成绩</view>
+      <view class="student-item" wx:for="{{studentScores}}" wx:key="id"
+            data-student-id="{{item.student_id || item.studentId}}"
+            data-student-name="{{item.student_name || item.studentName}}"
+            bindtap="goToStudentDetail">
+        <text class="student-avatar">{{item._avatarChar}}</text>
+        <view class="student-info">
+          <text class="student-name">{{item.student_name || item.studentName}}</text>
+          <text class="student-number" wx:if="{{item.exam_number}}">考号: {{item.exam_number}}</text>
+        </view>
+        <text class="student-score">{{item.score || 0}}分</text>
+        <text class="student-rate">{{item.accuracy ? Math.round(item.accuracy * 100) : 0}}%</text>
+      </view>
+    </view>
+  </block>
+
+  <!-- 单题详情弹窗 -->
+  <view class="modal-overlay" wx:if="{{selectedQuestion}}" bindtap="closeQuestionDetail">
+    <view class="modal-box" catchtap="">
+      <text class="modal-title">第{{selectedQuestion.question_number}}题 学情详情</text>
+      <view class="modal-body">
+        <text class="modal-type">{{selectedQuestion.question_type === 'multiple' ? '多选题' : '单选题'}}</text>
+        <view class="modal-stat"><text>正确率</text><text class="{{selectedQuestion.accuracy < 0.6 ? 'danger' : ''}}">{{Math.round((selectedQuestion.accuracy || 0) * 100)}}%</text></view>
+        <view class="modal-stat"><text>正确人数</text><text class="correct">{{selectedQuestion.correct_count || 0}}人</text></view>
+        <view class="modal-stat"><text>错误人数</text><text class="wrong">{{selectedQuestion.wrong_count || 0}}人</text></view>
+        <view class="modal-stat" wx:if="{{selectedQuestion.multi_short || selectedQuestion.multi_partial}}"><text>漏选/部分选错</text><text class="warn">{{selectedQuestion.multi_short || 0}}/{{selectedQuestion.multi_partial || 0}}人</text></view>
+      </view>
+      <button class="modal-close" bindtap="closeQuestionDetail">关闭</button>
+    </view>
+  </view>
+</view>

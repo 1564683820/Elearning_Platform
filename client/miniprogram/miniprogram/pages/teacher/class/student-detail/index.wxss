@@ -1,0 +1,188 @@
+.page {
+  min-height: 100vh;
+  background: #F5F7FA;
+  padding: 20rpx;
+}
+
+.student-header {
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.student-name {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #333;
+}
+
+.exam-title {
+  font-size: 24rpx;
+  color: #9CA3AF;
+  margin-top: 8rpx;
+  display: block;
+}
+
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 60rpx;
+  margin: 20rpx 0;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #5B9E6F;
+  display: block;
+}
+
+.stat-label {
+  font-size: 22rpx;
+  color: #9CA3AF;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80rpx 0;
+}
+
+.empty-icon-good {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #ECFDF5;
+  margin: 0 auto 16rpx;
+}
+.check-mark-empty {
+  width: 16rpx;
+  height: 28rpx;
+  border: 4rpx solid #5B9E6F;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+  margin-top: -6rpx;
+}
+
+.empty-text {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.mistake-list {
+  margin-top: 20rpx;
+}
+
+.mistake-card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 16rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.04);
+}
+
+.mistake-header {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 16rpx;
+}
+
+.mistake-number {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.mistake-type {
+  font-size: 20rpx;
+  color: #9CA3AF;
+  background: #F3F4F6;
+  padding: 2rpx 10rpx;
+  border-radius: 4rpx;
+}
+
+.mistake-status.wrong {
+  margin-left: auto;
+  font-size: 22rpx;
+  color: #E74C3C;
+}
+
+.mistake-body {
+  border-top: 1rpx solid #F3F4F6;
+  padding-top: 12rpx;
+}
+
+.mistake-row {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  padding: 6rpx 0;
+}
+
+.mistake-label {
+  font-size: 24rpx;
+  color: #666;
+  width: 100rpx;
+}
+
+.mistake-value {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.mistake-value.wrong {
+  color: #E74C3C;
+}
+
+.mistake-value.correct {
+  color: #5B9E6F;
+}
+
+.mistake-status-info {
+  margin-top: 8rpx;
+}
+
+.status-badge {
+  font-size: 20rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 6rpx;
+}
+
+.status-badge.blank { background: #F3F4F6; color: #9CA3AF; }
+.status-badge.multi { background: #FEF2F2; color: #E74C3C; }
+.status-badge.multi_short { background: #FEF2F2; color: #E74C3C; }
+.status-badge.multi_partial { background: #FEF2F2; color: #E74C3C; }
+.status-badge.multi_excess { background: #FEF2F2; color: #E74C3C; }
+.status-badge.all_filled { background: #FEF2F2; color: #E74C3C; }
+
+.loading-container {
+  padding: 80rpx 0;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 48rpx;
+  height: 48rpx;
+  border: 4rpx solid #E5E7EB;
+  border-top-color: #5B9E6F;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.no-paper-hint {
+  text-align: center;
+  padding: 20rpx;
+  color: #9CA3AF;
+  font-size: 22rpx;
+}

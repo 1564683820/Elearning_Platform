@@ -1,0 +1,83 @@
+<!-- 短语语法训练 -->
+<view class="page">
+  <!-- 自定义Header -->
+  <view class="custom-header" style="padding-top: {{navBarTop}}px;">
+    <view class="header-inner" style="height: {{navBarHeight}}px; padding-left: {{navPadLeft}}px; padding-right: {{navPadRight}}px;">
+      <view class="header-btn" bindtap="onBack">
+        <text class="header-btn-icon">‹</text>
+      </view>
+      <text class="header-title">短语语法训练</text>
+      <view class="header-btn" bindtap="onSettingsTap">
+        <text class="header-btn-icon">⚙</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 进度区 -->
+  <view class="progress-section">
+    <view class="progress-info">
+      <text class="progress-label">第 {{currentIndex + 1}} 题</text>
+      <view class="score-row">
+        <view class="score-item">
+          <view class="score-icon-circle correct-circle">
+            <text class="score-icon-inner">✓</text>
+          </view>
+          <text class="score-correct">{{correctCount}}</text>
+        </view>
+        <view class="score-item">
+          <view class="score-icon-circle wrong-circle">
+            <text class="score-icon-inner">✗</text>
+          </view>
+          <text class="score-wrong">{{wrongCount}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-bar-fill" style="width: {{answered ? 100 : 0}}%;"></view>
+    </view>
+  </view>
+
+  <!-- 题目卡片 -->
+  <view class="question-card" wx:if="{{loading}}">正在加载…</view>
+  <view class="question-card" wx:elif="{{!question}}">
+    <text>{{error || '当前阶段暂无语法题目'}}</text>
+    <button bindtap="loadQuestion">重新加载</button>
+  </view>
+  <block wx:else>
+  <view class="question-card">
+    <view class="question-tags">
+      <text class="tag tag-warning">短语语法</text>
+    </view>
+    <text class="question-text">{{question.stem}}</text>
+  </view>
+
+  <!-- 选项 -->
+  <view class="options-list">
+    <view class="quiz-option {{answered && selectedIndex === index ? (index === question.correctIndex ? 'correct' : 'wrong') : ''}} {{answered && index === question.correctIndex ? 'correct' : ''}}"
+          wx:for="{{question.options}}" wx:key="index"
+          data-index="{{index}}" bindtap="onSelectOption">
+      <view class="option-content">
+        <view class="option-letter">{{['A','B','C','D'][index]}}</view>
+        <text class="option-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+  <text wx:if="{{submitting}}">正在保存答案…</text>
+
+  <!-- 解析 -->
+  <view class="analysis-card" wx:if="{{showAnalysis}}">
+    <view class="analysis-header">
+      <text class="analysis-icon"></text>
+      <text class="analysis-title">答案解析</text>
+    </view>
+    <view class="analysis-body">
+      <text class="analysis-rule">正确答案：{{['A','B','C','D'][question.correctIndex]}}</text>
+      <text class="analysis-text">{{question.explanation}}</text>
+    </view>
+    <view class="next-btn" bindtap="onNextQuestion">
+      <text class="next-btn-text">下一题</text>
+      <text class="next-btn-arrow">→</text>
+    </view>
+  </view>
+  </block>
+</view>

@@ -1,0 +1,12 @@
+-- Phase 11: 学习阶段值迁移（精简为 4 阶段系统）
+--
+-- ⚠️  已拆分为两个独立文件，请按需选择运行：
+--
+--   主库: mysql -u root -p elearningtest < phase11_stage_migration_main.sql
+--   单词库: mysql -u root -p elearnword < phase11_stage_migration_words.sql
+--
+-- 映射规则:
+--   旧 1-4   → 新 1 (小学)
+--   旧 5-7   → 新 2 (初中)
+--   旧 8-10  → 新 3 (高中)
+--   旧 11-13 → 新 4 (四六级)

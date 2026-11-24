@@ -1,0 +1,835 @@
+<!-- 全屏 oapp 覆盖层：从首页 navigateTo 进入 -->
+<view class="oapp">
+
+  <!-- ===== 返回首页顶栏 ===== -->
+  <view class="oapp-ret" style="padding-top: {{statusBarHeight}}px;">
+    <text class="oret-btn" bindtap="onBack">← 返回</text>
+    <text class="oret-title">记单词</text>
+    <text class="oret-placeholder"></text>
+  </view>
+
+  <!-- ===== 动态 Header（根据 oappTab 切换） ===== -->
+  <view class="oapp-hd ohd-home" wx:if="{{oappTab === 0}}">
+    <text class="oapp-hd-blank"></text>
+    <text class="ohd-stage" bindtap="onOappStageTap">{{studyPhase}} ▼</text>
+  </view>
+  <view class="oapp-hd ohd-mem" wx:elif="{{oappTab === 1}}">
+    <text class="oback"></text>
+    <text class="otitle" bindtap="onMenuTap">{{menuItems[activeTab]}}</text>
+    <text class="oright" bindtap="onWordListTap">☰</text>
+  </view>
+  <view class="oapp-hd ohd-train" wx:elif="{{oappTab === 2}}">
+    <text class="oback" bindtap="onTrainMenuTap">≡</text>
+    <text class="otitle">单词训练</text>
+    <text class="oright" bindtap="onOsetTap">⚙</text>
+  </view>
+  <view class="oapp-hd ohd-chat" wx:elif="{{oappTab === 3}}">
+    <view class="ochat-hd-inner">
+      <text class="ochat-hd-title">智能对话</text>
+      <text class="ochat-hd-sub">AI 驱动的情景练习与知识问答</text>
+    </view>
+  </view>
+  <view class="oapp-hd ohd-prof" wx:elif="{{oappTab === 4}}">
+    <text class="oprof-title">我的</text>
+    <text></text>
+  </view>
+
+  <!-- ===== 内容区 ===== -->
+  <scroll-view scroll-y class="oapp-body">
+
+    <!-- ── Tab 0: 首页 ── -->
+    <view wx:if="{{oappTab === 0}}">
+      <!-- 每日一句 -->
+      <view class="odaily">
+        <text class="odaily-en">"{{dailyQuote.en}}"</text>
+        <text class="odaily-cn">{{dailyQuote.cn}}</text>
+        <text class="odaily-days">坚持学习第 {{studyDays}} 天</text>
+      </view>
+      <!-- 学习看板 -->
+      <view class="odashboard-header">
+        <text class="odashboard-title">学习看板</text>
+        <text class="odashboard-date">今天 · {{todayDate}}</text>
+      </view>
+      <view class="odashboard-3col">
+        <view class="odashboard-item">
+          <text class="odash-num">{{stats.todayWords}} 词</text>
+          <text class="odash-label">今日单词</text>
+        </view>
+        <view class="odashboard-item">
+          <text class="odash-num">{{stats.weekWords}} 词</text>
+          <text class="odash-label">本周单词</text>
+        </view>
+        <view class="odashboard-item">
+          <text class="odash-num">{{stats.accuracy}}%</text>
+          <text class="odash-label">正确率</text>
+        </view>
+      </view>
+      <!-- 错题本 -->
+      <view class="ocard oerr-card">
+        <view class="ocard-header">
+          <text class="ocard-title">错题本</text>
+          <text class="ocard-more" bindtap="onViewAllMistakes">查看全部 ›</text>
+        </view>
+        <view class="oerr-categories">
+          <view class="oerr-cat oerr-cat-green">
+            <text class="oerr-cat-label">单词错题</text>
+            <text class="oerr-cat-count">{{mistakeStats.wordCount}}</text>
+          </view>
+          <view class="oerr-cat oerr-cat-orange">
+            <text class="oerr-cat-label">语法错题</text>
+            <text class="oerr-cat-count">{{mistakeStats.grammarCount}}</text>
+          </view>
+        </view>
+        <view class="oerr-row" wx:for="{{mistakeItems}}" wx:key="index">
+          <view class="oerr-dot"></view>
+          <text class="oerr-word">{{item.word}}</text>
+          <text class="oerr-tag">{{item.type}}</text>
+          <text class="oerr-count">错{{item.errorCount}}次</text>
+          <text class="oerr-time">{{item.time}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- ── Tab 1: 巧记 ── -->
+    <view wx:elif="{{oappTab === 1}}">
+      <!-- 三个子 Tab 切换 -->
+      <view class="omem-tabs">
+        <view class="omem-tab {{activeTab === 0 ? 'active' : ''}}" data-tab="0" bindtap="onMenuSelect">单词</view>
+        <view class="omem-tab {{activeTab === 1 ? 'active' : ''}}" data-tab="1" bindtap="onMenuSelect">情景</view>
+        <view class="omem-tab {{activeTab === 2 ? 'active' : ''}}" data-tab="2" bindtap="onMenuSelect">收藏</view>
+      </view>
+
+
+
+  <!-- ===== 单词记忆视图 ===== -->
+  <block wx:if="{{activeTab === 0}}">
+    <!-- 搜索栏 -->
+    <view class="search-wrap">
+      <view class="search-icon"></view>
+      <input class="search-input" placeholder="搜索单词..." value="{{searchValue}}" bindinput="onSearchInput" bindconfirm="onSearchConfirm" />
+    </view>
+
+    <!-- 进度 -->
+    <view class="progress-row">
+      <text class="progress-text">{{currentIndex + 1}} / {{totalWords}}</text>
+      <view class="progress-bar">
+        <view class="progress-bar-fill" style="width: {{(currentIndex + 1) / totalWords * 100}}%;"></view>
+      </view>
+    </view>
+
+    <!-- 单词卡片 -->
+    <view class="card-scroll">
+      <view class="card-scroll-inner">
+        <view class="word-card">
+          <!-- 单词+音标 -->
+          <view class="word-header">
+            <view class="word-left">
+              <text class="word-text">{{wordDetail.word}}</text>
+              <view class="word-phonetic-row">
+                <text class="phonetic">{{wordDetail.phonetic}}</text>
+                <view class="play-btn" bindtap="onPlaySound">
+                  <text class="play-icon-text"></text>
+                </view>
+              </view>
+              <!-- 考试标签 -->
+              <view class="word-tag-row" wx:if="{{wordDetail.tagList && wordDetail.tagList.length}}">
+                <view class="word-tag-item" wx:for="{{wordDetail.tagList}}" wx:key="index"
+                      style="color: {{item.color}}; background: {{item.color}}18;">
+                  <text>{{item.label}}</text>
+                </view>
+              </view>
+            </view>
+            <view class="fav-btn {{isFavorite ? 'active' : ''}}" bindtap="onToggleFavorite">
+              <text class="fav-icon"></text>
+            </view>
+          </view>
+
+          <!-- 释义 -->
+          <view class="meaning-row">
+            <text class="meaning-text">{{wordDetail.meaning}}</text>
+          </view>
+
+          <!-- 例句 - 按词性分组展示 -->
+          <view class="example-section" wx:if="{{wordDetail.posGroups && wordDetail.posGroups.length}}">
+            <view class="example-label-tag">例句</view>
+            <view class="pos-group" wx:for="{{wordDetail.posGroups}}" wx:for-item="pg" wx:key="index">
+              <view class="pos-group-header">
+                <text class="pos-label">{{pg.pos}}</text>
+                <text class="pos-defs">{{pg.definitions}}</text>
+              </view>
+              <text class="example-en" wx:if="{{pg.example.en}}">
+                <text wx:for="{{pg.example.segments}}" wx:for-item="seg" wx:key="index" class="{{seg.bold ? 'word-highlight' : ''}}">{{seg.text}}</text>
+              </text>
+              <text class="example-zh" wx:if="{{pg.example.zh}}">{{pg.example.zh}}</text>
+            </view>
+          </view>
+
+          <!-- 词形变化（靠左竖排） -->
+          <view class="exchange-section" wx:if="{{wordDetail.exchangeData && wordDetail.exchangeData.length}}">
+            <view class="section-subtitle">词形变化</view>
+            <view class="exchange-list">
+              <view class="exchange-item" wx:for="{{wordDetail.exchangeData}}" wx:key="index">
+                <text class="exchange-label">{{item.label}}</text>
+                <text class="exchange-form">{{item.form}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 近义词辨析 -->
+          <view class="synonym-section" wx:if="{{wordDetail.synonyms && wordDetail.synonyms.length}}">
+            <view class="section-subtitle">近义词辨析</view>
+            <view class="synonym-list">
+              <view class="synonym-item" wx:for="{{wordDetail.synonyms}}" wx:key="word">
+                <view class="synonym-header">
+                  <text class="synonym-word" style="color: {{item.isPrimary ? 'var(--primary)' : '#6B7280'}};">{{item.word}}</text>
+                  <text class="synonym-tag" style="background: {{item.tagBg}}; color: {{item.tagColor}};">{{item.tag}}</text>
+                </view>
+                <text class="synonym-usage">{{item.usage}}</text>
+                <text class="synonym-example">{{item.example}}</text>
+              </view>
+            </view>
+          </view>
+
+          <!-- 记忆金句 -->
+          <view class="idiom-block" wx:if="{{wordDetail.idiom}}">
+            <view class="idiom-label">💡 记忆金句</view>
+            <text user-select class="idiom-en">{{wordDetail.idiom.en}}</text>
+            <text user-select class="idiom-zh">{{wordDetail.idiom.zh}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 导航按钮 -->
+    <view class="nav-buttons">
+      <view class="nav-btn prev {{currentIndex === 0 ? 'disabled' : ''}}" bindtap="onPrev">
+        <text class="nav-arrow">‹</text>
+        <text>上一个</text>
+      </view>
+      <view class="nav-btn next {{currentIndex === totalWords - 1 ? 'disabled' : ''}}" bindtap="onNext">
+        <text>下一个</text>
+        <text class="nav-arrow">›</text>
+      </view>
+    </view>
+  </block>
+
+  <!-- ===== 情景记忆视图 ===== -->
+  <block wx:elif="{{activeTab === 1}}">
+    <view class="scene-scroll">
+      <view class="scene-inner">
+        <!-- 选词来源 -->
+        <view class="card option-card">
+          <view class="option-header">
+            <text class="option-icon"></text>
+            <text class="option-title">选词来源</text>
+          </view>
+          <view class="option-row">
+            <view class="option-btn {{activeWordSource === index ? 'active' : ''}}"
+                  wx:for="{{wordSources}}" wx:key="index"
+                  data-index="{{index}}" bindtap="onWordSourceChange">
+              {{item}}
+            </view>
+          </view>
+        </view>
+
+        <!-- 时间范围（错题模式） / 文段类型 -->
+        <view class="card option-card">
+          <view class="option-header">
+            <text class="option-icon">🕐</text>
+            <text class="option-title">{{activeWordSource === 0 ? '选择错题时间范围' : '生成文段类型'}}</text>
+          </view>
+          <view class="option-row">
+            <block wx:if="{{activeWordSource === 0}}">
+              <view class="option-btn {{activeTimeRange === index ? 'active' : ''}}"
+                    wx:for="{{timeRanges}}" wx:key="index"
+                    data-index="{{index}}" bindtap="onSelectTimeRange">
+                {{item}}
+              </view>
+            </block>
+            <block wx:else>
+              <view class="option-btn {{activeTextType === index ? 'active' : ''}}"
+                    wx:for="{{textTypes}}" wx:key="index"
+                    data-index="{{index}}" bindtap="onSelectTextType">
+                {{item}}
+              </view>
+            </block>
+          </view>
+        </view>
+
+        <!-- 时间范围（错题模式，第二个卡片） -->
+        <view class="card option-card" wx:if="{{activeWordSource === 0}}">
+          <view class="option-header">
+            <text class="option-icon-light"></text>
+            <text class="option-title">生成文段类型</text>
+          </view>
+          <view class="option-row">
+            <view class="option-btn {{activeTextType === index ? 'active' : ''}}"
+                  wx:for="{{textTypes}}" wx:key="index"
+                  data-index="{{index}}" bindtap="onSelectTextType">
+              {{item}}
+            </view>
+          </view>
+        </view>
+
+        <!-- 单词预览 -->
+        <view class="card preview-card">
+          <text class="preview-hint">
+            {{activeWordSource === 0 ? '错题单词' : '随机单词'}}
+           （共{{scenarioWords.length}}个）：
+          </text>
+          <view class="word-tags" wx:if="{{scenarioWords.length}}">
+            <view class="word-tag" wx:for="{{scenarioWords}}" wx:key="index">{{item.word}}</view>
+          </view>
+          <text class="preview-empty" wx:else>暂无可用单词</text>
+        </view>
+
+        <!-- 生成按钮 -->
+        <view class="btn-primary generate-btn {{generating || scenarioLoading ? 'btn-disabled' : ''}}" bindtap="onGenerate">
+          <text class="btn-icon" wx:if="{{!generating && !scenarioLoading}}">✨</text>
+          <text wx:if="{{generating}}">⏳ 正在生成...</text>
+          <text wx:elif="{{scenarioLoading}}">⏳ 加载单词中...</text>
+          <text wx:else>生成情景文段</text>
+        </view>
+
+        <!-- 生成结果 -->
+        <view class="card result-card" wx:if="{{generated && scenarioText}}">
+          <view class="result-header">
+            <view class="result-left">
+              <text class="result-icon">✅</text>
+              <text class="result-title">AI 生成完成 · {{textTypes[activeTextType]}}</text>
+            </view>
+            <view class="bookmark-btn {{scenarioFaved ? 'bookmark-active' : ''}}" bindtap="onBookmark">{{scenarioFaved ? '★' : '☆'}}</view>
+          </view>
+          <view class="result-content">
+            <text user-select class="result-text" wx:if="{{scenarioSegments && scenarioSegments.length}}">
+              <text wx:for="{{scenarioSegments}}" wx:for-item="seg" wx:key="index" class="{{seg.bold ? 'word-highlight' : ''}}">{{seg.text}}</text>
+            </text>
+          </view>
+          <view class="video-btn" bindtap="onGenerateVideo">
+            🎬 生成记忆视频
+          </view>
+        </view>
+
+        <!-- 错误提示 -->
+        <view class="card error-card" wx:if="{{scenarioError}}">
+          <view class="error-header">
+            <text class="error-icon">⚠️</text>
+            <text class="error-title">生成失败</text>
+          </view>
+          <text class="error-detail">{{scenarioError}}</text>
+          <view class="error-retry" bindtap="onGenerate">点击重试</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- ===== 收藏视图 ===== -->
+  <block wx:elif="{{activeTab === 2}}">
+    <!-- 收藏Tab切换 -->
+    <view class="fav-tabs-row">
+      <view class="fav-tab {{activeFavTab === index ? 'active' : ''}}"
+            wx:for="{{favTabs}}" wx:key="index"
+            data-index="{{index}}" bindtap="onFavTabChange">
+        {{item}}
+      </view>
+    </view>
+
+    <!-- 单词收藏 (tab=0) -->
+    <view class="fav-scroll" wx:if="{{activeFavTab === 0}}">
+      <view class="fav-list">
+        <view class="fav-item card" wx:for="{{favorites.words}}" wx:key="id" data-word="{{item.word}}" bindtap="onFavItemTap">
+          <view class="fav-item-left">
+            <text class="fav-word">{{item.word}}</text>
+            <text class="fav-meaning">{{item.meaning}}</text>
+          </view>
+          <text class="fav-arrow">›</text>
+        </view>
+      </view>
+      <view class="empty-state" wx:if="{{favorites.words.length === 0}}">
+        <text class="empty-icon">📭</text>
+        <text class="empty-text">暂无单词收藏</text>
+      </view>
+    </view>
+
+    <!-- 文段收藏 (tab=2) — 情景记忆文段 -->
+    <view class="fav-scroll" wx:elif="{{activeFavTab === 2}}">
+      <view class="fav-list">
+        <view class="fav-item card" wx:for="{{favorites.passages}}" wx:key="id" data-index="{{index}}" bindtap="onFavPassageTap">
+          <view class="fav-item-left">
+            <text class="fav-word">{{item.passage_type ? '情景文段 · ' + item.passage_type : '情景文段'}}</text>
+            <text class="fav-meaning">{{item.content ? (item.content.length > 60 ? item.content.slice(0, 60) + '...' : item.content) : ''}}</text>
+          </view>
+          <text class="fav-arrow">›</text>
+        </view>
+      </view>
+      <view class="empty-state" wx:if="{{favorites.passages.length === 0}}">
+        <text class="empty-icon">📭</text>
+        <text class="empty-text">暂无文段收藏</text>
+      </view>
+    </view>
+
+    <!-- 其他类型（文章/歌曲）占位 -->
+    <view class="fav-scroll" wx:elif="{{activeFavTab === 1 || activeFavTab === 3}}">
+      <view class="empty-state">
+        <text class="empty-icon">📭</text>
+        <text class="empty-text">暂无{{favTabs[activeFavTab]}}收藏</text>
+      </view>
+    </view>
+  </block>
+
+    </view>
+
+    <!-- ── Tab 2: 训练 ── (已移出到 scroll-view 外部，见下方) -->
+
+    <!-- ── Tab 3: 小e ── -->
+    <view wx:elif="{{oappTab === 3}}" class="oe-body">
+      <view class="oectabs">
+        <view class="{{oecTab === 0 ? 'act' : ''}}" data-tab="0" bindtap="onOecTabChange">💬 情景对话</view>
+        <view class="{{oecTab === 1 ? 'act' : ''}}" data-tab="1" bindtap="onOecTabChange">🔍 智能问答</view>
+        <view class="{{oecTab === 2 ? 'act' : ''}}" data-tab="2" bindtap="onOecTabChange">🌐 智能翻译</view>
+      </view>
+      <!-- 子Tab 0 — 情景对话 -->
+      <view wx:if="{{oecTab === 0}}">
+        <!-- 场景选择页（未选中场景时） -->
+        <view wx:if="{{!oecSceneSelected}}" class="oescene-select">
+          <view class="oescene-intro">
+            <text class="oescene-title">选择情景开始对话</text>
+            <text class="oescene-desc">选择一个场景，AI 将扮演角色与你进行英语对话练习</text>
+          </view>
+          <view class="oescene-grid">
+            <view class="oescene-card" wx:for="{{oecScenePresets}}" wx:key="id" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="onOecSelectScenario">
+              <text class="oescene-card-icon">{{item.icon || '🗣️'}}</text>
+              <text class="oescene-card-name">{{item.name}}</text>
+            </view>
+          </view>
+          <!-- 自定义场景 -->
+          <view class="oescene-custom">
+            <text class="oescene-custom-label">🎯 自定义场景</text>
+            <view class="oescene-custom-row">
+              <input class="oescene-custom-input" placeholder="输入关键词，如：咖啡店、旅行…" value="{{oecSceneKeyword}}" bindinput="onOecKeywordInput" />
+              <view class="oescene-custom-btn" bindtap="onOecCustomScene">开始</view>
+            </view>
+          </view>
+        </view>
+        <!-- 对话页（选中场景后） -->
+        <view wx:else class="oescene-chat-wrap">
+          <!-- 场景标题 -->
+          <view class="oescene-chat-header">
+            <view class="oescene-chat-back" bindtap="onOecBackToScenarios">
+              <text>← 返回</text>
+            </view>
+            <view class="oescene-chat-info">
+              <text>{{oecSceneSelected.icon || '🗣️'}}</text>
+              <text>{{oecSceneSelected.name}}</text>
+            </view>
+          </view>
+          <!-- 消息列表 -->
+          <view class="oes-msgs">
+            <view class="obubble {{item.role}}" wx:for="{{oecSceneMsgs}}" wx:key="index">
+              <view>{{item.content}}</view>
+              <text class="oescene-cursor" wx:if="{{index === oecSceneMsgs.length - 1 && oecSceneSending &&
+                item.role === 'ai' && item.content !== ''}}">|</text>
+              <view class="oescene-thinking" wx:elif="{{item.thinking}}">
+                <text class="oescene-thinking-label">小e正在思考</text>
+                <view class="oescene-dots">
+                  <view class="oescene-dot"></view>
+                  <view class="oescene-dot"></view>
+                  <view class="oescene-dot"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- 输入栏 -->
+          <view class="oescene-inp-bar">
+            <input placeholder="{{oecSceneSending ? 'AI 正在回复...' : '用英语输入你的回复...'}}" value="{{oecSceneInput}}"
+                   bindinput="onOecSceneInput" disabled="{{oecSceneSending}}" confirm-type="send" bindconfirm="onOecSceneSend" />
+            <view class="oescene-send {{oecSceneSending ? 'oescene-send-disabled' : ''}}" bindtap="onOecSceneSend">
+              <text>{{oecSceneSending ? '…' : '➤'}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 子Tab 1 — 智能问答 -->
+      <view wx:elif="{{oecTab === 1}}">
+        <view class="ochat-msgs">
+          <view class="obubble {{item.role}}" wx:for="{{oecChatMsgs}}" wx:key="index">
+            <view>{{item.content}}</view>
+          </view>
+        </view>
+        <view class="oechat-inp">
+          <input placeholder="输入问题..." value="{{oecChatInput}}" bindinput="onOecChatInput" bindconfirm="onOecChatSend" />
+          <view class="osend" bindtap="onOecChatSend">➤</view>
+        </view>
+      </view>
+      <!-- 子Tab 2 — 智能翻译 -->
+      <view wx:elif="{{oecTab === 2}}">
+        <view class="odir">
+          <text class="{{oecTransDir === 'zh2en' ? 'act' : ''}}" bindtap="onOecTransDir">中 → 英</text>
+          <text class="oswp" bindtap="onOecSwapDir">⇄</text>
+          <text class="{{oecTransDir === 'en2zh' ? 'act' : ''}}">英 → 中</text>
+        </view>
+        <view class="otr-in">
+          <textarea placeholder="输入要翻译的内容..." value="{{oecTransInput}}" bindinput="onOecTransInput" />
+          <view class="otr-bar">
+            <text bindtap="onOecPickImage">🖼 选择图片</text>
+            <text>{{oecTransInput.length}}/5000</text>
+          </view>
+          <view class="obtn-primary" bindtap="onOecTranslate">🌐 翻译</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- ── Tab 4: 我的 ── -->
+    <view wx:elif="{{oappTab === 4}}" class="oprof-body">
+      <view class="oprof-card">
+        <text class="oav">{{oappProfile.avatar}}</text>
+        <text class="oname">{{oappProfile.name}}</text>
+        <view class="otags-row">
+          <text class="otag-green">{{oappProfile.phase}}</text>
+          <text class="otag-orange">学习{{oappProfile.days}}天🔥</text>
+        </view>
+      </view>
+      <view class="ostats-row">
+        <view class="ostat-item">
+          <text class="osn">{{oappProfile.wordCount}}</text>
+          <text class="osl">单词量</text>
+        </view>
+        <view class="ostat-item">
+          <text class="osn">{{oappProfile.trainCount}}</text>
+          <text class="osl">训练次</text>
+        </view>
+        <view class="ostat-item">
+          <text class="osn">{{oappProfile.totalDays}}</text>
+          <text class="osl">累计天</text>
+        </view>
+      </view>
+      <view class="olist">
+        <view class="ogrp">学习</view>
+        <view class="oli" bindtap="onOprofStudyPhase">
+          <text class="oln">📖 学习阶段</text>
+          <text class="olv">{{oappProfile.phase}} ›</text>
+        </view>
+        <view class="oli" bindtap="onOprofReport">
+          <text class="oln">📊 学习报告</text>
+          <text class="olv">›</text>
+        </view>
+        <view class="oli">
+          <text class="oln">🔔 学习提醒</text>
+          <view class="oswitch {{oappProfile.remindOn ? 'on' : ''}}" bindtap="onOprofToggleRemind"></view>
+        </view>
+      </view>
+      <view class="olist">
+        <view class="ogrp">工具</view>
+        <view class="oli" bindtap="onOprofApiKey">
+          <text class="oln">🔑 API Key 配置</text>
+          <text class="olv">›</text>
+        </view>
+        <view class="oli" bindtap="onOprofTeacher">
+          <text class="oln">👩‍🏫 教师管理后台</text>
+          <text class="olv">›</text>
+        </view>
+        <view class="oli" bindtap="onOprofDocUpload">
+          <text class="oln">📤 文档上传</text>
+          <text class="olv">›</text>
+        </view>
+      </view>
+      <view class="olist">
+        <view class="ogrp">系统</view>
+        <view class="oli">
+          <text class="oln">🌙 深色模式</text>
+          <view class="oswitch {{oappProfile.darkMode ? 'on' : ''}}" bindtap="onOprofToggleDark"></view>
+        </view>
+        <view class="oli" bindtap="onOprofSettings">
+          <text class="oln">🛡 系统设置</text>
+          <text class="olv">›</text>
+        </view>
+        <view class="oli" bindtap="onOprofFeedback">
+          <text class="oln">💬 反馈</text>
+          <text class="olv">›</text>
+        </view>
+      </view>
+      <view class="ologout" bindtap="onOprofLogout">
+        <text>🚪 退出登录</text>
+      </view>
+      <view class="over">
+        <text>E-Learning v1.0.0 英语全龄学习平台</text>
+      </view>
+    </view>
+
+  </scroll-view>
+
+  <!-- ===== Tab 2: 训练（独立布局，固定底部导航栏） ===== -->
+  <view wx:if="{{oappTab === 2}}" class="otrain-full" style="top: {{statusBarHeight + 90}}px;">
+    <scroll-view scroll-y class="otrain-content">
+      <!-- 加载中 -->
+      <view class="otrain-loading" wx:if="{{trainLoading}}">
+        <view class="otrain-loading-spinner"></view>
+        <text class="otrain-loading-text">正在加载题目...</text>
+      </view>
+      <!-- 题目内容 -->
+      <view wx:else>
+      <!-- 阅读文章（仅阅读模式） -->
+      <view class="otrain-article-wrap" wx:if="{{trainArticle}}">
+        <view class="otrain-article-hd">
+          <text class="otrain-article-icon">📖</text>
+          <text class="otrain-article-title">{{trainArticle.title}}</text>
+          <view class="fav-btn" bindtap="onToggleFavorite">
+            <text class="fav-icon {{favorites[currentFavKey] ? 'active' : ''}}">{{favorites[currentFavKey] ? '★' : '☆'}}</text>
+          </view>
+        </view>
+        <view class="otrain-article-body">
+          <text class="otrain-article-eng">{{trainArticle.content}}</text>
+          <view class="otrain-article-cn" wx:if="{{showTranslation && trainArticle.content_cn}}">
+            <text class="otrain-article-cn-label">【参考译文】</text>
+            <text class="otrain-article-cn-text">{{trainArticle.content_cn}}</text>
+          </view>
+        </view>
+        <view class="otrain-article-ft">
+          <text class="otrain-article-wc">词数: {{trainArticle.word_count}}</text>
+          <view class="trans-toggle" bindtap="onToggleTranslation">
+            <text class="trans-toggle-icon">{{showTranslation ? '🙈' : '🌐'}}</text>
+            <text class="trans-toggle-label">{{showTranslation ? '隐藏译文' : '显示译文'}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 进度信息 -->
+      <view class="otrain-progress">
+        <text class="otrain-qinfo">第 {{trainData.current + 1}}{{questionCount === 0 ? '' : ' / ' + questionCount}} 题</text>
+        <view class="otrain-score">
+          <text class="otrain-correct">✓ {{trainData.correct}}</text>
+          <text class="otrain-wrong">✗ {{trainData.wrong}}</text>
+        </view>
+      </view>
+      <view class="otrain-bar-wrap">
+        <view class="otrain-bar-fill" style="width: {{trainProgress}}%;"></view>
+      </view>
+      <!-- 题型标签 -->
+      <view class="otrain-tags">
+        <text class="otrain-tag">{{trainData.type}}</text>
+      </view>
+      <!-- 题目卡片 -->
+      <view class="otrain-question-card">
+        <view class="otrain-question-text">{{trainData.question}}</view>
+        <!-- 选择题 ABCD 选项 -->
+        <view class="otrain-options" wx:if="{{!trainData.isFillIn}}">
+          <view class="otrain-option {{item.status === 'cor' ? 'correct' : (item.status === 'wro' ? 'wrong' : '')}}"
+                wx:for="{{trainData.options}}" wx:key="index"
+                data-index="{{index}}" bindtap="onTrainSelect">
+            <view class="oopt-let">{{item.letter}}</view>
+            <text class="oopt-text">{{item.text}}</text>
+            <view class="oopt-icon" wx:if="{{item.status === 'cor'}}">✓</view>
+            <view class="oopt-icon" wx:if="{{item.status === 'wro'}}">✗</view>
+          </view>
+        </view>
+        <!-- 填空题/开放题输入区域 -->
+        <view wx:if="{{trainData.isFillIn}}" class="ofill-input-area">
+          <input wx:if="{{trainData.type === '句子翻译'}}"
+                 class="ofill-input" type="text"
+                 placeholder="请输入你的翻译..."
+                 value="{{trainData.userInput}}" bindinput="onFillInput"
+                 disabled="{{trainData.fillSubmitted}}" />
+          <textarea wx:elif="{{trainData.type === '作文写作'}}"
+                    class="ofill-textarea"
+                    placeholder="请输入你的作文..."
+                    value="{{trainData.userInput}}" bindinput="onFillInput"
+                    disabled="{{trainData.fillSubmitted}}" />
+          <button class="ofill-submit" type="primary" size="mini"
+                  wx:if="{{!trainData.fillSubmitted}}"
+                  bindtap="_onFillSubmit">提交答案</button>
+          <view class="ofill-submitted" wx:if="{{trainData.fillSubmitted}}">
+            <text class="ofill-check">✓ 已提交</text>
+          </view>
+        </view>
+        <!-- 反馈 -->
+        <view class="otrain-feedback" wx:if="{{trainData.feedback}}">
+          <text>{{trainData.feedback}}</text>
+        </view>
+      </view>
+      <!-- 解析 -->
+      <view class="otrain-analysis" wx:if="{{trainData.analysis}}">
+        <view class="oanal-header">
+          <text class="oanal-star">💡</text>
+          <text class="oanal-title">解析</text>
+        </view>
+        <text class="oanal-text">{{trainData.analysis}}</text>
+      </view>
+      </view>
+      <view class="obottom-spacer"></view>
+    </scroll-view>
+    <!-- 固定底部导航栏 -->
+    <view class="otrain-bottom-bar">
+      <view class="o-bot-btn prev-btn {{trainData.current === 0 ? 'disabled' : ''}}" bindtap="onTrainPrev">
+        <text class="obtn-icon">‹</text>
+        <text>上一题</text>
+      </view>
+      <view class="o-bot-btn next-btn" bindtap="onTrainNext">
+        <text>下一题</text>
+        <text class="obtn-icon">›</text>
+      </view>
+    </view>
+    <!-- 设置入口浮动按钮 -->
+    <view class="otrain-settings-float" bindtap="onOsetTap">
+      <text class="osettings-icon">⚙</text>
+    </view>
+  </view>
+
+  <!-- ===== 文段详情弹窗 ===== -->
+  <view class="modal-overlay {{showPassageModal ? 'show' : ''}}" bindtap="onClosePassageModal">
+    <view class="modal-content" catchtap="onStopPropagation">
+      <view class="modal-header">
+        <text class="modal-title">情景文段</text>
+        <text class="modal-close" bindtap="onClosePassageModal">×</text>
+      </view>
+      <view class="modal-body">
+        <view class="modal-passage-type" wx:if="{{favPassageDetail.passage_type}}">
+          类型：{{favPassageDetail.passage_type}}
+        </view>
+        <view class="modal-passage-text">
+          <text wx:for="{{favPassageDetail.segments}}" wx:for-item="seg" wx:key="index" class="{{seg.bold ? 'passage-bold' : ''}}">{{seg.text}}</text>
+        </view>
+        <view class="modal-passage-trans" wx:if="{{favPassageDetail.translation}}">
+          <view class="trans-label">中文翻译</view>
+          <text class="trans-text">{{favPassageDetail.translation}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- ===== 左侧边栏遮挡 + 抽屉（巧记 Tab） ===== -->
+  <view class="omask {{showSidebar ? 'show' : ''}}" bindtap="onCloseSidebar"></view>
+  <view class="obar {{showSidebar ? 'open' : ''}}">
+    <view class="obar-hd">
+      <text>巧记模式</text>
+      <text class="oclose" bindtap="onCloseSidebar">✕</text>
+    </view>
+    <view class="obar-item {{activeTab === 0 ? 'act' : ''}}" data-tab="0" bindtap="onObarSelect">
+      <text>📖 单词记忆</text>
+      <text class="chk" wx:if="{{activeTab === 0}}">✓</text>
+    </view>
+    <view class="obar-item {{activeTab === 1 ? 'act' : ''}}" data-tab="1" bindtap="onObarSelect">
+      <text>✨ 情景记忆</text>
+      <text class="chk" wx:if="{{activeTab === 1}}">✓</text>
+    </view>
+    <view class="obar-item {{activeTab === 2 ? 'act' : ''}}" data-tab="2" bindtap="onObarSelect">
+      <text>🔖 收藏</text>
+      <text class="chk" wx:if="{{activeTab === 2}}">✓</text>
+    </view>
+  </view>
+
+  <!-- ===== 右侧单词列表抽屉（巧记 Tab） ===== -->
+  <view class="omask {{showWordList ? 'show' : ''}}" bindtap="onCloseWordList"></view>
+  <view class="odrawer {{showWordList ? 'open' : ''}}">
+    <view class="odrawer-hd">
+      <text>单词列表 [{{totalWords}}]</text>
+      <text class="oclose" bindtap="onCloseWordList">✕</text>
+    </view>
+    <view class="odrawer-body">
+      <view class="odrawer-sort">
+        <text wx:for="{{drawerSortOptions}}" wx:key="index"
+              class="{{currentSort === item.value ? 'act' : ''}}"
+              data-sort="{{item.value}}" bindtap="onOdrawerSort">{{item.label}}</text>
+      </view>
+      <view class="oword-item {{currentIndex === index ? 'act' : ''}}"
+            wx:for="{{wordList}}" wx:key="index"
+            data-index="{{index}}" bindtap="onOdrawerSelect">
+        <text>{{index + 1}}. {{item}}</text>
+        <text class="odot" wx:if="{{currentIndex === index}}"></text>
+      </view>
+      <view class="odrawer-footer" wx:if="{{!hasMore}}">
+        <text>已加载全部 {{totalWords}} 个单词</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ===== 右侧设置抽屉（训练 Tab） ===== -->
+  <view class="omask {{showOset ? 'show' : ''}}" bindtap="onCloseOset"></view>
+  <view class="oset {{showOset ? 'open' : ''}}">
+    <view class="oset-hd">
+      <text class="oback" bindtap="onCloseOset">←</text>
+      <text>训练设置</text>
+    </view>
+    <view class="oset-body">
+      <!-- 学习阶段 -->
+      <view class="oset-section">
+        <view class="oset-quantity-header">
+          <text class="oset-quantity-icon">📖</text>
+          <text class="oset-label">学习阶段</text>
+        </view>
+        <view class="oset-phase-row" bindtap="onOsetPhaseTap">
+          <text class="oset-phase-value">{{studyPhase}}</text>
+          <text class="oset-phase-arrow">›</text>
+        </view>
+      </view>
+      <view class="oset-divider"></view>
+      <!-- 练习数量 -->
+      <view class="oset-section">
+        <view class="oset-quantity-header">
+          <text class="oset-quantity-icon">📝</text>
+          <text class="oset-label">练习数量</text>
+        </view>
+        <view class="oset-stepper">
+          <view class="stepper-btn" bindtap="onDecreaseCount">−</view>
+          <view class="stepper-value-wrap">
+            <text class="stepper-value {{questionCount === 0 ? 'inf' : ''}}">{{questionCount === 0 ? '∞' : questionCount}}</text>
+            <text class="stepper-unit">{{questionCount === 0 ? '' : '题'}}</text>
+          </view>
+          <view class="stepper-btn" bindtap="onIncreaseCount">+</view>
+        </view>
+        <view class="quick-counts">
+          <view class="quick-count {{questionCount === 5 ? 'active' : ''}}" bindtap="onQuickCount" data-count="5">5题</view>
+          <view class="quick-count {{questionCount === 10 ? 'active' : ''}}" bindtap="onQuickCount" data-count="10">10题</view>
+          <view class="quick-count {{questionCount === 20 ? 'active' : ''}}" bindtap="onQuickCount" data-count="20">20题</view>
+          <view class="quick-count {{questionCount === 50 ? 'active' : ''}}" bindtap="onQuickCount" data-count="50">50题</view>
+          <view class="quick-count {{questionCount === 0 ? 'active' : ''}}" bindtap="onQuickCount" data-count="0">∞</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- ===== 左侧边栏遮挡 + 抽屉（训练 Tab - 选择训练内容） ===== -->
+  <view class="otrain-mask {{showTrainMenu ? 'show' : ''}}" bindtap="onCloseTrainMenu"></view>
+  <view class="otrain-menu {{showTrainMenu ? 'open' : ''}}">
+    <view class="otrain-menu-hd">
+      <text>选择训练内容</text>
+      <text class="oclose" bindtap="onCloseTrainMenu">✕</text>
+    </view>
+    <view class="otrain-menu-item {{activeTrainType === index ? 'act' : ''}}"
+          wx:for="{{trainContentTypes}}" wx:key="index"
+          data-index="{{index}}" bindtap="onTrainMenuSelect">
+      <view class="otrain-menu-icon">
+        <text wx:if="{{item === '单词'}}">📖</text>
+        <text wx:elif="{{item === '短语语法'}}">🔤</text>
+        <text wx:elif="{{item === '阅读'}}">📚</text>
+        <text wx:elif="{{item === '句子翻译'}}">🌐</text>
+        <text wx:elif="{{item === '作文'}}">✏️</text>
+      </view>
+      <text class="otrain-menu-text">{{item}}</text>
+      <text class="chk" wx:if="{{activeTrainType === index}}">✓</text>
+    </view>
+  </view>
+
+  <!-- ===== 底部 Tab 栏（5个Tab） ===== -->
+  <view class="oapp-tb">
+    <view class="{{oappTab === 0 ? 'act' : ''}}" data-tab="0" bindtap="onOappTab">
+      <text class="tic">🏠</text>
+      <text>首页</text>
+    </view>
+    <view class="{{oappTab === 1 ? 'act' : ''}}" data-tab="1" bindtap="onOappTab">
+      <text class="tic">📖</text>
+      <text>巧记</text>
+    </view>
+    <view class="{{oappTab === 2 ? 'act' : ''}}" data-tab="2" bindtap="onOappTab">
+      <text class="tic">🏋</text>
+      <text>训练</text>
+    </view>
+    <view class="{{oappTab === 3 ? 'act' : ''}}" data-tab="3" bindtap="onOappTab">
+      <text class="tic">💬</text>
+      <text>小e</text>
+    </view>
+    <view class="{{oappTab === 4 ? 'act' : ''}}" data-tab="4" bindtap="onOappTab">
+      <text class="tic">👤</text>
+      <text>我的</text>
+    </view>
+  </view>
+
+</view>

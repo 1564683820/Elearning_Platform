@@ -1,0 +1,15 @@
+{
+  "name": "ecdict-import",
+  "version": "1.0.0",
+  "description": "ECDICT 数据导入到 CloudBase MySQL",
+  "scripts": {
+    "import": "node import-ecdict.js",
+    "import:skip-download": "node import-ecdict.js --skip-download",
+    "import:skip-import": "node import-ecdict.js --skip-import",
+    "import:stage-only": "node import-ecdict.js --skip-download --skip-import"
+  },
+  "dependencies": {
+    "@cloudbase/node-sdk": "latest",
+    "better-sqlite3": "latest"
+  }
+}

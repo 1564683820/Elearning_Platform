@@ -1,0 +1,702 @@
+<!-- 训练 - 5合1 侧边栏切换 -->
+<view class="page">
+  <!-- 自定义Header -->
+  <view class="custom-header" style="padding-top: {{navBarTop}}px;">
+    <view class="header-inner" style="height: {{navBarHeight}}px; padding-left: {{navPadLeft}}px; padding-right: {{navPadRight}}px;">
+      <view class="header-menu-btn" bindtap="onMenuTap">
+        <view class="menu-line"></view>
+        <view class="menu-line"></view>
+        <view class="menu-line"></view>
+      </view>
+      <text class="header-title">{{menuItems[activeTab]}}</text>
+      <view class="header-btn" bindtap="onSettingsTap">
+        <text class="header-btn-icon">⚙</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 侧边栏遮罩 -->
+  <view class="sidebar-overlay" wx:if="{{showSidebar}}" bindtap="onCloseSidebar"></view>
+  <!-- 侧边栏 -->
+  <view class="sidebar {{showSidebar ? 'open' : ''}}">
+    <view class="sidebar-bg-pattern"></view>
+    <view class="sidebar-header">
+      <view class="sidebar-header-info">
+        <text class="sidebar-header-title">训练中心</text>
+        <text class="sidebar-header-subtitle">选择训练模式</text>
+      </view>
+      <view class="sidebar-close" bindtap="onCloseSidebar">
+        <text class="sidebar-close-icon">✕</text>
+      </view>
+    </view>
+    <view class="sidebar-menu">
+      <view class="sidebar-item {{activeTab === 0 ? 'active' : ''}}" data-tab="0" bindtap="onMenuSelect">
+        <view class="sidebar-item-icon-wrap" style="background: linear-gradient(135deg, #5B9E6F, #7AB88A);">
+          <text class="sidebar-item-icon">词</text>
+        </view>
+        <view class="sidebar-item-content">
+          <text class="sidebar-item-text">单词训练</text>
+          <text class="sidebar-item-desc">拼写·释义·例句</text>
+        </view>
+        <view class="sidebar-item-check {{activeTab === 0 ? 'show' : ''}}">
+          <text class="check-icon">✓</text>
+        </view>
+      </view>
+      <view class="sidebar-item {{activeTab === 1 ? 'active' : ''}}" data-tab="1" bindtap="onMenuSelect">
+        <view class="sidebar-item-icon-wrap" style="background: linear-gradient(135deg, #F97316, #FB923C);">
+          <text class="sidebar-item-icon">语</text>
+        </view>
+        <view class="sidebar-item-content">
+          <text class="sidebar-item-text">短语语法</text>
+          <text class="sidebar-item-desc">搭配·语法·固定表达</text>
+        </view>
+        <view class="sidebar-item-check {{activeTab === 1 ? 'show' : ''}}">
+          <text class="check-icon">✓</text>
+        </view>
+      </view>
+      <view class="sidebar-item {{activeTab === 2 ? 'active' : ''}}" data-tab="2" bindtap="onMenuSelect">
+        <view class="sidebar-item-icon-wrap" style="background: linear-gradient(135deg, #6366F1, #818CF8);">
+          <text class="sidebar-item-icon">读</text>
+        </view>
+        <view class="sidebar-item-content">
+          <text class="sidebar-item-text">阅读理解</text>
+          <text class="sidebar-item-desc">文章·理解·分析</text>
+        </view>
+        <view class="sidebar-item-check {{activeTab === 2 ? 'show' : ''}}">
+          <text class="check-icon">✓</text>
+        </view>
+      </view>
+      <view class="sidebar-item {{activeTab === 3 ? 'active' : ''}}" data-tab="3" bindtap="onMenuSelect">
+        <view class="sidebar-item-icon-wrap" style="background: linear-gradient(135deg, #06B6D4, #22D3EE);">
+          <text class="sidebar-item-icon">译</text>
+        </view>
+        <view class="sidebar-item-content">
+          <text class="sidebar-item-text">翻译</text>
+          <text class="sidebar-item-desc">AI评分·中译英</text>
+        </view>
+        <view class="sidebar-item-check {{activeTab === 3 ? 'show' : ''}}">
+          <text class="check-icon">✓</text>
+        </view>
+      </view>
+      <view class="sidebar-item {{activeTab === 4 ? 'active' : ''}}" data-tab="4" bindtap="onMenuSelect">
+        <view class="sidebar-item-icon-wrap" style="background: linear-gradient(135deg, #EC4899, #F472B6);">
+          <text class="sidebar-item-icon">文</text>
+        </view>
+        <view class="sidebar-item-content">
+          <text class="sidebar-item-text">作文</text>
+          <text class="sidebar-item-desc">AI评分·写作训练</text>
+        </view>
+        <view class="sidebar-item-check {{activeTab === 4 ? 'show' : ''}}">
+          <text class="check-icon">✓</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- ============================================================== -->
+  <!--  模式 0: 单词训练（选择题）                                      -->
+  <!-- ============================================================== -->
+  <block wx:if="{{activeTab === 0}}">
+    <scroll-view class="content-scroll" scroll-y>
+      <!-- 进度区 -->
+      <view class="progress-section">
+        <view class="progress-info">
+          <text class="progress-label">第 {{wordQuiz.currentIndex + 1}} / ∞ 题</text>
+          <view class="progress-right">
+            <view class="fav-btn" bindtap="onToggleFavorite">
+              <text class="fav-icon {{favorites[currentFavKey] ? 'active' : ''}}">{{favorites[currentFavKey] ? '★' : '☆'}}</text>
+            </view>
+            <view class="score-row">
+              <view class="score-item">
+                <view class="score-icon-circle correct-circle"><text class="score-icon-inner">✓</text></view>
+                <text class="score-correct">{{wordQuiz.correctCount}}</text>
+              </view>
+              <view class="score-item">
+                <view class="score-icon-circle wrong-circle"><text class="score-icon-inner">✗</text></view>
+                <text class="score-wrong">{{wordQuiz.wrongCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="progress-bar">
+          <view class="progress-bar-fill" style="width: {{wordQuiz.questions.length > 0 ? (wordQuiz.currentIndex + 1) / wordQuiz.questions.length * 100 : 10}}%;"></view>
+        </view>
+      </view>
+
+      <!-- 加载中 -->
+      <view class="loading-placeholder" wx:if="{{wordQuiz.loading && !wordQuiz.question}}">
+        <text class="loading-text">加载题目中...</text>
+      </view>
+      <view class="loading-placeholder" wx:if="{{!wordQuiz.loading && !wordQuiz.question}}">
+        <text>{{wordQuiz.error || '当前阶段暂无单词题目'}}</text>
+        <button bindtap="loadWordQuestions">重新加载</button>
+      </view>
+      <text wx:if="{{wordQuiz.submitting}}">正在保存答案…</text>
+
+      <!-- 题目卡片 -->
+      <block wx:if="{{wordQuiz.question}}">
+        <view class="question-card">
+          <view class="question-badge-row">
+            <text class="question-badge">{{wordQuiz.question.type || '单词'}}</text>
+            <text class="question-number">Q{{wordQuiz.currentIndex + 1}}</text>
+          </view>
+          <text class="question-text">{{wordQuiz.question.question || wordQuiz.question.stem}}</text>
+        </view>
+
+        <!-- 选项 -->
+        <view class="options-list">
+          <view class="quiz-option {{wordQuiz.answered && wordQuiz.selectedIndex === index ? (index === wordQuiz.question.correctIndex || index === wordQuiz.question.correct ? 'correct' : 'wrong') : ''}}"
+                wx:for="{{wordQuiz.question.options}}" wx:key="index"
+                data-index="{{index}}" data-tab-index="0" bindtap="onSelectOption">
+            <view class="option-content">
+              <view class="option-letter {{wordQuiz.answered && wordQuiz.selectedIndex === index ? (index === wordQuiz.question.correctIndex || index === wordQuiz.question.correct ? 'correct' : 'wrong') : ''}}">{{['A','B','C','D'][index]}}</view>
+              <text class="option-text">{{item}}</text>
+            </view>
+            <view class="option-status" wx:if="{{wordQuiz.answered}}">
+              <text wx:if="{{index === wordQuiz.question.correctIndex || index === wordQuiz.question.correct}}" class="status-icon correct-icon">✓</text>
+              <text wx:elif="{{wordQuiz.selectedIndex === index}}" class="status-icon wrong-icon">✗</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 答案解析 -->
+        <view class="analysis-card" wx:if="{{wordQuiz.showAnalysis}}">
+          <view class="analysis-header">
+            <text class="analysis-star">✦</text>
+            <text class="analysis-title">答案解析</text>
+          </view>
+          <view class="analysis-body">
+            <text class="analysis-meaning" wx:if="{{wordQuiz.question.analysis}}">{{wordQuiz.question.analysis.meaning || wordQuiz.question.analysis.explanation || ''}}</text>
+            <text class="analysis-meaning" wx:elif="{{wordQuiz.question.explanation}}">{{wordQuiz.question.explanation}}</text>
+            <view class="analysis-example" wx:if="{{wordQuiz.question.analysis && wordQuiz.question.analysis.example}}">
+              <text class="example-label">📖 例句</text>
+              <text class="example-text">{{wordQuiz.question.analysis.example}}</text>
+            </view>
+            <view class="analysis-tip" wx:if="{{wordQuiz.question.analysis && wordQuiz.question.analysis.tip}}">
+              <text class="tip-label">记忆技巧</text>
+              <text class="tip-text">{{wordQuiz.question.analysis.tip}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <!-- 底部占位 -->
+      <view class="scroll-bottom-spacer"></view>
+    </scroll-view>
+
+    <!-- 底部导航栏 -->
+    <view class="bottom-bar">
+      <view class="bottom-bar-inner">
+        <view class="bottom-btn prev-btn {{wordQuiz.currentIndex === 0 ? 'disabled' : ''}}" bindtap="onWordQuizPrev">
+          <text class="btn-icon">‹</text>
+          <text class="btn-text">上一题</text>
+        </view>
+        <view class="bottom-divider"></view>
+        <view class="bottom-btn next-btn" bindtap="onWordQuizNext">
+          <text class="btn-text">{{wordQuiz.answered ? '下一题' : '跳过'}}</text>
+          <text class="btn-icon">›</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- ============================================================== -->
+  <!--  模式 1: 短语语法（选择题）                                      -->
+  <!-- ============================================================== -->
+  <block wx:elif="{{activeTab === 1}}">
+    <scroll-view class="content-scroll" scroll-y>
+      <!-- 进度区 -->
+      <view class="progress-section">
+        <view class="progress-info">
+          <text class="progress-label">第 {{phrase.currentIndex + 1}} / ∞ 题</text>
+          <view class="progress-right">
+            <view class="fav-btn" bindtap="onToggleFavorite">
+              <text class="fav-icon {{favorites[currentFavKey] ? 'active' : ''}}">{{favorites[currentFavKey] ? '★' : '☆'}}</text>
+            </view>
+            <view class="score-row">
+              <view class="score-item">
+                <view class="score-icon-circle correct-circle"><text class="score-icon-inner">✓</text></view>
+                <text class="score-correct">{{phrase.correctCount}}</text>
+              </view>
+              <view class="score-item">
+                <view class="score-icon-circle wrong-circle"><text class="score-icon-inner">✗</text></view>
+                <text class="score-wrong">{{phrase.wrongCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="progress-bar">
+          <view class="progress-bar-fill" style="width: {{phrase.questions.length > 0 ? (phrase.currentIndex + 1) / phrase.questions.length * 100 : 10}}%;"></view>
+        </view>
+      </view>
+
+      <!-- 加载中 -->
+      <view class="loading-placeholder" wx:if="{{phrase.loading && !phrase.question}}">
+        <text class="loading-text">加载题目中...</text>
+      </view>
+
+      <view class="loading-placeholder" wx:if="{{!phrase.loading && !phrase.question}}">
+        <text>{{phrase.error || '当前阶段暂无语法题目'}}</text>
+        <button bindtap="loadPhraseQuestions">重新加载</button>
+      </view>
+      <text wx:if="{{phrase.submitting}}">正在保存答案…</text>
+      <block wx:if="{{phrase.question}}">
+        <!-- 题目卡片 -->
+        <view class="question-card">
+          <view class="question-tags">
+            <text class="tag tag-warning">{{phrase.question.type || '短语语法'}}</text>
+            <text class="tag tag-gray">{{phrase.question.subType || '选择题'}}</text>
+          </view>
+          <text class="question-text">{{phrase.question.question || phrase.question.stem}}</text>
+          <text class="question-hint" wx:if="{{phrase.question.hint}}">{{phrase.question.hint}}</text>
+        </view>
+
+        <!-- 选项 -->
+        <view class="options-list">
+          <view class="quiz-option {{phrase.answered && phrase.selectedIndex === index ? (index === phrase.question.correctIndex || index === phrase.question.correct ? 'correct' : 'wrong') : ''}}"
+                wx:for="{{phrase.question.options}}" wx:key="index"
+                data-index="{{index}}" data-tab-index="1" bindtap="onSelectOption">
+            <view class="option-content">
+              <view class="option-letter {{phrase.answered && phrase.selectedIndex === index ? (index === phrase.question.correctIndex || index === phrase.question.correct ? 'correct' : 'wrong') : ''}}">{{['A','B','C','D'][index]}}</view>
+              <text class="option-text">{{item}}</text>
+            </view>
+            <view class="option-status correct" wx:if="{{phrase.answered && (index === phrase.question.correctIndex || index === phrase.question.correct)}}">
+              <text>✓</text>
+            </view>
+            <view class="option-status wrong" wx:if="{{phrase.answered && phrase.selectedIndex === index && index !== phrase.question.correctIndex && index !== phrase.question.correct}}">
+              <text>✗</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 解析 -->
+        <view class="analysis-card" wx:if="{{phrase.showAnalysis}}">
+          <view class="analysis-header">
+            <view class="analysis-icon">A</view>
+            <text class="analysis-title">答案解析</text>
+          </view>
+          <view class="analysis-body">
+            <text class="analysis-rule" wx:if="{{phrase.question.analysis && phrase.question.analysis.rule}}">{{phrase.question.analysis.rule}}</text>
+            <text class="analysis-rule" wx:elif="{{phrase.question.explanation}}">{{phrase.question.explanation}}</text>
+            <view class="analysis-example-block" wx:if="{{phrase.question.analysis && phrase.question.analysis.example}}">
+              <text class="analysis-label">例句</text>
+              <text class="analysis-text">{{phrase.question.analysis.example}}</text>
+            </view>
+            <view class="analysis-similar" wx:if="{{phrase.question.analysis && phrase.question.analysis.similar}}">
+              <text class="analysis-label">类似搭配</text>
+              <view class="similar-tags">
+                <text class="similar-tag" wx:for="{{phrase.question.analysis.similar}}" wx:key="index">{{item}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="next-btn" bindtap="onPhraseNext">
+            <text class="next-btn-text">下一题</text>
+            <text class="next-btn-arrow">→</text>
+          </view>
+        </view>
+      </block>
+
+      <view class="scroll-bottom-spacer"></view>
+    </scroll-view>
+  </block>
+
+  <!-- ============================================================== -->
+  <!--  模式 2: 阅读理解（AI生成文章 + 5题选择题）                      -->
+  <!--  布局：上半区可滚动文章 + 下半区固定题目/选项/导航                -->
+  <!-- ============================================================== -->
+  <block wx:elif="{{activeTab === 2}}">
+    <!-- 加载中 -->
+    <view class="loading-placeholder" wx:if="{{reading.loading && !reading.article}}">
+      <text class="loading-text">加载阅读材料中...</text>
+    </view>
+
+    <block wx:if="{{reading.article && reading.currentQuestion}}">
+      <!-- 整体分为上下两部分 -->
+      <view class="reading-layout">
+
+        <!-- === 上半区：进度 + 可滚动文章 === -->
+        <view class="reading-top">
+          <!-- 进度 -->
+          <view class="progress-section reading-progress">
+            <view class="progress-info">
+              <text class="progress-label">题目 {{reading.currentQIndex + 1}}/{{reading.questions.length}}</text>
+              <view class="progress-right">
+                <view class="fav-btn" bindtap="onToggleFavorite">
+                  <text class="fav-icon {{favorites[currentFavKey] ? 'active' : ''}}">{{favorites[currentFavKey] ? '★' : '☆'}}</text>
+                </view>
+                <view class="score-row">
+                  <view class="score-item">
+                    <view class="score-icon-circle correct-circle"><text class="score-icon-inner">✓</text></view>
+                    <text class="score-correct">{{reading.correctCount}}</text>
+                  </view>
+                  <view class="score-item">
+                    <view class="score-icon-circle wrong-circle"><text class="score-icon-inner">✗</text></view>
+                    <text class="score-wrong">{{reading.wrongCount}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <view class="progress-bar">
+              <view class="progress-bar-fill" style="width: {{reading.questions.length > 0 ? (reading.currentQIndex + 1) / reading.questions.length * 100 : 10}}%;"></view>
+            </view>
+          </view>
+
+          <!-- 可滚动的文章卡片 -->
+          <scroll-view class="article-scroll" scroll-y>
+            <view class="article-card">
+              <view class="article-title-row">
+                <text class="article-title">{{reading.article.title}}</text>
+                <text class="article-word-count">{{reading.article.word_count}}词</text>
+              </view>
+              <view class="article-body">
+                <text class="article-content">{{reading.article.content}}</text>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+
+        <!-- === 下半区：固定题目 + 选项 + 导航 === -->
+        <view class="reading-bottom">
+          <!-- 题目 -->
+          <view class="question-section">
+            <view class="question-tags">
+              <text class="tag tag-primary">Q{{reading.currentQIndex + 1}}</text>
+            </view>
+            <text class="question-text reading-q-text">{{reading.currentQuestion.question || reading.currentQuestion.stem}}</text>
+            <view class="options-list reading-options">
+              <view class="quiz-option reading-option {{reading.selectedIndex === index ? (index === reading.currentQuestion.correct ? 'correct' : 'wrong') : ''}}"
+                    wx:for="{{reading.currentQuestion.options}}" wx:key="index"
+                    data-index="{{index}}" data-tab-index="2" bindtap="onSelectOption">
+                <view class="option-content">
+                  <view class="option-letter reading-opt-letter {{reading.selectedIndex === index ? (index === reading.currentQuestion.correct ? 'correct' : 'wrong') : ''}}">{{['A','B','C','D'][index]}}</view>
+                  <text class="option-text reading-opt-text">{{item}}</text>
+                </view>
+                <view class="option-status correct" wx:if="{{reading.answered && index === reading.currentQuestion.correct}}">
+                  <text>✓</text>
+                </view>
+                <view class="option-status wrong" wx:if="{{reading.selectedIndex === index && index !== reading.currentQuestion.correct}}">
+                  <text>✗</text>
+                </view>
+              </view>
+            </view>
+          </view>
+
+          <!-- 解析（答题后显示） -->
+          <view class="analysis-card reading-analysis" wx:if="{{reading.showAnalysis}}">
+            <view class="analysis-header">
+              <view class="analysis-icon">A</view>
+              <text class="analysis-title">答案解析</text>
+            </view>
+            <text class="analysis-answer" wx:if="{{reading.currentQuestion.analysis && reading.currentQuestion.analysis.answer}}">{{reading.currentQuestion.analysis.answer}}</text>
+            <text class="analysis-explain">{{(reading.currentQuestion.analysis && reading.currentQuestion.analysis.explanation) || reading.currentQuestion.explanation || ''}}</text>
+          </view>
+
+          <!-- 缩小版上一题 / 下一题 / 刷新 导航按钮 -->
+          <view class="reading-nav-bar">
+            <view class="reading-nav-btn reading-prev {{reading.currentQIndex === 0 ? 'disabled' : ''}}" bindtap="onReadingPrev">
+              <text class="rn-icon">‹</text>
+              <text class="rn-text">上一题</text>
+            </view>
+            <view class="reading-nav-btn reading-refresh" bindtap="onReadingRefresh">
+              <text class="rn-icon">🔄</text>
+              <text class="rn-text">刷新</text>
+            </view>
+            <view class="reading-nav-btn reading-next" bindtap="onReadingNext">
+              <text class="rn-text">{{reading.answered ? '下一题' : '跳过'}}</text>
+              <text class="rn-icon">›</text>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </block>
+
+  <!-- ============================================================== -->
+  <!--  模式 3: 翻译（AI生成中文 → 用户写英文 → AI评分）                -->
+  <!-- ============================================================== -->
+  <block wx:elif="{{activeTab === 3}}">
+    <!-- 加载中 -->
+    <view class="loading-placeholder" wx:if="{{translation.loading && !translation.stem}}">
+      <text class="loading-text">加载题目中...</text>
+    </view>
+    <view class="loading-placeholder" wx:if="{{!translation.loading && !translation.stem}}">
+      <text>{{translation.error || '暂无翻译题目'}}</text>
+      <button bindtap="loadTranslationQuestion">重新加载</button>
+    </view>
+
+    <block wx:if="{{translation.stem}}">
+      <scroll-view class="content-scroll" scroll-y>
+        <!-- 题目标题（含刷新按钮和收藏） -->
+        <view class="progress-section">
+          <view class="progress-info">
+            <text class="progress-label">翻译练习</text>
+            <view class="progress-right">
+              <view class="fav-btn" bindtap="onToggleFavorite">
+                <text class="fav-icon {{favorites[currentFavKey] ? 'active' : ''}}">{{favorites[currentFavKey] ? '★' : '☆'}}</text>
+              </view>
+              <view class="refresh-btn-sm" bindtap="onTranslationRefresh">
+                <text class="refresh-sm-icon">🔄</text>
+                <text class="refresh-sm-text">换一题</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 题目卡片 -->
+        <view class="question-card">
+          <view class="question-tags">
+            <text class="tag tag-primary">中译英</text>
+            <text class="tag tag-gray" wx:if="{{translation.topic}}">{{translation.topic}}</text>
+          </view>
+          <text class="question-text">{{translation.stem}}</text>
+
+          <!-- 关键词 -->
+          <view class="keyword-row" wx:if="{{translation.keyVocab && translation.keyVocab.length > 0}}">
+            <text class="keyword-hint">参考词汇：</text>
+            <text class="keyword-tag" wx:for="{{translation.keyVocab}}" wx:key="index"
+                  style="background: rgba(6,182,212,0.10); color: #06B6D4;">{{item.word || item}}</text>
+          </view>
+
+          <!-- 提示 -->
+          <text class="question-hint" wx:if="{{translation.hints}}">{{translation.hints}}</text>
+        </view>
+
+        <!-- 输入区（未提交时） -->
+        <view class="input-section" wx:if="{{!translation.submitted}}">
+          <view class="input-label-row">
+            <text class="input-label">你的翻译（英文）：</text>
+            <text class="input-count">{{translation.userAnswer.length}}/500</text>
+          </view>
+          <textarea class="translate-input" placeholder="请输入你的英文翻译..."
+                    value="{{translation.userAnswer}}" bindinput="onTranslationInput" disabled="{{translation.loading}}" maxlength="500"></textarea>
+          <view class="submit-btn" bindtap="onTranslationSubmit">
+            <text class="submit-btn-text" wx:if="{{!translation.loading}}">提交评分</text>
+            <text class="submit-btn-text" wx:else>评分中...</text>
+            <text class="submit-btn-icon">✓</text>
+          </view>
+        </view>
+
+        <!-- 评分结果（已提交时） -->
+        <view class="score-card" wx:if="{{translation.submitted && translation.scoreResult}}">
+          <!-- 总分 -->
+          <view class="score-big-circle {{translation.scoreResult.score >= 80 ? 'excellent' : translation.scoreResult.score >= 60 ? 'good' : 'poor'}}">
+            <text class="score-big-value">{{translation.scoreResult.score}}</text>
+            <text class="score-big-label">分</text>
+          </view>
+
+          <!-- 反馈 -->
+          <view class="score-feedback" wx:if="{{translation.scoreResult.feedback}}">
+            <text class="score-feedback-icon">💡</text>
+            <text class="score-feedback-text">{{translation.scoreResult.feedback}}</text>
+          </view>
+
+          <!-- 参考译文 -->
+          <view class="score-reference" wx:if="{{translation.reference}}">
+            <text class="score-ref-label">参考译文</text>
+            <text class="score-ref-text">{{translation.reference}}</text>
+          </view>
+
+          <!-- 错误点 -->
+          <view class="score-mistakes" wx:if="{{translation.scoreResult.mistakes && translation.scoreResult.mistakes.length > 0}}">
+            <text class="score-mistakes-title">改进建议</text>
+            <view class="score-mistake-item" wx:for="{{translation.scoreResult.mistakes}}" wx:key="index">
+              <text class="mistake-dot">•</text>
+              <text class="mistake-text">{{item}}</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 操作按钮（已提交时） -->
+        <view class="score-actions" wx:if="{{translation.submitted}}">
+          <view class="score-action-btn retry-btn" bindtap="onTranslationRetry">
+            <text class="action-btn-text">重做</text>
+          </view>
+          <view class="score-action-btn next-btn-inline" bindtap="onTranslationNext">
+            <text class="action-btn-text">下一题</text>
+            <text class="action-btn-arrow">→</text>
+          </view>
+        </view>
+
+        <view class="scroll-bottom-spacer"></view>
+      </scroll-view>
+    </block>
+  </block>
+
+  <!-- ============================================================== -->
+  <!--  模式 4: 作文（AI生成情景 → 用户写作文 → AI评分）                -->
+  <!-- ============================================================== -->
+  <block wx:elif="{{activeTab === 4}}">
+    <!-- 加载中 -->
+    <view class="loading-placeholder" wx:if="{{essay.loading && !essay.stem}}">
+      <text class="loading-text">加载题目中...</text>
+    </view>
+    <view class="loading-placeholder" wx:if="{{!essay.loading && !essay.stem}}">
+      <text>{{essay.error || '暂无作文题目'}}</text>
+      <button bindtap="loadEssayQuestion">重新加载</button>
+    </view>
+
+    <block wx:if="{{essay.stem}}">
+      <scroll-view class="content-scroll" scroll-y>
+        <!-- 题目标题（含刷新按钮和收藏） -->
+        <view class="progress-section">
+          <view class="progress-info">
+            <text class="progress-label">作文练习</text>
+            <view class="progress-right">
+              <view class="fav-btn" bindtap="onToggleFavorite">
+                <text class="fav-icon {{favorites[currentFavKey] ? 'active' : ''}}">{{favorites[currentFavKey] ? '★' : '☆'}}</text>
+              </view>
+              <view class="refresh-btn-sm" bindtap="onEssayRefresh">
+                <text class="refresh-sm-icon">🔄</text>
+                <text class="refresh-sm-text">换一题</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 题目卡片 -->
+        <view class="question-card">
+          <view class="question-tags">
+            <text class="tag tag-primary">{{essay.topic || '作文'}}</text>
+            <text class="tag tag-gray" wx:if="{{essay.wordLimit}}">{{essay.wordLimit}}</text>
+          </view>
+          <text class="question-text">{{essay.stem}}</text>
+
+          <!-- 要点提示 -->
+          <view class="key-points-section" wx:if="{{essay.keyPoints && essay.keyPoints.length > 0}}">
+            <text class="key-points-title">写作要点</text>
+            <view class="key-point" wx:for="{{essay.keyPoints}}" wx:key="index">
+              <text class="kp-dot">✦</text>
+              <text class="kp-text">{{item.point || item}}</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 输入区（未提交时） -->
+        <view class="essay-input-section" wx:if="{{!essay.submitted}}">
+          <view class="input-label-row">
+            <text class="input-label">你的作文：</text>
+            <text class="input-count">{{essay.userAnswer.length}}/2000</text>
+          </view>
+          <textarea class="essay-textarea" placeholder="在此输入你的英语作文..."
+                    value="{{essay.userAnswer}}" bindinput="onEssayInput" disabled="{{essay.loading}}" maxlength="2000"></textarea>
+          <view class="submit-btn" bindtap="onEssaySubmit">
+            <text class="submit-btn-text" wx:if="{{!essay.loading}}">提交评分</text>
+            <text class="submit-btn-text" wx:else>评分中...</text>
+            <text class="submit-btn-icon">✓</text>
+          </view>
+        </view>
+
+        <!-- 评分结果（已提交时） -->
+        <view class="score-card" wx:if="{{essay.submitted && essay.scoreResult}}">
+          <!-- 总分 -->
+          <view class="score-big-circle {{essay.scoreResult.score >= 80 ? 'excellent' : essay.scoreResult.score >= 60 ? 'good' : 'poor'}}">
+            <text class="score-big-value">{{essay.scoreResult.score}}</text>
+            <text class="score-big-label">分</text>
+          </view>
+
+          <!-- 维度评分 -->
+          <view class="dimension-scores" wx:if="{{essay.scoreResult.dimension_scores && essay.scoreResult.dimension_scores.length > 0}}">
+            <view class="dimension-item" wx:for="{{essay.scoreResult.dimension_scores}}" wx:key="index">
+              <view class="dimension-label-row">
+                <text class="dimension-label">{{item.name || item.dimension}}</text>
+                <text class="dimension-value">{{item.score}}分</text>
+              </view>
+              <view class="dimension-bar">
+                <view class="dimension-fill" style="width: {{item.score}}%;"></view>
+              </view>
+            </view>
+          </view>
+
+          <!-- 反馈 -->
+          <view class="score-feedback" wx:if="{{essay.scoreResult.feedback}}">
+            <text class="score-feedback-icon">📝</text>
+            <text class="score-feedback-text">{{essay.scoreResult.feedback}}</text>
+          </view>
+
+          <!-- 改进建议 -->
+          <view class="score-mistakes" wx:if="{{essay.scoreResult.suggestions && essay.scoreResult.suggestions.length > 0}}">
+            <text class="score-mistakes-title">改进建议</text>
+            <view class="score-mistake-item" wx:for="{{essay.scoreResult.suggestions}}" wx:key="index">
+              <text class="mistake-dot">•</text>
+              <text class="mistake-text">{{item}}</text>
+            </view>
+          </view>
+
+          <!-- 参考范文 -->
+          <view class="score-reference" wx:if="{{essay.reference}}">
+            <text class="score-ref-label">参考范文</text>
+            <text class="score-ref-text">{{essay.reference}}</text>
+          </view>
+        </view>
+
+        <!-- 操作按钮（已提交时） -->
+        <view class="score-actions" wx:if="{{essay.submitted}}">
+          <view class="score-action-btn retry-btn" bindtap="onEssayRetry">
+            <text class="action-btn-text">重写</text>
+          </view>
+          <view class="score-action-btn next-btn-inline" bindtap="onEssayNext">
+            <text class="action-btn-text">下一题</text>
+            <text class="action-btn-arrow">→</text>
+          </view>
+        </view>
+
+        <view class="scroll-bottom-spacer"></view>
+      </scroll-view>
+    </block>
+  </block>
+
+  <!-- ============================================================== -->
+  <!--  设置抽屉                                                      -->
+  <!-- ============================================================== -->
+  <view class="drawer-overlay" wx:if="{{showSettings}}" bindtap="onCloseSettings"></view>
+  <view class="settings-drawer {{showSettings ? 'open' : ''}}">
+    <!-- 顶部装饰条 -->
+    <view class="drawer-glow"></view>
+
+    <view class="drawer-header">
+      <view class="drawer-back-btn" bindtap="onCloseSettings">
+        <text class="drawer-back-icon">←</text>
+      </view>
+      <view class="drawer-header-text">
+        <text class="drawer-title">训练设置</text>
+        <text class="drawer-subtitle">自定义你的训练方案</text>
+      </view>
+    </view>
+
+    <!-- 题目数量 -->
+    <view class="setting-section">
+      <view class="setting-label-row">
+        <text class="setting-section-icon"></text>
+        <text class="setting-label">题目数量</text>
+      </view>
+      <view class="count-card">
+        <view class="count-stepper">
+          <view class="stepper-btn {{questionCount <= 5 ? 'disabled' : ''}}" bindtap="onDecreaseCount">
+            <text class="stepper-btn-text">−</text>
+          </view>
+          <view class="stepper-value-wrap">
+            <text class="stepper-value">{{questionCount}}</text>
+            <text class="stepper-unit">题</text>
+          </view>
+          <view class="stepper-btn {{questionCount >= 100 ? 'disabled' : ''}}" bindtap="onIncreaseCount">
+            <text class="stepper-btn-text">+</text>
+          </view>
+        </view>
+        <!-- 快捷选项 -->
+        <view class="quick-counts">
+          <view class="quick-count {{questionCount === 5 ? 'active' : ''}}" bindtap="onQuickCount" data-count="5">5题</view>
+          <view class="quick-count {{questionCount === 10 ? 'active' : ''}}" bindtap="onQuickCount" data-count="10">10题</view>
+          <view class="quick-count {{questionCount === 20 ? 'active' : ''}}" bindtap="onQuickCount" data-count="20">20题</view>
+          <view class="quick-count {{questionCount === 50 ? 'active' : ''}}" bindtap="onQuickCount" data-count="50">50题</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 开始训练按钮 -->
+    <view class="setting-start-btn" bindtap="onStartTraining">
+      <text class="start-btn-text">开始训练</text>
+      <text class="start-btn-arrow">→</text>
+    </view>
+  </view>
+</view>

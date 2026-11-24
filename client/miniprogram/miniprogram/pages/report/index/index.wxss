@@ -1,0 +1,421 @@
+/* 学习报告 */
+.page {
+  min-height: 100vh;
+  background: #F5F7FA;
+}
+
+/* 加载状态 */
+.loading-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 200rpx 40rpx;
+}
+
+.loading-spinner {
+  width: 64rpx;
+  height: 64rpx;
+  border: 6rpx solid #E8EDF0;
+  border-top-color: #5B9E6F;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  margin-top: 24rpx;
+  font-size: 26rpx;
+  color: #9CA3AF;
+}
+
+/* 错误状态 */
+.error-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200rpx 40rpx;
+}
+
+.error-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.error-text {
+  font-size: 28rpx;
+  color: #6B7280;
+  text-align: center;
+}
+
+.retry-btn {
+  margin-top: 32rpx;
+  padding: 16rpx 48rpx;
+  background: #5B9E6F;
+  color: #FFFFFF;
+  border-radius: 99rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+/* 空状态 */
+.empty-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 200rpx 40rpx;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: #374151;
+  font-weight: 600;
+}
+
+.empty-hint {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #9CA3AF;
+}
+
+/* 报告内容 */
+.report-scroll {
+  height: 100vh;
+}
+
+.report-content {
+  padding: 24rpx 32rpx 60rpx;
+}
+
+/* 概览卡片 */
+.overview-card {
+  background: linear-gradient(135deg, #5B9E6F 0%, #7AB88A 100%);
+  border-radius: 32rpx;
+  padding: 40rpx;
+  margin-bottom: 24rpx;
+  color: #FFFFFF;
+}
+
+.overview-top {
+  margin-bottom: 32rpx;
+}
+
+.overview-name {
+  font-size: 36rpx;
+  font-weight: 800;
+}
+
+.overview-period {
+  font-size: 22rpx;
+  color: rgba(255,255,255,0.7);
+  margin-top: 6rpx;
+  display: block;
+}
+
+.overview-grid {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 32rpx;
+}
+
+.ov-item {
+  flex: 1;
+  background: rgba(255,255,255,0.15);
+  border-radius: 20rpx;
+  padding: 20rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ov-value {
+  font-size: 34rpx;
+  font-weight: 800;
+}
+
+.ov-label {
+  font-size: 20rpx;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4rpx;
+}
+
+.overall-accuracy {
+  display: flex;
+  justify-content: center;
+}
+
+.accuracy-ring {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.ring-circle {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring-inner {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring-value {
+  font-size: 40rpx;
+  font-weight: 800;
+  color: #5B9E6F;
+}
+
+.ring-label {
+  font-size: 20rpx;
+  color: #6B7280;
+  margin-top: 4rpx;
+}
+
+/* 通用卡片 */
+.section-card {
+  background: #FFFFFF;
+  border-radius: 32rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0,0,0,0.04);
+}
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 24rpx;
+}
+
+.section-subtitle {
+  display: block;
+  font-size: 22rpx;
+  font-weight: 400;
+  color: #9CA3AF;
+  margin-top: 6rpx;
+}
+
+/* 模块正确率 */
+.module-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.module-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.module-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.module-name {
+  font-size: 26rpx;
+  color: #374151;
+}
+
+.module-value {
+  font-size: 24rpx;
+  font-weight: 700;
+}
+
+.module-value.low {
+  color: #EF4444;
+}
+
+.module-value.mid {
+  color: #F59E0B;
+}
+
+.module-value.high {
+  color: #10B981;
+}
+
+.module-bar {
+  height: 12rpx;
+  background: #F3F4F6;
+  border-radius: 99rpx;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 99rpx;
+  transition: width 0.6s ease;
+}
+
+.bar-fill.low {
+  background: linear-gradient(90deg, #EF4444, #F87171);
+}
+
+.bar-fill.mid {
+  background: linear-gradient(90deg, #F59E0B, #FBBF24);
+}
+
+.bar-fill.high {
+  background: linear-gradient(90deg, #10B981, #34D399);
+}
+
+/* 薄弱知识点 */
+.weakness-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.weakness-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  background: #FFF5F5;
+  border-radius: 20rpx;
+}
+
+.weakness-left {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  flex: 1;
+}
+
+.weakness-icon {
+  font-size: 32rpx;
+  flex-shrink: 0;
+}
+
+.weakness-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weakness-name {
+  font-size: 26rpx;
+  color: #374151;
+  font-weight: 600;
+}
+
+.weakness-detail {
+  font-size: 22rpx;
+  color: #9CA3AF;
+  margin-top: 4rpx;
+}
+
+.weakness-badge {
+  padding: 8rpx 20rpx;
+  border-radius: 99rpx;
+  font-size: 22rpx;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.weakness-badge.danger {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+/* AI 学习建议 */
+.suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16rpx;
+}
+
+.suggestion-bullet {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  background: #5B9E6F;
+  color: #FFFFFF;
+  font-size: 20rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.suggestion-text {
+  font-size: 26rpx;
+  color: #374151;
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* 趋势图 */
+.trend-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8rpx;
+  height: 180rpx;
+  padding-top: 20rpx;
+}
+
+.trend-bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.trend-bar-item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 140rpx;
+}
+
+.trend-bar-fill {
+  width: 40rpx;
+  min-height: 8rpx;
+  background: linear-gradient(180deg, #7AB88A 0%, #5B9E6F 100%);
+  border-radius: 8rpx 8rpx 0 0;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  transition: height 0.4s ease;
+}
+
+.trend-bar-value {
+  position: absolute;
+  top: -32rpx;
+  font-size: 20rpx;
+  color: #5B9E6F;
+  font-weight: 600;
+}
+
+.trend-bar-label {
+  font-size: 20rpx;
+  color: #9CA3AF;
+}

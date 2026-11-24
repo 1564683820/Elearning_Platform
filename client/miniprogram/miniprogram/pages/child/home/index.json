@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "footer-tabs": "/components/footer-tabs/index",
+    "phase-selector": "/components/phase-selector/index"
+  },
+  "navigationStyle": "custom"
+}

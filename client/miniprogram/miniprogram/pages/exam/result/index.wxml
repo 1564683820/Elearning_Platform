@@ -1,0 +1,39 @@
+<view class="page">
+  <view class="result-header">
+    <view class="score-circle {{gradeClass}}">
+      <text class="score-text">{{score}}</text>
+      <text class="score-label">分</text>
+    </view>
+    <text class="exam-title">{{examTitle}}</text>
+    <text class="grade-text">{{gradeText}}</text>
+  </view>
+
+  <view class="section">
+    <text class="section-title">答题详情</text>
+    <view class="answer-item" wx:for="{{details}}" wx:key="index">
+      <view class="a-header">
+        <text class="q-num">Q{{index + 1}}.</text>
+        <text class="q-type">{{item.type === 'choice' ? '选择' : item.type === 'fill' ? '填空' : item.type === 'translation' ? '翻译' : item.type === 'writing' ? '写作' : '阅读'}}</text>
+        <text class="q-score" style="color: {{item.is_correct !== false ? '#5B9E6F' : '#e74c3c'}}">
+          {{item.score || 0}}分
+        </text>
+      </view>
+      <text class="q-text">{{item.question}}</text>
+      <view class="a-row">
+        <text class="a-label">你的答案:</text>
+        <text class="a-value">{{item.student_answer || '未作答'}}</text>
+      </view>
+      <view class="a-row">
+        <text class="a-label">参考答案:</text>
+        <text class="a-value">{{item.correct_answer || '-'}}</text>
+      </view>
+      <view class="a-comment" wx:if="{{item.comment}}">
+        <text>{{item.comment}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-actions">
+    <button class="action-btn" bindtap="goBack">返回考试列表</button>
+  </view>
+</view>

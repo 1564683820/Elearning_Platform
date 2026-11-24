@@ -1,0 +1,457 @@
+/* 听力训练 */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg);
+}
+
+/* Header */
+.custom-header {
+  background: #FFFFFF;
+  border-bottom: 1rpx solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16rpx;
+}
+
+.header-btn {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 24rpx;
+  background: var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.header-btn-icon {
+  font-size: 32rpx;
+  color: var(--text-primary);
+}
+
+.header-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+  flex: 1;
+  text-align: center;
+}
+
+/* 进度区 */
+.progress-section {
+  padding: 24rpx 40rpx 16rpx;
+  background: var(--bg);
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.progress-label {
+  font-size: 26rpx;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.score-row {
+  display: flex;
+  gap: 20rpx;
+}
+
+.score-item {
+  display: flex;
+  align-items: center;
+  gap: 6rpx;
+}
+
+.score-icon-circle {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.score-icon-circle.correct-circle {
+  background: var(--success-bg);
+}
+
+.score-icon-circle.wrong-circle {
+  background: var(--danger-bg);
+}
+
+.score-icon-inner {
+  font-size: 20rpx;
+  font-weight: 700;
+}
+
+.correct-circle .score-icon-inner {
+  color: var(--success);
+}
+
+.wrong-circle .score-icon-inner {
+  color: var(--danger);
+}
+
+.score-correct {
+  font-size: 26rpx;
+  color: var(--success);
+  font-weight: 600;
+}
+
+.score-wrong {
+  font-size: 26rpx;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* 题型切换 */
+.type-switch {
+  display: flex;
+  gap: 16rpx;
+  padding: 16rpx 40rpx 0;
+}
+
+.type-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  padding: 20rpx 0;
+  border-radius: 28rpx;
+  background: #F3F4F6;
+  font-size: 24rpx;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.type-btn.active {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+
+.type-icon {
+  font-size: 24rpx;
+}
+
+/* 播放器 - 深色渐变卡片 */
+.player-card {
+  margin: 24rpx 32rpx;
+  background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+  border-radius: var(--radius-lg);
+  padding: 32rpx;
+  box-shadow: var(--shadow-md);
+}
+
+.player-main {
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.play-btn-large {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8rpx 24rpx rgba(91,158,111,0.4);
+}
+
+.play-btn-icon {
+  font-size: 36rpx;
+  color: #FFFFFF;
+}
+
+.player-progress-wrapper {
+  flex: 1;
+}
+
+.player-time-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12rpx;
+}
+
+.time-text {
+  font-size: 24rpx;
+  color: rgba(255,255,255,0.7);
+}
+
+.player-progress-bar {
+  width: 100%;
+  height: 8rpx;
+  background: rgba(255,255,255,0.2);
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+
+.player-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #5B9E6F, #7AB88A);
+  border-radius: 4rpx;
+  transition: width 0.3s ease;
+}
+
+.player-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.play-count-row {
+  display: flex;
+  align-items: center;
+  gap: 4rpx;
+}
+
+.play-count-icon {
+  font-size: 22rpx;
+}
+
+.play-count-label {
+  font-size: 22rpx;
+  color: rgba(255,255,255,0.5);
+}
+
+.play-count-value {
+  font-size: 22rpx;
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.speed-row {
+  display: flex;
+  gap: 16rpx;
+}
+
+.speed-btn {
+  padding: 6rpx 16rpx;
+  border-radius: 12rpx;
+  font-size: 22rpx;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.1);
+}
+
+.speed-btn.active {
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* 题目区 */
+.question-section {
+  margin: 0 32rpx 24rpx;
+  padding: 32rpx;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.question-tags {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 12rpx;
+}
+
+.question-text {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.5;
+  display: block;
+}
+
+/* 选项 */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  padding: 0 32rpx;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32rpx;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 4rpx solid #E5E7EB;
+  transition: all 0.3s;
+}
+
+.quiz-option.correct {
+  border-color: var(--success);
+  background: var(--success-bg);
+}
+
+.quiz-option.wrong {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+}
+
+.option-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.option-letter {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 20rpx;
+  background: var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.option-letter.correct {
+  background: var(--success);
+  color: #FFFFFF;
+}
+
+.option-letter.wrong {
+  background: var(--danger);
+  color: #FFFFFF;
+}
+
+.option-text {
+  flex: 1;
+  font-size: 30rpx;
+  color: var(--text-primary);
+  margin-left: 24rpx;
+  line-height: 1.5;
+}
+
+/* 主观题 */
+.subjective-input {
+  margin: 0 32rpx;
+}
+
+.answer-textarea {
+  width: 100%;
+  min-height: 200rpx;
+  padding: 24rpx;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  font-size: 28rpx;
+  color: var(--text-primary);
+  margin-bottom: 16rpx;
+  box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+}
+
+/* 提交按钮 */
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  background: linear-gradient(135deg, #5B9E6F 0%, #7AB88A 100%);
+  color: #FFFFFF;
+  border-radius: 28rpx;
+  padding: 28rpx;
+  box-shadow: 0 8rpx 24rpx rgba(91,158,111,0.3);
+}
+
+.submit-btn-text {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.submit-btn-icon {
+  font-size: 30rpx;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* 解析 */
+.analysis-card {
+  margin: 24rpx 32rpx;
+  padding: 32rpx;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border-left: 8rpx solid var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.analysis-header {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 12rpx;
+}
+
+.analysis-icon {
+  font-size: 28rpx;
+}
+
+.analysis-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.analysis-answer {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: var(--success);
+  margin-bottom: 8rpx;
+  display: block;
+}
+
+.analysis-explain {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24rpx;
+  display: block;
+}
+
+/* 下一题按钮 */
+.next-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12rpx;
+  background: linear-gradient(135deg, #5B9E6F 0%, #7AB88A 100%);
+  color: #FFFFFF;
+  border-radius: 28rpx;
+  padding: 28rpx;
+  box-shadow: 0 8rpx 24rpx rgba(91,158,111,0.3);
+}
+
+.next-btn-text {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.next-btn-arrow {
+  font-size: 30rpx;
+  color: #FFFFFF;
+  font-weight: 700;
+}

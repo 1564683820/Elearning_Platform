@@ -1,0 +1,205 @@
+<!-- 我的 -->
+<view class="page">
+
+  <!-- ===== 已登录 ===== -->
+  <view wx:if="{{profile}}">
+    <!-- 渐变个人信息区 -->
+    <view class="profile-header profile-{{profile.role || 'student'}}">
+      <view class="user-info">
+        <view class="avatar-wrap" bindtap="onAvatarTap">
+          <image class="avatar-img" wx:if="{{profile.avatar_url}}" src="{{profile.avatar_url}}" mode="aspectFill" />
+          <view class="avatar {{profile.avatar_url ? 'avatar-hidden' : ''}}"></view>
+          
+        </view>
+        <view class="user-detail">
+          <view class="user-name-row">
+            <text class="user-name">{{profile.name || '微信用户'}}</text>
+            <view class="role-badge role-{{profile.role || 'student'}}">
+              <text>{{profile.role === 'teacher' ? '教师' : profile.role === 'personal' ? '个人' : '学生'}}</text>
+            </view>
+          </view>
+          <text class="user-email" wx:if="{{profile.email}}">邮箱 {{profile.email}}</text>
+          <text class="user-email" wx:elif="{{profile.role === 'teacher'}}">教师账号 · 可管理班级</text>
+          <text class="user-email" wx:elif="{{profile.role === 'personal'}}">自主学习模式</text>
+          <text class="user-email" wx:elif="{{myClasses.length > 0}}">已加入 {{myClasses.length}} 个班级</text>
+          <text class="user-email" wx:else>暂未加入班级</text>
+          <view class="user-tags">
+            <view class="user-tag tag-phase">
+              <text>{{profile.phase}}</text>
+            </view>
+            <view class="user-tag tag-days">
+              <text>学习 {{profile.days || 0}} 天</text>
+            </view>
+            <view class="user-tag tag-membership" wx:if="{{profile.membership !== 'free'}}">
+              <text>{{profile.membership === 'vip' ? 'VIP' : 'PRO'}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 数据统计 -->
+      <view class="user-stats">
+        <view class="stat-box">
+          <text class="stat-value">{{profile.totalWords || 0}}</text>
+          <text class="stat-label">单词掌握</text>
+        </view>
+        <view class="stat-box">
+          <text class="stat-value">{{profile.totalTraining || 0}}</text>
+          <text class="stat-label">训练次数</text>
+        </view>
+        <view class="stat-box">
+          <text class="stat-value">{{profile.days || 0}}</text>
+          <text class="stat-label">累计天数</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 学习阶段选择器 -->
+    <picker mode="selector" range="{{studyPhases}}" value="{{currentPhaseIndex}}"
+            bindchange="onPhaseConfirm" wx:if="{{showPhasePicker}}">
+      <view style="position:fixed;left:-9999px;">选择</view>
+    </picker>
+
+    <scroll-view scroll-y class="menu-scroll">
+      <view class="scroll-content">
+
+      <!-- 班级信息（学生/个人学习） -->
+      <view class="list-group card" wx:if="{{profile.role !== 'teacher' && myClasses.length > 0}}">
+        <view class="list-group-title">我的班级</view>
+        <view class="list-item" wx:for="{{myClasses}}" wx:key="id" data-id="{{item.id}}" bindtap="onClassTap">
+          <view class="list-item-left">
+            <view class="icon-box primary">
+            </view>
+            <view class="list-item-text">
+              <text class="list-item-label">{{item.name}}</text>
+              <text class="list-item-sub">共 {{item.student_count}} 名同学</text>
+            </view>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+      </view>
+
+      <!-- 学习分组 -->
+      <view class="list-group card">
+        <view class="list-group-title">学习</view>
+        <view class="list-item" bindtap="onEditPhase">
+          <view class="list-item-left">
+            <text class="list-item-label">学习阶段</text>
+          </view>
+          <view class="list-item-right">
+            <text class="list-item-value">{{studyPhases[currentPhaseIndex]}}</text>
+            <text class="list-item-arrow">›</text>
+          </view>
+        </view>
+
+      </view>
+
+      <!-- 创作分组 -->
+      <view class="list-group card">
+        <view class="list-group-title">创作</view>
+        <view class="list-item" bindtap="onVideoListTap">
+          <view class="list-item-left">
+            <text class="list-item-label">我的视频演绎</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+      </view>
+
+      <!-- 教师专属分组 -->
+      <view class="list-group card" wx:if="{{profile.role === 'teacher'}}">
+        <view class="list-group-title">教师管理</view>
+        <view class="list-item" bindtap="onTeacherDashboardTap">
+          <view class="list-item-left">
+            <text class="list-item-label">教师工作台</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+        <view class="list-item" bindtap="onWebAdminTap">
+          <view class="list-item-left">
+            <text class="list-item-label">后台管理</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+      </view>
+
+      <!-- 学生专属分组 -->
+      <view class="list-group card" wx:if="{{profile.role === 'student' || profile.role === 'personal'}}">
+        <view class="list-group-title">班级</view>
+        <view class="list-item" bindtap="onJoinClassTap">
+          <view class="list-item-left">
+            <text class="list-item-label">加入班级</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+        <view class="list-item" bindtap="onAssistantGradeTap" wx:if="{{profile.role === 'assistant'}}">
+          <view class="list-item-left">
+            <text class="list-item-label">辅助批改</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+      </view>
+
+      <!-- 工具分组（通用） -->
+      <view class="list-group card">
+        <view class="list-group-title">工具</view>
+        <view class="list-item" bindtap="onApiKeyTap">
+          <view class="list-item-left">
+            <text class="list-item-label">API Key 配置</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+        <view class="list-item" bindtap="onDocUploadTap">
+          <view class="list-item-left">
+            <text class="list-item-label">文档上传</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+      </view>
+
+      <!-- 系统分组 -->
+      <view class="list-group card">
+        <view class="list-group-title">系统</view>
+        <view class="list-item" bindtap="onSystemStatusTap">
+          <view class="list-item-left">
+            <text class="list-item-label">系统状态</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+        <view class="list-item" data-action="settings" bindtap="onMenuTap">
+          <view class="list-item-left">
+            <text class="list-item-label">系统设置</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+        <view class="list-item" data-action="help" bindtap="onMenuTap">
+          <view class="list-item-left">
+            <text class="list-item-label">使用说明</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+        <view class="list-item" data-action="feedback" bindtap="onMenuTap">
+          <view class="list-item-left">
+            <text class="list-item-label">反馈</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+        <view class="list-item" data-action="about" bindtap="onMenuTap">
+          <view class="list-item-left">
+            <text class="list-item-label">关于</text>
+          </view>
+          <text class="list-item-arrow">›</text>
+        </view>
+      </view>
+
+      <!-- 退出登录 -->
+      <view class="logout-btn" bindtap="onLogout">
+    <text class="logout-text">退出登录</text>
+      </view>
+
+      <!-- 版本信息 -->
+      <view class="version-footer">
+        <text class="version-text">E-Learning v1.0.0 · 英语全龄学习平台</text>
+      </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

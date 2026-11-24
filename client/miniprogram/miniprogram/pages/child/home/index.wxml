@@ -1,0 +1,89 @@
+<!-- 幼儿启蒙首页 -->
+<view class="child-container">
+  <!-- 状态栏占位 -->
+  <view class="status-bar"></view>
+
+  <!-- 顶部栏 -->
+  <view class="top-bar">
+    <view class="logo-area">
+      <text class="logo-e">E</text>
+      <text class="logo-text">-Learning</text>
+    </view>
+    <view class="phase-btn" catchtap="onOpenPhaseSelector">
+      <text class="phase-btn-text">{{currentPhase}}</text>
+      <text class="phase-arrow">▼</text>
+    </view>
+  </view>
+
+  <!-- 滚动内容区 -->
+  <scroll-view class="scroll-area" scroll-y>
+    <!-- 欢迎区域 -->
+    <view class="welcome-section">
+      <view class="welcome-title">欢迎小朋友来学习</view>
+      <view class="welcome-subtitle">今天也要开心学英语哦</view>
+      <view class="decor-dots">
+        <view class="dot d1"></view>
+        <view class="dot d2"></view>
+        <view class="dot d3"></view>
+      </view>
+    </view>
+
+    <!-- 正在播放 -->
+    <view class="player-card" wx:if="{{currentSong}}" catchtap="onPlaySong" data-id="{{currentSong.id}}">
+      <view class="player-row">
+        <view class="player-avatar">
+          <text wx:if="{{isPlaying}}">⏸️</text>
+          <text wx:else>▶️</text>
+        </view>
+        <view class="player-info">
+          <text class="player-title">{{currentSong.title}}</text>
+          <text class="player-subtitle">{{currentSong.subtitle}}</text>
+        </view>
+      </view>
+      <view class="player-progress">
+        <view class="progress-track">
+          <view class="progress-fill" style="width: {{progressPercent}}%"></view>
+        </view>
+        <text class="progress-time">{{playTime}}</text>
+      </view>
+    </view>
+
+    <!-- 儿歌列表 -->
+    <view class="section-title">更多儿歌</view>
+    <view class="song-list">
+      <view class="song-item" wx:for="{{songs}}" wx:key="id"
+            data-id="{{item.id}}" catchtap="onPlaySong">
+        <view class="song-avatar">
+          <text>▶️</text>
+        </view>
+        <view class="song-info">
+          <text class="song-title">{{item.title}}</text>
+          <text class="song-subtitle">{{item.subtitle}}</text>
+        </view>
+        <text class="song-duration">{{item.duration}}</text>
+      </view>
+    </view>
+
+    <!-- 底部安全空间 -->
+    <view class="bottom-safe"></view>
+  </scroll-view>
+
+  <!-- 底部导航 -->
+  <footer-tabs activeIndex="0"></footer-tabs>
+
+  <!-- 阶段选择弹窗 -->
+  <phase-selector visible="{{showPhaseSelector}}"
+                  currentPhase="{{phaseMode.getSavedPhaseIndex()}}"
+                  bind:close="onClosePhaseSelector"
+                  bind:saved="onPhaseSaved"></phase-selector>
+
+  <!-- 保存提示弹窗 -->
+  <view class="modal-overlay {{showSaveTip ? 'show' : ''}}">
+    <view class="tip-box">
+      <view class="tip-icon">✅</view>
+      <view class="tip-title">阶段已保存</view>
+      <view class="tip-desc">已切换到 <text class="tip-highlight">{{savedPhaseName}}</text> 模式<br/>重启后可获得更佳体验</view>
+      <button class="tip-btn" catchtap="onRestartNow">立即重启</button>
+    </view>
+  </view>
+</view>

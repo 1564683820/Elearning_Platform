@@ -1,0 +1,68 @@
+<!-- 智能翻译 -->
+<view class="page">
+  <!-- 渐变Header -->
+  <view class="chat-header" style="padding-top: {{navBarTop}}px;">
+    <view class="header-top" style="height: {{navBarHeight}}px;">
+      <text class="header-sparkle"></text>
+      <view class="header-center">
+        <text class="header-title">智能对话</text>
+        <text class="header-subtitle">AI 驱动的情景练习与知识问答</text>
+      </view>
+    </view>
+    <view class="header-tabs">
+      <view class="header-tab" data-index="0" bindtap="onTabChange">
+        <text>情景对话</text>
+      </view>
+      <view class="header-tab" data-index="1" bindtap="onTabChange">
+        <text class="tab-icon">🔍</text>
+        <text>智能问答</text>
+      </view>
+      <view class="header-tab active" data-index="2" bindtap="onTabChange">
+        <text>智能翻译</text>
+      </view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y class="translate-scroll" style="height: calc(100vh - {{headerHeight}}px);">
+    <!-- 翻译方向 -->
+    <view class="direction-row">
+      <view class="direction-label {{direction === 'zh2en' ? 'active' : ''}}">中 → 英</view>
+      <view class="direction-switch" bindtap="onToggleDirection">
+        <text class="switch-icon">⇄</text>
+      </view>
+      <view class="direction-label {{direction === 'en2zh' ? 'active' : ''}}">英 → 中</view>
+    </view>
+
+    <!-- 输入区 -->
+    <view class="translate-card input-card card">
+      <text class="card-label">{{direction === 'zh2en' ? '输入中文' : '输入英文'}}</text>
+      <textarea class="translate-textarea" placeholder="输入要翻译的内容..."
+                value="{{inputText}}" bindinput="onInput" maxlength="5000" />
+      <view class="input-toolbar">
+        <view class="toolbar-btn" bindtap="onImageTranslate">
+          <text class="toolbar-btn-text">选择图片</text>
+        </view>
+        <text class="char-count">{{charCount}}/5000</text>
+        <view class="btn-primary translate-btn" bindtap="onTranslate">
+          <text>翻译</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 输出区 -->
+    <view class="translate-card output-card card" wx:if="{{translated}}">
+      <view class="output-header">
+        <view class="output-status-wrap">
+          <text class="output-check">✓</text>
+          <text class="output-status">翻译完成</text>
+        </view>
+        <view class="copy-btn" bindtap="onCopy">
+          <text class="copy-text">复制</text>
+        </view>
+      </view>
+      <text class="output-text" user-select>{{outputText}}</text>
+    </view>
+
+    <view style="height: 40rpx;"></view>
+  </scroll-view>
+</view>

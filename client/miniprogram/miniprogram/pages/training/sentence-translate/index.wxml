@@ -1,0 +1,80 @@
+<!-- 句子翻译训练 -->
+<view class="page">
+  <!-- 自定义Header -->
+  <view class="custom-header" style="padding-top: {{navBarTop}}px;">
+    <view class="header-inner" style="height: {{navBarHeight}}px; padding-left: {{navPadLeft}}px; padding-right: {{navPadRight}}px;">
+      <view class="header-btn" bindtap="onBack">
+        <text class="header-btn-icon">‹</text>
+      </view>
+      <text class="header-title">句子翻译训练</text>
+      <view class="header-btn" bindtap="onSettingsTap">
+        <text class="header-btn-icon">⚙</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 进度区 -->
+  <view class="progress-section">
+    <view class="progress-info">
+      <text class="progress-label">第 {{currentIndex + 1}} 题 · 对照练习</text>
+    </view>
+    <!-- 中译英 / 英译中 切换 -->
+    <view class="direction-row">
+      <view class="direction-btn {{direction === 'zh2en' ? 'active' : ''}}" bindtap="onDirectionChange" data-dir="zh2en">
+        <text class="direction-text {{direction === 'zh2en' ? 'active' : ''}}">中 → 英</text>
+      </view>
+      <view class="direction-switch" bindtap="onToggleDirection">
+        <text class="direction-switch-icon">⇄</text>
+      </view>
+      <view class="direction-btn {{direction === 'en2zh' ? 'active' : ''}}" bindtap="onDirectionChange" data-dir="en2zh">
+        <text class="direction-text {{direction === 'en2zh' ? 'active' : ''}}">英 → 中</text>
+      </view>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-bar-fill" style="width: {{showReference ? 100 : 0}}%;"></view>
+    </view>
+  </view>
+
+  <!-- 题目 -->
+  <view class="question-card" wx:if="{{loading}}">正在加载…</view>
+  <view class="question-card" wx:elif="{{!question}}">
+    <text>{{error || '暂无题目'}}</text>
+    <button bindtap="loadQuestions">重新加载</button>
+  </view>
+  <block wx:else>
+  <view class="question-card">
+    <view class="question-tag-row">
+      <text class="tag tag-primary">{{direction === 'zh2en' ? '中译英' : '英译中'}}</text>
+    </view>
+    <text class="question-text">{{direction === 'zh2en' ? question.zh : question.en}}</text>
+    <text class="keyword-hint" wx:if="{{question.hints && direction === 'zh2en'}}">{{question.hints}}</text>
+  </view>
+
+  <!-- 输入区 -->
+  <view class="input-section">
+    <view class="input-label-row">
+      <text class="input-label">你的翻译（{{direction === 'zh2en' ? '英文' : '中文'}}）：</text>
+      <text class="input-count">{{inputText.length}}/2000</text>
+    </view>
+    <textarea class="translate-input" placeholder="请输入你的翻译..."
+              value="{{inputText}}" bindinput="onInput" maxlength="2000" />
+    <view class="submit-btn" bindtap="onSubmit">
+      <text class="submit-btn-text">查看参考译文</text>
+      <text class="submit-btn-icon">✓</text>
+    </view>
+  </view>
+
+  <!-- 参考答案 -->
+  <view class="analysis-card" wx:if="{{showReference}}">
+    <view class="analysis-header">
+      <text class="analysis-icon"></text>
+      <text class="analysis-title">参考答案</text>
+    </view>
+    <text class="reference-answer">{{referenceText}}</text>
+    <view class="next-btn" bindtap="onNextQuestion">
+      <text class="next-btn-text">下一题</text>
+      <text class="next-btn-arrow">→</text>
+    </view>
+  </view>
+  </block>
+</view>

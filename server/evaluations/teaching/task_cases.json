@@ -1,0 +1,22 @@
+[
+  {"id":"T01","scenario":"过去时错题生成20分钟10题复习课","objective":"根据最近两次考试设计过去时复习课","expected":"awaiting_review","human_review_required":true},
+  {"id":"T02","scenario":"针对多个薄弱点生成练习","objective":"覆盖全部高频错题知识点","expected":"awaiting_review","human_review_required":true},
+  {"id":"T03","scenario":"5分钟3题课堂检测","objective":"设计快速课堂检测","duration_minutes":5,"question_count":3,"expected":"awaiting_review","human_review_required":true},
+  {"id":"T04","scenario":"40分钟20题综合复习","objective":"设计综合复习课","duration_minutes":40,"question_count":20,"expected":"awaiting_review","human_review_required":true},
+  {"id":"T05","scenario":"保留教师互动教学偏好","objective":"增加学生合作讨论活动","expected":"awaiting_review","human_review_required":true},
+  {"id":"T06","scenario":"没有班级历史考试","expected":"awaiting_input","automated_test":"test_missing_evidence_waits_for_input_instead_of_fabricating"},
+  {"id":"T07","scenario":"没有已批改错题","expected":"awaiting_input","manual_fixture":"remove graded answers in a disposable copy"},
+  {"id":"T08","scenario":"没有可访问教材","expected":"awaiting_input","manual_fixture":"use a new empty class"},
+  {"id":"T09","scenario":"其他班级教材不可检索","expected":"excluded","automated_test":"test_retrieval_filters_foreign_documents_before_vector_search"},
+  {"id":"T10","scenario":"不存在的引用、错误总分、重复题被拦截","expected":"rejected","automated_test":"test_bad_counts_scores_duplicates_citations_and_coverage_are_rejected"},
+  {"id":"T11","scenario":"两次自动修正后仍不合格","expected":"awaiting_input","automated_test":"test_validation_correction_is_bounded"},
+  {"id":"T12","scenario":"教师修改导致审核失效","expected":"awaiting_review","automated_test":"test_teacher_edits_invalidate_approval_and_stale_requests_are_rejected"},
+  {"id":"T13","scenario":"重复发布不生成第二张试卷","expected":"same_exam","automated_test":"test_repeated_publish_returns_same_exam_and_uses_existing_publisher"},
+  {"id":"T14","scenario":"取消后模型旧结果到达","expected":"cancelled","automated_test":"test_cancel_fences_in_flight_model_result"},
+  {"id":"T15","scenario":"Worker 失效后回收租约","expected":"recovered","automated_test":"test_expired_worker_lease_can_be_reclaimed_and_old_owner_fenced"},
+  {"id":"T16","scenario":"失败后从上个成功节点继续","expected":"resumed","automated_test":"test_retry_resumes_successful_analysis_after_worker_failure"},
+  {"id":"T17","scenario":"Redis 断连保留未派发任务","expected":"queued","automated_test":"test_redis_outage_retains_transactional_outbox"},
+  {"id":"T18","scenario":"重复队列投递不重复生成","expected":"once","automated_test":"test_workflow_persists_every_node_and_duplicate_delivery_does_not_regenerate"},
+  {"id":"T19","scenario":"跨教师读取或班级权限撤销","expected":"404","automated_test":"test_foreign_teacher_and_revoked_membership_cannot_read_task"},
+  {"id":"T20","scenario":"API 重启后重复发布查询同一结果","expected":"same_exam","automated_test":"test_repeated_publish_returns_same_exam_and_uses_existing_publisher"}
+]

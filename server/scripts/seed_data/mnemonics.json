@@ -1,0 +1,3932 @@
+[
+  {
+    "word": "abandon",
+    "mnemonic": "a+band+on → 一个乐队在台上，主唱却放弃了 → 放弃",
+    "en": "Don't abandon your dreams.",
+    "zh": "不要放弃你的梦想。"
+  },
+  {
+    "word": "ability",
+    "mnemonic": "abili(能力) + ty(名词) → 能做某事的能力",
+    "en": "She has the ability to solve complex problems.",
+    "zh": "她有快速解决复杂问题的能力。"
+  },
+  {
+    "word": "absent",
+    "mnemonic": "ab(离开) + sent(存在) → 不在场 → 缺席",
+    "en": "Three students were absent from class.",
+    "zh": "今天有三个学生缺课。"
+  },
+  {
+    "word": "absorb",
+    "mnemonic": "ab(离开) + sorb(吸) → 吸走 → 吸收",
+    "en": "Plants absorb carbon dioxide.",
+    "zh": "植物吸收二氧化碳。"
+  },
+  {
+    "word": "abstract",
+    "mnemonic": "abs(离开) + tract(拉) → 从现实中拉出来的 → 抽象的",
+    "en": "This concept is too abstract for children.",
+    "zh": "这个概念对孩子来说太抽象了。"
+  },
+  {
+    "word": "accept",
+    "mnemonic": "ac(加强) + cept(拿) → 拿过来 → 接受",
+    "en": "Please accept this small gift.",
+    "zh": "请接受这份小礼物。"
+  },
+  {
+    "word": "access",
+    "mnemonic": "ac(靠近) + cess(走) → 走近 → 进入",
+    "en": "Students have free access to the library.",
+    "zh": "学生可以免费进入图书馆。"
+  },
+  {
+    "word": "accident",
+    "mnemonic": "ac(朝向) + cid(落下) + ent → 突然落到头上 → 意外",
+    "en": "The accident was caused by slippery roads.",
+    "zh": "这场车祸是由路滑引起的。"
+  },
+  {
+    "word": "account",
+    "mnemonic": "ac(加强) + count(数) → 数清楚 → 算账",
+    "en": "Check your bank account balance.",
+    "zh": "查看你的银行账户余额。"
+  },
+  {
+    "word": "accurate",
+    "mnemonic": "ac(加强) + cur(关心) + ate → 非常用心 → 精确的",
+    "en": "Make sure your measurements are accurate.",
+    "zh": "确保测量精确。"
+  },
+  {
+    "word": "achieve",
+    "mnemonic": "a(到) + chieve(头) → 到头 → 实现",
+    "en": "You can achieve anything if you work hard.",
+    "zh": "只要努力就能实现任何事情。"
+  },
+  {
+    "word": "adapt",
+    "mnemonic": "ad(朝向) + apt(适合) → 使适合 → 适应",
+    "en": "Animals must adapt to their environment.",
+    "zh": "动物必须适应环境。"
+  },
+  {
+    "word": "adjust",
+    "mnemonic": "ad(朝向) + just(正好) → 让某物正好 → 调整",
+    "en": "Adjust the volume with this button.",
+    "zh": "用这个按钮调整音量。"
+  },
+  {
+    "word": "admit",
+    "mnemonic": "ad(朝向) + mit(送) → 送进去 → 承认",
+    "en": "He admitted his mistake.",
+    "zh": "他承认了错误。"
+  },
+  {
+    "word": "adopt",
+    "mnemonic": "ad(朝向) + opt(选择) → 选择为己有 → 收养",
+    "en": "They adopted a child.",
+    "zh": "他们收养了一个孩子。"
+  },
+  {
+    "word": "advantage",
+    "mnemonic": "ad(朝向) + vant(前) + age → 向前 → 优势",
+    "en": "English fluency is a great advantage.",
+    "zh": "英语流利是很大优势。"
+  },
+  {
+    "word": "ambition",
+    "mnemonic": "ambi(周围) + tion → 想看遍周围 → 雄心",
+    "en": "Her ambition is to become a scientist.",
+    "zh": "她的雄心是成为科学家。"
+  },
+  {
+    "word": "ambulance",
+    "mnemonic": "谐音: 俺不能死 → 救护车快来了",
+    "en": "The ambulance arrived in minutes.",
+    "zh": "救护车几分钟就到了。"
+  },
+  {
+    "word": "appear",
+    "mnemonic": "ap(朝向) + pear(梨) → 梨冒出来了 → 出现",
+    "en": "A rainbow appeared after the rain.",
+    "zh": "雨后出现了彩虹。"
+  },
+  {
+    "word": "apply",
+    "mnemonic": "ap(靠近) + ply(折叠) → 折起来贴近 → 申请",
+    "en": "Apply for the scholarship.",
+    "zh": "申请奖学金。"
+  },
+  {
+    "word": "appreciate",
+    "mnemonic": "ap(加强) + preci(价值) + ate → 看出价值 → 欣赏",
+    "en": "I appreciate your help.",
+    "zh": "我感激你的帮助。"
+  },
+  {
+    "word": "approach",
+    "mnemonic": "ap(靠近) + proach(接近) → 一再靠近 → 接近",
+    "en": "Winter is approaching.",
+    "zh": "冬天正在临近。"
+  },
+  {
+    "word": "argue",
+    "mnemonic": "谐音: 阿Q → 阿Q经常和人争论",
+    "en": "Don't argue with stubborn people.",
+    "zh": "不要和固执的人争论。"
+  },
+  {
+    "word": "assemble",
+    "mnemonic": "as(加强) + semble(相同) → 到相同的地方 → 集合",
+    "en": "Students assembled in the hall.",
+    "zh": "学生们在大厅集合。"
+  },
+  {
+    "word": "assist",
+    "mnemonic": "as(靠近) + sist(站立) → 站在旁边 → 协助",
+    "en": "Can you assist me with this box?",
+    "zh": "你能帮我搬箱子吗？"
+  },
+  {
+    "word": "assume",
+    "mnemonic": "as(加强) + sume(拿) → 拿过来当作自己的 → 假设",
+    "en": "Never assume without checking facts.",
+    "zh": "核实事实前不要假设。"
+  },
+  {
+    "word": "attempt",
+    "mnemonic": "at(加强) + tempt(尝试) → 用力尝试",
+    "en": "She attempted to climb the mountain.",
+    "zh": "她尝试攀登那座山。"
+  },
+  {
+    "word": "attend",
+    "mnemonic": "at(朝向) + tend(伸展) → 伸向某处 → 参加",
+    "en": "All employees must attend the meeting.",
+    "zh": "所有员工必须参会。"
+  },
+  {
+    "word": "attract",
+    "mnemonic": "at(朝向) + tract(拉) → 拉向自己 → 吸引",
+    "en": "Bright colors attract butterflies.",
+    "zh": "鲜艳颜色吸引蝴蝶。"
+  },
+  {
+    "word": "balance",
+    "mnemonic": "谐音: 摆轮子 → 保持平衡",
+    "en": "Balance work and personal life.",
+    "zh": "平衡工作和生活。"
+  },
+  {
+    "word": "believe",
+    "mnemonic": "谐音: 别离我 → 相信我就别离开我",
+    "en": "I believe you can succeed.",
+    "zh": "我相信你能成功。"
+  },
+  {
+    "word": "benefit",
+    "mnemonic": "bene(好) + fit(做) → 做得好就有好处",
+    "en": "Exercise has many health benefits.",
+    "zh": "锻炼对健康有很多好处。"
+  },
+  {
+    "word": "calculate",
+    "mnemonic": "calc(小石子) → 古人用石子计数",
+    "en": "Engineers calculate strength carefully.",
+    "zh": "工程师仔细计算强度。"
+  },
+  {
+    "word": "capture",
+    "mnemonic": "cap(抓) + ture → 抓住",
+    "en": "The photo captured the sunset.",
+    "zh": "照片捕捉了夕阳。"
+  },
+  {
+    "word": "celebrate",
+    "mnemonic": "celeb(著名) + rate → 因著名而庆祝",
+    "en": "We celebrate Christmas with family.",
+    "zh": "我们和家人庆祝圣诞。"
+  },
+  {
+    "word": "college",
+    "mnemonic": "col(共同) + leg(选择) → 共同选择学习的地方",
+    "en": "She went to college to study medicine.",
+    "zh": "她上大学学医。"
+  },
+  {
+    "word": "communicate",
+    "mnemonic": "com(共同) + muni(服务) + cate → 共同服务",
+    "en": "Communicate your feelings clearly.",
+    "zh": "清楚表达你的感受。"
+  },
+  {
+    "word": "compare",
+    "mnemonic": "com(共同) + pare(相等) → 放在一起比较",
+    "en": "Don't compare yourself to others.",
+    "zh": "别和别人比较。"
+  },
+  {
+    "word": "compete",
+    "mnemonic": "com(共同) + pete(寻求) → 共同追求→竞争",
+    "en": "Athletes compete in the Olympics.",
+    "zh": "运动员在奥运会上竞争。"
+  },
+  {
+    "word": "complete",
+    "mnemonic": "com(加强) + plete(填满) → 填满→完成",
+    "en": "Please complete your homework.",
+    "zh": "请完成作业。"
+  },
+  {
+    "word": "concentrate",
+    "mnemonic": "con(共同) + centr(中心) + ate → 集中到中心",
+    "en": "Please concentrate on your studies.",
+    "zh": "请专注学习。"
+  },
+  {
+    "word": "conclude",
+    "mnemonic": "con(共同) + clude(关闭) → 一起关闭→结束",
+    "en": "What can we conclude from this?",
+    "zh": "我们能得出什么结论？"
+  },
+  {
+    "word": "confidence",
+    "mnemonic": "con(加强) + fid(信任) + ence → 非常信任自己",
+    "en": "Practice builds confidence.",
+    "zh": "练习建立自信。"
+  },
+  {
+    "word": "connect",
+    "mnemonic": "con(共同) + nect(绑) → 绑在一起",
+    "en": "This bridge connects both sides.",
+    "zh": "这座桥连接两岸。"
+  },
+  {
+    "word": "consider",
+    "mnemonic": "con(共同) + sider(星星) → 观星象→考虑",
+    "en": "Consider my proposal carefully.",
+    "zh": "认真考虑我的提议。"
+  },
+  {
+    "word": "construct",
+    "mnemonic": "con(共同) + struct(建造) → 共同建造",
+    "en": "They will construct a new school.",
+    "zh": "他们将建一所新学校。"
+  },
+  {
+    "word": "contain",
+    "mnemonic": "con(共同) + tain(保持) → 保持在一起",
+    "en": "This box contains my memories.",
+    "zh": "盒子装满了我的回忆。"
+  },
+  {
+    "word": "contribute",
+    "mnemonic": "con(共同) + tribute(给予) → 大家一起给",
+    "en": "Everyone should contribute to society.",
+    "zh": "每个人都应做贡献。"
+  },
+  {
+    "word": "convince",
+    "mnemonic": "con(加强) + vince(征服) → 征服观点→说服",
+    "en": "She convinced me to join.",
+    "zh": "她说服了我加入。"
+  },
+  {
+    "word": "courage",
+    "mnemonic": "cour(心) + age → 发自内心的力量→勇气",
+    "en": "It takes courage to admit mistakes.",
+    "zh": "承认错误需要勇气。"
+  },
+  {
+    "word": "curious",
+    "mnemonic": "cur(关心) + ious → 非常关心的",
+    "en": "Children are curious about everything.",
+    "zh": "孩子对一切好奇。"
+  },
+  {
+    "word": "dab",
+    "mnemonic": "打（da）吧（b）→ 轻拍一下就打吧 → 少量轻拍",
+    "en": "She gave a dab of paint on the canvas.",
+    "zh": "她在画布上轻轻点了一下颜料。"
+  },
+  {
+    "word": "daddy",
+    "mnemonic": "大大（da）的（ddy）依靠 → 爸爸是家里的顶梁柱",
+    "en": "My daddy taught me how to ride a bike.",
+    "zh": "我爸爸教我骑自行车。"
+  },
+  {
+    "word": "daffodil",
+    "mnemonic": "大（da）福（ff）到（di）了（l）→ 水仙花开，福气到",
+    "en": "A yellow daffodil bloomed in the garden.",
+    "zh": "一朵黄色水仙花在花园里绽放。"
+  },
+  {
+    "word": "dahlia",
+    "mnemonic": "大（da）丽（li）呀（a）→ 大丽花真华丽",
+    "en": "She planted a dahlia in the front yard.",
+    "zh": "她在前院种了一棵大丽花。"
+  },
+  {
+    "word": "daily",
+    "mnemonic": "待（dai）里（ly）→ 每天的事情等待处理 → 每日的",
+    "en": "Reading the daily news is a good habit.",
+    "zh": "阅读每日新闻是个好习惯。"
+  },
+  {
+    "word": "dairy",
+    "mnemonic": "带（dai）乳（ry）→ 带来乳制品的地方 → 乳品店",
+    "en": "We buy fresh milk from the local dairy.",
+    "zh": "我们从当地乳品店买鲜牛奶。"
+  },
+  {
+    "word": "dam",
+    "mnemonic": "大（da）妈（m）→ 大妈筑坝拦水？嗯，就是水坝",
+    "en": "The dam controls the flow of the river.",
+    "zh": "水坝控制着河流的流量。"
+  },
+  {
+    "word": "damage",
+    "mnemonic": "打（da）骂（ma）哥（ge）→ 打骂会带来伤害 → 损害",
+    "en": "The storm caused serious damage to the house.",
+    "zh": "暴风雨对房子造成了严重损害。"
+  },
+  {
+    "word": "dame",
+    "mnemonic": "大（da）妈（me）→ 大妈就是夫人，尊称",
+    "en": "The dame walked gracefully into the hall.",
+    "zh": "那位夫人优雅地走进大厅。"
+  },
+  {
+    "word": "damned",
+    "mnemonic": "打（da）猛（mned）→ 被打得很惨，真该死 → 该死的",
+    "en": "That damned cat knocked over the vase.",
+    "zh": "那只该死的猫打翻了花瓶。"
+  },
+  {
+    "word": "damning",
+    "mnemonic": "打（da）命（mning）→ 打到命都不要了，诅咒一片 → 诅咒",
+    "en": "The evidence was damning for the suspect.",
+    "zh": "证据对嫌疑人来说是毁灭性的。"
+  },
+  {
+    "word": "damp",
+    "mnemonic": "大（da）雾（mp）→ 大雾让空气潮湿 → 潮湿的",
+    "en": "The basement feels damp and cold.",
+    "zh": "地下室又湿又冷。"
+  },
+  {
+    "word": "damsel",
+    "mnemonic": "但（dam）说（sel）→ 但说少女在等待 → 少女",
+    "en": "The damsel was trapped in the tower.",
+    "zh": "那位少女被困在塔里。"
+  },
+  {
+    "word": "dance floor",
+    "mnemonic": "跳（dance）舞的地板（floor）→ 舞池",
+    "en": "Everyone moved to the dance floor.",
+    "zh": "所有人都移到了舞池。"
+  },
+  {
+    "word": "dandelion",
+    "mnemonic": "蛋（dan）的（de）里（li）昂（on）→ 蒲公英像鸡蛋黄？不，是蒲公英",
+    "en": "The dandelion seeds floated in the wind.",
+    "zh": "蒲公英的种子随风飘散。"
+  },
+  {
+    "word": "danger",
+    "mnemonic": "当（dang）儿（er）→ 当心！有危险 → 危险",
+    "en": "There is danger lurking in the forest.",
+    "zh": "森林里潜伏着危险。"
+  },
+  {
+    "word": "dangerous",
+    "mnemonic": "danger+ous（多的）→ 危险多多的 → 危险的",
+    "en": "It is dangerous to drive in the snow.",
+    "zh": "在雪地里开车很危险。"
+  },
+  {
+    "word": "dare",
+    "mnemonic": "大（da）热（re）→ 大热天你敢挑战吗？→ 敢",
+    "en": "I dare you to jump into the pool.",
+    "zh": "我谅你不敢跳进泳池。"
+  },
+  {
+    "word": "daring",
+    "mnemonic": "dare（敢）+ing → 敢做的人很大胆 → 大胆的",
+    "en": "The daring rescue saved three people.",
+    "zh": "那次大胆的营救救了三个人。"
+  },
+  {
+    "word": "darken",
+    "mnemonic": "dark（黑暗）+en（使）→ 使变暗 → 弄暗",
+    "en": "The storm clouds darkened the sky.",
+    "zh": "暴风雨云使天空变暗。"
+  },
+  {
+    "word": "darkened",
+    "mnemonic": "darken的过去式 → 已经变暗了",
+    "en": "The room darkened as she closed the curtains.",
+    "zh": "她拉上窗帘后房间变暗了。"
+  },
+  {
+    "word": "darkroom",
+    "mnemonic": "dark（黑暗）+room（房间）→ 暗房",
+    "en": "He developed the film in the darkroom.",
+    "zh": "他在暗房里冲洗胶卷。"
+  },
+  {
+    "word": "darling",
+    "mnemonic": "达（da）令（rling）→ 亲爱的，我的达令 → 亲爱的",
+    "en": "Good morning, my darling!",
+    "zh": "早上好，亲爱的！"
+  },
+  {
+    "word": "darn",
+    "mnemonic": "打（da）纫（rn）→ 用针线织补袜子 → 织补",
+    "en": "She knows how to darn a sock.",
+    "zh": "她知道怎么织补袜子。"
+  },
+  {
+    "word": "dash",
+    "mnemonic": "打（da）湿（sh）→ 冲出去被雨打湿 → 猛冲",
+    "en": "He made a dash for the finish line.",
+    "zh": "他冲向终点线。"
+  },
+  {
+    "word": "dashboard",
+    "mnemonic": "dash（冲）+board（板）→ 冲撞时看到的板 → 仪表板",
+    "en": "The speedometer is on the dashboard.",
+    "zh": "速度表在仪表板上。"
+  },
+  {
+    "word": "dashing",
+    "mnemonic": "dash（冲）+ing → 一直在冲，真有闯劲 → 闯劲足的",
+    "en": "He looked dashing in his new suit.",
+    "zh": "他穿上新西装显得很精神。"
+  },
+  {
+    "word": "DAT",
+    "mnemonic": "打（Da）特（T）→ 数字录音带（DAT）像磁带，打特技？",
+    "en": "The data was stored on a DAT tape.",
+    "zh": "数据存储在数字录音带上。"
+  },
+  {
+    "word": "data",
+    "mnemonic": "大（da）踏（ta）→ 大步踏来的是数据 → 数据",
+    "en": "We need more data to finish the report.",
+    "zh": "我们需要更多数据来完成报告。"
+  },
+  {
+    "word": "daughter-in-law",
+    "mnemonic": "daughter（女儿）+in（进入）+law（法律）→ 法律认可进来的女儿 → 媳妇",
+    "en": "My daughter-in-law is a great cook.",
+    "zh": "我媳妇是个很棒的厨师。"
+  },
+  {
+    "word": "dawn",
+    "mnemonic": "d+awn→‘当’第一缕光‘亮’起→破晓；联想‘当’你醒来，黎明已至",
+    "en": "We woke up at dawn to see the sunrise.",
+    "zh": "我们黎明起床看日出。"
+  },
+  {
+    "word": "day care",
+    "mnemonic": "day(白天)+care(照顾)→白天把孩子交给别人照顾→日托",
+    "en": "She takes her son to day care every morning.",
+    "zh": "她每天早上送儿子去日托。"
+  },
+  {
+    "word": "day off",
+    "mnemonic": "day(天)+off(离开)→离开工作的那天→休假",
+    "en": "I finally got a day off this Friday.",
+    "zh": "这周五我终于有一天假。"
+  },
+  {
+    "word": "day trip",
+    "mnemonic": "day(一天)+trip(旅行)→当天去当天回的旅行→短途游",
+    "en": "We took a day trip to the beach.",
+    "zh": "我们去海滩做了一次当日往返的短途旅行。"
+  },
+  {
+    "word": "day-to-day",
+    "mnemonic": "一天又一天→日常的、暂时的；‘day to day’连字符→天天如此",
+    "en": "I handle day-to-day operations at the office.",
+    "zh": "我负责办公室的日常运营。"
+  },
+  {
+    "word": "daydream",
+    "mnemonic": "day(白天)+dream(梦)→白天做梦→空想；谐音‘呆追梦’→发呆时追梦",
+    "en": "Stop daydreaming and focus on your work.",
+    "zh": "别做白日梦了，专心工作。"
+  },
+  {
+    "word": "daylight",
+    "mnemonic": "day(白天)+light(光)→白天的光→日光；谐音‘逮来特’→逮住光线",
+    "en": "The room is full of daylight in the morning.",
+    "zh": "早晨房间里充满日光。"
+  },
+  {
+    "word": "daytime",
+    "mnemonic": "day(白天)+time(时间)→白天的时间→日间",
+    "en": "I prefer to study during the daytime.",
+    "zh": "我更喜欢在白天学习。"
+  },
+  {
+    "word": "dazed",
+    "mnemonic": "daze(晕眩)+d→‘呆紫的’→头昏眼花，脸色发紫→茫然的",
+    "en": "After the accident, he looked dazed.",
+    "zh": "事故后，他看上去头昏眼花。"
+  },
+  {
+    "word": "DC",
+    "mnemonic": "字母D像电池正极，C像负极→直流电；也可记作‘Direct Current’缩写",
+    "en": "This device runs on DC power.",
+    "zh": "这个设备使用直流电。"
+  },
+  {
+    "word": "de facto",
+    "mnemonic": "de(的)+facto→‘事实的’音译→事实上存在的（非法律上的）",
+    "en": "He is the de facto leader of the group.",
+    "zh": "他是这个团体事实上的领导者。"
+  },
+  {
+    "word": "deacon",
+    "mnemonic": "d+ea+con→‘递’‘一’本‘经’→副主祭递圣经；联想‘迪肯’音译",
+    "en": "The deacon read the scripture in church.",
+    "zh": "执事在教堂诵读经文。"
+  },
+  {
+    "word": "dead end",
+    "mnemonic": "dead(死)+end(尽头)→死胡同；联想‘走到头发现是死的’→绝路",
+    "en": "This street is a dead end.",
+    "zh": "这条街是一条死胡同。"
+  },
+  {
+    "word": "deadlocked",
+    "mnemonic": "dead(死)+locked(锁住)→像锁死一样→陷入僵局；‘僵持不下’",
+    "en": "The negotiations became deadlocked.",
+    "zh": "谈判陷入了僵局。"
+  },
+  {
+    "word": "deadly",
+    "mnemonic": "dead(死)+ly→‘致死地’→致命的；谐音‘呆得累’→累到快死→非常",
+    "en": "This snake has deadly venom.",
+    "zh": "这条蛇有致命的毒液。"
+  },
+  {
+    "word": "deaf",
+    "mnemonic": "d+eaf→‘弟’‘耳’‘否’→弟弟耳朵否（听不见）→聋的",
+    "en": "He is deaf in one ear.",
+    "zh": "他一只耳朵是聋的。"
+  },
+  {
+    "word": "deafening",
+    "mnemonic": "deafen(使聋)+ing→声音大得让人聋→震耳欲聋",
+    "en": "The music was deafening at the concert.",
+    "zh": "音乐会上的音乐震耳欲聋。"
+  },
+  {
+    "word": "deal",
+    "mnemonic": "d+eal→‘递’‘一’‘摞’钱→交易；谐音‘抵哦’→成交",
+    "en": "They made a deal to share the profits.",
+    "zh": "他们达成协议分享利润。"
+  },
+  {
+    "word": "dealership",
+    "mnemonic": "dealer(商人)+ship(身份)→经销商的资格→代理权；联想‘4S店’",
+    "en": "He owns a car dealership in town.",
+    "zh": "他在镇上拥有一家汽车经销店。"
+  },
+  {
+    "word": "dealings",
+    "mnemonic": "deal(交易)+ings→多次交易→来往；‘打交道’",
+    "en": "I have business dealings with them.",
+    "zh": "我和他们有业务往来。"
+  },
+  {
+    "word": "dearest",
+    "mnemonic": "dear(亲爱的)+est(最)→最亲爱的→最亲爱的人",
+    "en": "You are my dearest friend.",
+    "zh": "你是我最亲爱的朋友。"
+  },
+  {
+    "word": "dearly",
+    "mnemonic": "dear(亲爱的)+ly→像爱亲人一样→深深地；谐音‘滴耳哩’→滴在耳朵里，珍贵→昂贵地",
+    "en": "I dearly love my family.",
+    "zh": "我深深地爱着我的家人。"
+  },
+  {
+    "word": "death",
+    "mnemonic": "d+ea+th→‘弟’‘畏’‘死’→弟弟畏惧死亡→死亡；谐音‘带死’→带来死亡",
+    "en": "The accident caused his death.",
+    "zh": "那场事故导致了他的死亡。"
+  },
+  {
+    "word": "death penalty",
+    "mnemonic": "death(死亡)+penalty(惩罚)→以死亡为惩罚→死刑",
+    "en": "Some countries have the death penalty.",
+    "zh": "一些国家有死刑。"
+  },
+  {
+    "word": "death rate",
+    "mnemonic": "death(死亡)+rate(比率)→死亡比率→死亡率",
+    "en": "The death rate has decreased this year.",
+    "zh": "今年的死亡率下降了。"
+  },
+  {
+    "word": "death row",
+    "mnemonic": "death(死亡)+row(排)→一排等待死亡的人→死囚室",
+    "en": "He spent ten years on death row.",
+    "zh": "他在死囚室待了十年。"
+  },
+  {
+    "word": "death sentence",
+    "mnemonic": "death(死亡)+sentence(判决)→判决死亡→死刑判决",
+    "en": "The judge gave him a death sentence.",
+    "zh": "法官判了他死刑。"
+  },
+  {
+    "word": "death squad",
+    "mnemonic": "death(死亡)+squad(小队)→执行死亡的小队→暗杀小组",
+    "en": "The death squad targeted political enemies.",
+    "zh": "暗杀小组以政敌为目标。"
+  },
+  {
+    "word": "death toll",
+    "mnemonic": "death(死亡)+toll(钟声)→死亡的钟声响起→死亡人数",
+    "en": "The death toll from the earthquake rose to 200.",
+    "zh": "地震死亡人数上升至200人。"
+  },
+  {
+    "word": "debate",
+    "mnemonic": "de(下)+bate(打)→‘打’嘴仗→辩论；谐音‘迪贝特’→迪贝特辩论",
+    "en": "They had a heated debate about politics.",
+    "zh": "他们就政治进行了激烈的辩论。"
+  },
+  {
+    "word": "debit",
+    "mnemonic": "债bi（币）记借方 → 借出去的钱要记在左边",
+    "en": "The bank debited my account for $50.",
+    "zh": "银行从我的账户借方扣了50美元。"
+  },
+  {
+    "word": "debt",
+    "mnemonic": "得（de）不（b）到（t）钱→欠债难还",
+    "en": "He is trying to pay off his debt.",
+    "zh": "他正努力还清债务。"
+  },
+  {
+    "word": "Dec.",
+    "mnemonic": "Decem（十）ber → 十二月是第十个月（古罗马历）",
+    "en": "Christmas is in Dec.",
+    "zh": "圣诞节在十二月。"
+  },
+  {
+    "word": "decade",
+    "mnemonic": "deca（十）+de（年）→ 十年",
+    "en": "A decade has passed since then.",
+    "zh": "从那时起已经过去十年了。"
+  },
+  {
+    "word": "decay",
+    "mnemonic": "de（向下）+cay（像cay倒下）→ 衰退腐败",
+    "en": "The old house began to decay.",
+    "zh": "老房子开始腐朽。"
+  },
+  {
+    "word": "deceased",
+    "mnemonic": "de+ceased（停止）→ 生命停止→已故的",
+    "en": "The deceased was a kind man.",
+    "zh": "死者是一位善良的人。"
+  },
+  {
+    "word": "deceit",
+    "mnemonic": "de（往下）+ceit（取）→ 往下取你东西→欺骗",
+    "en": "His deceit hurt everyone.",
+    "zh": "他的欺骗伤害了所有人。"
+  },
+  {
+    "word": "deceive",
+    "mnemonic": "de（离开）+ceive（拿）→ 拿走真相→欺骗",
+    "en": "Don't deceive yourself about the result.",
+    "zh": "不要自欺欺人。"
+  },
+  {
+    "word": "decent",
+    "mnemonic": "de（得）+cent（分币）→ 得一分钱也要得体大方",
+    "en": "She wore a decent dress to the party.",
+    "zh": "她穿了一条得体的裙子去派对。"
+  },
+  {
+    "word": "decide",
+    "mnemonic": "de(离开) + cide(切) → 切掉其他选择→决定",
+    "en": "I need time to decide.",
+    "zh": "我需要时间决定。"
+  },
+  {
+    "word": "decision",
+    "mnemonic": "de（去掉）+cision（切）→ 切掉犹豫→做决定",
+    "en": "She made a quick decision.",
+    "zh": "她迅速做了决定。"
+  },
+  {
+    "word": "decision-making",
+    "mnemonic": "做决定（decision）+ 制造（making）→ 决策过程",
+    "en": "Decision-making is an important skill.",
+    "zh": "决策是一项重要的技能。"
+  },
+  {
+    "word": "deck",
+    "mnemonic": "deck音似‘带壳’→ 甲板像船的硬壳，也可装饰",
+    "en": "We sat on the deck enjoying the sun.",
+    "zh": "我们坐在甲板上享受阳光。"
+  },
+  {
+    "word": "declare",
+    "mnemonic": "de（强调）+clare（清楚）→ 把话说清楚→宣布",
+    "en": "The president will declare the result.",
+    "zh": "总统将宣布结果。"
+  },
+  {
+    "word": "decline",
+    "mnemonic": "de（向下）+cline（倾斜）→ 向下倾斜→下降/婉拒",
+    "en": "He declined the invitation politely.",
+    "zh": "他礼貌地谢绝了邀请。"
+  },
+  {
+    "word": "deconstruct",
+    "mnemonic": "de（拆）+construct（建造）→ 拆解建筑→解构",
+    "en": "The critic will deconstruct the novel.",
+    "zh": "评论家将解构这部小说。"
+  },
+  {
+    "word": "decor",
+    "mnemonic": "de（得）+cor音似‘靠’→ 装饰让家靠得住",
+    "en": "The room has modern decor.",
+    "zh": "这个房间是现代的装饰风格。"
+  },
+  {
+    "word": "decorate",
+    "mnemonic": "decor（装饰）+ate（动词后缀）→ 装饰",
+    "en": "They decorate the tree every Christmas.",
+    "zh": "他们每年圣诞节都装饰圣诞树。"
+  },
+  {
+    "word": "decrease",
+    "mnemonic": "de（向下）+crease（增长）→ 减少增长→减少",
+    "en": "The cost will decrease next year.",
+    "zh": "明年成本会减少。"
+  },
+  {
+    "word": "deduce",
+    "mnemonic": "de（向下）+duce（引导）→ 引导出结论→推论",
+    "en": "We can deduce the answer from the clues.",
+    "zh": "我们可以从线索中推断出答案。"
+  },
+  {
+    "word": "deduction",
+    "mnemonic": "deduce（推论）+tion（名词）→ 推论；也可记‘扣除’（de拿走+duct管道）",
+    "en": "The tax deduction saved him money.",
+    "zh": "税收扣除帮他省了钱。"
+  },
+  {
+    "word": "deed",
+    "mnemonic": "deed音似‘地的’→ 转让地产的契约→行为凭证",
+    "en": "His good deed was remembered by all.",
+    "zh": "他的善举被所有人铭记。"
+  },
+  {
+    "word": "deep-seated",
+    "mnemonic": "deep（深）+seated（座位的）→ 座位深陷→根深蒂固",
+    "en": "He has a deep-seated fear of water.",
+    "zh": "他对水有根深蒂固的恐惧。"
+  },
+  {
+    "word": "deepen",
+    "mnemonic": "deep（深）+en（使…）→ 使更深→加深",
+    "en": "The river will deepen after the rain.",
+    "zh": "雨后河水会加深。"
+  },
+  {
+    "word": "deer",
+    "mnemonic": "deer音似‘爹儿’→ 爹儿在森林里遇到鹿",
+    "en": "A deer ran across the road.",
+    "zh": "一只鹿跑过了马路。"
+  },
+  {
+    "word": "defeat",
+    "mnemonic": "de（向下）+feat（功绩）→ 功绩被压下→击败",
+    "en": "They managed to defeat the enemy.",
+    "zh": "他们成功击败了敌人。"
+  },
+  {
+    "word": "defect",
+    "mnemonic": "de（否定）+fect（做）→ 做得不好→缺陷",
+    "en": "The product has a small defect.",
+    "zh": "这个产品有个小缺陷。"
+  },
+  {
+    "word": "defence",
+    "mnemonic": "de（加强）+fence（篱笆）→ 加强篱笆→防卫",
+    "en": "The army built a strong defence line.",
+    "zh": "军队建立了一道坚固的防线。"
+  },
+  {
+    "word": "defend",
+    "mnemonic": "de(离开) + fend(打击) → 打走攻击→防卫",
+    "en": "Soldiers defend the country.",
+    "zh": "士兵保卫国家。"
+  },
+  {
+    "word": "defender",
+    "mnemonic": "defence（防卫）+er（人）→ 防卫者",
+    "en": "He is a defender of human rights.",
+    "zh": "他是人权的捍卫者。"
+  },
+  {
+    "word": "define",
+    "mnemonic": "de（下）+fine（界限）→ 划下界限→定义",
+    "en": "Can you define this word for me?",
+    "zh": "你能给我定义这个单词吗？"
+  },
+  {
+    "word": "definite",
+    "mnemonic": "define（定义）+ite（形容词）→ 有了定义就明确",
+    "en": "We need a definite answer by Monday.",
+    "zh": "我们周一前需要明确的答复。"
+  },
+  {
+    "word": "definitely",
+    "mnemonic": "de+finite+ly → 有限（finite）的否定就是“无限确定”→ 明确地",
+    "en": "I will definitely finish the work today.",
+    "zh": "我今天肯定会完成这项工作。"
+  },
+  {
+    "word": "definition",
+    "mnemonic": "define（定义）+tion → 给概念下个清晰的定义",
+    "en": "What is the definition of success?",
+    "zh": "成功的定义是什么？"
+  },
+  {
+    "word": "degree",
+    "mnemonic": "de+gree（谐音“格里”）→ 温度计上每一格代表一度 → 程度",
+    "en": "She earned a degree in biology.",
+    "zh": "她获得了生物学学位。"
+  },
+  {
+    "word": "delay",
+    "mnemonic": "de+lay（躺）→ 事情躺在那不动了 → 延迟",
+    "en": "The flight was delayed by three hours.",
+    "zh": "航班延误了三个小时。"
+  },
+  {
+    "word": "delegate",
+    "mnemonic": "de+leg（腿）+ate → 派一条腿出去代表你 → 代表",
+    "en": "He was elected as a delegate to the conference.",
+    "zh": "他被选为会议代表。"
+  },
+  {
+    "word": "delegation",
+    "mnemonic": "delegate（代表）+ion → 一群代表组成的代表团",
+    "en": "The delegation will visit the factory tomorrow.",
+    "zh": "代表团明天将参观工厂。"
+  },
+  {
+    "word": "delete",
+    "mnemonic": "de+let（让）+e → 让这个字母消失 → 删除",
+    "en": "Please delete this file from the computer.",
+    "zh": "请从电脑上删除这个文件。"
+  },
+  {
+    "word": "deliberate",
+    "mnemonic": "de+liber（自由）+ate → 在自由的状态下思考 → 深思熟虑的",
+    "en": "He made a deliberate choice to study abroad.",
+    "zh": "他深思熟虑后选择了出国留学。"
+  },
+  {
+    "word": "deliberately",
+    "mnemonic": "deliberate（故意的）+ly → 故意地做某事",
+    "en": "She deliberately ignored his question.",
+    "zh": "她故意忽略了他的问题。"
+  },
+  {
+    "word": "deliberation",
+    "mnemonic": "deliberate（深思熟虑）+ion → 经过深思熟虑的过程",
+    "en": "After much deliberation, they agreed.",
+    "zh": "经过反复考虑，他们同意了。"
+  },
+  {
+    "word": "delicate",
+    "mnemonic": "delic（谐音“得利卡”）+ate → 得利卡是精致小车 → 精致的",
+    "en": "The delicate flower needs special care.",
+    "zh": "这朵娇嫩的花需要特殊照料。"
+  },
+  {
+    "word": "delicious",
+    "mnemonic": "de+licious（谐音“粒粒舍”）→ 每一粒都舍不得吃 → 美味的",
+    "en": "The cake tastes delicious.",
+    "zh": "这蛋糕味道鲜美。"
+  },
+  {
+    "word": "delight",
+    "mnemonic": "de+light（光）→ 心里充满光芒 → 高兴",
+    "en": "The children shouted with delight.",
+    "zh": "孩子们高兴地欢呼。"
+  },
+  {
+    "word": "delightful",
+    "mnemonic": "delight（高兴）+ful（充满）→ 充满欢乐的 → 令人愉快的",
+    "en": "We had a delightful evening together.",
+    "zh": "我们一起度过了一个愉快的夜晚。"
+  },
+  {
+    "word": "deliver",
+    "mnemonic": "de+liver（肝脏）→ 把肝脏递给你？其实是“递送”的意思",
+    "en": "The mailman will deliver the package.",
+    "zh": "邮递员会递送这个包裹。"
+  },
+  {
+    "word": "delivery",
+    "mnemonic": "deliver（递送）+y → 递送的动作或结果",
+    "en": "The delivery of the goods is free.",
+    "zh": "货物免费配送。"
+  },
+  {
+    "word": "deluxe",
+    "mnemonic": "de+luxe（谐音“拉克丝”）→ 奢侈品牌 → 豪华的",
+    "en": "They stayed in a deluxe hotel suite.",
+    "zh": "他们住在一间豪华酒店套房。"
+  },
+  {
+    "word": "demand",
+    "mnemonic": "de+mand（命令）→ 强烈要求 → 需求",
+    "en": "The workers demand higher wages.",
+    "zh": "工人们要求提高工资。"
+  },
+  {
+    "word": "dementia",
+    "mnemonic": "de+ment（心智）+ia（病）→ 心智丧失的病 → 痴呆",
+    "en": "Grandma suffers from dementia.",
+    "zh": "奶奶患有痴呆症。"
+  },
+  {
+    "word": "demilitarize",
+    "mnemonic": "de（去除）+militarize（军事化）→ 去除军事化 → 解除武装",
+    "en": "The country agreed to demilitarize the border.",
+    "zh": "该国同意使边境非军事化。"
+  },
+  {
+    "word": "Demo",
+    "mnemonic": "demo是demonstration的缩写 → 演示",
+    "en": "The company gave a product demo.",
+    "zh": "公司进行了产品演示。"
+  },
+  {
+    "word": "democracy",
+    "mnemonic": "demo（人民）+cracy（统治）→ 人民统治 → 民主",
+    "en": "Democracy is a system of government by the people.",
+    "zh": "民主是一种由人民治理的政府制度。"
+  },
+  {
+    "word": "democratic",
+    "mnemonic": "democracy（民主）+tic → 民主的",
+    "en": "They held a democratic election.",
+    "zh": "他们举行了一次民主选举。"
+  },
+  {
+    "word": "demon",
+    "mnemonic": "谐音“地魔”→ 地上的魔鬼 → 魔鬼",
+    "en": "The story is about a demon who lives in a cave.",
+    "zh": "这个故事讲的是一个住在洞穴里的魔鬼。"
+  },
+  {
+    "word": "demonstrate",
+    "mnemonic": "de+monster（怪物）+ate → 把怪物展示出来 → 示范、证明",
+    "en": "Let me demonstrate how to use this tool.",
+    "zh": "让我演示如何使用这个工具。"
+  },
+  {
+    "word": "dense",
+    "mnemonic": "谐音“等死”→ 人口密集得让人想等死 → 密集的",
+    "en": "The forest is very dense.",
+    "zh": "这片森林非常茂密。"
+  },
+  {
+    "word": "density",
+    "mnemonic": "dense（密集）+ity（名词后缀）→ 密度",
+    "en": "The density of water is 1 g/cm³.",
+    "zh": "水的密度是1克每立方厘米。"
+  },
+  {
+    "word": "deny",
+    "mnemonic": "谐音“抵赖”→ 否认事实 → 否认",
+    "en": "He denies stealing the money.",
+    "zh": "他否认偷了钱。"
+  },
+  {
+    "word": "deodorant",
+    "mnemonic": "de（去除）+odor（气味）+ant → 去除气味的物品 → 除臭剂",
+    "en": "I always use deodorant after a shower.",
+    "zh": "我洗完澡后总是使用除臭剂。"
+  },
+  {
+    "word": "depart",
+    "mnemonic": "de（离开）+part（部分）→ 离开自己的部分 → 出发、离开",
+    "en": "The train will depart at 9 o'clock.",
+    "zh": "火车将在9点出发。"
+  },
+  {
+    "word": "department",
+    "mnemonic": "de(向下)+part(部分)+ment → 公司向下分部分→部门",
+    "en": "She works in the sales department.",
+    "zh": "她在销售部门工作。"
+  },
+  {
+    "word": "department store",
+    "mnemonic": "百货公司就像很多部门组成的商店→department store",
+    "en": "Let's go to the department store.",
+    "zh": "我们去百货商店吧。"
+  },
+  {
+    "word": "departure",
+    "mnemonic": "de+part(离开)+ure → 离开的动作→出发",
+    "en": "The departure time is 8 a.m.",
+    "zh": "出发时间是早上8点。"
+  },
+  {
+    "word": "depend",
+    "mnemonic": "de(向下) + pend(悬挂) → 悬挂在上面→依赖",
+    "en": "You can depend on your family.",
+    "zh": "你可以依靠家人。"
+  },
+  {
+    "word": "dependency",
+    "mnemonic": "depend(依赖)+ency → 依赖的状态→从属国",
+    "en": "The island was a British dependency.",
+    "zh": "该岛曾是英国的附属地。"
+  },
+  {
+    "word": "dependent",
+    "mnemonic": "de+pend(悬挂)+ent → 挂在别人身上的→依赖的",
+    "en": "He is dependent on his parents.",
+    "zh": "他依赖父母。"
+  },
+  {
+    "word": "deplorable",
+    "mnemonic": "de(否定)+plor(哭泣)+able → 让人哭的→可叹的",
+    "en": "The living conditions were deplorable.",
+    "zh": "生活条件极其悲惨。"
+  },
+  {
+    "word": "deposit",
+    "mnemonic": "de+posit(放置) → 把钱放下→存款",
+    "en": "Please deposit money in the bank.",
+    "zh": "请把钱存入银行。"
+  },
+  {
+    "word": "depress",
+    "mnemonic": "de(向下)+press(压) → 向下压→使沮丧",
+    "en": "Bad news can depress you.",
+    "zh": "坏消息会让你沮丧。"
+  },
+  {
+    "word": "depressing",
+    "mnemonic": "depress+ing → 让人沮-丧的→沉闷的",
+    "en": "The rainy weather is depressing.",
+    "zh": "下雨天令人郁闷。"
+  },
+  {
+    "word": "depression",
+    "mnemonic": "depress+ion → 被压下去的状态→抑郁/不景气",
+    "en": "He suffered from depression.",
+    "zh": "他患有抑郁症。"
+  },
+  {
+    "word": "dept",
+    "mnemonic": "department 的缩写，发音类似“得普特”→部门",
+    "en": "Which dept do you work in?",
+    "zh": "你在哪个部门工作？"
+  },
+  {
+    "word": "depth",
+    "mnemonic": "deep(深)变depth → 深度",
+    "en": "The depth of the pool is 2 meters.",
+    "zh": "游泳池的深度是2米。"
+  },
+  {
+    "word": "deputy",
+    "mnemonic": "de+put(放)+y → 被放在下面的人→副手",
+    "en": "He is the deputy manager.",
+    "zh": "他是副经理。"
+  },
+  {
+    "word": "derail",
+    "mnemonic": "de(脱离)+rail(铁轨) → 脱离铁轨→出轨",
+    "en": "The train did not derail.",
+    "zh": "火车没有脱轨。"
+  },
+  {
+    "word": "derby",
+    "mnemonic": "德比(地名) → 德比大赛马→大赛马",
+    "en": "He won the Kentucky Derby.",
+    "zh": "他赢得了肯塔基德比。"
+  },
+  {
+    "word": "deregulate",
+    "mnemonic": "de(去除)+regulate(管制) → 解除管制",
+    "en": "The government decided to deregulate airlines.",
+    "zh": "政府决定解除对航空公司的管制。"
+  },
+  {
+    "word": "derive",
+    "mnemonic": "de+riv(河流)+e → 河流源头→起源",
+    "en": "The word derives from Latin.",
+    "zh": "这个词源自拉丁语。"
+  },
+  {
+    "word": "descend",
+    "mnemonic": "de(向下)+scend(爬) → 向下爬→下降",
+    "en": "The plane began to descend.",
+    "zh": "飞机开始下降。"
+  },
+  {
+    "word": "descended",
+    "mnemonic": "descend的过去式→下降/遗传",
+    "en": "He is descended from royalty.",
+    "zh": "他是王室后裔。"
+  },
+  {
+    "word": "describe",
+    "mnemonic": "de(向下) + scribe(写) → 写下来→描述",
+    "en": "Describe what you saw.",
+    "zh": "描述你看到的。"
+  },
+  {
+    "word": "description",
+    "mnemonic": "de+script(写)+ion → 写下来的东西→描述",
+    "en": "Please give a description of the thief.",
+    "zh": "请描述一下那个小偷。"
+  },
+  {
+    "word": "descriptive",
+    "mnemonic": "description的形容词→描述的",
+    "en": "The report is very descriptive.",
+    "zh": "报告描述得非常详细。"
+  },
+  {
+    "word": "desert",
+    "mnemonic": "沙漠(谐音“得瑟特”) 或 放弃(de+sert→离开) → 沙漠/放弃",
+    "en": "Don't desert me in the desert.",
+    "zh": "别在沙漠里抛弃我。"
+  },
+  {
+    "word": "desert island",
+    "mnemonic": "沙漠岛屿→荒岛",
+    "en": "He was stranded on a desert island.",
+    "zh": "他被困在荒岛上。"
+  },
+  {
+    "word": "deserve",
+    "mnemonic": "de(加强) + serve(服务) → 如此服务→应得",
+    "en": "You deserve a reward.",
+    "zh": "你应得奖励。"
+  },
+  {
+    "word": "deserving",
+    "mnemonic": "de+serv(服务)+ing → 因服务而应得→值得的",
+    "en": "She is deserving of the award.",
+    "zh": "她应得这个奖。"
+  },
+  {
+    "word": "design",
+    "mnemonic": "de+sign(标记) → 做标记→设计",
+    "en": "She designed a beautiful dress.",
+    "zh": "她设计了一件漂亮的裙子。"
+  },
+  {
+    "word": "desirable",
+    "mnemonic": "desire(渴望)+able → 令人渴望的→可取的",
+    "en": "This house is very desirable.",
+    "zh": "这栋房子非常令人向往。"
+  },
+  {
+    "word": "desire",
+    "mnemonic": "谐音“迪赛尔”→渴望得到迪赛尔手表→欲望",
+    "en": "He has a strong desire to travel.",
+    "zh": "他非常渴望去旅行。"
+  },
+  {
+    "word": "despair",
+    "mnemonic": "de(否定)+spair(希望) → 没有希望→绝望",
+    "en": "She cried in despair.",
+    "zh": "她绝望地哭了。"
+  },
+  {
+    "word": "desperate",
+    "mnemonic": "de(失去)+sper(希望)+ate → 失去希望的→绝望的",
+    "en": "He is desperate for money.",
+    "zh": "他极度渴望钱。"
+  },
+  {
+    "word": "desperation",
+    "mnemonic": "desperate的名词→绝望",
+    "en": "He acted out of desperation.",
+    "zh": "他因绝望而行动。"
+  },
+  {
+    "word": "despise",
+    "mnemonic": "de（底下）+spise（音似“死鄙视”）→ 从心底鄙视 → 轻视",
+    "en": "I despise people who lie.",
+    "zh": "我鄙视说谎的人。"
+  },
+  {
+    "word": "despite",
+    "mnemonic": "de+spite（恶意）→ 恶意之下依然 → 尽管",
+    "en": "He succeeded despite the difficulties.",
+    "zh": "尽管困难重重，他成功了。"
+  },
+  {
+    "word": "destabilize",
+    "mnemonic": "de（去掉）+stable（稳定）+ize → 使不稳定 → 动摇",
+    "en": "The rumor could destabilize the government.",
+    "zh": "谣言可能动摇政府。"
+  },
+  {
+    "word": "destination",
+    "mnemonic": "dest（命运）+in（在）+ation → 命运指向的地方 → 目的地",
+    "en": "We finally reached our destination.",
+    "zh": "我们终于到达了目的地。"
+  },
+  {
+    "word": "destined",
+    "mnemonic": "de（向下）+stin（站）+ed → 早就站好位置 → 注定的",
+    "en": "She was destined to become a star.",
+    "zh": "她注定要成为明星。"
+  },
+  {
+    "word": "destroy",
+    "mnemonic": "de(去掉) + stroy(建造) → 去掉建造的→毁灭",
+    "en": "The earthquake destroyed buildings.",
+    "zh": "地震摧毁了建筑。"
+  },
+  {
+    "word": "destroyer",
+    "mnemonic": "destroy（破坏）+er（者）→ 破坏者，也指驱逐舰",
+    "en": "The destroyer sank the enemy ship.",
+    "zh": "驱逐舰击沉了敌舰。"
+  },
+  {
+    "word": "destruction",
+    "mnemonic": "de（向下）+struct（建筑）+ion → 建筑被拆 → 破坏",
+    "en": "The storm caused great destruction.",
+    "zh": "暴风雨造成了巨大破坏。"
+  },
+  {
+    "word": "destructive",
+    "mnemonic": "destruction（破坏）+ive（形容词）→ 破坏性的",
+    "en": "Fire can be very destructive.",
+    "zh": "火可能极具破坏性。"
+  },
+  {
+    "word": "detachment",
+    "mnemonic": "de（分离）+tach（接触）+ment → 分离 → 分遣队",
+    "en": "A detachment of soldiers arrived.",
+    "zh": "一支分遣队到达了。"
+  },
+  {
+    "word": "detail",
+    "mnemonic": "de（彻底）+tail（尾巴）→ 连尾巴都数清楚 → 细节",
+    "en": "Please explain every detail.",
+    "zh": "请解释每一个细节。"
+  },
+  {
+    "word": "detainee",
+    "mnemonic": "detain（拘留）+ee（被…的人）→ 被拘留者",
+    "en": "The detainee was released yesterday.",
+    "zh": "这名被拘留者昨天被释放。"
+  },
+  {
+    "word": "detect",
+    "mnemonic": "de（去掉）+tect（掩盖）→ 把掩盖去掉 → 发现",
+    "en": "Dogs can detect drugs easily.",
+    "zh": "狗能轻易探测到毒品。"
+  },
+  {
+    "word": "detection",
+    "mnemonic": "detect（发现）+ion（名词）→ 发现 / 探测",
+    "en": "Early detection saves lives.",
+    "zh": "早期发现能挽救生命。"
+  },
+  {
+    "word": "detente",
+    "mnemonic": "de+tente（音似“探探”）→ 互相试探缓和 → 缓和",
+    "en": "The two countries signed a detente.",
+    "zh": "两国签署了缓和协议。"
+  },
+  {
+    "word": "detention",
+    "mnemonic": "de+ten（拿住）+tion → 被拿住不放 → 拘留",
+    "en": "He was held in detention for a week.",
+    "zh": "他被拘留了一周。"
+  },
+  {
+    "word": "determination",
+    "mnemonic": "de（加强）+termin（界限）+ation → 划清界限不退缩 → 决心",
+    "en": "His determination led to success.",
+    "zh": "他的决心带来了成功。"
+  },
+  {
+    "word": "determine",
+    "mnemonic": "de(向下) + termine(界限) → 定下界限→决定",
+    "en": "We must determine the cause.",
+    "zh": "我们必须确定原因。"
+  },
+  {
+    "word": "determined",
+    "mnemonic": "determine（决定）+d → 已经决定了 → 坚决的",
+    "en": "She is determined to win.",
+    "zh": "她决心要赢。"
+  },
+  {
+    "word": "deterrence",
+    "mnemonic": "deter（阻止）+rence → 阻止的力量 → 威慑",
+    "en": "Nuclear weapons are a deterrence.",
+    "zh": "核武器是一种威慑。"
+  },
+  {
+    "word": "detox",
+    "mnemonic": "de（去掉）+tox（毒）→ 去毒 → 戒瘾诊所",
+    "en": "He checked into a detox center.",
+    "zh": "他住进了戒瘾中心。"
+  },
+  {
+    "word": "detractor",
+    "mnemonic": "de（向下）+tract（拉）+or → 往下拉的人 → 贬低者",
+    "en": "The critic was a detractor of her work.",
+    "zh": "这位批评家是贬低她作品的人。"
+  },
+  {
+    "word": "devalue",
+    "mnemonic": "de（降低）+value（价值）→ 降低价值 → 贬值",
+    "en": "The country decided to devalue its currency.",
+    "zh": "该国决定让货币贬值。"
+  },
+  {
+    "word": "devastated",
+    "mnemonic": "de（彻底）+vast（空）+ated → 彻底空了 → 摧毁 / 崩溃",
+    "en": "The town was devastated by the earthquake.",
+    "zh": "小镇被地震摧毁了。"
+  },
+  {
+    "word": "develop",
+    "mnemonic": "de(去掉) + velop(包) → 去掉包裹→发展",
+    "en": "The city developed rapidly.",
+    "zh": "城市发展迅速。"
+  },
+  {
+    "word": "developer",
+    "mnemonic": "develop（发展）+er（人/物）→ 开发者；显影剂",
+    "en": "The developer built a new app.",
+    "zh": "这位开发者创建了一个新应用。"
+  },
+  {
+    "word": "developing",
+    "mnemonic": "develop（发展）+ing → 正在发展的 → 发展中的",
+    "en": "Many developing countries need aid.",
+    "zh": "许多发展中国家需要援助。"
+  },
+  {
+    "word": "developmental",
+    "mnemonic": "development（发展）+al → 发展的 / 发育的",
+    "en": "The child has developmental delays.",
+    "zh": "这个孩子有发育迟缓。"
+  },
+  {
+    "word": "device",
+    "mnemonic": "de（加强）+vice（代替）→ 能代替人做事的 → 装置",
+    "en": "This device can measure your heart rate.",
+    "zh": "这个设备能测量你的心率。"
+  },
+  {
+    "word": "devil",
+    "mnemonic": "音似“呆我”→ 魔鬼把我呆住 → 魔鬼",
+    "en": "The devil is often shown with horns.",
+    "zh": "魔鬼常被画成有角。"
+  },
+  {
+    "word": "devise",
+    "mnemonic": "de（下）+vise（看）→ 仔细看后想出 → 设计，发明",
+    "en": "They devised a new plan.",
+    "zh": "他们设计了一个新计划。"
+  },
+  {
+    "word": "devolution",
+    "mnemonic": "de（向下）+volution（转）→ 权力向下转 → 转让 / 退化",
+    "en": "Devolution of power to regions is happening.",
+    "zh": "权力正在向地方下放。"
+  },
+  {
+    "word": "devote",
+    "mnemonic": "de（加强）+vote（投票）→ 把票都投给一件事 → 献身",
+    "en": "She devotes her life to teaching.",
+    "zh": "她将一生奉献给教学。"
+  },
+  {
+    "word": "dew",
+    "mnemonic": "谐音'丢'→早晨露珠丢在草叶上，闪闪发光",
+    "en": "The grass is wet with morning dew.",
+    "zh": "晨露打湿了草地。"
+  },
+  {
+    "word": "diabetic",
+    "mnemonic": "谐音'呆伯糖'→弟弟怕糖得糖尿病→糖尿病",
+    "en": "My grandfather is diabetic.",
+    "zh": "我祖父是糖尿病患者。"
+  },
+  {
+    "word": "diagram",
+    "mnemonic": "dia(穿过)+gram(写)→用线条穿过的图→图表",
+    "en": "Please draw a diagram of the process.",
+    "zh": "请画一个流程图。"
+  },
+  {
+    "word": "dial",
+    "mnemonic": "谐音'打'→打电话要拨号→拨号盘",
+    "en": "Dial the number and press call.",
+    "zh": "拨号码然后按通话键。"
+  },
+  {
+    "word": "dialect",
+    "mnemonic": "dia(相对)+lect(选)→不同地区选的语言→方言",
+    "en": "He speaks a local dialect.",
+    "zh": "他说一种地方方言。"
+  },
+  {
+    "word": "dialog",
+    "mnemonic": "dia(对)+log(说)→两个人对着说话→对话",
+    "en": "Let's have a friendly dialog.",
+    "zh": "我们来一场友好的对话。"
+  },
+  {
+    "word": "diameter",
+    "mnemonic": "dia(穿过)+meter(测量)→穿过圆心测的线→直径",
+    "en": "The diameter of the circle is 10 cm.",
+    "zh": "这个圆的直径是10厘米。"
+  },
+  {
+    "word": "diamond",
+    "mnemonic": "谐音'带蒙的'→戴着蒙住眼睛的钻石→钻石",
+    "en": "She wore a diamond ring.",
+    "zh": "她戴着一枚钻石戒指。"
+  },
+  {
+    "word": "diaper",
+    "mnemonic": "谐音'带怕儿'→带着怕孩子尿裤子的东西→尿布",
+    "en": "The baby needs a clean diaper.",
+    "zh": "宝宝需要换干净尿布。"
+  },
+  {
+    "word": "diaphragm",
+    "mnemonic": "dia(隔开)+phragm(栅栏)→隔开胸腔和腹腔的膜→横隔膜",
+    "en": "Breathe deeply using your diaphragm.",
+    "zh": "用横膈膜深呼吸。"
+  },
+  {
+    "word": "diarrhoea",
+    "mnemonic": "谐音'待啊如啊'→一直等去厕所→腹泻",
+    "en": "He had diarrhoea from bad food.",
+    "zh": "他因食物不洁而腹泻。"
+  },
+  {
+    "word": "diary",
+    "mnemonic": "谐音'待爱累'→每天等待记录爱和累→日记",
+    "en": "I write in my diary every night.",
+    "zh": "我每晚写日记。"
+  },
+  {
+    "word": "dice",
+    "mnemonic": "谐音'待死'→玩骰子等死的感觉→骰子",
+    "en": "Roll the dice and see your luck.",
+    "zh": "掷骰子看看你的运气。"
+  },
+  {
+    "word": "dictate",
+    "mnemonic": "dict(说)+ate→口述让别人写→听写/命令",
+    "en": "The boss will dictate a letter.",
+    "zh": "老板将口述一封信。"
+  },
+  {
+    "word": "dictation",
+    "mnemonic": "dictate的名词→老师口述学生写→听写",
+    "en": "We have a dictation test today.",
+    "zh": "我们今天有听写测试。"
+  },
+  {
+    "word": "dictatorial",
+    "mnemonic": "dictator(独裁者)+ial→像独裁者一样的→独裁的",
+    "en": "His dictatorial style annoyed everyone.",
+    "zh": "他独裁的行事风格惹恼了所有人。"
+  },
+  {
+    "word": "dictatorship",
+    "mnemonic": "dictator(独裁者)+ship(身份)→独裁者统治→独裁政权",
+    "en": "The country suffered under dictatorship.",
+    "zh": "这个国家在独裁统治下受苦。"
+  },
+  {
+    "word": "didn't",
+    "mnemonic": "did not缩写→'迪登特'→我没做→没有",
+    "en": "I didn't see him yesterday.",
+    "zh": "我昨天没看见他。"
+  },
+  {
+    "word": "diet",
+    "mnemonic": "谐音'待它'→等待吃东西要节制→日常饮食/节食",
+    "en": "She is on a strict diet.",
+    "zh": "她在严格节食。"
+  },
+  {
+    "word": "differ",
+    "mnemonic": "dif(分开)+fer(带)→分开带走→分歧→不同",
+    "en": "Our opinions differ greatly.",
+    "zh": "我们的意见大不相同。"
+  },
+  {
+    "word": "difference",
+    "mnemonic": "differ+ence→不同的状态→差异",
+    "en": "What is the difference between these two?",
+    "zh": "这两者有什么不同？"
+  },
+  {
+    "word": "differential",
+    "mnemonic": "difference的形容词→差别的/微分的",
+    "en": "The differential equation is hard.",
+    "zh": "这个微分方程很难。"
+  },
+  {
+    "word": "difficulty",
+    "mnemonic": "difficult(困难)+y→困难的状态→难点",
+    "en": "She overcame every difficulty.",
+    "zh": "她克服了每一个困难。"
+  },
+  {
+    "word": "digest",
+    "mnemonic": "di(分开)+gest(运)→运化分解食物→消化；文摘",
+    "en": "It takes time to digest food.",
+    "zh": "消化食物需要时间。"
+  },
+  {
+    "word": "digger",
+    "mnemonic": "dig(挖)+ger(人)→挖掘的人→挖掘者",
+    "en": "The digger found ancient coins.",
+    "zh": "挖掘者发现了古钱币。"
+  },
+  {
+    "word": "digital",
+    "mnemonic": "digit(数字)+al→数字的→数字显示的",
+    "en": "This is a digital clock.",
+    "zh": "这是一个数字钟。"
+  },
+  {
+    "word": "diligent",
+    "mnemonic": "谐音'地里耕田'→在田里勤奋耕作→勤勉的",
+    "en": "A diligent student studies hard.",
+    "zh": "勤奋的学生努力学习。"
+  },
+  {
+    "word": "dill",
+    "mnemonic": "谐音'迪欧'→像迪奥香水名字的植物→莳萝（香料）",
+    "en": "Add some fresh dill to the soup.",
+    "zh": "在汤里加些新鲜莳萝。"
+  },
+  {
+    "word": "dim",
+    "mnemonic": "谐音'叮'→灯光暗得像蚊子叮一下→暗淡的",
+    "en": "The room was dim and quiet.",
+    "zh": "房间暗淡而安静。"
+  },
+  {
+    "word": "dimension",
+    "mnemonic": "di(分开)+mens(测量)+ion→测量出的各个方向→尺寸/维数",
+    "en": "What are the dimensions of the box?",
+    "zh": "这个盒子的尺寸是多少？"
+  },
+  {
+    "word": "diner",
+    "mnemonic": "dine(用餐)+r(人)→用餐的人→用餐者",
+    "en": "The diner ordered a steak.",
+    "zh": "用餐者点了一份牛排。"
+  },
+  {
+    "word": "dinghy",
+    "mnemonic": "叮咣(ding)一声，小艇(hy)撞上了码头→小船",
+    "en": "We rowed the dinghy to shore.",
+    "zh": "我们把小艇划到岸边。"
+  },
+  {
+    "word": "dining room",
+    "mnemonic": "dining(用餐)+room(房间)→专门吃饭的房间→饭厅",
+    "en": "The dining room has a big table.",
+    "zh": "饭厅里有一张大桌子。"
+  },
+  {
+    "word": "dining table",
+    "mnemonic": "dining(用餐)+table(桌子)→吃饭用的桌子→餐桌",
+    "en": "Please set the dining table.",
+    "zh": "请摆好餐桌。"
+  },
+  {
+    "word": "dinner party",
+    "mnemonic": "dinner(正餐)+party(派对)→正餐派对→宴会",
+    "en": "We hosted a dinner party last night.",
+    "zh": "昨晚我们举办了一场宴会。"
+  },
+  {
+    "word": "dinner table",
+    "mnemonic": "dinner(正餐)+table(桌子)→放正餐的桌子→餐桌",
+    "en": "Don't put your elbows on the dinner table.",
+    "zh": "不要把胳膊肘放在餐桌上。"
+  },
+  {
+    "word": "diocese",
+    "mnemonic": "di(二)+o(圆圈)+cese(似'see')→两个圆圈看到主教管辖区→主教教区",
+    "en": "The bishop governs the entire diocese.",
+    "zh": "主教管理整个教区。"
+  },
+  {
+    "word": "dip",
+    "mnemonic": "dip发音似'滴噗'→一滴水噗地浸入→浸",
+    "en": "She dipped her finger in the water.",
+    "zh": "她把手指浸入水中。"
+  },
+  {
+    "word": "direct",
+    "mnemonic": "di(分开)+rect(直)→分开指向直线→直接的；指挥",
+    "en": "Can you direct me to the station?",
+    "zh": "你能指给我去车站的路吗？"
+  },
+  {
+    "word": "direction",
+    "mnemonic": "direct(指导)+ion(名词后缀)→指导的方向→方向",
+    "en": "The arrow shows the direction.",
+    "zh": "箭头指示方向。"
+  },
+  {
+    "word": "directive",
+    "mnemonic": "direct(指导)+ive(形容词后缀)→指导性的→指令",
+    "en": "The manager issued a new directive.",
+    "zh": "经理发布了一项新指令。"
+  },
+  {
+    "word": "directly",
+    "mnemonic": "direct(直接)+ly(副词)→直接地；径直地",
+    "en": "I'll come directly after work.",
+    "zh": "我下班后直接来。"
+  },
+  {
+    "word": "director",
+    "mnemonic": "direct(指导)+or(人)→指导的人→导演/主管",
+    "en": "The director shouted 'Action!'",
+    "zh": "导演喊了一声‘开拍！’"
+  },
+  {
+    "word": "director general",
+    "mnemonic": "director(主管)+general(总的)→总主管→局长",
+    "en": "The director general approved the plan.",
+    "zh": "局长批准了该计划。"
+  },
+  {
+    "word": "directorate",
+    "mnemonic": "director(董事)+ate(名词后缀)→董事的职位或团体→董事会",
+    "en": "The directorate meets once a month.",
+    "zh": "董事会每月开一次会。"
+  },
+  {
+    "word": "dirt",
+    "mnemonic": "dirt发音似'得特'→'特别的脏'→污垢",
+    "en": "Your shoes are covered in dirt.",
+    "zh": "你的鞋上沾满了泥。"
+  },
+  {
+    "word": "dirty trick",
+    "mnemonic": "dirty(脏的)+trick(把戏)→肮脏的把戏→卑鄙手段",
+    "en": "He played a dirty trick on me.",
+    "zh": "他对我耍了卑鄙手段。"
+  },
+  {
+    "word": "disable",
+    "mnemonic": "dis(否定)+able(能够)→使不能→使失去能力",
+    "en": "The accident disabled his leg.",
+    "zh": "事故使他的腿残疾了。"
+  },
+  {
+    "word": "disadvantage",
+    "mnemonic": "dis(否定)+advantage(优势)→没有优势→缺点",
+    "en": "Height can be a disadvantage in basketball? No!",
+    "zh": "身高在篮球中可能是缺点？不！"
+  },
+  {
+    "word": "disadvantaged",
+    "mnemonic": "disadvantage(不利)+ed(被)→处于不利地位的→生活条件差的",
+    "en": "We help disadvantaged children.",
+    "zh": "我们帮助贫困儿童。"
+  },
+  {
+    "word": "disaffected",
+    "mnemonic": "dis(不)+affect(影响)+ed(被)→被不良影响→不满的",
+    "en": "The disaffected workers went on strike.",
+    "zh": "不满的工人举行了罢工。"
+  },
+  {
+    "word": "disagree",
+    "mnemonic": "dis(不)+agree(同意)→不同意→不一致",
+    "en": "I disagree with your opinion.",
+    "zh": "我不同意你的观点。"
+  },
+  {
+    "word": "disappear",
+    "mnemonic": "dis(不)+appear(出现)→不出现→消失",
+    "en": "The magician made the rabbit disappear.",
+    "zh": "魔术师让兔子消失了。"
+  },
+  {
+    "word": "disappoint",
+    "mnemonic": "dis(不)+appoint(任命)→没被任命→失望",
+    "en": "I'm sorry to disappoint you.",
+    "zh": "很抱歉让你失望了。"
+  },
+  {
+    "word": "disappointed",
+    "mnemonic": "disappoint(使失望)+ed(被)→感到失望的→失望的",
+    "en": "She was disappointed with the result.",
+    "zh": "她对结果感到失望。"
+  },
+  {
+    "word": "disappointing",
+    "mnemonic": "disappoint(使失望)+ing(令人…)→令人失望的",
+    "en": "The movie was disappointing.",
+    "zh": "这部电影令人失望。"
+  },
+  {
+    "word": "disapprove",
+    "mnemonic": "dis(不)+approve(批准)→不批准→不赞成",
+    "en": "My parents disapprove of my tattoo.",
+    "zh": "我父母不赞成我的纹身。"
+  },
+  {
+    "word": "disarmament",
+    "mnemonic": "dis(消除)+arm(武器)+ament(名词)→消除武器→裁军",
+    "en": "The treaty calls for nuclear disarmament.",
+    "zh": "该条约呼吁核裁军。"
+  },
+  {
+    "word": "disaster",
+    "mnemonic": "dis(否定)+aster(星星)→星星陨落→灾祸",
+    "en": "The earthquake was a terrible disaster.",
+    "zh": "地震是一场可怕的灾难。"
+  },
+  {
+    "word": "disbelief",
+    "mnemonic": "dis(不)+belief(相信)→不相信→怀疑",
+    "en": "He stared at me in disbelief.",
+    "zh": "他怀疑地盯着我。"
+  },
+  {
+    "word": "discard",
+    "mnemonic": "dis（否定）+card（卡片）→ 把不要的卡片扔掉 → 丢弃",
+    "en": "Please discard the old newspapers in the bin.",
+    "zh": "请把旧报纸丢进垃圾桶。"
+  },
+  {
+    "word": "discharge",
+    "mnemonic": "dis（去掉）+charge（电荷）→ 去掉电荷就是放电；也可联想“解雇”如老板放掉员工",
+    "en": "The factory discharged waste into the river.",
+    "zh": "工厂把废水排进了河里。"
+  },
+  {
+    "word": "disciplinary",
+    "mnemonic": "discipline（纪律）+ary（形容词）→ 跟纪律有关的 → 惩戒的",
+    "en": "The teacher took disciplinary action against the cheater.",
+    "zh": "老师对作弊者采取了惩戒措施。"
+  },
+  {
+    "word": "discipline",
+    "mnemonic": "dis（分开）+cip（拿）+line（线）→ 拿线分开，比喻用纪律约束 → 纪律",
+    "en": "Self-discipline is the key to success.",
+    "zh": "自律是成功的关键。"
+  },
+  {
+    "word": "disclose",
+    "mnemonic": "dis（打开）+close（关闭）→ 把关闭的打开 → 揭露",
+    "en": "The spy refused to disclose the secret.",
+    "zh": "间谍拒绝透露秘密。"
+  },
+  {
+    "word": "disconcerting",
+    "mnemonic": "dis（不）+concert（一致）+ing → 让人不一致的 → 令人不安的",
+    "en": "His sudden laugh was disconcerting.",
+    "zh": "他突然笑起来让人不安。"
+  },
+  {
+    "word": "discontinue",
+    "mnemonic": "dis（否定）+continue（继续）→ 不继续 → 中断",
+    "en": "They decided to discontinue the product.",
+    "zh": "他们决定停产该产品。"
+  },
+  {
+    "word": "discount",
+    "mnemonic": "dis（向下）+count（数）→ 向下数钱 → 打折扣",
+    "en": "Students get a 10% discount on books.",
+    "zh": "学生买书可享九折优惠。"
+  },
+  {
+    "word": "discourage",
+    "mnemonic": "dis（去掉）+courage（勇气）→ 去掉勇气 → 使气馁",
+    "en": "Don't let failure discourage you.",
+    "zh": "别让失败使你气馁。"
+  },
+  {
+    "word": "discover",
+    "mnemonic": "dis(去掉) + cover(盖子) → 去掉盖子→发现",
+    "en": "Scientists discover new species.",
+    "zh": "科学家发现新物种。"
+  },
+  {
+    "word": "discovery",
+    "mnemonic": "dis（去掉）+cover（覆盖）+y → 去掉覆盖物 → 发现",
+    "en": "The discovery of penicillin saved many lives.",
+    "zh": "青霉素的发现拯救了许多生命。"
+  },
+  {
+    "word": "discrimination",
+    "mnemonic": "dis（分开）+crimin（罪）+ation → 把人分开定罪 → 歧视",
+    "en": "Racial discrimination is against the law.",
+    "zh": "种族歧视是违法的。"
+  },
+  {
+    "word": "discussion",
+    "mnemonic": "dis（分开）+cuss（敲击）+ion → 互相敲击想法 → 讨论",
+    "en": "We had a lively discussion about the movie.",
+    "zh": "我们就那部电影进行了热烈的讨论。"
+  },
+  {
+    "word": "disease",
+    "mnemonic": "dis（不）+ease（舒适）→ 身体不舒适 → 疾病",
+    "en": "Regular exercise can prevent disease.",
+    "zh": "经常锻炼可以预防疾病。"
+  },
+  {
+    "word": "diseased",
+    "mnemonic": "disease（疾病）+d（的）→ 患病的",
+    "en": "The diseased tree was cut down.",
+    "zh": "那棵病树被砍倒了。"
+  },
+  {
+    "word": "disenchanted",
+    "mnemonic": "dis（去掉）+enchant（使着迷）+ed → 不再着迷 → 感到幻灭",
+    "en": "He became disenchanted with politics.",
+    "zh": "他对政治感到幻灭了。"
+  },
+  {
+    "word": "disgraced",
+    "mnemonic": "dis（失去）+grace（优雅）+ed → 失去优雅 → 丢脸",
+    "en": "The disgraced official resigned from office.",
+    "zh": "那位蒙羞的官员辞职了。"
+  },
+  {
+    "word": "disgraceful",
+    "mnemonic": "disgrace（丢脸）+ful（充满）→ 充满丢脸的 → 可耻的",
+    "en": "That behavior is disgraceful.",
+    "zh": "那种行为真可耻。"
+  },
+  {
+    "word": "disgruntled",
+    "mnemonic": "dis（不）+grunt（咕哝）+led → 不满地咕哝着 → 满腹牢骚的",
+    "en": "The disgruntled employee complained loudly.",
+    "zh": "那位不满的员工大声抱怨。"
+  },
+  {
+    "word": "disguise",
+    "mnemonic": "dis（不同）+guise（外表）→ 改变外表 → 伪装",
+    "en": "She wore a hat as a disguise.",
+    "zh": "她戴了顶帽子作为伪装。"
+  },
+  {
+    "word": "disgust",
+    "mnemonic": "dis（不）+gust（味道）→ 味道不好 → 厌恶",
+    "en": "The smell filled me with disgust.",
+    "zh": "那味道让我充满厌恶。"
+  },
+  {
+    "word": "dishonest",
+    "mnemonic": "dis（不）+honest（诚实）→ 不诚实",
+    "en": "It's wrong to be dishonest.",
+    "zh": "不诚实是错误的。"
+  },
+  {
+    "word": "dishonestly",
+    "mnemonic": "dishonest（不诚实）+ly（副词）→ 不诚实地",
+    "en": "He obtained the money dishonestly.",
+    "zh": "他通过不诚实手段获得了那笔钱。"
+  },
+  {
+    "word": "dishonesty",
+    "mnemonic": "dishonest（不诚实）+y（名词）→ 不诚实的行为",
+    "en": "Dishonesty destroys trust.",
+    "zh": "不诚实会破坏信任。"
+  },
+  {
+    "word": "dishonour",
+    "mnemonic": "dis（不）+honour（荣誉）→ 不荣誉 → 耻辱",
+    "en": "He brought dishonour to his family.",
+    "zh": "他给家族带来了耻辱。"
+  },
+  {
+    "word": "dishwasher",
+    "mnemonic": "dish（盘子）+washer（清洗者）→ 洗碗的机器或人",
+    "en": "I loaded the dishwasher after dinner.",
+    "zh": "晚饭后我把碗放进洗碗机。"
+  },
+  {
+    "word": "disk",
+    "mnemonic": "像“碟子”的圆形 → 磁盘、圆盘",
+    "en": "Save the file on your computer disk.",
+    "zh": "把文件保存到你的电脑磁盘上。"
+  },
+  {
+    "word": "dislike",
+    "mnemonic": "dis（不）+like（喜欢）→ 不喜欢",
+    "en": "I dislike getting up early.",
+    "zh": "我不喜欢早起。"
+  },
+  {
+    "word": "dismiss",
+    "mnemonic": "dis（分开）+miss（送走）→ 送走 → 解散、开除",
+    "en": "The teacher dismissed the class early.",
+    "zh": "老师提前下课了。"
+  },
+  {
+    "word": "dismissive",
+    "mnemonic": "dismiss（打发）+ive（形容词）→ 一副打发人的样子 → 轻视的",
+    "en": "She gave a dismissive wave of her hand.",
+    "zh": "她不耐烦地挥了挥手。"
+  },
+  {
+    "word": "disorder",
+    "mnemonic": "dis（不）+order（秩序）→ 没有秩序 → 混乱",
+    "en": "The room was in complete disorder.",
+    "zh": "房间里一片混乱。"
+  },
+  {
+    "word": "disorganized",
+    "mnemonic": "dis(否定)+organized(有序)→没条理，像个乱糟糟的鸡窝→紊乱",
+    "en": "His desk is disorganized and messy.",
+    "zh": "他的桌子乱七八糟。"
+  },
+  {
+    "word": "dispersed",
+    "mnemonic": "dis(分离)+perse(散开)→人群像被风吹散的蒲公英→分散",
+    "en": "The crowd dispersed after the concert.",
+    "zh": "音乐会结束后人群散开了。"
+  },
+  {
+    "word": "display",
+    "mnemonic": "dis(分开)+play(玩)→把东西摆出来玩→陈列、显示",
+    "en": "The museum displays ancient artifacts.",
+    "zh": "博物馆陈列着古代文物。"
+  },
+  {
+    "word": "displease",
+    "mnemonic": "dis(不)+please(使高兴)→不高兴→使生气",
+    "en": "Your behavior will displease your parents.",
+    "zh": "你的行为会让你父母不高兴。"
+  },
+  {
+    "word": "displeasure",
+    "mnemonic": "displease的名词形式，不愉快情绪→不满",
+    "en": "He showed his displeasure by frowning.",
+    "zh": "他皱眉头表示不满。"
+  },
+  {
+    "word": "disposal",
+    "mnemonic": "dis(分开)+pos(放)+al→把东西放掉→处理、丢掉",
+    "en": "Waste disposal is a big problem.",
+    "zh": "垃圾处理是个大问题。"
+  },
+  {
+    "word": "dispose",
+    "mnemonic": "dis(分开)+pose(放)→分开放置→处理、布置",
+    "en": "Please dispose of the trash properly.",
+    "zh": "请妥善处理垃圾。"
+  },
+  {
+    "word": "dispute",
+    "mnemonic": "dis(否定)+pute(思考)→想法不同→争论",
+    "en": "They dispute the ownership of the land.",
+    "zh": "他们争论土地所有权。"
+  },
+  {
+    "word": "disqualify",
+    "mnemonic": "dis(取消)+qualify(资格)→取消资格",
+    "en": "Cheating will disqualify you from the game.",
+    "zh": "作弊会让你失去比赛资格。"
+  },
+  {
+    "word": "disquiet",
+    "mnemonic": "dis(不)+quiet(安静)→内心不安静→焦虑不安",
+    "en": "The news caused great disquiet.",
+    "zh": "这消息引起了极大的不安。"
+  },
+  {
+    "word": "dissatisfied",
+    "mnemonic": "dis(不)+satisfied(满意的)→不满的",
+    "en": "She is dissatisfied with her job.",
+    "zh": "她对工作不满意。"
+  },
+  {
+    "word": "dissatisfy",
+    "mnemonic": "dis(不)+satisfy(使满意)→使不满",
+    "en": "Poor service will dissatisfy customers.",
+    "zh": "差劲的服务会让顾客不满。"
+  },
+  {
+    "word": "dissolve",
+    "mnemonic": "dis(分离)+solve(解决)→把固体分开融入液体→溶解，解散",
+    "en": "Salt dissolves easily in water.",
+    "zh": "盐很容易在水中溶解。"
+  },
+  {
+    "word": "distance",
+    "mnemonic": "di(二)+stan(站)+ce→两个站点之间的长度→距离",
+    "en": "The distance from here to school is 2km.",
+    "zh": "从这里到学校的距离是两公里。"
+  },
+  {
+    "word": "distant",
+    "mnemonic": "distance的形容词→距离远的→遥远的",
+    "en": "He lives in a distant country.",
+    "zh": "他住在一个遥远的国家。"
+  },
+  {
+    "word": "distaste",
+    "mnemonic": "dis(不)+taste(味道)→味道不好→讨厌",
+    "en": "She has a distaste for spicy food.",
+    "zh": "她讨厌辛辣食物。"
+  },
+  {
+    "word": "distillery",
+    "mnemonic": "distill(蒸馏)+ery(场所)→蒸馏酒精的工厂→酿酒厂",
+    "en": "The distillery produces fine whiskey.",
+    "zh": "这家酿酒厂生产优质威士忌。"
+  },
+  {
+    "word": "distinct",
+    "mnemonic": "dis(分开)+stinct(刺)→刺出来，与别的分开→明显的，不同的",
+    "en": "There is a distinct difference between them.",
+    "zh": "它们之间有明显的区别。"
+  },
+  {
+    "word": "distinction",
+    "mnemonic": "distinct的名词→区别、卓越",
+    "en": "He won a distinction for his work.",
+    "zh": "他因工作出色而获得荣誉。"
+  },
+  {
+    "word": "distinguish",
+    "mnemonic": "distinct的动词形式→区分、辨别",
+    "en": "Can you distinguish the two colors?",
+    "zh": "你能区分这两种颜色吗？"
+  },
+  {
+    "word": "distress",
+    "mnemonic": "dis(不)+stress(压力)→压力过大→苦恼、痛苦",
+    "en": "The flood caused great distress.",
+    "zh": "洪水造成了巨大苦难。"
+  },
+  {
+    "word": "distribute",
+    "mnemonic": "dis(分开)+tribute(给与)→分给每个人→分配、分发",
+    "en": "Please distribute the books to students.",
+    "zh": "请把书发给学生。"
+  },
+  {
+    "word": "distributed",
+    "mnemonic": "distribute的过去分词→被分配的、分布式的",
+    "en": "The tasks are distributed equally.",
+    "zh": "任务被平均分配。"
+  },
+  {
+    "word": "distribution",
+    "mnemonic": "distribute的名词→分配、分布",
+    "en": "The distribution of wealth is uneven.",
+    "zh": "财富分配不均。"
+  },
+  {
+    "word": "distributor",
+    "mnemonic": "distribute+or(人)→分发者、经销商",
+    "en": "He works as a car distributor.",
+    "zh": "他是一名汽车经销商。"
+  },
+  {
+    "word": "district",
+    "mnemonic": "di(二)+strict(严格)→严格划分的区块→区域",
+    "en": "This district is famous for its parks.",
+    "zh": "这个区以公园闻名。"
+  },
+  {
+    "word": "District Attorney",
+    "mnemonic": "district(地区)+attorney(律师)→地区检察官",
+    "en": "The District Attorney filed charges.",
+    "zh": "地方检察官提起了诉讼。"
+  },
+  {
+    "word": "distrust",
+    "mnemonic": "dis(不)+trust(信任)→不信任",
+    "en": "She distrusts strangers easily.",
+    "zh": "她很容易不信任陌生人。"
+  },
+  {
+    "word": "disturb",
+    "mnemonic": "dis(不)+turb(搅动)→搅乱平静→打扰、使不安",
+    "en": "Please do not disturb me.",
+    "zh": "请不要打扰我。"
+  },
+  {
+    "word": "disturbed",
+    "mnemonic": "disturb的过去分词→被打扰的、混乱的",
+    "en": "He felt disturbed by the noise.",
+    "zh": "他被噪音干扰了。"
+  },
+  {
+    "word": "disused",
+    "mnemonic": "dis(不)+used(用) → 不再用了 → 废弃的",
+    "en": "The old factory is now disused.",
+    "zh": "这座旧工厂现在已废弃。"
+  },
+  {
+    "word": "ditch",
+    "mnemonic": "di(地)+tch(土沟) → 地上挖条沟 → 沟渠；动词：抛弃(像丢进沟里)",
+    "en": "He dug a ditch around the garden.",
+    "zh": "他在花园周围挖了一条沟。"
+  },
+  {
+    "word": "dither",
+    "mnemonic": "di(抖)+ther(热) → 热得发抖 → 发抖；也指犹豫不决(像发抖一样)",
+    "en": "Stop dithering and make a decision!",
+    "zh": "别犹豫了，快做决定！"
+  },
+  {
+    "word": "diuretic",
+    "mnemonic": "di(利尿)+uretic(尿的) → 利尿剂，让人多尿",
+    "en": "Coffee is a natural diuretic.",
+    "zh": "咖啡是一种天然的利尿剂。"
+  },
+  {
+    "word": "dive",
+    "mnemonic": "d(大)+ive(爱抚) → 大海里爱抚，一头扎进去 → 潜水，跳水",
+    "en": "She loves to dive into the sea.",
+    "zh": "她喜欢跳入海中潜水。"
+  },
+  {
+    "word": "diverse",
+    "mnemonic": "di(不同)+verse(转) → 转向不同方向 → 多种多样的",
+    "en": "The group has diverse interests.",
+    "zh": "这个小组有各种各样的兴趣。"
+  },
+  {
+    "word": "diverting",
+    "mnemonic": "di(离开)+vert(转)+ing → 把注意力转开 → 娱乐的，有趣的",
+    "en": "The movie was quite diverting.",
+    "zh": "这部电影相当有趣。"
+  },
+  {
+    "word": "divide",
+    "mnemonic": "di(分开)+vide(看) → 分开来看 → 分割，分配",
+    "en": "Divide the cake into eight pieces.",
+    "zh": "把蛋糕分成八块。"
+  },
+  {
+    "word": "diving",
+    "mnemonic": "dive(潜水)+ing → 正在潜水或跳水",
+    "en": "Diving is my favorite sport.",
+    "zh": "潜水是我最喜欢的运动。"
+  },
+  {
+    "word": "divinity",
+    "mnemonic": "divine(神)+ity(性质) → 神性，神",
+    "en": "She studied divinity at university.",
+    "zh": "她在大学学习神学。"
+  },
+  {
+    "word": "division",
+    "mnemonic": "divide(分)+sion(名词) → 分开的结果 → 部门，除法",
+    "en": "She works in the sales division.",
+    "zh": "她在销售部门工作。"
+  },
+  {
+    "word": "divisive",
+    "mnemonic": "divide(分裂)+sive(形容词) → 制造分裂的 → 区分的",
+    "en": "His speech was divisive.",
+    "zh": "他的演讲是制造分裂的。"
+  },
+  {
+    "word": "divorce",
+    "mnemonic": "di(离开)+vorce(转) → 转到两边去 → 离婚",
+    "en": "They decided to get a divorce.",
+    "zh": "他们决定离婚。"
+  },
+  {
+    "word": "DIY",
+    "mnemonic": "Do It Yourself 首字母 → 自己动手做",
+    "en": "I enjoy DIY projects at home.",
+    "zh": "我喜欢在家做手工活。"
+  },
+  {
+    "word": "DNA",
+    "mnemonic": "脱氧核糖核酸的英文缩写，像双螺旋结构 → 生命的密码",
+    "en": "DNA contains genetic information.",
+    "zh": "DNA包含遗传信息。"
+  },
+  {
+    "word": "dock",
+    "mnemonic": "do(做)+ck(可靠) → 做可靠停靠 → 码头；剪短(像剪掉尾巴)",
+    "en": "The ship is at the dock.",
+    "zh": "船停靠在码头。"
+  },
+  {
+    "word": "dockland",
+    "mnemonic": "dock(码头)+land(土地) → 港口区域 → 港区",
+    "en": "Dockland is busy during the day.",
+    "zh": "港区白天很繁忙。"
+  },
+  {
+    "word": "doctorate",
+    "mnemonic": "doctor(博士)+ate(动词后缀) → 获得博士头衔",
+    "en": "She earned her doctorate in physics.",
+    "zh": "她获得了物理学博士学位。"
+  },
+  {
+    "word": "document",
+    "mnemonic": "doc(教)+u(你)+ment(名词) → 教你东西的文件 → 文档",
+    "en": "Please sign this document.",
+    "zh": "请签署这份文件。"
+  },
+  {
+    "word": "dodgy",
+    "mnemonic": "dodge(躲避)+y → 老是躲躲闪闪的 → 狡猾的，不可靠的",
+    "en": "That website looks dodgy.",
+    "zh": "那个网站看起来不靠谱。"
+  },
+  {
+    "word": "doesn't",
+    "mnemonic": "does(做)+not(不) → 不做 → 一般现在时第三人称否定",
+    "en": "He doesn't like coffee.",
+    "zh": "他不喜欢咖啡。"
+  },
+  {
+    "word": "dogfish",
+    "mnemonic": "dog(狗)+fish(鱼) → 像狗一样的鱼 → 狗鲨",
+    "en": "Dogfish are small sharks.",
+    "zh": "狗鲨是小型鲨鱼。"
+  },
+  {
+    "word": "dolly",
+    "mnemonic": "doll(娃娃)+y(亲昵) → 洋娃娃；也指移动摄影车(像推娃娃车)",
+    "en": "She played with her dolly.",
+    "zh": "她玩她的洋娃娃。"
+  },
+  {
+    "word": "domestic",
+    "mnemonic": "dome(家)+stic(形容词) → 家里的 → 家庭的，国内的",
+    "en": "She is a domestic helper.",
+    "zh": "她是一名家政服务员。"
+  },
+  {
+    "word": "dominate",
+    "mnemonic": "dom(家)+inate(动词) → 在家称王 → 支配，占优势",
+    "en": "The company dominates the market.",
+    "zh": "这家公司主导市场。"
+  },
+  {
+    "word": "domino",
+    "mnemonic": "dom(家)+ino(小) → 小家小牌 → 多米诺骨牌",
+    "en": "We played dominoes all night.",
+    "zh": "我们整晚玩多米诺骨牌。"
+  },
+  {
+    "word": "don't",
+    "mnemonic": "do(做) not(不) 缩写 → 不要",
+    "en": "Don't run in the hallway.",
+    "zh": "不要在走廊里跑。"
+  },
+  {
+    "word": "done",
+    "mnemonic": "do(做)的过去分词 → 做完了",
+    "en": "The work is finally done.",
+    "zh": "工作终于完成了。"
+  },
+  {
+    "word": "donkey",
+    "mnemonic": "don(吨)+key(钥匙) → 一吨重钥匙？其实是驴子，叫声像“哏”",
+    "en": "The donkey carried heavy loads.",
+    "zh": "那头驴驮着重物。"
+  },
+  {
+    "word": "doorbell",
+    "mnemonic": "door(门)+bell(铃) → 门铃",
+    "en": "Someone rang the doorbell.",
+    "zh": "有人按了门铃。"
+  },
+  {
+    "word": "doorstep",
+    "mnemonic": "出门踩到台阶上，step是脚步，door门 → 门阶就是门口的台阶",
+    "en": "Milk was left on the doorstep every morning.",
+    "zh": "每天早上牛奶被放在门阶上。"
+  },
+  {
+    "word": "doorway",
+    "mnemonic": "door门+way路 → 门口就是通往门的路 → 门口；也比喻途径",
+    "en": "Success is just through that doorway.",
+    "zh": "成功就在那个门口后。"
+  },
+  {
+    "word": "dope",
+    "mnemonic": "dope谐音‘都泼’→ 吸毒者都泼出钱来买毒 → 笨蛋、麻醉药",
+    "en": "That guy is a total dope for trying drugs.",
+    "zh": "那家伙尝试吸毒真是个笨蛋。"
+  },
+  {
+    "word": "dorm",
+    "mnemonic": "dorm联想‘door门’+‘room房间’缩写 → 宿舍就是一个门里很多房间",
+    "en": "I live in a dorm with three roommates.",
+    "zh": "我和三个室友住在宿舍里。"
+  },
+  {
+    "word": "dormitory",
+    "mnemonic": "dormitory = dorm + tory → 睡觉（dormire）的地方 → 宿舍（比dorm更正式）",
+    "en": "The dormitory is quiet after midnight.",
+    "zh": "午夜后宿舍很安静。"
+  },
+  {
+    "word": "dosage",
+    "mnemonic": "dose（剂量）+ age（年龄）→ 按年龄调整用药量 → 剂量",
+    "en": "The doctor prescribed a proper dosage.",
+    "zh": "医生开了合适的剂量。"
+  },
+  {
+    "word": "dose",
+    "mnemonic": "谐音‘都死’→ 吃错剂量全都死 → 剂量；服药",
+    "en": "Take one dose of medicine every four hours.",
+    "zh": "每四小时服用一剂药。"
+  },
+  {
+    "word": "dot",
+    "mnemonic": "小点像字母i上的点 → dot就是点，也可以记成‘道特’→ 道路上的小点",
+    "en": "Connect the dots to draw a picture.",
+    "zh": "连点成画。"
+  },
+  {
+    "word": "dotted",
+    "mnemonic": "dot+ted（过去分词）→ 被点上点的 → 有点的；星罗棋布的",
+    "en": "The map was dotted with small villages.",
+    "zh": "地图上星罗棋布着小村庄。"
+  },
+  {
+    "word": "double cream",
+    "mnemonic": "double双倍+cream奶油 → 双倍脂肪的浓奶油 → 高脂肪浓奶油",
+    "en": "She added double cream to the cake batter.",
+    "zh": "她在蛋糕面糊中加了高脂肪浓奶油。"
+  },
+  {
+    "word": "double standard",
+    "mnemonic": "double双重+standard标准 → 对同一事用不同标准 → 双重标准（尤指性道德）",
+    "en": "Many people criticize the double standard in society.",
+    "zh": "许多人批评社会上的双重标准。"
+  },
+  {
+    "word": "doublespeak",
+    "mnemonic": "double双重+speak说话 → 说两面话 → 欺人之谈、故弄玄虚的言词",
+    "en": "Politicians often use doublespeak to confuse people.",
+    "zh": "政客们常用欺人之谈来迷惑大众。"
+  },
+  {
+    "word": "doubly",
+    "mnemonic": "double的副词形式 → 双倍地、双重地；记‘加倍里’",
+    "en": "You must be doubly careful on icy roads.",
+    "zh": "在结冰的路上你必须加倍小心。"
+  },
+  {
+    "word": "doubt",
+    "mnemonic": "谐音‘大把特’→ 心里有‘大把的特别’疑问 → 怀疑",
+    "en": "I doubt that he will come on time.",
+    "zh": "我怀疑他是否能准时来。"
+  },
+  {
+    "word": "doubtful",
+    "mnemonic": "doubt+ful（充满）→ 充满怀疑的 → 可疑的、疑心的",
+    "en": "The outcome of the game is doubtful.",
+    "zh": "比赛结果难以预料。"
+  },
+  {
+    "word": "doubtless",
+    "mnemonic": "doubt+less（没有）→ 没有怀疑的 → 无疑地；记‘大把特累死’反义",
+    "en": "He will doubtless succeed with his hard work.",
+    "zh": "他的努力无疑会成功。"
+  },
+  {
+    "word": "dough",
+    "mnemonic": "谐音‘斗’→ 揉面时要用力斗 → 生面团；也俚语指钱",
+    "en": "Knead the dough until it becomes smooth.",
+    "zh": "揉面团直到它变得光滑。"
+  },
+  {
+    "word": "doughnut",
+    "mnemonic": "dough面团+nut坚果 → 面团做成圆圈像坚果环 → 油炸圈饼、甜甜圈",
+    "en": "She ate a chocolate doughnut for breakfast.",
+    "zh": "她早餐吃了一个巧克力甜甜圈。"
+  },
+  {
+    "word": "down payment",
+    "mnemonic": "down向下+payment付款 → 先付一部分钱‘向下’压 → 预付定金",
+    "en": "We need to make a down payment on the house.",
+    "zh": "我们需要为这房子支付首付。"
+  },
+  {
+    "word": "down stairs",
+    "mnemonic": "down向下+stairs楼梯 → 顺着楼梯向下 → 下楼",
+    "en": "He ran down stairs to answer the door.",
+    "zh": "他跑下楼去开门。"
+  },
+  {
+    "word": "down under",
+    "mnemonic": "down下+under下面 → 地球下方 → 指澳大利亚、新西兰等（在地球另一边）",
+    "en": "She is traveling to down under next month.",
+    "zh": "她下个月要去澳大利亚旅行。"
+  },
+  {
+    "word": "downfall",
+    "mnemonic": "down向下+fall跌落 → 向下跌落 → 衰败、大雨（像天塌下来）",
+    "en": "His greed led to his downfall.",
+    "zh": "贪婪导致了他的衰败。"
+  },
+  {
+    "word": "downgrade",
+    "mnemonic": "down向下+grade等级 → 等级向下 → 降低、贬低；下坡",
+    "en": "The company decided to downgrade the job position.",
+    "zh": "公司决定降低这个职位等级。"
+  },
+  {
+    "word": "downhill",
+    "mnemonic": "down向下+hill山 → 向山下 → 下坡；比喻事情变糟",
+    "en": "The road goes downhill from here.",
+    "zh": "这条路从这里开始下坡。"
+  },
+  {
+    "word": "Downing Street",
+    "mnemonic": "伦敦唐宁街10号是英国首相官邸 → 唐宁街代表英国政府",
+    "en": "Downing Street issued a statement this morning.",
+    "zh": "唐宁街今早发表了一份声明。"
+  },
+  {
+    "word": "downright",
+    "mnemonic": "down向下+right正确 → ‘直直地向下’ → 十足的、彻底的、明白的",
+    "en": "That is downright outrageous behavior!",
+    "zh": "那完全是令人发指的行为！"
+  },
+  {
+    "word": "downside",
+    "mnemonic": "down向下+side边 → 下边 → 底侧；比喻缺点、下降趋势",
+    "en": "The downside of this plan is high cost.",
+    "zh": "这个计划的缺点是成本高。"
+  },
+  {
+    "word": "downstairs",
+    "mnemonic": "down向下+stairs楼梯 → 楼下（泛指楼下区域）",
+    "en": "The bathroom is downstairs on the left.",
+    "zh": "洗手间在楼下左手边。"
+  },
+  {
+    "word": "downstream",
+    "mnemonic": "down向下+stream溪流 → 顺着溪流向下 → 下游",
+    "en": "Pollution flows downstream to the sea.",
+    "zh": "污染物顺流而下入海。"
+  },
+  {
+    "word": "downward",
+    "mnemonic": "down向下+ward朝向 → 向下的方向 → 向下的",
+    "en": "The plane began its downward descent.",
+    "zh": "飞机开始向下降落。"
+  },
+  {
+    "word": "drift",
+    "mnemonic": "谐音'坠浮特'，东西坠入水中漂浮→漂流",
+    "en": "The boat began to drift slowly.",
+    "zh": "船开始慢慢漂流。"
+  },
+  {
+    "word": "drill",
+    "mnemonic": "谐音'锥儿'，锥子钻孔，反复训练→钻孔机/训练",
+    "en": "The soldier practiced with a drill.",
+    "zh": "士兵用钻机练习。"
+  },
+  {
+    "word": "drinker",
+    "mnemonic": "drink+er，喝东西的人→饮者，特指酒徒",
+    "en": "He is a heavy drinker of coffee.",
+    "zh": "他是个重度咖啡饮用者。"
+  },
+  {
+    "word": "drinking water",
+    "mnemonic": "drinking（饮用）+ water（水）→饮用水",
+    "en": "We need clean drinking water.",
+    "zh": "我们需要干净的饮用水。"
+  },
+  {
+    "word": "drip",
+    "mnemonic": "谐音'坠破'，水滴坠下破裂→滴下",
+    "en": "The rain drip from the roof.",
+    "zh": "雨水从屋顶滴下。"
+  },
+  {
+    "word": "drive-in",
+    "mnemonic": "drive（开车）+ in（进入）→开车进入享受服务",
+    "en": "Let's go to the drive-in movie.",
+    "zh": "我们去免下车电影院吧。"
+  },
+  {
+    "word": "driveway",
+    "mnemonic": "drive（开车）+ way（路）→车开的路→车道",
+    "en": "The car is parked in the driveway.",
+    "zh": "车停在车道上。"
+  },
+  {
+    "word": "driving licence",
+    "mnemonic": "driving（驾驶）+ licence（执照）→驾驶执照",
+    "en": "She passed her driving licence test.",
+    "zh": "她通过了驾驶执照考试。"
+  },
+  {
+    "word": "drop",
+    "mnemonic": "谐音'坠坡'，从坡上坠落→落下，滴下",
+    "en": "Please drop the letter in the box.",
+    "zh": "请把信投进信箱。"
+  },
+  {
+    "word": "droppings",
+    "mnemonic": "drop（掉落）+ings（复数）→掉落的东西→动物粪便",
+    "en": "Bird droppings stained the car.",
+    "zh": "鸟粪弄脏了汽车。"
+  },
+  {
+    "word": "drought",
+    "mnemonic": "谐音'捉奥特'，干旱时奥特曼都抓不到水→干旱",
+    "en": "The drought ruined the crops.",
+    "zh": "干旱毁坏了庄稼。"
+  },
+  {
+    "word": "droves",
+    "mnemonic": "drove（驾驶过去式）+s，人群像被驱动一样涌动→成群的人",
+    "en": "Tourists came in droves to the beach.",
+    "zh": "游客成群结队来到海滩。"
+  },
+  {
+    "word": "drown",
+    "mnemonic": "谐音'抓挠'，淹死时拼命抓挠→淹死",
+    "en": "He nearly drowned in the river.",
+    "zh": "他差点在河里淹死。"
+  },
+  {
+    "word": "drug",
+    "mnemonic": "谐音'抓个'，抓个药或毒品→药，麻药",
+    "en": "This drug can cure the disease.",
+    "zh": "这种药可以治愈这种疾病。"
+  },
+  {
+    "word": "drugstore",
+    "mnemonic": "drug（药）+ store（商店）→药店，兼卖杂货",
+    "en": "I need to go to the drugstore for aspirin.",
+    "zh": "我需要去药店买阿司匹林。"
+  },
+  {
+    "word": "druid",
+    "mnemonic": "谐音'朱伊德'，古代巫师的名字→巫师，祭师",
+    "en": "The druid performed a mysterious ritual.",
+    "zh": "德鲁伊执行了一个神秘的仪式。"
+  },
+  {
+    "word": "drum",
+    "mnemonic": "谐音'壮'，敲鼓壮声势→鼓",
+    "en": "He plays the drum in the band.",
+    "zh": "他在乐队里打鼓。"
+  },
+  {
+    "word": "drunk",
+    "mnemonic": "谐音'撞磕'，喝醉了走路撞磕→喝醉的",
+    "en": "He got drunk at the party.",
+    "zh": "他在派对上喝醉了。"
+  },
+  {
+    "word": "drunken",
+    "mnemonic": "drunk+en，形容酒醉的状态→酒醉的",
+    "en": "A drunken man was lying on the road.",
+    "zh": "一个醉汉躺在路上。"
+  },
+  {
+    "word": "dryer",
+    "mnemonic": "dry（干燥）+er（物）→使干燥的东西→干衣机",
+    "en": "Put the clothes in the dryer.",
+    "zh": "把衣服放进干衣机。"
+  },
+  {
+    "word": "duchess",
+    "mnemonic": "duke（公爵）+ess（女性）→公爵夫人",
+    "en": "The duchess wore a beautiful dress.",
+    "zh": "公爵夫人穿着漂亮的裙子。"
+  },
+  {
+    "word": "duchy",
+    "mnemonic": "duke（公爵）+y（领地）→公爵领地，公国",
+    "en": "The duke ruled his duchy wisely.",
+    "zh": "公爵明智地统治着他的公国。"
+  },
+  {
+    "word": "duck",
+    "mnemonic": "谐音'打客'，鸭子会打客人吗？→鸭子",
+    "en": "The duck swam in the pond.",
+    "zh": "鸭子在池塘里游泳。"
+  },
+  {
+    "word": "dud",
+    "mnemonic": "谐音'达的'，哑弹打到目标却不响→无用的东西",
+    "en": "The fireworks was a dud.",
+    "zh": "这个烟花是个哑弹。"
+  },
+  {
+    "word": "dude",
+    "mnemonic": "谐音'丢的'，花花公子总丢东西→纨绔子弟",
+    "en": "Hey dude, what's up?",
+    "zh": "嘿哥们，怎么了？"
+  },
+  {
+    "word": "due",
+    "mnemonic": "谐音'丢'，丢下该付的钱（到期）→到期的，应得的",
+    "en": "The payment is due tomorrow.",
+    "zh": "付款明天到期。"
+  },
+  {
+    "word": "duff",
+    "mnemonic": "谐音'达夫'，水果布丁达夫，但也可指无用物→水果干布丁/无用东西",
+    "en": "This old computer is a duff.",
+    "zh": "这台旧电脑没用了。"
+  },
+  {
+    "word": "dull",
+    "mnemonic": "谐音'叨'，钝刀叨个不停→迟钝的，无趣的",
+    "en": "The lecture was very dull.",
+    "zh": "这个讲座非常无聊。"
+  },
+  {
+    "word": "dumb",
+    "mnemonic": "谐音'当'，哑巴当当敲桌子不说话→哑的",
+    "en": "He was born dumb and deaf.",
+    "zh": "他天生又聋又哑。"
+  },
+  {
+    "word": "dump",
+    "mnemonic": "谐音'当噗'，倾倒垃圾的声音→垃圾场，倾倒",
+    "en": "Don't dump rubbish here.",
+    "zh": "不要在这里倒垃圾。"
+  },
+  {
+    "word": "dung",
+    "mnemonic": "大粪 → 动物排泄物，谐音‘当’ → 当肥料用",
+    "en": "The farmer used dung as fertilizer.",
+    "zh": "农民用粪肥做肥料。"
+  },
+  {
+    "word": "dunno",
+    "mnemonic": "‘我不知道’的缩写，发音像‘当 no’ → 我不会",
+    "en": "I dunno where he went.",
+    "zh": "我不知道他去哪了。"
+  },
+  {
+    "word": "duo",
+    "mnemonic": "‘多’人去二重唱 → 两人组合",
+    "en": "The piano duo played beautifully.",
+    "zh": "钢琴二重奏演奏得很美。"
+  },
+  {
+    "word": "durable",
+    "mnemonic": "dure（持续）+able（能）→ 能持续的→耐用的",
+    "en": "This bag is made of durable material.",
+    "zh": "这个包由耐用材料制成。"
+  },
+  {
+    "word": "duration",
+    "mnemonic": "dure（持续）+ation（名词）→ 持续时间",
+    "en": "The duration of the movie is two hours.",
+    "zh": "电影的持续时间是两小时。"
+  },
+  {
+    "word": "dusk",
+    "mnemonic": "‘打’死‘客’ → 黄昏打架，天色微暗",
+    "en": "We went for a walk at dusk.",
+    "zh": "我们在黄昏时去散步。"
+  },
+  {
+    "word": "dust",
+    "mnemonic": "‘打他’ → 灰尘太多要打掉→灰尘",
+    "en": "Please dust the shelves every day.",
+    "zh": "请每天拂去架子上的灰尘。"
+  },
+  {
+    "word": "duty",
+    "mnemonic": "‘丢踢’ → 踢球是职责？→责任、关税",
+    "en": "It is your duty to clean the room.",
+    "zh": "打扫房间是你的责任。"
+  },
+  {
+    "word": "duty-free",
+    "mnemonic": "duty（关税）+free（免费）→ 免税的",
+    "en": "I bought perfume at the duty-free shop.",
+    "zh": "我在免税店买了香水。"
+  },
+  {
+    "word": "duvet",
+    "mnemonic": "‘独威’→ 独自盖羽绒被很威风→羽绒被",
+    "en": "She snuggled under the warm duvet.",
+    "zh": "她蜷缩在温暖的羽绒被下。"
+  },
+  {
+    "word": "dwelling",
+    "mnemonic": "dwell（居住）+ing → 住处",
+    "en": "Their dwelling is a small cottage.",
+    "zh": "他们的住处是一间小木屋。"
+  },
+  {
+    "word": "dye",
+    "mnemonic": "‘大一’→ 大一学生染头发→染料",
+    "en": "She wants to dye her hair blue.",
+    "zh": "她想把头发染成蓝色。"
+  },
+  {
+    "word": "dying",
+    "mnemonic": "die（死）+ing → 正在死→垂死的",
+    "en": "The dying plant needs more water.",
+    "zh": "那株垂死的植物需要更多水。"
+  },
+  {
+    "word": "dyke",
+    "mnemonic": "‘大渴’→ 堤坝上的工人很渴→堤",
+    "en": "The dyke protects the village from floods.",
+    "zh": "堤坝保护村庄免受洪水侵袭。"
+  },
+  {
+    "word": "dynamic",
+    "mnemonic": "dyna（力量）+mic → 有活力的、动态的",
+    "en": "She has a dynamic personality.",
+    "zh": "她有一个充满活力的个性。"
+  },
+  {
+    "word": "dynamism",
+    "mnemonic": "dynamic（动态的）+ism → 动力说、活力",
+    "en": "His dynamism energized the team.",
+    "zh": "他的活力激励了团队。"
+  },
+  {
+    "word": "dynamite",
+    "mnemonic": "dyna（力量）+mite（小）→ 小东西大力量→炸药",
+    "en": "They used dynamite to blast the rock.",
+    "zh": "他们用炸药炸开岩石。"
+  },
+  {
+    "word": "e.g.",
+    "mnemonic": "exempli gratia 缩写，读‘一记’ → 举例来说",
+    "en": "Eat fruits, e.g., apples and bananas.",
+    "zh": "吃水果，例如苹果和香蕉。"
+  },
+  {
+    "word": "eager",
+    "mnemonic": "‘一哥’→ 一哥渴望当第一→渴望的",
+    "en": "The students are eager to learn.",
+    "zh": "学生们渴望学习。"
+  },
+  {
+    "word": "eagle",
+    "mnemonic": "‘一狗’？不，鹰的眼睛像‘衣钩’→ 鹰",
+    "en": "An eagle soared high in the sky.",
+    "zh": "一只鹰在高空翱翔。"
+  },
+  {
+    "word": "earliest",
+    "mnemonic": "early（早）+est（最）→ 最早的",
+    "en": "He arrived at the earliest hour.",
+    "zh": "他在最早的时刻到达。"
+  },
+  {
+    "word": "earmark",
+    "mnemonic": "ear（耳朵）+mark（记号）→ 耳朵上做记号→特征",
+    "en": "The project has been earmarked for funding.",
+    "zh": "这个项目已被指定用于资助。"
+  },
+  {
+    "word": "earn",
+    "mnemonic": "‘嗯’→ 努力工作‘赚’钱发出‘嗯’声→赚得",
+    "en": "She works hard to earn money.",
+    "zh": "她努力工作赚钱。"
+  },
+  {
+    "word": "earner",
+    "mnemonic": "earn（赚）+er（人）→ 赚钱的人",
+    "en": "He is the main earner in his family.",
+    "zh": "他是家里主要赚钱的人。"
+  },
+  {
+    "word": "earnest",
+    "mnemonic": "earn（赚）+est（最）→ 最认真才能赚大钱→认真的",
+    "en": "He made an earnest effort to improve.",
+    "zh": "他做了认真的努力去改进。"
+  },
+  {
+    "word": "earthquake",
+    "mnemonic": "earth（地球）+quake（震动）→ 地震",
+    "en": "The earthquake shook the whole city.",
+    "zh": "地震震动了整个城市。"
+  },
+  {
+    "word": "ease",
+    "mnemonic": "‘一次’→ 一次轻松搞定→安逸、减轻",
+    "en": "The medicine eased her pain.",
+    "zh": "药物减轻了她的疼痛。"
+  },
+  {
+    "word": "easily",
+    "mnemonic": "easy（容易）+ly（副词）→ 容易地",
+    "en": "She passed the test easily.",
+    "zh": "她轻易地通过了考试。"
+  },
+  {
+    "word": "eastern",
+    "mnemonic": "east（东）+ern（形容词）→ 东方的",
+    "en": "The sun rises in the eastern sky.",
+    "zh": "太阳从东方天空升起。"
+  },
+  {
+    "word": "easy-going",
+    "mnemonic": "easy（容易）+going（走）→ 好说话、随和",
+    "en": "My father is very easy-going.",
+    "zh": "我父亲非常随和。"
+  },
+  {
+    "word": "eater",
+    "mnemonic": "eat（吃）+er（人）→ 吃饭的人；爱吃水果的人就是eater",
+    "en": "He is a big meat eater.",
+    "zh": "他是个大肉食者。"
+  },
+  {
+    "word": "ebullient",
+    "mnemonic": "e（出）+bull（公牛）+ient → 公牛冲出来，热情沸腾 → 热情洋溢的",
+    "en": "She was ebullient after winning the prize.",
+    "zh": "她获奖后热情洋溢。"
+  },
+  {
+    "word": "ecclesiastical",
+    "mnemonic": "ecclesia（教会）+tical → 教会相关的，神职的",
+    "en": "He studied ecclesiastical history.",
+    "zh": "他研究教会历史。"
+  },
+  {
+    "word": "echelon",
+    "mnemonic": "e（出）+che（车）+lon（轮）→ 车队排出梯形 → 梯队",
+    "en": "Soldiers marched in echelon formation.",
+    "zh": "士兵们以梯队队形行进。"
+  },
+  {
+    "word": "echo",
+    "mnemonic": "e（回声）+cho（“口”）→ 嘴巴发出的声音回响 → 回声",
+    "en": "The echo came back from the mountain.",
+    "zh": "回声从山上传来。"
+  },
+  {
+    "word": "economic",
+    "mnemonic": "economy（经济）+ic（形容词）→ 经济上的，节省的",
+    "en": "The country faces economic problems.",
+    "zh": "这个国家面临经济问题。"
+  },
+  {
+    "word": "economical",
+    "mnemonic": "economic（经济）+al（形容词）→ 更强调节约，合算的",
+    "en": "Buying in bulk is more economical.",
+    "zh": "批量购买更经济实惠。"
+  },
+  {
+    "word": "economics",
+    "mnemonic": "economy（经济）+ics（学科）→ 研究经济的学科 → 经济学",
+    "en": "She majors in economics at university.",
+    "zh": "她在大学主修经济学。"
+  },
+  {
+    "word": "economy",
+    "mnemonic": "e（一）+co（共）+no（不）+my（我的）→ 大家共省不浪费 → 经济、节约",
+    "en": "The economy is growing slowly.",
+    "zh": "经济增长缓慢。"
+  },
+  {
+    "word": "ecu",
+    "mnemonic": "E（欧洲）+C（货币）+U（单位）→ 欧洲货币单位缩写",
+    "en": "The ECU was a precursor to the euro.",
+    "zh": "欧洲货币单位是欧元的前身。"
+  },
+  {
+    "word": "eczema",
+    "mnemonic": "e（一）+c（可）+ze（则）+ma（麻）→ 皮肤又痒又麻 → 湿疹",
+    "en": "He has eczema on his hands.",
+    "zh": "他手上有湿疹。"
+  },
+  {
+    "word": "edge",
+    "mnemonic": "e（一）+dge（“这”）→ 走到这的边缘 → 边缘、刀刃",
+    "en": "Be careful of the sharp edge.",
+    "zh": "小心锋利的边缘。"
+  },
+  {
+    "word": "edged",
+    "mnemonic": "edge（边缘）+d（过去分词）→ 有刃的，如双刃的",
+    "en": "He wielded a double-edged sword.",
+    "zh": "他挥舞着一把双刃剑。"
+  },
+  {
+    "word": "edgy",
+    "mnemonic": "edge（边缘）+y（形容词）→ 处于边缘，急躁不安 → 急躁的",
+    "en": "She felt edgy before the exam.",
+    "zh": "考试前她感到急躁不安。"
+  },
+  {
+    "word": "edition",
+    "mnemonic": "edit（编辑）+ion（名词）→ 编辑出来的版本",
+    "en": "This is the latest edition of the book.",
+    "zh": "这是这本书的最新版本。"
+  },
+  {
+    "word": "editor",
+    "mnemonic": "edit（编辑）+or（人）→ 做编辑工作的人",
+    "en": "The editor corrected my article.",
+    "zh": "编辑修改了我的文章。"
+  },
+  {
+    "word": "editorial",
+    "mnemonic": "editor（编辑）+ial（形容词）→ 编辑的，也指社论",
+    "en": "I read the editorial in the newspaper.",
+    "zh": "我读了报纸上的社论。"
+  },
+  {
+    "word": "educate",
+    "mnemonic": "e(出) + duc(引导) + ate → 引导出来→教育",
+    "en": "Schools educate the next generation.",
+    "zh": "学校教育下一代。"
+  },
+  {
+    "word": "education",
+    "mnemonic": "e（出）+duc（引导）+ation → 把学生引导出来 → 教育",
+    "en": "Education is important for everyone.",
+    "zh": "教育对每个人都很重要。"
+  },
+  {
+    "word": "edwardian",
+    "mnemonic": "Edward（爱德华）+ian（…的）→ 英王爱德华时代的风格",
+    "en": "The house has Edwardian architecture.",
+    "zh": "这栋房子是爱德华时代的建筑风格。"
+  },
+  {
+    "word": "eel",
+    "mnemonic": "e（一）+el（“鱼”）→ 像蛇一样长的鱼 → 鳗鱼",
+    "en": "Eels are slippery and hard to catch.",
+    "zh": "鳗鱼很滑，很难抓。"
+  },
+  {
+    "word": "effect",
+    "mnemonic": "ef（出）+fect（做）→ 做出来的结果 → 效果、影响",
+    "en": "The medicine had a good effect.",
+    "zh": "药效果很好。"
+  },
+  {
+    "word": "effective",
+    "mnemonic": "effect（效果）+ive（形容词）→ 有效果的，有效的",
+    "en": "This method is very effective.",
+    "zh": "这个方法非常有效。"
+  },
+  {
+    "word": "efficiency",
+    "mnemonic": "ef（出）+fic（做）+iency → 做得又快又好 → 效率",
+    "en": "We need to improve efficiency.",
+    "zh": "我们需要提高效率。"
+  },
+  {
+    "word": "efficient",
+    "mnemonic": "ef（出）+fic（做）+ient → 做事效率高 → 有效率的",
+    "en": "She is an efficient worker.",
+    "zh": "她是个高效率的员工。"
+  },
+  {
+    "word": "effort",
+    "mnemonic": "ef（出）+fort（力量）→ 使出力量 → 努力",
+    "en": "He made a great effort to win.",
+    "zh": "他付出巨大努力去赢。"
+  },
+  {
+    "word": "effortless",
+    "mnemonic": "effort（努力）+less（无）→ 不需要努力 → 容易的",
+    "en": "She danced with effortless grace.",
+    "zh": "她跳舞毫不费力，优雅自如。"
+  },
+  {
+    "word": "eh",
+    "mnemonic": "e（额）+h（哈）→ 疑问语气词“嗯？啊？”",
+    "en": "Eh? What did you say?",
+    "zh": "嗯？你说什么？"
+  },
+  {
+    "word": "eighteen",
+    "mnemonic": "eight（八）+teen（十）→ 十八",
+    "en": "She is eighteen years old.",
+    "zh": "她十八岁。"
+  },
+  {
+    "word": "eighteenth",
+    "mnemonic": "eighteen（十八）+th（第）→ 第十八",
+    "en": "Today is his eighteenth birthday.",
+    "zh": "今天是他十八岁生日。"
+  },
+  {
+    "word": "eightieth",
+    "mnemonic": "eighty（八十）+th（第）→ 第八十",
+    "en": "He celebrated his eightieth birthday.",
+    "zh": "他庆祝了他的八十岁生日。"
+  },
+  {
+    "word": "eighty",
+    "mnemonic": "eight（八）+y → 八后面加个y，变成八十岁？不，是数字八十。",
+    "en": "My grandfather is eighty years old.",
+    "zh": "我祖父八十岁了。"
+  },
+  {
+    "word": "elaborate",
+    "mnemonic": "e（出）+labor（劳动）+ate → 反复劳动做出来的，当然精细详尽。",
+    "en": "She gave an elaborate explanation.",
+    "zh": "她给出了详尽的解释。"
+  },
+  {
+    "word": "elastic",
+    "mnemonic": "e+last（持续）+ic → 能持续拉伸的 → 有弹性的。",
+    "en": "The rubber band is very elastic.",
+    "zh": "这根橡皮筋很有弹性。"
+  },
+  {
+    "word": "elbow",
+    "mnemonic": "el（像L形）+bow（弓）→ 手肘弯曲像弓，用手肘推开别人。",
+    "en": "He elbowed his way through the crowd.",
+    "zh": "他用肘推开人群挤过去。"
+  },
+  {
+    "word": "elder",
+    "mnemonic": "eld（老）+er → 比较老的那个 → 年长者。",
+    "en": "My elder brother is a teacher.",
+    "zh": "我哥哥是一名老师。"
+  },
+  {
+    "word": "elderly",
+    "mnemonic": "elder（年长）+ly → 上了年纪的 → 稍老的。",
+    "en": "An elderly man walked slowly.",
+    "zh": "一位老人慢慢地走着。"
+  },
+  {
+    "word": "eldest",
+    "mnemonic": "elder（年长）+est（最）→ 最年长的。",
+    "en": "She is the eldest daughter.",
+    "zh": "她是长女。"
+  },
+  {
+    "word": "elect",
+    "mnemonic": "e（出）+lect（选）→ 选出来 → 选举。",
+    "en": "They will elect a new president.",
+    "zh": "他们将选举一位新总统。"
+  },
+  {
+    "word": "election",
+    "mnemonic": "elect（选举）+ion（名词后缀）→ 选举这件事。",
+    "en": "The election is next Tuesday.",
+    "zh": "选举在下周二。"
+  },
+  {
+    "word": "elector",
+    "mnemonic": "elect（选举）+or（人）→ 选举人，有选举权的人。",
+    "en": "Every elector has one vote.",
+    "zh": "每个选举人有一票。"
+  },
+  {
+    "word": "electoral",
+    "mnemonic": "elector（选举人）+al（形容词后缀）→ 选举的，选举人的。",
+    "en": "They discussed electoral reform.",
+    "zh": "他们讨论了选举改革。"
+  },
+  {
+    "word": "electric",
+    "mnemonic": "electr（电）+ic（形容词后缀）→ 电的，电动的。",
+    "en": "The electric fan is cooling us.",
+    "zh": "电扇正在给我们降温。"
+  },
+  {
+    "word": "emerge",
+    "mnemonic": "e(出) + merge(沉) → 从沉没中出来→浮现",
+    "en": "New evidence emerged.",
+    "zh": "出现了新证据。"
+  },
+  {
+    "word": "emphasize",
+    "mnemonic": "em(加强) + phas(说) + ize → 用力说→强调",
+    "en": "The teacher emphasized key points.",
+    "zh": "老师强调了重点。"
+  },
+  {
+    "word": "encourage",
+    "mnemonic": "en(使) + courage(勇气) → 使有勇气→鼓励",
+    "en": "Parents should encourage children.",
+    "zh": "父母应鼓励孩子。"
+  },
+  {
+    "word": "establish",
+    "mnemonic": "e(出) + st(站立) + abl(能)+ish → 使站出来→建立",
+    "en": "They established a new company.",
+    "zh": "他们创办了新公司。"
+  },
+  {
+    "word": "evidence",
+    "mnemonic": "e(出) + vid(看) + ence → 看得出来→证据",
+    "en": "There is evidence of climate change.",
+    "zh": "有气候变化证据。"
+  },
+  {
+    "word": "examine",
+    "mnemonic": "ex(出) + amine(测量) → 测出来→检查",
+    "en": "The doctor examined the patient.",
+    "zh": "医生检查了病人。"
+  },
+  {
+    "word": "exchange",
+    "mnemonic": "ex(出) + change(换) → 换出去→交换",
+    "en": "They exchanged gifts.",
+    "zh": "他们交换了礼物。"
+  },
+  {
+    "word": "exclude",
+    "mnemonic": "ex(出) + clude(关闭) → 关在外面→排除",
+    "en": "Some items are excluded.",
+    "zh": "有些商品被排除。"
+  },
+  {
+    "word": "expand",
+    "mnemonic": "ex(出) + pand(伸展) → 向外伸展→扩张",
+    "en": "The company expanded overseas.",
+    "zh": "公司向海外扩张。"
+  },
+  {
+    "word": "explain",
+    "mnemonic": "ex(出) + plain(平坦) → 让事情平坦易懂→解释",
+    "en": "Can you explain this rule?",
+    "zh": "你能解释这条规则吗？"
+  },
+  {
+    "word": "explore",
+    "mnemonic": "ex(出) + plore(流) → 流出去→探索",
+    "en": "Let's explore the forest.",
+    "zh": "我们去探索森林。"
+  },
+  {
+    "word": "export",
+    "mnemonic": "ex(出) + port(搬运) → 搬运出去→出口",
+    "en": "China exports goods worldwide.",
+    "zh": "中国向全球出口商品。"
+  },
+  {
+    "word": "express",
+    "mnemonic": "ex(出) + press(压) → 压出来→表达",
+    "en": "Express your feelings honestly.",
+    "zh": "诚实表达感受。"
+  },
+  {
+    "word": "extend",
+    "mnemonic": "ex(出) + tend(伸展) → 伸展出去→延伸",
+    "en": "Please extend the deadline.",
+    "zh": "请延长截止日期。"
+  },
+  {
+    "word": "extract",
+    "mnemonic": "ex(出) + tract(拉) → 拉出来→提取",
+    "en": "Honey is extracted from beehives.",
+    "zh": "蜂蜜从蜂巢提取。"
+  },
+  {
+    "word": "fascinate",
+    "mnemonic": "fascin(魔力) + ate → 被魔力吸引",
+    "en": "The story fascinated the children.",
+    "zh": "故事让孩子们着迷。"
+  },
+  {
+    "word": "forecast",
+    "mnemonic": "fore(前) + cast(投掷) → 向前投→预测",
+    "en": "The forecast says rain.",
+    "zh": "天气预报说有雨。"
+  },
+  {
+    "word": "hesitate",
+    "mnemonic": "hesit(粘住) + ate → 粘在原地→犹豫",
+    "en": "Don't hesitate to ask questions.",
+    "zh": "别犹豫，尽管问。"
+  },
+  {
+    "word": "illustrate",
+    "mnemonic": "il(进入) + lustr(照亮)+ate → 照亮给人看",
+    "en": "The diagram illustrates the process.",
+    "zh": "图表说明了流程。"
+  },
+  {
+    "word": "imagine",
+    "mnemonic": "im(进入) + ag(做) + ine → 进入脑海做画面",
+    "en": "Imagine a world without pollution.",
+    "zh": "想象无污染的世界。"
+  },
+  {
+    "word": "immediate",
+    "mnemonic": "im(无) + medi(中间) + ate → 无中间→立即",
+    "en": "Take immediate action.",
+    "zh": "立即采取行动。"
+  },
+  {
+    "word": "impress",
+    "mnemonic": "im(进入) + press(压) → 压入脑海→印象深刻",
+    "en": "Her speech impressed everyone.",
+    "zh": "她的演讲令人印象深刻。"
+  },
+  {
+    "word": "include",
+    "mnemonic": "in(进入) + clude(关闭) → 关在里面→包括",
+    "en": "The price includes tax.",
+    "zh": "价格含税。"
+  },
+  {
+    "word": "indicate",
+    "mnemonic": "in(进入) + dic(说) + ate → 往里说→暗示",
+    "en": "The sign indicates the way.",
+    "zh": "标志指示方向。"
+  },
+  {
+    "word": "influence",
+    "mnemonic": "in(进入) + flu(流动) + ence → 流入内心→影响",
+    "en": "Friends influence our decisions.",
+    "zh": "朋友影响决定。"
+  },
+  {
+    "word": "inform",
+    "mnemonic": "in(进入) + form(形式) → 以形式进入→通知",
+    "en": "Please inform us of changes.",
+    "zh": "请通知我们变化。"
+  },
+  {
+    "word": "inject",
+    "mnemonic": "in(进入) + ject(投掷) → 投进去→注射",
+    "en": "The doctor injected the vaccine.",
+    "zh": "医生注射了疫苗。"
+  },
+  {
+    "word": "inspect",
+    "mnemonic": "in(进入) + spect(看) → 进去看→检查",
+    "en": "The inspector checked the factory.",
+    "zh": "检查员检查了工厂。"
+  },
+  {
+    "word": "inspire",
+    "mnemonic": "in(进入) + spire(呼吸) → 吸入灵气→启发",
+    "en": "Great leaders inspire others.",
+    "zh": "伟大领袖激励他人。"
+  },
+  {
+    "word": "instruct",
+    "mnemonic": "in(进入) + struct(建造) → 脑中建造→指导",
+    "en": "The coach instructed the team.",
+    "zh": "教练指导了团队。"
+  },
+  {
+    "word": "interrupt",
+    "mnemonic": "inter(之间) + rupt(打破) → 打破中间→打断",
+    "en": "Don't interrupt when others speak.",
+    "zh": "别人说话别打断。"
+  },
+  {
+    "word": "introduce",
+    "mnemonic": "intro(向内) + duce(引导) → 引导进来→介绍",
+    "en": "Let me introduce my friend.",
+    "zh": "让我介绍朋友。"
+  },
+  {
+    "word": "invent",
+    "mnemonic": "in(进入) + vent(来) → 来到世上的新事物→发明",
+    "en": "Edison invented the light bulb.",
+    "zh": "爱迪生发明了灯泡。"
+  },
+  {
+    "word": "invest",
+    "mnemonic": "in(进入) + vest(衣服) → 把钱放进衣服→投资",
+    "en": "Invest in your education.",
+    "zh": "投资你的教育。"
+  },
+  {
+    "word": "isolate",
+    "mnemonic": "i(岛) + sol(单独) + ate → 像孤岛一样→隔离",
+    "en": "The patient was isolated.",
+    "zh": "病人被隔离了。"
+  },
+  {
+    "word": "maintain",
+    "mnemonic": "main(手) + tain(保持) → 用手保持→维持",
+    "en": "Maintain good relationships.",
+    "zh": "维持良好关系。"
+  },
+  {
+    "word": "manufacture",
+    "mnemonic": "manu(手) + fact(做) + ure → 用手做→制造",
+    "en": "This factory manufactures cars.",
+    "zh": "这家工厂制造汽车。"
+  },
+  {
+    "word": "memorize",
+    "mnemonic": "memor(记忆) + ize → 记忆",
+    "en": "Memorize these new words.",
+    "zh": "记住这些新单词。"
+  },
+  {
+    "word": "negative",
+    "mnemonic": "neg(否定) + ative → 否定的",
+    "en": "Avoid negative thinking.",
+    "zh": "避免消极想法。"
+  },
+  {
+    "word": "observe",
+    "mnemonic": "ob(加强) + serve(保持) → 保持看→观察",
+    "en": "Observe the experiment carefully.",
+    "zh": "仔细观察实验。"
+  },
+  {
+    "word": "obtain",
+    "mnemonic": "ob(加强) + tain(保持) → 保持住→获得",
+    "en": "She obtained a degree.",
+    "zh": "她获得了学位。"
+  },
+  {
+    "word": "occur",
+    "mnemonic": "oc(朝向) + cur(跑) → 跑到脑海中→发生",
+    "en": "When did the accident occur?",
+    "zh": "事故什么时候发生的？"
+  },
+  {
+    "word": "oppose",
+    "mnemonic": "op(相反) + pose(放) → 放在对面→反对",
+    "en": "I oppose this idea.",
+    "zh": "我反对这个想法。"
+  },
+  {
+    "word": "organize",
+    "mnemonic": "organ(器官) + ize → 使有器官→组织",
+    "en": "Organize your thoughts first.",
+    "zh": "先组织你的想法。"
+  },
+  {
+    "word": "participate",
+    "mnemonic": "part(部分) + cip(拿) + ate → 拿一部分→参与",
+    "en": "Everyone should participate.",
+    "zh": "每个人都应参与。"
+  },
+  {
+    "word": "patient",
+    "mnemonic": "pati(忍受) + ent → 能忍受的→耐心的",
+    "en": "Be patient with children.",
+    "zh": "对孩子要有耐心。"
+  },
+  {
+    "word": "perform",
+    "mnemonic": "per(完全) + form(形式) → 完全呈现→表演",
+    "en": "She performed beautifully on stage.",
+    "zh": "她在舞台上表演精彩。"
+  },
+  {
+    "word": "permit",
+    "mnemonic": "per(通过) + mit(送) → 送过去→许可",
+    "en": "Smoking is not permitted here.",
+    "zh": "这里不允许吸烟。"
+  },
+  {
+    "word": "persist",
+    "mnemonic": "per(贯穿) + sist(站立) → 一直站着→坚持",
+    "en": "Persist in your efforts.",
+    "zh": "坚持你的努力。"
+  },
+  {
+    "word": "persuade",
+    "mnemonic": "per(贯穿) + suade(劝告) → 一直劝说→说服",
+    "en": "She persuaded me to try.",
+    "zh": "她说服我去尝试。"
+  },
+  {
+    "word": "possess",
+    "mnemonic": "pos(能) + sess(坐) → 能坐拥→拥有",
+    "en": "He possesses great talent.",
+    "zh": "他拥有很大的天赋。"
+  },
+  {
+    "word": "postpone",
+    "mnemonic": "post(后) + pone(放置) → 放在后面→推迟",
+    "en": "Let's postpone the meeting.",
+    "zh": "我们把会议推迟吧。"
+  },
+  {
+    "word": "predict",
+    "mnemonic": "pre(前) + dict(说) → 提前说→预测",
+    "en": "Predict the weather accurately.",
+    "zh": "准确预测天气。"
+  },
+  {
+    "word": "prefer",
+    "mnemonic": "pre(前) + fer(带来) → 把某个放前面→偏好",
+    "en": "I prefer tea to coffee.",
+    "zh": "比起咖啡我更喜欢茶。"
+  },
+  {
+    "word": "prepare",
+    "mnemonic": "pre(前) + pare(准备) → 提前准备",
+    "en": "Prepare for the exam.",
+    "zh": "准备考试。"
+  },
+  {
+    "word": "present",
+    "mnemonic": "pre(前) + sent(存在) → 存在面前→呈现",
+    "en": "He presented his research.",
+    "zh": "他展示了研究成果。"
+  },
+  {
+    "word": "preserve",
+    "mnemonic": "pre(前) + serve(保持) → 提前保持→保存",
+    "en": "Preserve the environment.",
+    "zh": "保护环境。"
+  },
+  {
+    "word": "prevent",
+    "mnemonic": "pre(前) + vent(来) → 提前挡住→预防",
+    "en": "Prevent diseases by exercising.",
+    "zh": "通过锻炼预防疾病。"
+  },
+  {
+    "word": "produce",
+    "mnemonic": "pro(向前) + duce(引导) → 引导出来→生产",
+    "en": "This factory produces toys.",
+    "zh": "这家工厂生产玩具。"
+  },
+  {
+    "word": "progress",
+    "mnemonic": "pro(向前) + gress(走) → 向前走→进步",
+    "en": "Technology progresses rapidly.",
+    "zh": "技术快速进步。"
+  },
+  {
+    "word": "promise",
+    "mnemonic": "pro(向前) + mise(发送) → 发送承诺→许诺",
+    "en": "Keep your promise.",
+    "zh": "信守你的承诺。"
+  },
+  {
+    "word": "promote",
+    "mnemonic": "pro(向前) + mote(移动) → 向前移动→晋升",
+    "en": "She was promoted to manager.",
+    "zh": "她被晋升为经理。"
+  },
+  {
+    "word": "protect",
+    "mnemonic": "pro(前) + tect(遮盖) → 在前面遮盖→保护",
+    "en": "Protect the environment.",
+    "zh": "保护环境。"
+  },
+  {
+    "word": "provide",
+    "mnemonic": "pro(前) + vide(看) → 提前看到并准备→提供",
+    "en": "We provide free education.",
+    "zh": "我们提供免费教育。"
+  },
+  {
+    "word": "publish",
+    "mnemonic": "pub(公众) + lish → 公开给公众→出版",
+    "en": "The book was published last year.",
+    "zh": "这本书去年出版。"
+  },
+  {
+    "word": "pursue",
+    "mnemonic": "pur(向前) + sue(跟随) → 向前跟随→追求",
+    "en": "Pursue your dreams.",
+    "zh": "追求你的梦想。"
+  },
+  {
+    "word": "recognize",
+    "mnemonic": "re(再) + cogn(知道) + ize → 再次知道→认出",
+    "en": "I recognized her voice.",
+    "zh": "我认出了她的声音。"
+  },
+  {
+    "word": "recommend",
+    "mnemonic": "re(再) + commend(推荐) → 再三推荐→推荐",
+    "en": "I recommend this restaurant.",
+    "zh": "我推荐这家餐厅。"
+  },
+  {
+    "word": "record",
+    "mnemonic": "re(再) + cord(心) → 心中再记→记录",
+    "en": "Record the meeting.",
+    "zh": "记录这次会议。"
+  },
+  {
+    "word": "recover",
+    "mnemonic": "re(再) + cover(覆盖) → 再次覆盖→恢复",
+    "en": "She recovered from illness.",
+    "zh": "她从病中恢复。"
+  },
+  {
+    "word": "reduce",
+    "mnemonic": "re(向后) + duce(引导) → 引导向后→减少",
+    "en": "Reduce waste to save the planet.",
+    "zh": "减少浪费保护地球。"
+  },
+  {
+    "word": "refer",
+    "mnemonic": "re(再) + fer(带来) → 再次带来→参考",
+    "en": "Refer to the dictionary.",
+    "zh": "查一下词典。"
+  },
+  {
+    "word": "reflect",
+    "mnemonic": "re(向后) + flect(弯曲) → 向后弯曲→反射",
+    "en": "Mirrors reflect light.",
+    "zh": "镜子反射光。"
+  },
+  {
+    "word": "refuse",
+    "mnemonic": "re(向后) + fuse(灌注) → 灌回去→拒绝",
+    "en": "He refused the offer.",
+    "zh": "他拒绝了提议。"
+  },
+  {
+    "word": "relate",
+    "mnemonic": "re(再) + late(带来) → 再次带来→关联",
+    "en": "How do these events relate?",
+    "zh": "这些事件如何关联？"
+  },
+  {
+    "word": "release",
+    "mnemonic": "re(再) + lease(放松) → 放松→释放",
+    "en": "Release the prisoner.",
+    "zh": "释放囚犯。"
+  },
+  {
+    "word": "relieve",
+    "mnemonic": "re(再) + lieve(轻) → 再次变轻→缓解",
+    "en": "This medicine relieves pain.",
+    "zh": "这药缓解疼痛。"
+  },
+  {
+    "word": "remain",
+    "mnemonic": "re(再) + main(留) → 一直留着→保持",
+    "en": "Remain calm in emergencies.",
+    "zh": "紧急时刻保持冷静。"
+  },
+  {
+    "word": "remember",
+    "mnemonic": "re(再) + member(记忆) → 再次记起→记得",
+    "en": "Remember to lock the door.",
+    "zh": "记得锁门。"
+  },
+  {
+    "word": "remove",
+    "mnemonic": "re(再) + move(移动) → 移走→移除",
+    "en": "Remove the lid carefully.",
+    "zh": "小心取下盖子。"
+  },
+  {
+    "word": "repeat",
+    "mnemonic": "re(再) + peat(请求) → 再次请求→重复",
+    "en": "Please repeat the question.",
+    "zh": "请重复问题。"
+  },
+  {
+    "word": "replace",
+    "mnemonic": "re(再) + place(放置) → 重新放→替换",
+    "en": "Replace the old battery.",
+    "zh": "更换旧电池。"
+  },
+  {
+    "word": "report",
+    "mnemonic": "re(再) + port(搬运) → 搬运回来→报告",
+    "en": "Report the incident to the police.",
+    "zh": "向警方报告事件。"
+  },
+  {
+    "word": "request",
+    "mnemonic": "re(再) + quest(寻求) → 再次寻求→请求",
+    "en": "Request a meeting.",
+    "zh": "请求开会。"
+  },
+  {
+    "word": "require",
+    "mnemonic": "re(再) + quire(寻求) → 反复寻求→需要",
+    "en": "This job requires patience.",
+    "zh": "这项工作需要耐心。"
+  },
+  {
+    "word": "research",
+    "mnemonic": "re(再) + search(搜索) → 反复搜索→研究",
+    "en": "Research the topic thoroughly.",
+    "zh": "彻底研究这个主题。"
+  },
+  {
+    "word": "resist",
+    "mnemonic": "re(反对) + sist(站立) → 站在对面→抵抗",
+    "en": "Resist the temptation.",
+    "zh": "抵抗诱惑。"
+  },
+  {
+    "word": "resolve",
+    "mnemonic": "re(再) + solve(解开) → 解开问题→解决",
+    "en": "Resolve conflicts peacefully.",
+    "zh": "和平解决冲突。"
+  },
+  {
+    "word": "respect",
+    "mnemonic": "re(再) + spect(看) → 反复看→尊重",
+    "en": "Respect your elders.",
+    "zh": "尊重长辈。"
+  },
+  {
+    "word": "respond",
+    "mnemonic": "re(再) + spond(承诺) → 承诺回应→回答",
+    "en": "Please respond to the email.",
+    "zh": "请回复邮件。"
+  },
+  {
+    "word": "restore",
+    "mnemonic": "re(再) + store(储存) → 恢复储存→修复",
+    "en": "Restore the old building.",
+    "zh": "修复老建筑。"
+  },
+  {
+    "word": "restrict",
+    "mnemonic": "re(再) + strict(拉紧) → 拉紧→限制",
+    "en": "Restrict access to the area.",
+    "zh": "限制进入该区域。"
+  },
+  {
+    "word": "reveal",
+    "mnemonic": "re(向后) + veal(面纱) → 去掉面纱→揭示",
+    "en": "The truth was revealed.",
+    "zh": "真相被揭示。"
+  },
+  {
+    "word": "revenue",
+    "mnemonic": "re(再) + venue(来) → 回来的钱→收入",
+    "en": "The company's revenue increased.",
+    "zh": "公司收入增加了。"
+  },
+  {
+    "word": "review",
+    "mnemonic": "re(再) + view(看) → 再看→复习",
+    "en": "Review your notes daily.",
+    "zh": "每天复习笔记。"
+  },
+  {
+    "word": "revise",
+    "mnemonic": "re(再) + vise(看) → 再看→修订",
+    "en": "Revise your essay.",
+    "zh": "修改你的文章。"
+  },
+  {
+    "word": "satisfy",
+    "mnemonic": "satis(足够) + fy(使) → 使足够→满足",
+    "en": "The food satisfied my hunger.",
+    "zh": "食物满足了我的饥饿。"
+  },
+  {
+    "word": "schedule",
+    "mnemonic": "sched(纸片)+ule → 纸上写的时间→日程",
+    "en": "Check your schedule for today.",
+    "zh": "查看今天的日程。"
+  },
+  {
+    "word": "separate",
+    "mnemonic": "se(分开) + par(准备) + ate → 分开准备→隔离",
+    "en": "Separate the recyclables.",
+    "zh": "把可回收物分开。"
+  },
+  {
+    "word": "significance",
+    "mnemonic": "sign(标记) + ific(做)+ance → 做标记→意义",
+    "en": "Understand the significance.",
+    "zh": "理解其重要性。"
+  },
+  {
+    "word": "similar",
+    "mnemonic": "simil(相同) + ar → 相同的",
+    "en": "These two are very similar.",
+    "zh": "这两个非常相似。"
+  },
+  {
+    "word": "simplify",
+    "mnemonic": "simpl(简单) + ify(使) → 使简单",
+    "en": "Simplify the process.",
+    "zh": "简化流程。"
+  },
+  {
+    "word": "sincere",
+    "mnemonic": "sin(罪)+cere(蜡) → 无蜡即无伪→真诚的",
+    "en": "Her apology was sincere.",
+    "zh": "她的道歉是真诚的。"
+  },
+  {
+    "word": "society",
+    "mnemonic": "soci(同伴) + ety → 同伴群体→社会",
+    "en": "Society needs good citizens.",
+    "zh": "社会需要好公民。"
+  },
+  {
+    "word": "sophisticated",
+    "mnemonic": "soph(智慧) + isticated → 充满智慧的→精密的",
+    "en": "This is sophisticated technology.",
+    "zh": "这是精密技术。"
+  },
+  {
+    "word": "specific",
+    "mnemonic": "spec(看) + ific(做) → 让人看清楚→具体的",
+    "en": "Give specific examples.",
+    "zh": "给出具体例子。"
+  },
+  {
+    "word": "structure",
+    "mnemonic": "struct(建造) + ure → 建造出来的→结构",
+    "en": "The building has a steel structure.",
+    "zh": "建筑是钢结构。"
+  },
+  {
+    "word": "struggle",
+    "mnemonic": "谐音: 是抓狗 → 抓狗很费劲→奋斗",
+    "en": "Life is a constant struggle.",
+    "zh": "生活是持续的战斗。"
+  },
+  {
+    "word": "succeed",
+    "mnemonic": "suc(靠近) + ceed(走) → 走近目标→成功",
+    "en": "Hard work leads to success.",
+    "zh": "努力带来成功。"
+  },
+  {
+    "word": "sufficient",
+    "mnemonic": "suf(下) + fic(做) + ient → 做得足够的",
+    "en": "We have sufficient supplies.",
+    "zh": "我们有足够的物资。"
+  },
+  {
+    "word": "suggest",
+    "mnemonic": "sug(下) + gest(搬运) → 从下面提上来→建议",
+    "en": "I suggest you start early.",
+    "zh": "我建议你早点开始。"
+  },
+  {
+    "word": "summary",
+    "mnemonic": "sum(总) + mary → 总计→摘要",
+    "en": "Write a summary of the article.",
+    "zh": "写文章摘要。"
+  },
+  {
+    "word": "support",
+    "mnemonic": "sup(下) + port(搬运) → 从下方扛起→支持",
+    "en": "Support your family.",
+    "zh": "支持你的家人。"
+  },
+  {
+    "word": "suppose",
+    "mnemonic": "sup(下) + pose(放) → 放在下面作基础→假设",
+    "en": "Suppose it rains tomorrow?",
+    "zh": "假设明天下雨呢？"
+  },
+  {
+    "word": "surround",
+    "mnemonic": "sur(上) + round(圆) → 在上方围成圆→包围",
+    "en": "Mountains surround the city.",
+    "zh": "群山环绕城市。"
+  },
+  {
+    "word": "survive",
+    "mnemonic": "sur(上) + vive(活) → 活下来→幸存",
+    "en": "Only the strong survive.",
+    "zh": "只有强者生存。"
+  },
+  {
+    "word": "suspect",
+    "mnemonic": "sus(下) + (s)pect(看) → 向下看→怀疑",
+    "en": "I suspect he is lying.",
+    "zh": "我怀疑他在说谎。"
+  },
+  {
+    "word": "symbol",
+    "mnemonic": "sym(共同) + bol(投掷) → 共同投出的标志→象征",
+    "en": "The dove is a symbol of peace.",
+    "zh": "鸽子是和平的象征。"
+  },
+  {
+    "word": "sympathy",
+    "mnemonic": "sym(共同) + path(感情) + y → 共同的感情→同情",
+    "en": "Show sympathy for others.",
+    "zh": "对别人表示同情。"
+  },
+  {
+    "word": "tendency",
+    "mnemonic": "tend(伸展) + ency → 向某方向伸展→趋势",
+    "en": "There is a tendency to gain weight.",
+    "zh": "有发胖的趋势。"
+  },
+  {
+    "word": "tradition",
+    "mnemonic": "tra(跨越) + dit(给) + ion → 跨越时代传递→传统",
+    "en": "Keep family traditions alive.",
+    "zh": "保持家庭传统。"
+  },
+  {
+    "word": "transform",
+    "mnemonic": "trans(跨越) + form(形式) → 跨越形式→转变",
+    "en": "Education transforms lives.",
+    "zh": "教育改变人生。"
+  },
+  {
+    "word": "translate",
+    "mnemonic": "trans(跨越) + late(带来) → 从一种语言带过来→翻译",
+    "en": "Translate this sentence.",
+    "zh": "翻译这个句子。"
+  },
+  {
+    "word": "transmit",
+    "mnemonic": "trans(跨越) + mit(送) → 送过去→传输",
+    "en": "Disease can be transmitted.",
+    "zh": "疾病可以传播。"
+  },
+  {
+    "word": "transport",
+    "mnemonic": "trans(跨越) + port(搬运) → 搬运过去→运输",
+    "en": "Transport the goods by truck.",
+    "zh": "用卡车运输货物。"
+  },
+  {
+    "word": "tremendous",
+    "mnemonic": "trem(颤抖) + endous → 让人颤抖的→巨大的",
+    "en": "A tremendous explosion was heard.",
+    "zh": "听到了巨大的爆炸声。"
+  },
+  {
+    "word": "universe",
+    "mnemonic": "uni(一) + verse(转) → 旋转的一体→宇宙",
+    "en": "The universe is vast.",
+    "zh": "宇宙浩瀚。"
+  },
+  {
+    "word": "vacation",
+    "mnemonic": "vac(空) + ation → 有空的时间→假期",
+    "en": "We went on vacation to Hawaii.",
+    "zh": "我们去夏威夷度假。"
+  },
+  {
+    "word": "valuable",
+    "mnemonic": "valu(价值) + able(能) → 有价值的",
+    "en": "This is a valuable painting.",
+    "zh": "这是一幅有价值的画。"
+  },
+  {
+    "word": "various",
+    "mnemonic": "vari(变化) + ous → 变化的->各种各样的",
+    "en": "There are various options.",
+    "zh": "有各种各样的选择。"
+  },
+  {
+    "word": "volunteer",
+    "mnemonic": "vol(意志) + unteer → 自愿的人→志愿者",
+    "en": "Volunteer at the local shelter.",
+    "zh": "在当地庇护所做志愿者。"
+  },
+  {
+    "word": "witness",
+    "mnemonic": "wit(知道)+ness → 知道真相的人→目击者",
+    "en": "She witnessed the accident.",
+    "zh": "她目击了事故。"
+  }
+]

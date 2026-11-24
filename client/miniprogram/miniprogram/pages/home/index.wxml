@@ -1,0 +1,110 @@
+<!-- 学习首页 -->
+<view class="container">
+  <!-- 顶部栏 -->
+  <view class="top-bar">
+    <view class="logo-area">
+      <view class="logo-icon">E</view>
+      <text class="logo-text">E-Learning</text>
+    </view>
+    <view class="phase-selector" bindtap="onOpenPhaseSelector">
+      <text class="phase-text">{{currentPhase}}</text>
+      <text class="phase-arrow">▼</text>
+    </view>
+  </view>
+
+  <!-- 主标题 -->
+  <view class="home-header">
+    <text class="home-title">Practice makes perfect.</text>
+    <text class="home-subtitle">—— 熟能生巧</text>
+  </view>
+
+  <!-- 学习统计行 -->
+  <view class="stats-row">
+    <view class="stat-item">
+      <text class="stat-num">{{stats.todayWords}}</text>
+      <text class="stat-lbl">今日单词</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">{{stats.accuracy}}</text>
+      <text class="stat-lbl">正确率</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-num">{{stats.streakDays || '0'}}d</text>
+      <text class="stat-lbl">连续天数</text>
+    </view>
+  </view>
+
+  <!-- 2×2 功能入口网格 -->
+  <view class="entry-grid">
+    <view class="entry-item" bindtap="onClassEntry">
+      <view class="entry-icon" style="background:#E3F0FB;"><text class="entry-icon-text">班</text></view>
+      <text class="entry-name">班级</text>
+    </view>
+    <view class="entry-item" bindtap="onChatEntry">
+      <view class="entry-icon" style="background:#F3E5F5;"><text class="entry-icon-text">聊</text></view>
+      <text class="entry-name">智能对话</text>
+    </view>
+    <view class="entry-item" bindtap="onWordEntry">
+      <view class="entry-icon" style="background:#FFF3E0;"><text class="entry-icon-text">词</text></view>
+      <text class="entry-name">记单词</text>
+    </view>
+    <view class="entry-item" bindtap="onMistakeBookEntry">
+      <view class="entry-icon" style="background:#FFEBEE;"><text class="entry-icon-text">错</text></view>
+      <text class="entry-name">错题本</text>
+    </view>
+  </view>
+
+  <!-- 班级通知 — 展示待完成考试 -->
+  <view class="notice-card">
+    <view class="notice-header">
+      <view class="notice-title">班级通知</view>
+      <view class="notice-header-right">
+        <text class="notice-count" wx:if="{{pendingExamCount > 0}}">{{pendingExamCount}}条</text>
+        <text class="notice-all-link" wx:if="{{notices.length > 0}}" bindtap="onViewAllExams">查看全部 ›</text>
+      </view>
+    </view>
+    <view class="notice-body">
+      <view class="notice-item" wx:for="{{notices}}" wx:for-item="noti" wx:key="index"
+            data-id="{{noti.examId}}" bindtap="onNoticeTap">
+        <text class="notice-dot">{{noti.icon || ''}}</text>
+        <view class="notice-content-wrap">
+          <text class="notice-content">{{noti.content}}</text>
+          <!-- 试卷简要信息 -->
+          <view class="notice-exam-meta" wx:if="{{noti.questionCount}}">
+            <text class="meta-tag tag-diff-{{noti.difficulty || 1}}">
+              {{['','简单','中等','困难'][noti.difficulty] || '中等'}}
+            </text>
+            <text class="meta-tag">{{noti.questionCount}}题</text>
+            <text class="meta-tag">{{noti.totalScore}}分</text>
+            <text class="meta-tag" wx:if="{{noti.durationMinutes}}">{{noti.durationMinutes}}分钟</text>
+          </view>
+        </view>
+        <text class="notice-go">›</text>
+      </view>
+      <view wx:if="{{notices.length === 0 && !loading}}">
+        <text class="notice-content" style="color:#9CA3AF;">暂无待完成的考试通知</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部加载状态 -->
+  <view class="loading-footer" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 阶段选择弹窗 -->
+  <phase-selector visible="{{showPhaseSelector}}"
+                  currentPhase="{{savedPhaseIndex}}"
+                  bind:close="onClosePhaseSelector"
+                  bind:saved="onPhaseSaved"></phase-selector>
+
+  <!-- 保存提示弹窗 -->
+  <view class="tip-overlay {{showSaveTip ? 'show' : ''}}">
+    <view class="tip-box">
+      <view class="tip-icon">✅</view>
+      <view class="tip-title">阶段已保存</view>
+      <view class="tip-desc">已切换到 <text class="tip-highlight">{{savedPhaseName}}</text> 模式<br/>重启后可获得更佳体验</view>
+      <button class="tip-btn" catchtap="onRestartNow">立即重启</button>
+    </view>
+  </view>
+</view>

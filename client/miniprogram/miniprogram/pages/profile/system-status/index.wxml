@@ -1,0 +1,73 @@
+<view class="page">
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>正在检测后端服务状态...</text>
+  </view>
+
+  <scroll-view scroll-y class="content" wx:else>
+    <!-- 整体状态横幅 -->
+    <view class="banner banner-{{overall}}">
+      <text class="banner-icon">{{overallIcon}}</text>
+      <view class="banner-text">
+        <text class="banner-title">{{overallLabel}}</text>
+        <text class="banner-sub">系统状态 · {{timestamp}}</text>
+      </view>
+    </view>
+
+    <!-- 各服务状态列表 -->
+    <view class="section">
+      <view class="section-title">
+        <text class="section-icon">🔌</text>
+        <text class="section-label">后端服务连接状态</text>
+      </view>
+
+      <view class="service-card" wx:for="{{services}}" wx:key="name" data-index="{{index}}" bindtap="onToggleDetail">
+        <!-- 服务头部 — 名称 + 状态 -->
+        <view class="service-header">
+          <view class="service-left">
+            <view class="service-status-dot {{item.status}}"></view>
+            <text class="service-name">{{item.icon}} {{item.name}}</text>
+          </view>
+          <view class="service-right">
+            <text class="service-status-text {{item.status}}">{{item.statusLabel}}</text>
+            <text class="toggle-arrow {{expanded[index] ? 'expanded' : ''}}">▸</text>
+          </view>
+        </view>
+
+        <!-- 详情（可折叠） -->
+        <view class="service-detail {{expanded[index] ? 'show' : ''}}">
+          <!-- 延迟 -->
+          <view class="detail-row" wx:if="{{item.latency_ms != null}}">
+            <text class="detail-key">响应延迟</text>
+            <text class="detail-val {{item.latencyClass}}">{{item.latency_ms}} ms</text>
+          </view>
+          <!-- 状态描述 -->
+          <view class="detail-row">
+            <text class="detail-key">状态描述</text>
+            <text class="detail-val">{{item.detail}}</text>
+          </view>
+          <!-- 配置列表 -->
+          <view class="detail-row" wx:for="{{item.configList}}" wx:key="*this" wx:for-item="cfg">
+            <text class="detail-key">{{cfg.key}}</text>
+            <text class="detail-val monospace">{{cfg.val}}</text>
+          </view>
+          <!-- 额外信息（如模型可用性） -->
+          <view class="extras-box" wx:if="{{item.extrasList.length > 0}}">
+            <view class="detail-row" wx:for="{{item.extrasList}}" wx:key="*this" wx:for-item="ext">
+              <text class="detail-key">{{ext.key}}</text>
+              <text class="detail-val monospace">{{ext.val}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-row">
+      <view class="action-btn" bindtap="onRefresh">
+        <text class="action-icon">🔄</text>
+        <text class="action-label">重新检测</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

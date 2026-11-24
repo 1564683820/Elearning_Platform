@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>七选五答题卡</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;}
+@page{size:A5;margin:0;}
+body{
+  font-family:'SimSun','STSong','SimHei',serif;
+  color:#000;background:#fff;
+  width:148mm;height:210mm;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+}
+.page{
+  width:148mm;min-height:210mm;
+  padding:7mm 9mm;
+  position:relative;
+}
+.title{
+  text-align:center;font-size:14pt;font-weight:700;
+  letter-spacing:3pt;padding-bottom:2mm;
+  border-bottom:1.5px solid #000;margin-bottom:3mm;
+}
+/* ── 上区：左右布局 ── */
+.top-area{display:flex;gap:6mm;margin-bottom:4mm;}
+.top-left{flex:1;border:1.5px solid #000;padding:3mm 3.5mm;}
+.top-right{flex:1;border:1.5px solid #000;padding:2mm 2.5mm;}
+.tl-title{font-size:9pt;font-weight:700;margin-bottom:2.5mm;border-bottom:1px solid #000;padding-bottom:1mm;}
+.tl-row{display:flex;align-items:center;gap:1.5mm;margin-bottom:2.5mm;font-size:9pt;}
+.tl-label{font-weight:700;white-space:nowrap;}
+.tl-line{flex:1;border-bottom:1.5px solid #000;height:5mm;}
+.tr-title{font-size:8pt;font-weight:700;text-align:center;margin-bottom:1.5mm;letter-spacing:1pt;}
+.tr-hint{font-size:6.5pt;color:#555;text-align:center;margin-bottom:1.5mm;}
+.digit-area{display:flex;gap:1mm;justify-content:center;}
+.dg{display:flex;flex-direction:column;align-items:center;gap:1mm;}
+.dh{width:4.5mm;height:4.5mm;border:1.2px solid #000;display:flex;align-items:center;justify-content:center;font-size:6.5pt;font-weight:700;}
+.db{display:flex;flex-direction:column;align-items:center;gap:0.3mm;}
+.dl{font-size:5pt;color:#000;}
+.dc{width:2.5mm;height:2.5mm;border-radius:50%;border:1.5px solid #000;background:#fff;}
+/* ── 下区：题目填涂 ── */
+.bottom-area{border:1.5px solid #000;padding:2mm 1.5mm;}
+.ba-title{font-size:8pt;font-weight:700;text-align:center;border-bottom:1px solid #000;padding-bottom:0.8mm;margin-bottom:1.5mm;letter-spacing:2pt;}
+.qr{display:flex;margin-bottom:0;}
+.qc{flex:1;display:flex;align-items:center;gap:0;padding:0;min-width:0;}
+.qn{font-size:5.5pt;font-weight:700;white-space:nowrap;min-width:5mm;text-align:right;padding-right:0.5mm;}
+.qb{display:inline-flex;align-items:center;justify-content:center;}
+.bk{font-size:5.5pt;font-weight:700;border:1.2px solid #000;padding:0.2mm 0;width:6mm;text-align:center;line-height:1.2;background:#fff;border-left:none;}
+.bk:first-child{border-left:1.2px solid #000;}
+/* ── 说明 ── */
+.legend{display:flex;justify-content:center;gap:3mm;margin-top:2mm;font-size:6.5pt;align-items:center;}
+.lg-item{display:flex;align-items:center;gap:0.8mm;}
+.lg-bk{border:1.2px solid #000;padding:0.2mm 0.8mm;font-weight:700;font-size:6pt;}
+.lg-dot{width:2.2mm;height:2.2mm;border-radius:50%;border:1.5px solid #000;background:#fff;}
+.lg-dot.filled{background:#000;}
+.footer{display:flex;justify-content:space-between;align-items:center;padding-top:1.2mm;margin-top:1.5mm;border-top:1.5px solid #000;font-size:6.5pt;}
+/* ── 第二页参考答案 ── */
+.page2{width:148mm;min-height:210mm;padding:7mm 9mm;position:relative;}
+.ans-title{text-align:center;font-size:13pt;font-weight:700;letter-spacing:3pt;border-bottom:1.5px solid #000;padding-bottom:2mm;margin-bottom:3mm;}
+.ans-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.5mm 4mm;}
+.ans-item{display:flex;align-items:center;gap:1.5mm;padding:0.5mm 0;border-bottom:0.8px solid #ddd;font-size:7pt;}
+.ans-num{font-weight:700;min-width:6mm;}
+.ans-val{margin-left:auto;border:1.2px solid #000;padding:0.2mm 1mm;font-weight:700;font-size:6.5pt;}
+</style>
+</head>
+<body>
+
+<!-- ══════ 第一页：答题卡 ══════ -->
+<div class="page">
+  <div class="title">七选五答题卡</div>
+
+  <!-- 上区：左右 -->
+  <div class="top-area">
+    <div class="top-left">
+<div class="tl-title">▼ 请用黑色签字笔填写</div>
+<div class="tl-row"><span class="tl-label">姓　名</span><span class="tl-line"></span></div>
+<div class="tl-row"><span class="tl-label">班　级</span><span class="tl-line"></span></div>
+<div class="tl-row"><span class="tl-label">考　号</span><span class="tl-line"></span></div>
+</div>
+    <div class="top-right">
+  <div class="tr-title">考 号 填 涂</div>
+  <div class="tr-hint">（用 2B 铅笔填涂 ●，每位选一个数字）</div>
+  <div class="digit-area">
+<div class="dg" style="min-width:6mm;"><div class="dh">1</div><div class="db">
+<span class="dl">1</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">2</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">3</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">4</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">5</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">6</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">7</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">8</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">9</span>
+<span class="dc"></span>
+</div></div>
+<div class="dg" style="min-width:6mm;"><div class="dh">2</div><div class="db">
+<span class="dl">1</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">2</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">3</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">4</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">5</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">6</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">7</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">8</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">9</span>
+<span class="dc"></span>
+</div></div>
+<div class="dg" style="min-width:6mm;"><div class="dh">3</div><div class="db">
+<span class="dl">1</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">2</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">3</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">4</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">5</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">6</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">7</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">8</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">9</span>
+<span class="dc"></span>
+</div></div>
+<div class="dg" style="min-width:6mm;"><div class="dh">4</div><div class="db">
+<span class="dl">1</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">2</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">3</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">4</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">5</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">6</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">7</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">8</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">9</span>
+<span class="dc"></span>
+</div></div>
+<div class="dg" style="min-width:6mm;"><div class="dh">5</div><div class="db">
+<span class="dl">1</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">2</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">3</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">4</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">5</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">6</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">7</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">8</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">9</span>
+<span class="dc"></span>
+</div></div>
+<div class="dg" style="min-width:6mm;"><div class="dh">6</div><div class="db">
+<span class="dl">1</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">2</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">3</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">4</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">5</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">6</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">7</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">8</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">9</span>
+<span class="dc"></span>
+</div></div>
+<div class="dg" style="min-width:6mm;"><div class="dh">7</div><div class="db">
+<span class="dl">1</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">2</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">3</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">4</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">5</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">6</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">7</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">8</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">9</span>
+<span class="dc"></span>
+</div></div>
+<div class="dg" style="min-width:6mm;"><div class="dh">8</div><div class="db">
+<span class="dl">1</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">2</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">3</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">4</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">5</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">6</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">7</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">8</span>
+<span class="dc"></span>
+</div>
+<div class="db">
+<span class="dl">9</span>
+<span class="dc"></span>
+</div></div>
+  </div>
+</div>
+  </div>
+
+  <!-- 下区：题目填涂 -->
+  <div class="bottom-area">
+    <div class="ba-title">选择题填涂区 （1–50 题，共 7 个选项）</div>
+    <div class="qr"><div class="qc"><span class="qn">1.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">2.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">3.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">4.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">5.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">6.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">7.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">8.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">9.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">10.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">11.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">12.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">13.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">14.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">15.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">16.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">17.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">18.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">19.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">20.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">21.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">22.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">23.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">24.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">25.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">26.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">27.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">28.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">29.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">30.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">31.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">32.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">33.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">34.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">35.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">36.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">37.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">38.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">39.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">40.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">41.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">42.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">43.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">44.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">45.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+<div class="qr"><div class="qc"><span class="qn">46.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">47.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">48.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">49.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div>
+<div class="qc"><span class="qn">50.</span><span class="qb"><span class="bk">[A]</span></span><span class="qb"><span class="bk">[B]</span></span><span class="qb"><span class="bk">[C]</span></span><span class="qb"><span class="bk">[D]</span></span><span class="qb"><span class="bk">[E]</span></span><span class="qb"><span class="bk">[F]</span></span><span class="qb"><span class="bk">[G]</span></span></div></div>
+  </div>
+
+  <!-- 图例 -->
+  <div class="legend">
+    <span class="lg-item"><span class="lg-bk">[A]</span> 正确填涂</span>
+    <span class="lg-item"><span class="lg-dot filled"></span> 正确填涂</span>
+    <span class="lg-item"><span class="lg-dot"></span> 错误填涂</span>
+    <span class="lg-item">修改请用橡皮擦干净</span>
+  </div>
+
+  <div class="footer">
+    <span>请用 2B 铅笔填涂 · 黑色签字笔书写</span>
+    <span>第 1 页</span>
+  </div>
+</div>
+
+<!-- ══════ 第二页：参考答案 ══════ -->
+
+<div class="page2" style="page-break-before:always;">
+  <div class="ans-title">参考答案</div>
+  <div class="ans-grid">
+    <div class="ans-item"><span class="ans-num">1.</span><span class="ans-val">A</span></div>
+<div class="ans-item"><span class="ans-num">2.</span><span class="ans-val">B</span></div>
+<div class="ans-item"><span class="ans-num">3.</span><span class="ans-val">C</span></div>
+<div class="ans-item"><span class="ans-num">4.</span><span class="ans-val">D</span></div>
+<div class="ans-item"><span class="ans-num">5.</span><span class="ans-val">E</span></div>
+<div class="ans-item"><span class="ans-num">6.</span><span class="ans-val">F</span></div>
+<div class="ans-item"><span class="ans-num">7.</span><span class="ans-val">G</span></div>
+<div class="ans-item"><span class="ans-num">8.</span><span class="ans-val">A</span></div>
+<div class="ans-item"><span class="ans-num">9.</span><span class="ans-val">B</span></div>
+<div class="ans-item"><span class="ans-num">10.</span><span class="ans-val">C</span></div>
+<div class="ans-item"><span class="ans-num">11.</span><span class="ans-val">D</span></div>
+<div class="ans-item"><span class="ans-num">12.</span><span class="ans-val">E</span></div>
+<div class="ans-item"><span class="ans-num">13.</span><span class="ans-val">F</span></div>
+<div class="ans-item"><span class="ans-num">14.</span><span class="ans-val">G</span></div>
+<div class="ans-item"><span class="ans-num">15.</span><span class="ans-val">A</span></div>
+<div class="ans-item"><span class="ans-num">16.</span><span class="ans-val">B</span></div>
+<div class="ans-item"><span class="ans-num">17.</span><span class="ans-val">C</span></div>
+<div class="ans-item"><span class="ans-num">18.</span><span class="ans-val">D</span></div>
+<div class="ans-item"><span class="ans-num">19.</span><span class="ans-val">E</span></div>
+<div class="ans-item"><span class="ans-num">20.</span><span class="ans-val">F</span></div>
+<div class="ans-item"><span class="ans-num">21.</span><span class="ans-val">G</span></div>
+<div class="ans-item"><span class="ans-num">22.</span><span class="ans-val">A</span></div>
+<div class="ans-item"><span class="ans-num">23.</span><span class="ans-val">B</span></div>
+<div class="ans-item"><span class="ans-num">24.</span><span class="ans-val">C</span></div>
+<div class="ans-item"><span class="ans-num">25.</span><span class="ans-val">D</span></div>
+<div class="ans-item"><span class="ans-num">26.</span><span class="ans-val">E</span></div>
+<div class="ans-item"><span class="ans-num">27.</span><span class="ans-val">F</span></div>
+<div class="ans-item"><span class="ans-num">28.</span><span class="ans-val">G</span></div>
+<div class="ans-item"><span class="ans-num">29.</span><span class="ans-val">A</span></div>
+<div class="ans-item"><span class="ans-num">30.</span><span class="ans-val">B</span></div>
+<div class="ans-item"><span class="ans-num">31.</span><span class="ans-val">C</span></div>
+<div class="ans-item"><span class="ans-num">32.</span><span class="ans-val">D</span></div>
+<div class="ans-item"><span class="ans-num">33.</span><span class="ans-val">E</span></div>
+<div class="ans-item"><span class="ans-num">34.</span><span class="ans-val">F</span></div>
+<div class="ans-item"><span class="ans-num">35.</span><span class="ans-val">G</span></div>
+<div class="ans-item"><span class="ans-num">36.</span><span class="ans-val">A</span></div>
+<div class="ans-item"><span class="ans-num">37.</span><span class="ans-val">B</span></div>
+<div class="ans-item"><span class="ans-num">38.</span><span class="ans-val">C</span></div>
+<div class="ans-item"><span class="ans-num">39.</span><span class="ans-val">D</span></div>
+<div class="ans-item"><span class="ans-num">40.</span><span class="ans-val">E</span></div>
+<div class="ans-item"><span class="ans-num">41.</span><span class="ans-val">F</span></div>
+<div class="ans-item"><span class="ans-num">42.</span><span class="ans-val">G</span></div>
+<div class="ans-item"><span class="ans-num">43.</span><span class="ans-val">A</span></div>
+<div class="ans-item"><span class="ans-num">44.</span><span class="ans-val">B</span></div>
+<div class="ans-item"><span class="ans-num">45.</span><span class="ans-val">C</span></div>
+<div class="ans-item"><span class="ans-num">46.</span><span class="ans-val">D</span></div>
+<div class="ans-item"><span class="ans-num">47.</span><span class="ans-val">E</span></div>
+<div class="ans-item"><span class="ans-num">48.</span><span class="ans-val">F</span></div>
+<div class="ans-item"><span class="ans-num">49.</span><span class="ans-val">G</span></div>
+<div class="ans-item"><span class="ans-num">50.</span><span class="ans-val">A</span></div>
+  </div>
+  <div class="footer" style="margin-top:3mm;">
+    <span>标准答案 · 仅供参考</span>
+    <span>第 2 页</span>
+  </div>
+</div>
+
+</body>
+</html>

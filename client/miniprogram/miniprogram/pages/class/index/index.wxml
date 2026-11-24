@@ -1,0 +1,63 @@
+<view class="page">
+  <!-- 顶部导航 -->
+  <view class="top-bar">
+    <text class="top-title">班级</text>
+    <button class="join-btn-sm" bindtap="onShowJoinModal">加入班级</button>
+  </view>
+
+  <!-- 班级列表 -->
+  <view class="class-list" wx:if="{{!loading}}">
+    <view
+      class="class-card"
+      wx:for="{{classes}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onClassTap"
+    >
+      <view class="card-top">
+        <view class="card-avatar">{{item.name.slice(0, 1)}}</view>
+        <view class="card-info">
+          <text class="card-name">{{item.name}}</text>
+          <text class="card-teacher">{{item.teacher_name || '未知教师'}} · {{item.student_count || 0}} 位同学</text>
+        </view>
+        <text class="card-arrow">›</text>
+      </view>
+      <text class="card-desc" wx:if="{{item.description}}">{{item.description}}</text>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{classes.length === 0}}">
+      <text class="empty-icon">🏫</text>
+      <text class="empty-text">你还没有加入任何班级</text>
+      <text class="empty-desc">联系老师获取邀请码即可加入</text>
+      <button class="empty-btn" bindtap="onShowJoinModal">加入班级</button>
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-view" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 加入班级弹窗 -->
+  <view class="modal-mask" wx:if="{{showJoinModal}}" bindtap="onCloseJoinModal">
+    <view class="modal-content" catchtap="preventClose">
+      <text class="modal-title">加入班级</text>
+      <text class="modal-desc">请输入老师提供的邀请码</text>
+      <input
+        class="modal-input"
+        placeholder="请输入邀请码"
+        value="{{inviteCode}}"
+        bindinput="onInviteCodeInput"
+        maxlength="20"
+        auto-focus
+      />
+      <view class="modal-actions">
+        <button class="modal-btn cancel" bindtap="onCloseJoinModal">取消</button>
+        <button class="modal-btn confirm {{joinLoading ? 'loading' : ''}}" bindtap="onJoinConfirm">
+          {{joinLoading ? '加入中...' : '确认加入'}}
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

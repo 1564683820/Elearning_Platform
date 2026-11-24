@@ -1,0 +1,31 @@
+<!-- 阶段选择弹窗 -->
+<view class="modal-overlay {{visible ? 'show' : ''}}" catchtap="onCancel">
+  <view class="modal-box" catchtap="">
+    <view class="modal-title">选择学习阶段</view>
+    <view class="modal-desc">选好后重启应用体验更佳</view>
+
+    <view class="phase-list">
+      <view class="phase-item {{selectedIndex === item.index ? 'selected' : ''}}"
+            wx:for="{{phases}}" wx:key="index"
+            data-index="{{item.index}}" catchtap="onSelect">
+        <view class="phase-icon" style="background: {{item.color}};">
+          <text>{{item.name.slice(0,1)}}</text>
+        </view>
+        <view class="phase-info">
+          <text class="phase-name">{{item.name}}</text>
+          <text class="phase-desc">{{item.desc}}</text>
+        </view>
+        <view class="phase-check">
+          <view class="check-circle {{selectedIndex === item.index ? 'checked' : ''}}">
+            <text wx:if="{{selectedIndex === item.index}}">✓</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="modal-actions">
+      <button class="btn-cancel" catchtap="onCancel">取消</button>
+      <button class="btn-save" catchtap="onSave">保存并重启</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<!-- 情景记忆视频创建页 -->
+<view class="container">
+  <view class="content-area">
+    <!-- 页面说明 -->
+    <view class="card intro-card">
+      <text class="intro-title">生成记忆视频</text>
+      <text class="intro-desc">选择一个已生成的情景文段，将其转换为记忆视频，帮助加深印象</text>
+    </view>
+
+    <!-- 情景文段列表 -->
+    <view class="section-label">选择情景文段</view>
+
+    <!-- 加载中 -->
+    <view class="loading-state" wx:if="{{loading}}">
+      <text class="loading-text">加载中...</text>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:elif="{{scenarios.length === 0}}">
+      <text class="empty-icon"></text>
+      <text class="empty-text">暂无情景文段</text>
+      <text class="empty-hint">请先在"情景记忆"中生成文段</text>
+      <view class="btn-primary" bindtap="onGoCreateScenario">
+        <text>去生成文段</text>
+      </view>
+    </view>
+
+    <!-- 情景列表 -->
+    <view class="scenario-list" wx:else>
+      <view class="card scenario-card {{activeIndex === index ? 'selected' : ''}}"
+            wx:for="{{scenarios}}" wx:key="id"
+            data-index="{{index}}" bindtap="onSelectScenario">
+        <view class="scenario-header">
+          <text class="scenario-type tag tag-primary">{{item.passage_type || '文段'}}</text>
+          <text class="scenario-date">{{item.created_at || ''}}</text>
+        </view>
+        <view class="scenario-preview">
+          <text class="preview-text">{{item.content || ''}}</text>
+        </view>
+        <view class="scenario-words" wx:if="{{item.words && item.words.length > 0}}">
+          <text class="word-tag" wx:for="{{item.words}}" wx:for-item="w" wx:key="id">{{w.word || w}}</text>
+        </view>
+        <view class="scenario-check" wx:if="{{activeIndex === index}}">
+          <text class="check-icon">✓</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 创建按钮 -->
+    <view class="btn-primary create-btn {{!scenarios.length ? 'disabled' : ''}}"
+          bindtap="onCreateVideo">
+      <text class="btn-icon"></text>
+      <text>{{creating ? '生成中...' : '生成记忆视频'}}</text>
+    </view>
+  </view>
+</view>

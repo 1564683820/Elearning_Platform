@@ -1,0 +1,201 @@
+/* 教材音频播放器组件 */
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border-radius: 32rpx 32rpx 0 0;
+  box-shadow: 0 -8rpx 40rpx rgba(0,0,0,0.1);
+  padding: 24rpx 32rpx 0;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+.audio-player.hidden {
+  transform: translateY(100%);
+}
+
+/* ===== Header ===== */
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.player-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.player-title-icon {
+  font-size: 28rpx;
+}
+
+.player-title {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #1F2937;
+}
+
+.player-close {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  background: #F3F4F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-icon {
+  font-size: 24rpx;
+  color: #9CA3AF;
+}
+
+/* ===== 进度条 ===== */
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.time-label {
+  font-size: 20rpx;
+  color: #9CA3AF;
+  min-width: 60rpx;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-track {
+  flex: 1;
+  height: 6rpx;
+  background: #E5E7EB;
+  border-radius: 3rpx;
+  position: relative;
+  overflow: visible;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #5B9E6F, #7AB88A);
+  border-radius: 3rpx;
+  transition: width 0.1s linear;
+}
+
+.progress-thumb {
+  position: absolute;
+  top: 50%;
+  width: 20rpx;
+  height: 20rpx;
+  background: #5B9E6F;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2rpx 8rpx rgba(91,158,111,0.4);
+  margin-left: -10rpx;
+}
+
+/* ===== 控制栏 ===== */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40rpx;
+  margin-bottom: 24rpx;
+}
+
+.ctrl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ctrl-btn.secondary {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background: #F3F4F6;
+}
+
+.ctrl-btn.primary {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5B9E6F, #4A8C5E);
+  box-shadow: 0 8rpx 24rpx rgba(91,158,111,0.35);
+}
+
+.ctrl-icon {
+  font-size: 28rpx;
+  color: #1F2937;
+}
+
+.ctrl-btn.primary .ctrl-icon {
+  color: #FFFFFF;
+  font-size: 36rpx;
+}
+
+/* ===== 逐句列表 ===== */
+.sentence-list {
+  max-height: 280rpx;
+  margin-bottom: 8rpx;
+  padding-right: 8rpx;
+}
+
+.sentence-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12rpx;
+  padding: 14rpx 16rpx;
+  border-radius: 16rpx;
+  margin-bottom: 8rpx;
+  transition: all 0.3s;
+}
+
+.sentence-item.active {
+  background: #F0F9F4;
+}
+
+.sentence-indicator {
+  width: 36rpx;
+  height: 36rpx;
+  background: #5B9E6F;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2rpx;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.indicator-icon {
+  font-size: 18rpx;
+  color: #FFFFFF;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.sentence-text {
+  font-size: 26rpx;
+  line-height: 1.6;
+  color: #4B5563;
+}
+
+.sentence-item.active .sentence-text {
+  color: #1F2937;
+  font-weight: 600;
+}
+
+/* ===== 底部安全区 ===== */
+.safe-bar {
+  height: env(safe-area-inset-bottom);
+  background: transparent;
+}

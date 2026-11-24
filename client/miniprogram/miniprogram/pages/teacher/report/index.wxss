@@ -1,0 +1,78 @@
+.page { min-height: 100vh; background: #F5F7FA; padding: 20rpx 30rpx 40rpx; }
+.loading-container { padding: 80rpx 0; text-align: center; }
+.loading-spinner { width: 48rpx; height: 48rpx; border: 4rpx solid #E5E7EB; border-top-color: #5B9E6F; border-radius: 50%; animation: spin .8s linear infinite; margin: 0 auto; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* 核心指标 */
+.stats-grid { display: flex; gap: 12rpx; margin-bottom: 16rpx; }
+.stat-card { flex: 1; background: #fff; border-radius: 14rpx; padding: 18rpx 0; text-align: center; box-shadow: 0 2rpx 8rpx rgba(0,0,0,.04); }
+.stat-card.primary { background: linear-gradient(135deg, #ECFDF5, #D1FAE5); }
+.stat-card.success { background: linear-gradient(135deg, #EFF6FF, #DBEAFE); }
+.stat-card.danger { background: linear-gradient(135deg, #FEF2F2, #FEE2E2); }
+.stat-value { display: block; font-size: 40rpx; font-weight: 800; color: #1F2937; }
+.stat-label { display: block; font-size: 20rpx; color: #6B7280; margin-top: 4rpx; }
+
+/* 得分率 */
+.rate-bar { background: #fff; border-radius: 14rpx; padding: 20rpx; margin-bottom: 16rpx; box-shadow: 0 2rpx 8rpx rgba(0,0,0,.04); }
+.rate-item { display: flex; align-items: center; gap: 12rpx; margin-bottom: 12rpx; }
+.rate-item:last-child { margin-bottom: 0; }
+.rate-label { font-size: 22rpx; color: #6B7280; width: 140rpx; flex-shrink: 0; }
+.rate-track { flex: 1; height: 20rpx; background: #F3F4F6; border-radius: 10rpx; overflow: hidden; }
+.rate-fill { height: 100%; border-radius: 10rpx; transition: width .6s ease; }
+.rate-fill.single { background: linear-gradient(90deg, #5B9E6F, #34D399); }
+.rate-fill.multi { background: linear-gradient(90deg, #F59E0B, #FBBF24); }
+.rate-value { font-size: 24rpx; font-weight: 700; color: #374151; width: 80rpx; text-align: right; }
+
+/* 图表卡片 */
+.chart-card { background: #fff; border-radius: 14rpx; padding: 16rpx; margin-bottom: 16rpx; box-shadow: 0 2rpx 8rpx rgba(0,0,0,.04); }
+.chart-canvas { width: 100%; height: 320rpx; }
+
+/* 区块卡片 */
+.section-card { background: #fff; border-radius: 14rpx; padding: 20rpx; margin-bottom: 16rpx; box-shadow: 0 2rpx 8rpx rgba(0,0,0,.04); }
+.section-card-title { font-size: 28rpx; font-weight: 700; color: #1F2937; margin-bottom: 16rpx; }
+
+/* 错题排行 */
+.wrong-item { display: flex; align-items: center; gap: 14rpx; padding: 12rpx 0; border-bottom: 1rpx solid #F3F4F6; }
+.wrong-item:last-child { border-bottom: none; }
+.wrong-rank { width: 40rpx; height: 40rpx; border-radius: 20rpx; background: #5B9E6F; color: #fff; font-size: 22rpx; font-weight: 700; text-align: center; line-height: 40rpx; flex-shrink: 0; }
+.wrong-rank:nth-child(1) { background: #E74C3C; }
+.wrong-rank:nth-child(2) { background: #F59E0B; }
+.wrong-rank:nth-child(3) { background: #3B82F6; }
+.wrong-info { flex: 1; }
+.wrong-question { font-size: 24rpx; color: #333; font-weight: 500; }
+.wrong-type { font-size: 20rpx; color: #9CA3AF; }
+.wrong-type.multi { color: #F59E0B; }
+.wrong-error-count { display: block; font-size: 20rpx; color: #9CA3AF; margin-top: 2rpx; }
+.wrong-rate { font-size: 24rpx; font-weight: 700; padding: 4rpx 12rpx; border-radius: 8rpx; }
+.wrong-rate.danger { background: #FEF2F2; color: #E74C3C; }
+.wrong-rate.warn { background: #FFFBEB; color: #F59E0B; }
+
+/* 多选统计 */
+.multi-stats { display: flex; gap: 16rpx; }
+.multi-stat-item { flex: 1; background: #F9FAFB; border-radius: 12rpx; padding: 16rpx; text-align: center; }
+.multi-stat-label { display: block; font-size: 22rpx; color: #6B7280; }
+.multi-stat-value { display: block; font-size: 36rpx; font-weight: 700; margin-top: 6rpx; }
+.multi-stat-value.warn { color: #F59E0B; }
+.multi-stat-value.danger { color: #E74C3C; }
+
+/* 学生列表 */
+.student-item { display: flex; align-items: center; gap: 12rpx; padding: 14rpx 0; border-bottom: 1rpx solid #F3F4F6; }
+.student-item:last-child { border-bottom: none; }
+.student-avatar { width: 48rpx; height: 48rpx; border-radius: 24rpx; background: #5B9E6F; color: #fff; font-size: 22rpx; text-align: center; line-height: 48rpx; flex-shrink: 0; }
+.student-info { flex: 1; }
+.student-name { font-size: 24rpx; font-weight: 600; color: #1F2937; }
+.student-number { font-size: 18rpx; color: #9CA3AF; }
+.student-score { font-size: 28rpx; font-weight: 700; color: #5B9E6F; }
+.student-rate { font-size: 22rpx; color: #9CA3AF; margin-left: 12rpx; }
+
+/* 弹窗 */
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 100; }
+.modal-box { background: #fff; border-radius: 20rpx; padding: 32rpx; width: 560rpx; max-height: 70vh; overflow-y: auto; }
+.modal-title { font-size: 28rpx; font-weight: 700; color: #1F2937; text-align: center; margin-bottom: 20rpx; }
+.modal-type { display: block; text-align: center; font-size: 22rpx; color: #9CA3AF; margin-bottom: 16rpx; }
+.modal-stat { display: flex; justify-content: space-between; padding: 12rpx 0; border-bottom: 1rpx solid #F3F4F6; font-size: 24rpx; }
+.modal-stat .correct { color: #5B9E6F; font-weight: 600; }
+.modal-stat .wrong { color: #E74C3C; font-weight: 600; }
+.modal-stat .warn { color: #F59E0B; font-weight: 600; }
+.modal-stat .danger { color: #E74C3C; font-weight: 600; }
+.modal-close { margin-top: 20rpx; width: 100%; background: #F3F4F6; color: #666; font-size: 26rpx; padding: 18rpx; border-radius: 10rpx; border: none; text-align: center; }

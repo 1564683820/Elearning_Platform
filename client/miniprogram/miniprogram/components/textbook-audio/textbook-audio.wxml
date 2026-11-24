@@ -1,0 +1,56 @@
+<!-- 教材音频播放器组件 -->
+<view class="audio-player {{isHidden ? 'hidden' : ''}}">
+  <!-- 顶部操作行 -->
+  <view class="player-header">
+    <view class="player-title-row">
+      <text class="player-title-icon">🎵</text>
+      <text class="player-title">{{title || '课文朗读'}}</text>
+    </view>
+    <view class="player-close" bindtap="onClose" wx:if="{{showClose}}">
+      <text class="close-icon">✕</text>
+    </view>
+  </view>
+
+  <!-- 进度条 -->
+  <view class="progress-row">
+    <text class="time-label">{{formatTime(currentTime)}}</text>
+    <view class="progress-track" bindtap="onSeek">
+      <view class="progress-bar" style="width: {{progressPercent}}%"></view>
+      <view class="progress-thumb" style="left: {{progressPercent}}%"></view>
+    </view>
+    <text class="time-label">{{formatTime(duration)}}</text>
+  </view>
+
+  <!-- 控制栏 -->
+  <view class="controls">
+    <view class="ctrl-btn secondary" bindtap="onPrevSentence">
+      <text class="ctrl-icon">⏮</text>
+    </view>
+    <view class="ctrl-btn primary" bindtap="onTogglePlay">
+      <text class="ctrl-icon main-icon">{{isPlaying ? '⏸' : '▶'}}</text>
+    </view>
+    <view class="ctrl-btn secondary" bindtap="onNextSentence">
+      <text class="ctrl-icon">⏭</text>
+    </view>
+  </view>
+
+  <!-- 逐句列表（高亮当前句） -->
+  <scroll-view class="sentence-list" scroll-y enhanced show-scrollbar="{{false}}" scroll-into-view="{{'sent_' + currentSentenceIndex}}" scroll-with-animation>
+    <view
+      class="sentence-item {{index === currentSentenceIndex ? 'active' : ''}}"
+      wx:for="{{sentences}}"
+      wx:key="index"
+      id="{{'sent_' + index}}"
+      bindtap="onSentenceTap"
+      data-index="{{index}}"
+    >
+      <view class="sentence-indicator" wx:if="{{index === currentSentenceIndex}}">
+        <text class="indicator-icon">♪</text>
+      </view>
+      <text class="sentence-text">{{item.text}}</text>
+    </view>
+  </scroll-view>
+
+  <!-- 底部安全区 -->
+  <view class="safe-bar"></view>
+</view>

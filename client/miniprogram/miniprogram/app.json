@@ -1,0 +1,98 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/memory/word/index",
+    "pages/memory/scenario/index",
+    "pages/memory/favorites/index",
+    "pages/training/word-quiz/index",
+    "pages/training/phrase-grammar/index",
+    "pages/training/sentence-translate/index",
+    "pages/training/reading/index",
+    "pages/training/listening/index",
+    "pages/chat/qa/index",
+    "pages/chat/scenario-text/index",
+    "pages/chat/realtime-dialogue/index",
+    "pages/chat/translate/index",
+    "pages/profile/index/index",
+    "pages/profile/api-key/index",
+    "pages/profile/edit-profile/index",
+    "pages/memory/scene-video/index",
+    "pages/memory/scene-create/index",
+    "pages/login/index",
+    "pages/auth/role-select/index",
+    "pages/webview/index",
+    "pages/teacher/index/index",
+    "pages/teacher/students/index",
+    "pages/teacher/exam-grade/index",
+    "pages/exam/list/index",
+    "pages/exam/do-exam/index",
+    "pages/exam/result/index",
+    "pages/membership/index/index",
+    "pages/textbook/index/index",
+    "pages/textbook/reader/index",
+    "pages/video/create/index",
+    "pages/video/watch/index",
+    "pages/video/list/index",
+    "pages/profile/system-status/index",
+    "pages/report/index/index",
+    "pages/class/detail/index",
+    "pages/class/index/index",
+    "pages/class/tabs/index",
+    "pages/class/classroom/index",
+    "pages/class/grade/index",
+    "pages/mistake-book/index",
+    "pages/mistake-book/report-detail/index",
+    "pages/teacher/class/index",
+    "pages/teacher/class/create/index",
+    "pages/teacher/class/detail/index",
+    "pages/teacher/class/import/index",
+    "pages/teacher/class/student-detail/index",
+    "pages/teacher/exam/index",
+    "pages/teacher/exam/create/index",
+    "pages/teacher/exam/detail/index",
+    "pages/teacher/exam/answer-sheet/index",
+    "pages/teacher/scan/index",
+    "pages/teacher/scan/result/index",
+    "pages/teacher/report/index",
+    "pages/teacher/profile/index"
+  ],
+  "window": {
+    "backgroundColor": "#F5F7FA",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "E-Learning",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#9CA3AF",
+    "selectedColor": "#5B9E6F",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "images/tab/home.png",
+        "selectedIconPath": "images/tab/home-active.png"
+      },
+      {
+        "pagePath": "pages/chat/qa/index",
+        "text": "智能对话",
+        "iconPath": "images/tab/chat.png",
+        "selectedIconPath": "images/tab/chat-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index/index",
+        "text": "我的",
+        "iconPath": "images/tab/user.png",
+        "selectedIconPath": "images/tab/user-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "custom-tab-bar": "/custom-tab-bar/index"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

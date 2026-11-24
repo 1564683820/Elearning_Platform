@@ -1,0 +1,125 @@
+<view class="page">
+  <!-- ====== 顶部Header：标题 + 计时 + 进度 ====== -->
+  <view class="exam-header">
+    <text class="exam-title">{{exam.title}}</text>
+    <view class="header-meta">
+      <text class="timer">{{formatTime(remainingSeconds)}}</text>
+      <text class="q-progress">{{currentIndex + 1}} / {{questions.length}}</text>
+    </view>
+  </view>
+
+  <!-- ====== 上半区域：大题内容（文章/题干）可滚动 ====== -->
+  <scroll-view class="top-passage" scroll-y enhanced show-scrollbar="{{false}}">
+    <!-- 阅读题：文章原文（兼容 passage/stem） -->
+    <view wx:if="{{readingPassage}}">
+      <view class="passage-label">📖 阅读文章</view>
+      <view class="passage-text">{{readingPassage}}</view>
+    </view>
+    <!-- 非阅读题或无文章：显示题干 -->
+    <view wx:else>
+      <view class="big-question">{{currentQuestion.stem}}</view>
+    </view>
+  </scroll-view>
+
+  <!-- ====== 分隔线 ====== -->
+  <view class="divider"></view>
+
+  <!-- ====== 下半区域：小题 + 选项/输入 + 导航 ====== -->
+  <view class="bottom-qa">
+    <!-- 题型标签 -->
+    <view class="q-header">
+      <text class="q-number">Q{{currentIndex + 1}}</text>
+      <text class="q-type-label">{{getTypeLabel(currentQuestion.type)}} {{currentQuestion.score}}分</text>
+    </view>
+
+    <!-- ====== 阅读题：子题（题干+选项）同时显示 ====== -->
+    <view wx:if="{{hasSubQuestions}}">
+      <block wx:for="{{currentQuestion.sub_questions}}" wx:for-index="subIdx" wx:for-item="sq" wx:key="subIdx">
+        <view class="reading-sub-wrap">
+          <text class="reading-sub-label">第{{sq.question_number || subIdx + 1}}题</text>
+          <text class="q-subject">{{sq.stem}}</text>
+          <view class="options-wrap" wx:if="{{sq.options && sq.options.length > 0}}">
+            <view class="option-item {{currentSubAnswers[subIdx] === opt ? 'selected' : ''}}"
+              wx:for="{{sq.options}}" wx:for-item="opt" wx:key="*this"
+              data-opt="{{opt}}" data-sub="{{subIdx}}"
+              bindtap="selectSubOption">
+              <view class="option-radio {{currentSubAnswers[subIdx] === opt ? 'active' : ''}}"></view>
+              <text class="option-text">{{opt}}</text>
+            </view>
+          </view>
+          <text class="no-options" wx:elif="{{!sq.options || sq.options.length === 0}}">暂无选项</text>
+        </view>
+      </block>
+    </view>
+
+    <!-- ====== 阅读题无子题：降级为选择题展示（文章已在顶部，此处只显示选项） ====== -->
+    <view wx:elif="{{currentQuestion.type === 'reading' && !hasSubQuestions && currentQuestion.options && currentQuestion.options.length > 0}}">
+      <view class="options-wrap">
+        <view class="option-item {{currentAnswer === opt ? 'selected' : ''}}"
+          wx:for="{{currentQuestion.options}}" wx:for-item="opt" wx:key="opt"
+          data-opt="{{opt}}" bindtap="selectOption">
+          <view class="option-radio {{currentAnswer === opt ? 'active' : ''}}"></view>
+          <text class="option-text">{{opt}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- ====== 阅读题完全无数据可展示 ====== -->
+    <view wx:elif="{{currentQuestion.type === 'reading'}}">
+      <text class="unknown-type">阅读题目数据异常，请联系教师</text>
+    </view>
+
+    <!-- ====== 选择题：选项列表 ====== -->
+    <view class="options-wrap" wx:elif="{{currentQuestion.type === 'choice'}}">
+      <view class="option-item {{currentAnswer === opt ? 'selected' : ''}}"
+        wx:for="{{currentQuestion.options}}" wx:for-item="opt" wx:key="opt"
+        data-opt="{{opt}}"
+        bindtap="selectOption">
+        <view class="option-radio {{currentAnswer === opt ? 'active' : ''}}"></view>
+        <text class="option-text">{{opt}}</text>
+      </view>
+      <text class="no-options" wx:if="{{!currentQuestion.options || currentQuestion.options.length === 0}}">暂无选项</text>
+    </view>
+
+    <!-- 填空题 -->
+    <view wx:elif="{{currentQuestion.type === 'fill'}}">
+      <input class="fill-input" value="{{currentAnswer}}" placeholder="请输入答案"
+        bindinput="onFillInput" />
+    </view>
+
+    <!-- 翻译题 -->
+    <view wx:elif="{{currentQuestion.type === 'translation'}}">
+      <textarea class="text-input" value="{{currentAnswer}}" placeholder="请输入翻译"
+        bindinput="onTextInput" />
+    </view>
+
+    <!-- 写作题 -->
+    <view wx:elif="{{currentQuestion.type === 'writing'}}">
+      <textarea class="text-input" value="{{currentAnswer}}" placeholder="请在此作答"
+        bindinput="onTextInput" />
+    </view>
+
+    <!-- 未知题型 -->
+    <view wx:else>
+      <text class="unknown-type">未知题型：{{currentQuestion.type}}</text>
+    </view>
+
+    <!-- ====== 上下题导航 ====== -->
+    <view class="nav-buttons">
+      <button class="nav-btn prev" bindtap="onPrev" disabled="{{currentIndex === 0}}">
+        ‹ 上一题
+      </button>
+      <button class="nav-btn next" bindtap="onNext" disabled="{{currentIndex >= questions.length - 1}}">
+        下一题 ›
+      </button>
+    </view>
+  </view>
+
+  <!-- ====== 底部提交栏 ====== -->
+  <view class="submit-bar">
+    <text class="progress-text">{{answeredCount}}/{{totalSubCount}} 已作答</text>
+    <button class="submit-btn" bindtap="submitExam" disabled="{{submitting}}">
+      {{submitting ? '提交中...' : '提交试卷'}}
+    </button>
+  </view>
+</view>

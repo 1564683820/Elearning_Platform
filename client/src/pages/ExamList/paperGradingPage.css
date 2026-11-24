@@ -1,0 +1,37 @@
+.web-paper-grading {
+  --bg: #fff;
+  --surface: #fafdf6;
+  --border: #d3e2d5;
+  --ink: #17372b;
+  --muted: #476358;
+  --green: #20694f;
+  --mint: #dceedf;
+  --amber: #f8e5b8;
+  --ember: #754e20;
+  --radius-field: 16px;
+  --radius-large: 28px;
+  --radius-pill: 100px;
+  --safe-bottom: 0px;
+}
+.web-paper-grading :where(*, *::before, *::after) { box-sizing: border-box; }
+.web-paper-grading :is(p, h1, h2) { margin-block-start: 0; }
+.web-paper-grading .heading { align-items: center; }
+.web-paper-grading .caption { color: var(--muted); font-size: 14px; }
+.web-paper-grading .wide { width: 100%; }
+.web-paper-grading :is(.round, .primary, .secondary) { text-decoration: none; }
+.web-paper-grading :is(.primary, .secondary) { display: inline-flex; align-items: center; justify-content: center; text-align: center; }
+.web-paper-grading .field { display: flex; align-items: center; gap: 10px; min-height: 46px; padding-inline: 12px; border: 1px solid var(--border); border-radius: var(--radius-field); color: var(--green); background: var(--surface); }
+.web-paper-grading .field input { flex: 1; min-width: 0; min-height: 40px; border: 0; color: var(--ink); background: transparent; }
+.web-paper-grading .record-back { margin-top: 18px; }
+.web-paper-grading .review-actions { position: static; }
+.web-paper-grading .actions > a { flex: 1; }
+.paper-review-portal { display: contents; }
+.paper-review-portal .overlay { z-index: 10001; }
+.web-paper-grading .sheet-paper-review { min-height: 222px; max-height: calc(100dvh - 24px); }
+.web-paper-grading .sheet-paper-review:has(.review-roster) { min-height: min(312px, calc(100dvh - 24px)); }
+.web-paper-grading .sheet-paper-review h2 { margin-block: 0 16px; }
+.web-paper-grading .sheet-paper-review form:has(.field) { min-height: 0; }
+.web-paper-grading .sheet-paper-review .review-roster .select ul { top: calc(100% + 5px); bottom: auto; max-height: 140px; }
+.web-paper-grading .sheet-paper-review:has(.review-roster) { overflow-y: visible; }
+
+.web-paper-grading .sheet-paper-review:has(.review-question-form) { min-height: min(400px, calc(100dvh - 24px)); }

@@ -1,0 +1,61 @@
+<!-- 角色选择页 — 首次登录后展示 -->
+<view class="page">
+  <!-- 顶部装饰区 -->
+  <view class="hero-area">
+    <text class="hero-title">欢迎来到 E-Learning</text>
+    <text class="hero-desc">请选择你的身份，开启学习之旅</text>
+  </view>
+
+  <!-- 角色卡片 -->
+  <view class="role-list">
+    <!-- 学生 -->
+    <view class="card role-card {{selectedRole === 'student' ? 'selected' : ''}}"
+          data-role="student" bindtap="onSelectRole">
+      <view class="role-avatar student-avatar">学</view>
+      <view class="role-info">
+        <text class="role-name">学生</text>
+        <text class="role-desc">日常背单词、做练习、参加班级学习</text>
+      </view>
+      <view class="role-check" wx:if="{{selectedRole === 'student'}}">
+        <text class="check-icon">✓</text>
+      </view>
+    </view>
+
+    <!-- 教师 -->
+    <view class="card role-card {{selectedRole === 'teacher' ? 'selected' : ''}}"
+          data-role="teacher" bindtap="onSelectRole">
+      <view class="role-avatar teacher-avatar">师</view>
+      <view class="role-info">
+        <text class="role-name">教师</text>
+        <text class="role-desc">管理班级、布置作业、查看学情数据</text>
+      </view>
+      <view class="role-check" wx:if="{{selectedRole === 'teacher'}}">
+        <text class="check-icon">✓</text>
+      </view>
+    </view>
+
+    <!-- 个人学习 -->
+    <view class="card role-card {{selectedRole === 'personal' ? 'selected' : ''}}"
+          data-role="personal" bindtap="onSelectRole">
+      <view class="role-avatar personal-avatar">个</view>
+      <view class="role-info">
+        <text class="role-name">个人学习</text>
+        <text class="role-desc">自主学习，提升英语水平</text>
+      </view>
+      <view class="role-check" wx:if="{{selectedRole === 'personal'}}">
+        <text class="check-icon">✓</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 确认按钮 -->
+  <view class="btn-primary confirm-btn {{!selectedRole ? 'disabled' : ''}}"
+        bindtap="onConfirm">
+    <text>确认选择</text>
+  </view>
+
+  <!-- 跳过入口 -->
+  <view class="skip-area" bindtap="onSkip">
+    <text class="skip-text">暂不选择，稍后再说</text>
+  </view>
+</view>

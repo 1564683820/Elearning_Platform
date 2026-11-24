@@ -1,0 +1,124 @@
+<!-- 听力训练 -->
+<view class="page">
+  <!-- 自定义Header -->
+  <view class="custom-header" style="padding-top: {{navBarTop}}px;">
+    <view class="header-inner" style="height: {{navBarHeight}}px; padding-left: {{navPadLeft}}px; padding-right: {{navPadRight}}px;">
+      <view class="header-btn" bindtap="onBack">
+        <text class="header-btn-icon">‹</text>
+      </view>
+      <text class="header-title">听力训练</text>
+      <view class="header-btn" bindtap="onSettingsTap">
+        <text class="header-btn-icon">⚙</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 进度 -->
+  <view class="player-card" wx:if="{{loading}}">正在加载…</view>
+  <view wx:elif="{{mode === 'list'}}">
+    <view class="player-card" wx:if="{{!materials.length}}">暂无听力材料</view>
+    <view class="player-card" wx:for="{{materials}}" wx:key="id" data-id="{{item.id}}" bindtap="onSelectMaterial">
+      <text class="question-text">{{item.title}}</text>
+      <text>{{item.duration}} 秒</text>
+    </view>
+    <button bindtap="loadMaterials">刷新材料</button>
+  </view>
+  <view class="player-card" wx:elif="{{mode === 'result'}}">
+    <text class="question-text">听力训练完成</text>
+    <text>答对 {{correctCount}} / {{questions.length}} 题</text>
+    <button bindtap="onBack">返回材料列表</button>
+  </view>
+  <block wx:else>
+  <view class="progress-section">
+    <view class="progress-info">
+      <text class="progress-label">{{currentMaterial.title}} · {{currentQIndex + 1}} / {{questions.length}} 题</text>
+      <view class="score-row">
+        <view class="score-item">
+          <view class="score-icon-circle correct-circle">
+            <text class="score-icon-inner">✓</text>
+          </view>
+          <text class="score-correct">{{correctCount}}</text>
+        </view>
+        <view class="score-item">
+          <view class="score-icon-circle wrong-circle">
+            <text class="score-icon-inner">✗</text>
+          </view>
+          <text class="score-wrong">{{currentQIndex + (answered ? 1 : 0) - correctCount}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-bar-fill" style="width: {{questions.length ? (currentQIndex + (answered ? 1 : 0)) * 100 / questions.length : 0}}%;"></view>
+    </view>
+  </view>
+
+  <!-- 题型切换 -->
+  <text class="question-text">听力选择题</text>
+
+  <!-- 播放器 -->
+  <view class="player-card">
+    <view class="player-main">
+      <view class="play-btn-large" bindtap="onPlayToggle">
+        <text class="play-btn-icon">{{isPlaying ? '暂停' : '播放'}}</text>
+      </view>
+      <view class="player-progress-wrapper">
+        <view class="player-time-row">
+          <text class="time-text">{{currentTime}}</text>
+          <text class="time-text">{{totalTime}}</text>
+        </view>
+        <view class="player-progress-bar">
+          <view class="player-progress-fill" style="width: {{playProgress}}%;"></view>
+        </view>
+      </view>
+    </view>
+    <view class="player-controls">
+      <view class="play-count-row">
+        <text class="play-count-icon"></text>
+        <text class="play-count-label">播放次数：</text>
+        <text class="play-count-value">{{playCount}}/{{maxPlayCount}}</text>
+      </view>
+      <view class="speed-row">
+        <text class="speed-btn {{activeSpeed === index ? 'active' : ''}}"
+              wx:for="{{speeds}}" wx:key="index"
+              data-index="{{index}}" bindtap="onSpeedChange">
+          {{item}}
+        </text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 题目 -->
+  <view class="question-section">
+    <text wx:if="{{!questions.length}}">本材料暂无配套题目，可播放音频或返回列表。</text>
+    <text class="question-text">{{question.stem}}</text>
+  </view>
+
+  <!-- 选项 -->
+  <view class="options-list">
+    <view class="quiz-option {{answered && selectedIndex === index ? (index === question.correctIndex ? 'correct' : 'wrong') : ''}} {{answered && index === question.correctIndex ? 'correct' : ''}}"
+          wx:for="{{question.options}}" wx:key="index"
+          data-index="{{index}}" bindtap="onSelectOption">
+      <view class="option-content">
+        <view class="option-letter">{{['A','B','C','D'][index]}}</view>
+        <text class="option-text">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <text wx:if="{{submitting}}">正在保存答案…</text>
+
+  <!-- 解析 -->
+  <view class="analysis-card" wx:if="{{showAnalysis}}">
+    <view class="analysis-header">
+      <text class="analysis-icon"></text>
+      <text class="analysis-title">答案解析</text>
+    </view>
+    <text class="analysis-answer">正确答案：{{['A','B','C','D'][question.correctIndex]}}</text>
+    <text class="analysis-explain">{{question.explanation}}</text>
+    <view class="next-btn" bindtap="onNextQuestion">
+      <text class="next-btn-text">下一题</text>
+      <text class="next-btn-arrow">→</text>
+    </view>
+  </view>
+  </block>
+</view>

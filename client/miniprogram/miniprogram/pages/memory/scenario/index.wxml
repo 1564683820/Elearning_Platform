@@ -1,0 +1,74 @@
+<!-- 情景记忆 -->
+<view class="container">
+  <!-- 页面头部 - header-bar样式 -->
+  <view class="header-bar">
+    <view class="header-btn" bindtap="onMenuTap">
+      <text class="header-btn-icon">☰</text>
+    </view>
+    <text class="header-title">情景记忆</text>
+    <view class="header-spacer"></view>
+  </view>
+
+  <view class="content-area">
+    <!-- 时间范围 -->
+    <view class="card option-card">
+      <view class="option-header">
+        <text class="option-icon"></text>
+        <text class="option-title">选择错题时间范围</text>
+      </view>
+      <view class="option-row">
+        <view class="option-btn {{activeTimeRange === index ? 'active' : ''}}"
+              wx:for="{{timeRanges}}" wx:key="index"
+              data-index="{{index}}" bindtap="onSelectTimeRange">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 文段类型 -->
+    <view class="card option-card">
+      <view class="option-header">
+        <text class="option-icon-light"></text>
+        <text class="option-title">生成文段类型</text>
+      </view>
+      <view class="option-row">
+        <view class="option-btn {{activeTextType === index ? 'active' : ''}}"
+              wx:for="{{textTypes}}" wx:key="index"
+              data-index="{{index}}" bindtap="onSelectTextType">
+          {{item}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 错题单词预览 -->
+    <view class="card preview-card">
+      <text class="preview-hint">将使用以下错题单词（{{timeRanges[activeTimeRange]}}内，共{{words.length}}个）：</text>
+      <view class="word-tags">
+        <view class="word-tag" wx:for="{{words}}" wx:key="index">{{item}}</view>
+      </view>
+    </view>
+
+    <!-- 生成按钮 -->
+    <view class="btn-primary generate-btn" bindtap="onGenerate">
+      <text class="btn-icon">✨</text>
+      <text>生成情景文段</text>
+    </view>
+
+    <!-- 生成结果 -->
+    <view class="card result-card" wx:if="{{generated}}">
+      <view class="result-header">
+        <view class="result-left">
+          <text class="result-icon"></text>
+          <text class="result-title">AI 生成完成 · {{textTypes[activeTextType]}}</text>
+        </view>
+        <view class="bookmark-btn" bindtap="onBookmark"></view>
+      </view>
+      <view class="result-content">
+        <text user-select class="result-text">{{scenarioText}}</text>
+      </view>
+      <view class="video-btn" bindtap="onGenerateVideo">
+        生成记忆视频
+      </view>
+    </view>
+  </view>
+</view>

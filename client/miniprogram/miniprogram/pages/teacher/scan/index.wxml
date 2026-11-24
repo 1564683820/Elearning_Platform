@@ -1,0 +1,155 @@
+<view class="scan-page">
+  <!-- 顶部进度条 -->
+  <view class="scan-bar">
+    <view class="scan-bar-inner">
+      <view class="scan-bar-left">
+        <text class="scan-bar-label">{{scanMode === 'server' ? '服务端扫描' : '本地扫描'}}</text>
+        <text class="scan-bar-title">{{examTitle}}</text>
+      </view>
+      <view class="scan-mode-switch" bindtap="switchScanMode">
+        <view class="mode-option {{scanMode === 'local' ? 'mode-active' : ''}}">本地</view>
+        <view class="mode-option {{scanMode === 'server' ? 'mode-active' : ''}}">服务端</view>
+      </view>
+      <view class="scan-stats">
+        <view class="scan-stat-item">
+          <text class="scan-stat-label">已拍</text>
+          <text class="scan-stat-value">{{photoQueue.length}}</text>
+        </view>
+        <view class="scan-stat-item">
+          <text class="scan-stat-label">批完</text>
+          <text class="scan-stat-value scan-stat-done">{{gradedCount}}</text>
+        </view>
+        <button class="scan-template-btn" bindtap="goToAnswerSheet">答题卡</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 摄像头始终可见（结果弹窗时 hidden） -->
+  <view class="camera-area" hidden="{{showResults}}">
+    <camera class="camera-preview" mode="normal" flash="auto" binderror="onCameraError">
+      <!-- 定位辅助框 -->
+      <cover-view class="overlay">
+        <cover-view class="guide-frame">
+          <cover-view class="guide-corner tl"></cover-view>
+          <cover-view class="guide-corner tr"></cover-view>
+          <cover-view class="guide-corner bl"></cover-view>
+          <cover-view class="guide-corner br"></cover-view>
+          <cover-view class="guide-area top-area">
+            <cover-view class="guide-label">考号区</cover-view>
+          </cover-view>
+          <cover-view class="guide-area bottom-area">
+            <cover-view class="guide-label">答题区</cover-view>
+          </cover-view>
+        </cover-view>
+      </cover-view>
+    </camera>
+
+    <!-- 底部：队列缩略图 + 操作按钮 -->
+    <view class="bottom-actions">
+      <!-- 队列缩略图横滑条 -->
+      <view class="photo-queue" wx:if="{{photoQueue.length > 0}}">
+        <scroll-view class="photo-strip" scroll-x enhanced show-scrollbar="{{false}}">
+          <view class="photo-thumb" wx:for="{{photoQueue}}" wx:key="id"
+                bindtap="onPreviewPhoto" data-id="{{item.id}}">
+            <image class="thumb-img {{item.status === 'error' ? 'thumb-error' : ''}}" 
+                   src="{{item.tempPath}}" mode="aspectFill" />
+            <!-- 状态标记 -->
+            <view class="thumb-status {{item.status}}">
+              <view wx:if="{{item.status === 'processing'}}" class="status-spin"></view>
+              <view wx:elif="{{item.status === 'success'}}" class="status-check"></view>
+              <view wx:elif="{{item.status === 'error'}}" class="status-cross"></view>
+            </view>
+            <!-- 识别完成显示姓名+分数 -->
+            <text class="thumb-info" wx:if="{{item.status === 'success'}}">{{item.student_name || item.exam_number || '?'}} {{item.score}}</text>
+            <text class="thumb-info thumb-info-error" wx:elif="{{item.status === 'error'}}">失败</text>
+            <!-- 删除按钮 -->
+            <view class="thumb-remove" catchtap="onRemovePhoto" data-id="{{item.id}}">✕</view>
+          </view>
+        </scroll-view>
+      </view>
+
+      <!-- 操作按钮组 -->
+      <view class="action-row">
+        <button class="action-btn action-capture" bindtap="onCapture" disabled="{{scanning}}">
+          <view class="capture-ring-small">
+            <view class="capture-dot" wx:if="{{!scanning}}"></view>
+            <text wx:else class="capture-text">...</text>
+          </view>
+          <text class="action-label">拍照</text>
+        </button>
+
+        <button class="action-btn action-finish" bindtap="onFinishCapture"
+                wx:if="{{photoQueue.length > 0}}">
+          <text class="finish-count">{{photoQueue.length}}</text>
+          <text class="action-label">完成</text>
+        </button>
+
+        <button class="action-btn action-retake" bindtap="onRetakeAll"
+                wx:if="{{photoQueue.length > 0}}">
+          <text class="action-label">重拍</text>
+        </button>
+      </view>
+
+      <text class="hint-text" wx:if="{{photoQueue.length === 0}}">将答题卡置于框内，点击拍照</text>
+    </view>
+  </view>
+
+  <!-- ========== 结果汇总弹窗 ========== -->
+  <view class="results-overlay" wx:if="{{showResults}}">
+    <view class="results-card">
+      <view class="results-header">
+        <text class="results-title">批改结果</text>
+        <view class="results-counts">
+          <text class="cnt-ok">{{successCount}}成功</text>
+          <text class="cnt-processing" wx:if="{{processingCount>0}}">
+            {{processingCount}}识别中
+          </text>
+          <text class="cnt-err" wx:if="{{errorCount>0}}">
+            {{errorCount}}失败
+          </text>
+        </view>
+      </view>
+
+      <scroll-view class="results-list" scroll-y>
+        <view class="result-row {{item.status}} {{item._submitted ? 'submitted' : ''}}"
+              wx:for="{{photoQueue}}" wx:key="id"
+              bindtap="onViewResultDetail" data-id="{{item.id}}">
+          <!-- 状态图标 -->
+          <view class="row-status">
+            <view wx:if="{{item.status === 'processing'}}" class="status-spin-small"></view>
+            <view wx:elif="{{item.status === 'success'}}" class="status-check-small"></view>
+            <view wx:elif="{{item.status === 'error'}}" class="status-cross-small"></view>
+          </view>
+          <!-- 信息 -->
+          <view class="row-info">
+            <text class="row-name">{{item.status === 'success' ? (item.student_name || '未匹配') : (item.status === 'processing' ? '识别中...' : '识别失败')}}</text>
+            <text class="row-examno" wx:if="{{item.exam_number && item.status === 'success'}}">考号 {{item.exam_number}}</text>
+          </view>
+          <!-- 分数 -->
+          <view class="row-score" wx:if="{{item.status === 'success'}}">
+            <text class="row-score-val {{item.score >= item.max_score * 0.6 ? 'pass' : 'fail'}}">{{item.score}}</text>
+            <text class="row-score-max">/{{item.max_score}}</text>
+          </view>
+          <!-- 重试 -->
+          <view class="row-retry" wx:if="{{item.status === 'error'}}" catchtap="onRetrySingle" data-id="{{item.id}}">重试</view>
+          <!-- 箭头 -->
+          <text class="row-arrow" wx:if="{{item.status === 'success'}}">></text>
+        </view>
+      </scroll-view>
+
+      <!-- 底部按钮 -->
+      <view class="results-actions">
+        <button class="res-btn res-btn-back" bindtap="onResetBatch">返回拍照</button>
+        <button class="res-btn res-btn-submit" bindtap="submitAllResults">
+          刷新成绩
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 亮度警告 -->
+  <view class="brightness-warn" wx:if="{{brightnessWarning}}">{{brightnessWarning}}</view>
+
+  <!-- 底部 TabBar -->
+  <custom-tab-bar activeIndex="2"></custom-tab-bar>
+</view>

@@ -1,0 +1,111 @@
+<!-- 视频观看页 — 播放器 + 角色信息 + 字幕 + 收藏分享 -->
+<view class="page">
+
+  <!-- 加载状态 -->
+  <view class="loading-state" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- 视频区域 -->
+  <view class="video-section" wx:elif="{{videoInfo}}">
+    <!-- 视频播放器 -->
+    <view class="player-wrapper">
+      <video
+        class="video-player"
+        src="{{videoInfo.video_url}}"
+        poster="{{videoInfo.thumbnail_url}}"
+        controls
+        autoplay="{{false}}"
+        bindplay="onPlay"
+        bindpause="onPause"
+        binderror="onVideoError"
+        enable-danmu
+        danmu-list="{{danmuList}}"
+      ></video>
+
+      <!-- 生成中占位 -->
+      <view class="processing-overlay" wx:if="{{videoInfo.status === 'processing'}}">
+        <view class="processing-icon">⏳</view>
+        <text class="processing-text">AI 正在生成视频...</text>
+        <text class="processing-progress">预计 1-3 分钟完成</text>
+      </view>
+    </view>
+
+    <!-- 信息区域 -->
+    <view class="info-section">
+      <view class="info-header">
+        <view class="info-left">
+          <text class="video-title">{{videoInfo.title}}</text>
+          <view class="video-meta">
+            <text class="meta-unit">{{videoInfo.textbook_grade || ''}} · {{videoInfo.unit_name || ''}}</text>
+            <text class="meta-duration">{{formatDuration(videoInfo.duration)}}</text>
+          </view>
+        </view>
+        <view class="info-actions">
+          <view class="action-btn {{videoInfo.favorite_count > 0 ? 'favorited' : ''}}" bindtap="onFavorite">
+            <text>{{videoInfo.favorite_count > 0 ? '⭐' : '☆'}}</text>
+            <text class="action-label">收藏</text>
+          </view>
+          <view class="action-btn" bindtap="onShare">
+            <text>📤</text>
+            <text class="action-label">分享</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 角色卡片 -->
+      <view class="character-card">
+        <image class="char-avatar" src="{{videoInfo.character_image_url || '/images/character-default.png'}}" mode="aspectFill" />
+        <view class="char-info">
+          <text class="char-name">{{videoInfo.character_type_name}}</text>
+          <text class="char-role">扮演角色 · 朗读课文</text>
+        </view>
+      </view>
+
+      <!-- 字幕/脚本 -->
+      <view class="script-section" wx:if="{{videoInfo.script_json && videoInfo.script_json.scenes && videoInfo.script_json.scenes.length > 0}}">
+        <view class="script-header">
+          <text class="script-title">AI 演绎分镜</text>
+        </view>
+        <view class="script-list">
+          <view
+            class="script-item {{scriptIndex === idx ? 'active' : ''}}"
+            wx:for="{{videoInfo.script_json.scenes}}"
+            wx:key="index"
+            wx:for-index="idx"
+            bindtap="onSceneTap"
+            data-index="{{idx}}"
+          >
+            <view class="script-num">{{idx + 1}}</view>
+            <view class="script-body">
+              <text class="script-text">{{item.spoken_text}}</text>
+              <view class="script-footer">
+                <text class="script-emotion">{{item.emotion}}</text>
+                <text class="script-translation" wx:if="{{item.translation}}">{{item.translation}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 统计 -->
+      <view class="stats-bar">
+        <text class="stat">👁 {{videoInfo.view_count || 0}} 次观看</text>
+        <text class="stat">{{videoInfo.created_at || ''}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-actions" wx:if="{{videoInfo && videoInfo.status === 'completed'}}">
+    <button class="action-btn replay-btn" bindtap="onReplay">重新播放</button>
+  </view>
+
+  <!-- 页面加载失败 -->
+  <view class="error-state" wx:elif="{{!loading && !videoInfo}}">
+    <text class="error-icon">!</text>
+    <text class="error-text">视频加载失败</text>
+    <button class="retry-btn" bindtap="onLoadVideo">重试</button>
+  </view>
+</view>

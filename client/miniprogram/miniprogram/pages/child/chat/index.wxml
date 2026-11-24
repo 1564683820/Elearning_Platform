@@ -1,0 +1,62 @@
+<!-- 幼儿小e对话页面 -->
+<view class="child-container">
+  <!-- 状态栏占位 -->
+  <view class="status-bar"></view>
+
+  <!-- 顶部栏 -->
+  <view class="top-bar">
+    <view class="logo-area">
+      <text class="logo-e">E</text>
+      <text class="logo-text">-Learning</text>
+    </view>
+    <view class="phase-btn" catchtap="onOpenPhaseSelector">
+      <text class="phase-btn-text">{{currentPhase}}</text>
+      <text class="phase-arrow">▼</text>
+    </view>
+  </view>
+
+  <!-- 对话消息区域 -->
+  <scroll-view class="chat-area" scroll-y scroll-into-view="{{'msg-' + (messages.length - 1)}}" scroll-with-animation>
+    <view class="messages-wrap">
+      <view class="message-row {{item.type === 'user' ? 'user-row' : 'ai-row'}}"
+            wx:for="{{messages}}" wx:key="index"
+            id="{{'msg-' + index}}">
+        <!-- AI 头像 -->
+        <view class="msg-avatar" wx:if="{{item.type === 'ai'}}">🤖</view>
+
+        <!-- 消息体 -->
+        <view class="msg-body {{item.type === 'user' ? 'msg-user' : 'msg-ai'}}">
+          <text class="msg-text">{{item.text}}</text>
+          <!-- AI 回复的重播按钮 -->
+          <button class="listen-btn" wx:if="{{item.showListenBtn}}"
+                  data-index="{{index}}" catchtap="onPlayVoice">
+            🔊 点我听听
+          </button>
+        </view>
+
+        <!-- 用户头像占位 -->
+        <view class="msg-avatar msg-user-avatar" wx:if="{{item.type === 'user'}}">👤</view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 录音区域 -->
+  <view class="record-area">
+    <button class="record-btn {{isRecording ? 'recording' : ''}}"
+            catchtouchstart="onStartRecord"
+            catchtouchend="onStopRecord"
+            catchtouchcancel="onStopRecord">
+      <text class="record-icon">🎤</text>
+    </button>
+    <text class="record-hint">{{recordingHint}}</text>
+  </view>
+</view>
+
+<!-- 底部导航（全局定位不遮挡录音区域）-->
+<footer-tabs activeIndex="2"></footer-tabs>
+
+<!-- 阶段选择弹窗 -->
+<phase-selector visible="{{showPhaseSelector}}"
+                currentPhase="{{phaseMode.getSavedPhaseIndex()}}"
+                bind:close="onClosePhaseSelector"
+                bind:saved="onPhaseSaved"></phase-selector>

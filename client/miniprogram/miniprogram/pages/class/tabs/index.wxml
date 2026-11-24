@@ -1,0 +1,167 @@
+<view class="page">
+  <!-- 班级头部 -->
+  <view class="class-header" wx:if="{{classInfo}}">
+    <view class="header-left" bindtap="onBack">
+      <text class="back-arrow">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-name">{{classInfo.name}}</text>
+      <text class="header-meta">{{classInfo.teacher_name || '未知教师'}} · {{classInfo.student_count || 0}}位同学</text>
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-view" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <view wx:else>
+    <!-- Tab栏 -->
+    <view class="tabs-underline">
+      <view
+        class="tab-underline-item {{activeTab === index ? 'active' : ''}}"
+        wx:for="{{tabs}}" wx:key="index"
+        data-index="{{index}}"
+        bindtap="onTabTap"
+      >{{item}}</view>
+    </view>
+
+    <!-- ========== 课堂 Tab ========== -->
+    <view class="tab-content" wx:if="{{activeTab === 0}}">
+      <view class="classroom-section">
+        <view class="section-header">
+          <view class="section-header-left">
+            <text class="section-icon">🎓</text>
+            <text class="section-title">当前课堂</text>
+          </view>
+          <view class="section-header-right">
+            <button class="refresh-btn" bindtap="onRefreshSession" disabled="{{checkingSession}}">
+              <text class="refresh-icon">{{checkingSession ? '⟳' : '↻'}}</text>
+              <text>{{checkingSession ? '检查中...' : '刷新'}}</text>
+            </button>
+          </view>
+        </view>
+        <view class="classroom-status" wx:if="{{checkingSession && !activeSession}}">
+          <text class="status-loading">检查课堂状态...</text>
+        </view>
+        <view class="classroom-status" wx:elif="{{activeSession && activeSession.has_active}}">
+          <view class="status-dot active"></view>
+          <text class="status-text active">老师正在授课</text>
+          <text class="status-ppt" wx:if="{{activeSession.title}}">{{activeSession.title}}</text>
+          <button class="enter-btn" bindtap="onEnterClassroom">进入课堂</button>
+        </view>
+        <view class="classroom-status" wx:else>
+          <view class="status-dot"></view>
+          <text class="status-text">当前没有老师授课</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- ========== 试卷 Tab ========== -->
+    <view class="tab-content" wx:if="{{activeTab === 1}}">
+      <view class="exam-section">
+        <view class="section-icon">📝</view>
+        <text class="section-title">班级试卷</text>
+
+        <view class="exam-list" wx:if="{{exams.length > 0}}">
+          <view
+            class="exam-item"
+            wx:for="{{exams}}" wx:key="id"
+            data-exam="{{item}}"
+            bindtap="onExamTap"
+          >
+            <view class="exam-left">
+              <text class="exam-title">{{item.title}}</text>
+              <view class="exam-meta">
+                <text class="meta-tag">{{item.question_count || 0}}题</text>
+                <text class="meta-tag">{{item.total_score || 0}}分</text>
+                <text class="meta-tag" wx:if="{{item.duration_minutes}}">{{item.duration_minutes}}分钟</text>
+                <text class="meta-tag diff-{{item.difficulty || 1}}">{{['','简单','中等','困难'][item.difficulty] || '未知'}}</text>
+              </view>
+            </view>
+            <view class="exam-right">
+              <text class="exam-status-tag {{item.my_submission && item.my_submission.score != null ? 'submitted' : 'pending'}}">
+                {{item.my_submission && item.my_submission.score != null ? (item.my_submission.score + '分') : '未提交'}}
+              </text>
+              <text class="exam-arrow">›</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="empty-hint" wx:elif="{{!examsLoading}}">
+          <text>暂无试卷</text>
+        </view>
+
+        <view class="loading-row" wx:if="{{examsLoading}}">
+          <text>加载中...</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- ========== 成绩 Tab ========== -->
+    <view class="tab-content" wx:if="{{activeTab === 2}}">
+      <view class="grade-section">
+        <view class="section-icon">📊</view>
+        <text class="section-title">成绩概况</text>
+
+        <view class="grade-overview" wx:if="{{gradeStats && !statsLoading}}">
+          <view class="overview-card">
+            <text class="overview-num">{{gradeStats.exam_count || 0}}</text>
+            <text class="overview-lbl">考试次数</text>
+          </view>
+          <view class="overview-card">
+            <text class="overview-num">{{gradeStats.avg_score || 0}}</text>
+            <text class="overview-lbl">平均分</text>
+          </view>
+          <view class="overview-card">
+            <text class="overview-num">{{gradeStats.current_total_score || 0}}/{{gradeStats.current_max_score || 100}}</text>
+            <text class="overview-lbl">最近得分</text>
+          </view>
+        </view>
+
+        <!-- 题型错误占比 -->
+        <view class="type-errors" wx:if="{{gradeStats && gradeStats.type_stats && gradeStats.type_stats.length > 0}}">
+          <text class="sub-title">题型错误占比</text>
+          <view class="error-bar-list">
+            <view class="error-bar-item" wx:for="{{gradeStats.type_stats}}" wx:key="type">
+              <text class="error-bar-label">{{item.label}}</text>
+              <view class="error-bar-track">
+                <view class="error-bar-fill" style="width:{{item.error_rate}}%;"></view>
+              </view>
+              <text class="error-bar-pct">{{item.error_rate}}%</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 成绩走向 -->
+        <view class="score-trend" wx:if="{{gradeStats && gradeStats.scores && gradeStats.scores.length > 0}}">
+          <view class="trend-header">
+            <text class="sub-title">成绩走向</text>
+            <text class="view-more" bindtap="onViewGradeDetail">查看详情 ›</text>
+          </view>
+          <view class="trend-chart">
+            <view class="trend-bar-item" wx:for="{{gradeStats.scores}}" wx:key="index" wx:for-item="s">
+              <view class="trend-bar-wrap">
+                <view
+                  class="trend-bar-fill"
+                  style="height:{{(s.score / s.max_score) * 100}}%;"
+                >
+                  <text class="trend-bar-val">{{s.score}}</text>
+                </view>
+              </view>
+              <text class="trend-bar-lbl">{{index + 1}}</text>
+            </view>
+          </view>
+        </view>
+
+        <view class="empty-hint" wx:elif="{{!statsLoading}}">
+          <text>暂未有考试成绩</text>
+        </view>
+
+        <view class="loading-row" wx:if="{{statsLoading}}">
+          <text>加载中...</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,69 @@
+<view class="page">
+  <!-- 学生信息 -->
+  <view class="student-header">
+    <text class="student-name">{{studentName}}</text>
+    <text class="exam-title">{{examTitle}}</text>
+  </view>
+
+  <!-- 统计 -->
+  <view class="stats-bar">
+    <view class="stat-item">
+      <text class="stat-value">{{wrongCount}}</text>
+      <text class="stat-label">错题数</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{totalScore}}分</text>
+      <text class="stat-label">试卷总分</text>
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+  </view>
+
+  <!-- 空状态 - 无错题 -->
+  <view class="empty-state" wx:elif="{{mistakes.length === 0}}">
+    <view class="empty-icon-good">
+      <view class="check-mark-empty"></view>
+    </view>
+    <text class="empty-text">全部正确！该生本次测验满分</text>
+  </view>
+
+  <!-- 错题列表 -->
+  <view class="mistake-list" wx:else>
+    <view class="mistake-card" wx:for="{{mistakes}}" wx:key="question_number">
+      <view class="mistake-header">
+        <text class="mistake-number">第{{item.question_number}}题</text>
+        <text class="mistake-type">{{item.question_type === 'multiple' ? '[多选]' : '[单选]'}}</text>
+        <text class="mistake-status wrong">扣{{item.question_score || 0}}分</text>
+      </view>
+      <view class="mistake-body">
+        <view class="mistake-row">
+          <text class="mistake-label">学生答案</text>
+          <text class="mistake-value wrong">{{item.student_answer || '未作答'}}</text>
+        </view>
+        <view class="mistake-row">
+          <text class="mistake-label">正确答案</text>
+          <text class="mistake-value correct">{{item.correct_answer}}</text>
+        </view>
+        <view class="mistake-status-info" wx:if="{{item.status && item.status !== 'normal'}}">
+          <text class="status-badge {{item.status}}">
+            {{item.status === 'blank' ? '未作答' : 
+              item.status === 'multi' ? '单选题多选' : 
+              item.status === 'multi_short' ? '漏选' :
+              item.status === 'multi_partial' ? '部分选错' :
+              item.status === 'multi_excess' ? '多涂' :
+              item.status === 'multi_light' ? '疑似多选' :
+              item.status === 'all_filled' ? '整题涂黑' : item.status}}
+          </text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 无电子版提示 -->
+  <view class="no-paper-hint" wx:if="{{!hasPaperImage && !loading && mistakes.length > 0}}">
+    <text>暂未上传电子版试卷，无法查看原题对照</text>
+  </view>
+</view>

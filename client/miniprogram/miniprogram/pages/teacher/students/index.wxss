@@ -1,0 +1,23 @@
+.page { padding: 20px 16px; min-height: 100vh; background: #F5F7FA; }
+.header { margin-bottom: 16px; }
+.title { font-size: 22px; font-weight: 700; color: #1a1a2e; display: block; }
+.subtitle { font-size: 14px; color: #888; margin-top: 4px; display: block; }
+
+.invite-card { background: linear-gradient(135deg, #5B9E6F, #3d7a4e); border-radius: 12px; padding: 20px; margin-bottom: 20px; text-align: center; }
+.invite-label { font-size: 13px; color: rgba(255,255,255,0.8); display: block; }
+.invite-code { font-size: 32px; font-weight: 700; color: #fff; letter-spacing: 4px; margin: 8px 0 16px; display: block; }
+.invite-actions { display: flex; gap: 10px; justify-content: center; }
+.invite-btn { flex: 1; max-width: 140px; border-radius: 20px; padding: 8px 0; font-size: 13px; text-align: center; }
+.invite-btn.copy { background: rgba(255,255,255,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+.invite-btn.refresh { background: rgba(255,255,255,0.25); color: #fff; border: 1px solid rgba(255,255,255,0.6); }
+.invite-btn.refresh.disabled { opacity: 0.5; }
+
+.section { background: #fff; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.section-title { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 12px; display: block; }
+.student-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f2f5; }
+.student-item:last-child { border-bottom: none; }
+.student-name { font-size: 15px; font-weight: 500; color: #333; display: block; }
+.student-detail { font-size: 12px; color: #888; margin-top: 2px; display: block; }
+.remove-btn { background: #fff; color: #e74c3c; border: 1px solid #e74c3c; border-radius: 6px; padding: 4px 12px; font-size: 12px; }
+.empty { text-align: center; padding: 30px 0; color: #aaa; }
+.empty-hint { font-size: 12px; color: #ccc; margin-top: 8px; display: block; }

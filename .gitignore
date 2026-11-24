@@ -1,0 +1,64 @@
+# Local secrets and environment
+.env
+.env.*
+!.env.example
+server/.env
+
+# Local configuration and credentials
+*.local
+*.local.*
+*.secret
+*.secrets
+credentials.json
+service-account*.json
+google-credentials*.json
+secrets.json
+**/.aws/credentials
+**/.aws/config
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Python
+.venv/
+venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node.js and builds
+**/node_modules/
+client/dist/
+client/h5/dist/
+*.tsbuildinfo
+*.zip
+
+# Runtime and generated data
+*.log
+uploads/
+server/uploads/
+server/app/uploads/
+server/data/
+data/
+output/
+server/output/
+
+# Local IDE/platform state
+.vscode/
+.idea/
+.claude/settings.local.json
+client/miniprogram/project.private.config.json
+
+# Debug artifacts
+debug*.jpg
+*output.txt
+
+# Local dictionary data and scan debugging samples
+server/scripts/ecdict-data/
+server/tests/*.jpg
+server/tests/omr_debug_output/

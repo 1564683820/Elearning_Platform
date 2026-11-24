@@ -1,0 +1,85 @@
+<view class="page">
+  <view class="login-card">
+    <!-- Logo 区域 -->
+    <view class="logo-area">
+      <view class="logo-icon">E</view>
+      <text class="logo-title">E-Learning</text>
+      <text class="logo-subtitle">英语学习平台</text>
+    </view>
+
+    <!-- 登录/注册切换 -->
+    <view class="tab-bar">
+      <text class="tab-item {{mode==='login'?'active':''}}" bindtap="switchMode" data-mode="login">登录</text>
+      <text class="tab-item {{mode==='register'?'active':''}}" bindtap="switchMode" data-mode="register">注册</text>
+    </view>
+
+    <!-- 登录表单 -->
+    <view class="form" wx:if="{{mode==='login'}}">
+      <!-- 登录角色选择 -->
+      <view class="input-group">
+        <text class="input-label">登录身份</text>
+        <view class="role-selector">
+          <view class="role-option {{loginRole==='student'?'role-active':''}}" bindtap="onLoginRoleSelect" data-role="student">
+            <text class="role-icon">🎓</text>
+            <text>学生</text>
+          </view>
+          <view class="role-option {{loginRole==='teacher'?'role-active':''}}" bindtap="onLoginRoleSelect" data-role="teacher">
+            <text class="role-icon">👨‍🏫</text>
+            <text>教师</text>
+          </view>
+        </view>
+      </view>
+      <view class="input-group">
+        <text class="input-label">账号</text>
+        <input class="input-field" type="text" placeholder="请输入账号" value="{{account}}" bindinput="onAccountInput" />
+      </view>
+      <view class="input-group">
+        <text class="input-label">密码</text>
+        <input class="input-field" type="password" placeholder="请输入密码" value="{{password}}" bindinput="onPasswordInput" />
+      </view>
+      <button class="login-btn" bindtap="onLogin" loading="{{loading}}" disabled="{{loading}}">
+        {{loading ? '登录中...' : '登 录'}}
+      </button>
+      <view class="error-tip" wx:if="{{errorMsg}}">{{errorMsg}}</view>
+    </view>
+
+    <!-- 注册表单 -->
+    <view class="form" wx:if="{{mode==='register'}}">
+      <view class="input-group">
+        <text class="input-label">账号</text>
+        <input class="input-field" type="text" placeholder="设置登录账号" value="{{regAccount}}" bindinput="onRegAccountInput" />
+      </view>
+      <view class="input-group">
+        <text class="input-label">用户名</text>
+        <input class="input-field" type="text" placeholder="设置显示用户名" value="{{regUsername}}" bindinput="onRegUsernameInput" />
+      </view>
+      <view class="input-group">
+        <text class="input-label">密码</text>
+        <input class="input-field" type="password" placeholder="设置密码" value="{{regPassword}}" bindinput="onRegPasswordInput" />
+      </view>
+      <!-- 角色选择 -->
+      <view class="input-group">
+        <text class="input-label">注册角色</text>
+        <view class="role-selector">
+          <view class="role-option {{regRole==='student'?'role-active':''}}" bindtap="onRegRoleSelect" data-role="student">
+            <text class="role-icon">🎓</text>
+            <text>学生</text>
+          </view>
+          <view class="role-option {{regRole==='teacher'?'role-active':''}}" bindtap="onRegRoleSelect" data-role="teacher">
+            <text class="role-icon">👨‍🏫</text>
+            <text>教师</text>
+          </view>
+        </view>
+      </view>
+      <view class="input-group">
+        <text class="input-label">{{regRole==='student'?'学生':'教师'}}邀请码</text>
+        <input class="input-field" type="text" placeholder="请输入{{regRole==='student'?'学生':'教师'}}邀请码" value="{{inviteCode}}" bindinput="onInviteCodeInput" />
+      </view>
+      <button class="login-btn" bindtap="onRegister" loading="{{regLoading}}" disabled="{{regLoading}}">
+        {{regLoading ? '注册中...' : '注 册'}}
+      </button>
+      <view class="error-tip" wx:if="{{regErrorMsg}}">{{regErrorMsg}}</view>
+      <view class="hint-text">已有账号？<text class="link" bindtap="switchMode" data-mode="login">去登录</text></view>
+    </view>
+  </view>
+</view>

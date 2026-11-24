@@ -1,0 +1,27 @@
+.exam-knowledge {
+  color: #17372b;
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+  min-height: 100%;
+  margin-inline: auto;
+}
+
+.exam-knowledge-heading { display: flex; align-items: center; gap: 10px; min-height: 48px; margin-bottom: 7px; }
+.exam-knowledge-heading h1 { margin: 0; line-height: 1.2; font-size: 30px; }
+.exam-knowledge-heading a { display: grid; place-items: center; flex-shrink: 0; width: 36px; height: 36px; border: 1px solid #d3e2d5; border-radius: 100px; background: #fafdf6; color: #20694f; }
+.exam-knowledge-subtitle { margin: 4px 0 9px; font-size: 13px; color: #476358; }
+.exam-knowledge-metric { display: grid; grid-template-columns: 1fr auto; align-items: end; margin-block: 29px 22px; padding: 18px 20px 22px; border-radius: 28px; color: #fff; background: #153f33; }
+.exam-knowledge-metric > span { grid-column: 1 / -1; font-size: 14px; font-weight: 700; color: #dbf1d4; }
+.exam-knowledge-metric strong { font-size: clamp(34px, 13vw, 50px); line-height: 1.2; font-weight: 800; }
+.exam-knowledge-metric small { padding-bottom: 8px; color: #dbf1d4; font-size: 13px; }
+.exam-knowledge h2 { margin: 0 0 11px; font-size: 20px; }
+.exam-knowledge-distribution { margin: 0 0 18px; list-style: none; padding: 0 17px; border: 1px solid #d3e2d5; border-radius: 22px; background: #fafdf6; }
+.exam-knowledge-distribution li { display: grid; grid-template-columns: 62px minmax(0, 1fr) 53px; align-items: center; gap: 6px; min-height: 49px; font-size: 13px; }
+.exam-knowledge-questions { margin: 0 0 18px; padding: 0 17px; list-style: none; border: 1px solid #d3e2d5; border-radius: 22px; background: #fafdf6; }
+.exam-knowledge-questions a { display: flex; align-items: center; justify-content: space-between; min-height: 49px; color: #20694f; font-size: 14px; text-decoration: none; }
+.exam-knowledge-distribution small { text-align: right; }
+.exam-knowledge-track { height: 8px; border-radius: 100px; background: #dceedf; overflow: hidden; }
+.exam-knowledge-track i { display: block; height: 100%; border-radius: inherit; background: #a2dca8; }
+.exam-knowledge-track i[data-correct="true"] { background: #20694f; }
+.exam-knowledge-back { display: grid; place-items: center; min-height: 48px; margin-top: auto; border: 1px solid #d3e2d5; border-radius: 16px; color: #20694f; background: #fafdf6; text-decoration: none; font-size: 15px; font-weight: 700; }

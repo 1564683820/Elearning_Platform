@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>答题卡 - GraderFlow 兼容格式</title>
+<style>
+/* ===== 页面设置 ===== */
+@page { size: A4 portrait; margin: 5mm; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'SimHei', 'Microsoft YaHei', 'SimSun', sans-serif;
+  color: #000;
+  background: #fff;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ===== 答题卡外容器 ===== */
+.sheet-container {
+  width: 198mm;
+  min-height: 280mm;
+  background: #fff;
+  border: 2.5px solid #000;
+  margin: 0 auto;
+  padding: 4mm 3.5mm;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== 标题 ===== */
+.sheet-title {
+  text-align: center;
+  font-size: 17pt;
+  font-weight: 700;
+  letter-spacing: 4pt;
+  margin-bottom: 2mm;
+  padding-bottom: 1.5mm;
+  border-bottom: 2px solid #000;
+}
+
+/* ===== 顶部区域：左(学生信息) + 右(考号填涂) ===== */
+.top-section {
+  display: flex;
+  gap: 3mm;
+  margin-bottom: 2mm;
+  padding-bottom: 2mm;
+  border-bottom: 2px solid #000;
+}
+
+/* 左侧：学生信息区 */
+.left-info {
+  width: 60mm;
+  min-width: 55mm;
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+}
+.left-info .info-title {
+  font-size: 8pt;
+  font-weight: 700;
+  text-align: center;
+  padding-bottom: 0.5mm;
+  border-bottom: 1px solid #999;
+}
+.info-row {
+  display: flex;
+  align-items: flex-end;
+  font-size: 9pt;
+  gap: 1mm;
+}
+.info-label {
+  font-weight: 700;
+  white-space: nowrap;
+  min-width: 14mm;
+  text-align: right;
+}
+.info-line {
+  flex: 1;
+  border-bottom: 1.5px solid #000;
+  height: 5mm;
+  margin-bottom: 0.5mm;
+}
+.info-hint {
+  font-size: 6.5pt;
+  color: #555;
+  margin-top: 0.5mm;
+  line-height: 1.5;
+}
+
+/* 条形码区域 */
+.barcode-area {
+  margin-top: 1mm;
+  border: 1.5px dashed #999;
+  height: 12mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6.5pt;
+  color: #999;
+}
+
+/* 右侧：考号填涂区 */
+.right-id-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.id-title {
+  font-size: 8pt;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1mm;
+  letter-spacing: 2pt;
+}
+.id-hint {
+  font-size: 6pt;
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.5mm;
+}
+
+/* 考号网格 */
+.id-grid {
+  display: flex;
+  gap: 1.2mm;
+  justify-content: center;
+}
+.id-digit-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3mm;
+}
+.id-digit-header {
+  width: 6.5mm;
+  height: 6mm;
+  border: 1.3px solid #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7pt;
+  font-weight: 700;
+  background: #f8f8f8;
+  margin-bottom: 0.3mm;
+}
+.id-digit-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3mm;
+}
+.id-box {
+  width: 6.5mm;
+  height: 4.2mm;
+  border: 1.3px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7pt;
+  font-weight: 700;
+  background: #fff;
+}
+
+/* ===== 题目区域 ===== */
+.questions-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+}
+
+/* 每组 area 行 */
+.area-row {
+  display: flex;
+  gap: 3mm;
+  justify-content: space-between;
+}
+
+/* 单个 answerArea */
+.answer-area {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background: #fcfcfc;
+  padding: 0.8mm 0.8mm;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5mm;
+  /* 每个area是一个YOLO检测单元 */
+}
+
+/* 每道题的行 */
+.question-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3mm;
+  height: 6mm;
+}
+
+/* 题号 */
+.q-number {
+  font-size: 7pt;
+  font-weight: 700;
+  min-width: 5mm;
+  text-align: right;
+  padding-right: 0.3mm;
+  color: #333;
+  flex-shrink: 0;
+}
+
+/* 选项字母标签 */
+.q-option-label {
+  font-size: 6pt;
+  font-weight: 700;
+  color: #555;
+  min-width: 2.5mm;
+  text-align: center;
+}
+
+/* 填涂矩形框 */
+.fill-box {
+  width: 5mm;
+  height: 4.2mm;
+  border: 1.5px solid #000;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+/* 选项间距 */
+.option-group {
+  display: flex;
+  gap: 0.8mm;
+  align-items: center;
+}
+
+/* ===== 四角定位标记 ===== */
+.corner-mark {
+  position: absolute;
+  width: 2.5mm;
+  height: 2.5mm;
+  background: #000;
+  border: 0.3mm solid #000;
+}
+.corner-tl { top: 1.5mm; left: 1.5mm; }
+.corner-tr { top: 1.5mm; right: 1.5mm; }
+.corner-bl { bottom: 1.5mm; left: 1.5mm; }
+.corner-br { bottom: 1.5mm; right: 1.5mm; }
+
+/* ===== 图例说明 ===== */
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 2.5mm;
+  margin-top: 2mm;
+  font-size: 6pt;
+  align-items: center;
+}
+.legend-item { display: flex; align-items: center; gap: 0.5mm; }
+.legend-box {
+  border: 1.5px solid #000;
+  width: 3.5mm;
+  height: 3mm;
+  background: #fff;
+  display: inline-block;
+}
+.legend-box-fill {
+  border: 1.5px solid #000;
+  width: 3.5mm;
+  height: 3mm;
+  background: #000;
+  display: inline-block;
+}
+
+/* ===== 页脚 ===== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5mm;
+  margin-top: 1.5mm;
+  border-top: 1px solid #000;
+  font-size: 5.5pt;
+  color: #666;
+}
+
+/* ===== 打印优化 ===== */
+@media print {
+  body { background: #fff; }
+  .sheet-container { border: 2.5px solid #000; }
+}
+</style>
+</head>
+<body>
+
+<div class="sheet-container">
+
+  <!-- 四角定位标记 -->
+  <div class="corner-mark corner-tl"></div>
+  <div class="corner-mark corner-tr"></div>
+  <div class="corner-mark corner-bl"></div>
+  <div class="corner-mark corner-br"></div>
+
+  <!-- 标题 -->
+  <div class="sheet-title">答  题  卡</div>
+
+  <!-- 顶部：学生信息 + 考号填涂 -->
+  <div class="top-section">
+    <!-- 左侧：学生信息 -->
+    <div class="left-info">
+      <div class="info-title">▼ 请用黑色签字笔填写</div>
+      <div class="info-row">
+        <span class="info-label">姓　名</span>
+        <span class="info-line"></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">班　级</span>
+        <span class="info-line"></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">学　校</span>
+        <span class="info-line"></span>
+      </div>
+
+      <!-- 条形码粘贴区 -->
+      <div style="font-size:7pt;font-weight:700;margin-top:1mm;">条形码粘贴区 ▼</div>
+      <div class="barcode-area">
+        条形码粘贴处（由监考老师粘贴）
+      </div>
+
+      <div class="info-hint">
+        1. 用 2B 铅笔将对应选项矩形框涂黑<br>
+        2. 修改答案请用橡皮擦干净<br>
+        3. 保持卡面平整、清洁
+      </div>
+    </div>
+
+    <!-- 右侧：考号填涂区 -->
+    <div class="right-id-area">
+      <div class="id-title">考 号 填 涂 区</div>
+      <div class="id-hint">
+        （用 2B 铅笔涂黑对应数字，位数不足7位在前面补0）
+      </div>
+      <div class="id-grid" id="idGrid">
+        <!-- JS 动态生成 7 位考号列，每位 0-9 -->
+      </div>
+      <div style="margin-top:2mm;text-align:center;">
+        <div style="display:flex;gap:1.2mm;justify-content:center;font-size:6.5pt;font-weight:700;color:#555;">
+          <span style="width:6.5mm;text-align:center;">1</span>
+          <span style="width:6.5mm;text-align:center;">2</span>
+          <span style="width:6.5mm;text-align:center;">3</span>
+          <span style="width:6.5mm;text-align:center;">4</span>
+          <span style="width:6.5mm;text-align:center;">5</span>
+          <span style="width:6.5mm;text-align:center;">6</span>
+          <span style="width:6.5mm;text-align:center;">7</span>
+        </div>
+        <div style="font-size:5.5pt;color:#999;">← 考号位数（从左到右）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 题目填涂区 -->
+  <div class="questions-section" id="questionsSection">
+    <!-- JS 动态生成 -->
+  </div>
+
+  <!-- 图例说明 -->
+  <div class="legend">
+    <div class="legend-item">
+      <span>正确填涂：</span>
+      <span class="legend-box-fill"></span>
+    </div>
+    <div class="legend-item">
+      <span>错误填涂：</span>
+      <span class="legend-box"></span>
+      <span style="margin-left:1mm;font-size:7pt;color:#888;">✗</span>
+    </div>
+    <div class="legend-item">
+      <span style="color:#888;">|</span>
+    </div>
+    <div class="legend-item">
+      <span>缺考标记：</span>
+      <span class="legend-box" style="margin-left:1mm;"></span>
+      <span style="font-size:5pt;color:#999;">监考员填涂</span>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ===================================================================
+// 答题卡数据配置
+// 修改以下参数即可调整答题卡布局
+// ===================================================================
+const CONFIG = {
+  questionCount: 40,       // 总题数
+  optionsPerQuestion: 4,   // 每题选项数 (4=A/B/C/D, 7=A/B/C/D/E/F/G)
+  questionsPerArea: 5,     // 每个 answerArea 包含题数 (匹配 group_size)
+  idDigits: 7,              // 考号位数
+  idOptions: ['0','1','2','3','4','5','6','7','8','9'], // 考号可选数字
+  areaRowGap: '4mm',       // answerArea 行间距
+  areaColGap: '3mm',       // answerArea 列间距
+};
+
+// 自动计算列数：超过4个选项用2列，否则4列
+CONFIG.columnsPerRow = CONFIG.optionsPerQuestion > 4 ? 2 : 4;
+
+// ===================================================================
+// 生成考号填涂区
+// ===================================================================
+function generateIdGrid() {
+  const grid = document.getElementById('idGrid');
+  for (let d = 0; d < CONFIG.idDigits; d++) {
+    const col = document.createElement('div');
+    col.className = 'id-digit-col';
+    const header = document.createElement('div');
+    header.className = 'id-digit-header';
+    col.appendChild(header);
+
+    const options = document.createElement('div');
+    options.className = 'id-digit-options';
+    for (const opt of CONFIG.idOptions) {
+      const box = document.createElement('span');
+      box.className = 'id-box';
+      box.textContent = opt;
+      options.appendChild(box);
+    }
+    col.appendChild(options);
+    grid.appendChild(col);
+  }
+}
+
+// ===================================================================
+// 生成题目填涂区
+// ===================================================================
+function generateQuestions() {
+  const section = document.getElementById('questionsSection');
+  const totalAreas = Math.ceil(CONFIG.questionCount / CONFIG.questionsPerArea);
+  const rowsNeeded = Math.ceil(totalAreas / CONFIG.columnsPerRow);
+
+  for (let row = 0; row < rowsNeeded; row++) {
+    const areaRow = document.createElement('div');
+    areaRow.className = 'area-row';
+    areaRow.style.gap = CONFIG.areaColGap;
+
+    for (let col = 0; col < CONFIG.columnsPerRow; col++) {
+      const areaIndex = row * CONFIG.columnsPerRow + col;
+      if (areaIndex >= totalAreas) break;
+
+      const area = document.createElement('div');
+      area.className = 'answer-area';
+
+      // 每个 area 内的问题
+      const startQ = areaIndex * CONFIG.questionsPerArea + 1;
+      const endQ = Math.min(startQ + CONFIG.questionsPerArea - 1, CONFIG.questionCount);
+
+      for (let q = startQ; q <= endQ; q++) {
+        const qRow = document.createElement('div');
+        qRow.className = 'question-row';
+
+        // 题号
+        const num = document.createElement('span');
+        num.className = 'q-number';
+        num.textContent = q + '.';
+        qRow.appendChild(num);
+
+        // 选项组
+        const optGroup = document.createElement('span');
+        optGroup.className = 'option-group';
+        for (let o = 0; o < CONFIG.optionsPerQuestion; o++) {
+          const label = document.createElement('span');
+          label.className = 'q-option-label';
+          label.textContent = String.fromCharCode(65 + o); // A, B, C, D...
+          optGroup.appendChild(label);
+
+          const box = document.createElement('span');
+          box.className = 'fill-box';
+          // 数据属性用于调试/验证
+          box.setAttribute('data-q', q);
+          box.setAttribute('data-opt', String.fromCharCode(65 + o));
+          box.setAttribute('data-area', areaIndex + 1);
+          optGroup.appendChild(box);
+        }
+        qRow.appendChild(optGroup);
+        area.appendChild(qRow);
+      }
+
+      areaRow.appendChild(area);
+    }
+    section.appendChild(areaRow);
+  }
+}
+
+// ===================================================================
+// 初始化
+// ===================================================================
+document.addEventListener('DOMContentLoaded', () => {
+  generateIdGrid();
+  generateQuestions();
+  console.log(`✅ 答题卡已生成: ${CONFIG.questionCount}题 × ${CONFIG.optionsPerQuestion}选项 × ${CONFIG.idDigits}位考号`);
+  console.log(`   YOLO answerArea 网格: ${Math.ceil(CONFIG.questionCount / CONFIG.questionsPerArea)}个区域`);
+  console.log(`   布局: ${CONFIG.columnsPerRow}列 × ${Math.ceil(Math.ceil(CONFIG.questionCount / CONFIG.questionsPerArea) / CONFIG.columnsPerRow)}行`);
+  console.log(`   填涂框: 矩形 ${5.0}mm × ${4.2}mm, 边框1.5px`);
+});
+</script>
+
+</body>
+</html>

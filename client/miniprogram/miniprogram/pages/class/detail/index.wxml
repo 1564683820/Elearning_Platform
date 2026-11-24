@@ -1,0 +1,57 @@
+<!-- 班级详情 -->
+<view class="page">
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <view wx:else>
+    <!-- 班级信息卡片 -->
+    <view class="class-card" wx:if="{{classInfo}}">
+      <view class="class-badge">班级</view>
+      <text class="class-name">{{classInfo.name}}</text>
+      <text class="class-teacher">{{classInfo.teacherName}}</text>
+      <text class="class-desc">{{classInfo.description}}</text>
+      <view class="class-meta">
+        <view class="meta-item">
+          <text class="meta-text">{{classInfo.studentCount}} 名同学</text>
+        </view>
+        <view class="meta-item">
+          <text class="meta-text">加入于 {{classInfo.joinedAt}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 班级公告 -->
+    <view class="section">
+      <view class="section-header">
+        <text class="section-title">班级公告</text>
+      </view>
+      <view class="section-body">
+        <view class="notice-item">
+          <text class="notice-icon"></text>
+          <text class="notice-text">欢迎加入班级！耐心等待老师发布学习任务和考试。</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 班级考试 -->
+    <view class="section" wx:if="{{exams.length > 0}}">
+      <view class="section-header">
+        <text class="section-title">📝 班级考试</text>
+      </view>
+      <view class="section-body">
+        <view class="exam-item" wx:for="{{exams}}" wx:key="id" data-id="{{item.id}}" bindtap="onExamTap">
+          <view class="exam-info">
+            <text class="exam-name">{{item.title || item.name}}</text>
+            <text class="exam-status {{item.status}}">{{item.status === 'pending' ? '待完成' : item.status === 'completed' ? '已完成' : '进行中'}}</text>
+          </view>
+          <text class="exam-arrow">›</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 加入新班级 -->
+    <view class="join-btn" bindtap="onJoinNewClass">
+      <text class="join-icon">+</text>
+      <text class="join-text">加入新班级</text>
+    </view>
+  </view>
+</view>

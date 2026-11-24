@@ -1,0 +1,111 @@
+<view class="page">
+  <!-- 顶部 Header -->
+  <view class="header">
+    <view class="header-bg"></view>
+    <view class="header-content">
+      <view class="header-text">
+        <text class="header-title">我的考试</text>
+        <text class="header-subtitle">查看教师发布的试卷与练习</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 状态筛选栏 -->
+  <view class="filter-bar">
+    <view
+      class="filter-tab {{statusFilter === item.key ? 'active' : ''}}"
+      wx:for="{{filterTabs}}" wx:key="key"
+      data-key="{{item.key}}"
+      bindtap="onFilterTap"
+    >
+      <text class="filter-label">{{item.label}}</text>
+      <text class="filter-count" wx:if="{{item.key === statusFilter && total > 0}}">{{total}}</text>
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-state" wx:if="{{loading && exams.length === 0}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- 错误状态 -->
+  <view class="error-state" wx:if="{{error && exams.length === 0}}">
+    <text class="error-icon">!</text>
+    <text class="error-text">{{errorMsg || '加载失败'}}</text>
+    <view class="retry-btn" bindtap="onRetry">
+      <text>重新加载</text>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{!loading && !error && exams.length === 0}}">
+    <text class="empty-title">
+      {{statusFilter === 'pending' ? '暂无未提交的考试' : statusFilter === 'submitted' ? '暂无已提交的考试' : '暂无考试任务'}}
+    </text>
+    <text class="empty-desc">
+      {{statusFilter === 'pending' ? '当你加入班级后，教师发布的考试将显示在这里' : statusFilter === 'submitted' ? '完成考试后，结果将显示在这里' : '请先加入班级，等待教师发布考试'}}
+    </text>
+  </view>
+
+  <!-- 考试列表 -->
+  <scroll-view class="exam-list" scroll-y enhanced show-scrollbar="{{false}}"
+    wx:if="{{exams.length > 0}}"
+    bindscrolltolower="onReachBottom"
+  >
+    <view
+      class="exam-card"
+      wx:for="{{exams}}" wx:key="id"
+      bindtap="startExam"
+      data-id="{{item.id}}"
+    >
+      <!-- 顶部：班级标签 + 状态 -->
+      <view class="exam-top">
+        <text class="exam-class-tag" wx:if="{{item.class_name}}">{{item.class_name}}</text>
+        <text class="exam-status-tag {{item.my_submission ? 'done' : 'pending'}}">
+          {{item.my_submission ? '已完成' : '待完成'}}
+        </text>
+      </view>
+
+      <!-- 标题 -->
+      <text class="exam-title">{{item.title || '未命名试卷'}}</text>
+
+      <!-- 标签行 -->
+      <view class="exam-tags">
+        <text class="tag tag-diff-{{item.difficulty || 1}}">
+          {{['', '简单', '中等', '困难'][item.difficulty] || '中等'}}
+        </text>
+        <text class="tag">{{item.duration_minutes || '-'}}分钟</text>
+        <text class="tag">{{item.total_score}}分</text>
+        <text class="tag">{{item.question_count}}题</text>
+      </view>
+
+      <!-- 描述 -->
+      <text class="exam-desc" wx:if="{{item.description}}">{{item.description}}</text>
+
+      <!-- 底部：分数 / 提交信息 -->
+      <view class="exam-footer" wx:if="{{item.my_submission || item.submission_count > 0}}">
+        <view class="footer-left">
+          <text wx:if="{{item.my_submission && item.my_submission.score != null}}">
+            我的得分: <text class="score-num {{item.avg_score && item.my_submission.score >= item.avg_score ? 'good' : ''}}">{{item.my_submission.score}}</text> 分
+          </text>
+          <text wx:elif="{{item.submission_count > 0}}">
+            班级均分: {{item.avg_score != null ? item.avg_score + '分' : '暂无'}}
+          </text>
+        </view>
+        <text class="footer-right">
+          {{item.submission_count > 0 ? item.submission_count + '人已提交' : ''}}
+        </text>
+      </view>
+    </view>
+
+    <!-- 加载更多 -->
+    <view class="load-more" wx:if="{{loadingMore}}">
+      <view class="loading-spinner sm"></view>
+      <text>加载更多...</text>
+    </view>
+    <view class="load-more no-more" wx:if="{{!hasMore && exams.length > 0}}">
+      <text>— 已展示全部 {{total}} 张试卷 —</text>
+    </view>
+  </scroll-view>
+</view>

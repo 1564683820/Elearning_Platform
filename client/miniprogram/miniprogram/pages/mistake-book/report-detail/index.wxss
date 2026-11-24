@@ -1,0 +1,146 @@
+/* 报告详情页样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #FFFFFF;
+}
+
+/* 顶部操作栏 */
+.action-bar {
+  display: flex;
+  gap: 20rpx;
+  padding: 16rpx 32rpx;
+  border-bottom: 2rpx solid #F3F4F6;
+  flex-shrink: 0;
+  background: #FFFFFF;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.action-btn {
+  flex: 1;
+  font-size: 26rpx;
+  font-weight: 700;
+  border: none;
+  border-radius: 12rpx;
+  padding: 16rpx 0;
+  text-align: center;
+  line-height: 1;
+}
+
+.copy-btn {
+  background: #5B9E6F;
+  color: #FFFFFF;
+}
+
+.copy-btn:active {
+  background: #4A8D5F;
+}
+
+.export-btn {
+  background: #3B82F6;
+  color: #FFFFFF;
+}
+
+.export-btn:active {
+  background: #2563EB;
+}
+
+.report-header {
+  padding: 20rpx 32rpx 16rpx;
+  border-bottom: 2rpx solid #F3F4F6;
+  flex-shrink: 0;
+}
+
+.report-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 8rpx;
+}
+
+.report-date {
+  display: block;
+  font-size: 24rpx;
+  color: #9CA3AF;
+}
+
+.report-desc {
+  display: block;
+  font-size: 24rpx;
+  color: #5B9E6F;
+  margin-top: 4rpx;
+}
+
+.report-body {
+  flex: 1;
+  padding: 24rpx 32rpx;
+}
+
+.report-content {
+  min-height: 100%;
+}
+
+.report-text {
+  font-size: 28rpx;
+  color: #374151;
+  line-height: 2;
+  word-break: break-word;
+}
+
+/* rich-text 内嵌标签样式继承 */
+.report-text strong {
+  font-weight: 700;
+}
+.report-text em {
+  font-style: italic;
+}
+.report-text ul {
+  padding-left: 32rpx;
+}
+.report-text ol {
+  padding-left: 32rpx;
+}
+
+.empty-state {
+  display: flex;
+  justify-content: center;
+  padding: 120rpx 0;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #9CA3AF;
+}
+
+/* 加载状态 */
+.loading-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 200rpx 0;
+}
+
+.loading-spinner {
+  width: 64rpx;
+  height: 64rpx;
+  border: 6rpx solid #E8F5E9;
+  border-top-color: #5B9E6F;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 16rpx;
+}
+
+.loading-text {
+  font-size: 26rpx;
+  color: #9CA3AF;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

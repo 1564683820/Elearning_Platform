@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "实时语音对话",
+  "navigationStyle": "custom",
+  "component": true,
+  "usingComponents": {}
+}

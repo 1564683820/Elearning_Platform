@@ -1,0 +1,107 @@
+<view class="page">
+  <!-- 顶部 -->
+  <view class="top-bar">
+    <button class="back-btn" bindtap="onBack">‹ 返回</button>
+    <text class="top-title">成绩分析</text>
+    <view class="top-right">{{className}}</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading-view">加载中...</view>
+
+  <scroll-view scroll-y class="scroll-area" wx:else>
+    <!-- 概况卡片 -->
+    <view class="summary-cards">
+      <view class="summary-card primary">
+        <text class="summary-num">{{examCount}}</text>
+        <text class="summary-lbl">考试次数</text>
+      </view>
+      <view class="summary-card success">
+        <text class="summary-num">{{avgScore}}</text>
+        <text class="summary-lbl">平均分</text>
+      </view>
+      <view class="summary-card warn" wx:if="{{scores.length > 0}}">
+        <text class="summary-num">{{scores[scores.length - 1].score || 0}}/{{scores[scores.length - 1].max_score || 100}}</text>
+        <text class="summary-lbl">最近成绩</text>
+      </view>
+    </view>
+
+    <!-- ===== 成绩走向 ===== -->
+    <view class="section" wx:if="{{scores.length > 0}}">
+      <text class="section-title">📈 成绩走向</text>
+
+      <!-- 图表区 -->
+      <view class="trend-chart">
+        <view class="y-axis">
+          <text class="y-label">100</text>
+          <text class="y-label">75</text>
+          <text class="y-label">50</text>
+          <text class="y-label">25</text>
+          <text class="y-label">0</text>
+        </view>
+        <view class="chart-area">
+          <!-- 网格线 -->
+          <view class="grid-line" style="top:0%"></view>
+          <view class="grid-line" style="top:25%"></view>
+          <view class="grid-line" style="top:50%"></view>
+          <view class="grid-line" style="top:75%"></view>
+          <view class="grid-line" style="bottom:0"></view>
+
+          <!-- 柱状图 -->
+          <view class="bars-container">
+            <view
+              class="bar-item"
+              wx:for="{{scores}}" wx:key="index" wx:for-item="s"
+              data-index="{{index}}"
+              bindtap="onScoreTap"
+            >
+              <view class="bar-wrapper">
+                <view
+                  class="bar-fill"
+                  style="height:{{(s.score / s.max_score) * 100}}%;"
+                >
+                  <text class="bar-val">{{s.score}}</text>
+                </view>
+              </view>
+              <text class="bar-label">{{index + 1}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 成绩列表 -->
+      <view class="score-list">
+        <view class="score-item" wx:for="{{scores}}" wx:key="index" wx:for-item="s">
+          <text class="score-name">{{s.exam_title || ('考试' + (index + 1))}}</text>
+          <view class="score-right">
+            <text class="score-val {{s.score >= s.max_score * 0.6 ? 'good' : 'bad'}}">{{s.score}}分</text>
+            <text class="score-date">{{formatDate(s.submitted_at)}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- ===== 题型错误占比 ===== -->
+    <view class="section" wx:if="{{typeStats.length > 0}}">
+      <text class="section-title">🎯 题型错误占比</text>
+      <view class="error-list">
+        <view class="error-item" wx:for="{{typeStats}}" wx:key="type">
+          <view class="error-top">
+            <text class="error-label">{{item.label}}</text>
+            <text class="error-count">{{item.wrong}}/{{item.total}} 错</text>
+          </view>
+          <view class="error-track">
+            <view class="error-fill" style="width:{{item.error_rate}}%;"></view>
+          </view>
+          <text class="error-pct">{{item.error_rate}}%</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{!loading && scores.length === 0 && typeStats.length === 0}}">
+      <text class="empty-icon">📊</text>
+      <text class="empty-text">暂无考试数据</text>
+      <text class="empty-desc">完成考试后这里将展示成绩分析</text>
+    </view>
+  </scroll-view>
+</view>

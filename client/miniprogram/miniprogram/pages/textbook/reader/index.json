@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "教材点读",
+  "navigationBarBackgroundColor": "#5B9E6F",
+  "navigationBarTextStyle": "white",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "textbook-audio": "/components/textbook-audio/textbook-audio"
+  }
+}

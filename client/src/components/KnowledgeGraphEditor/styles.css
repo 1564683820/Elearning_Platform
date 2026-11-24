@@ -1,0 +1,233 @@
+/* 知识图谱编辑器样式 */
+.kg-editor {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.kg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.kg-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.kg-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.kg-section {
+  margin-bottom: 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.kg-section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e8e8e8;
+  cursor: grab;
+}
+
+.kg-section-header:active {
+  cursor: grabbing;
+}
+
+.kg-section-icon {
+  display: flex;
+  align-items: center;
+  color: #2d7d46;
+}
+
+.kg-section-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  border: none;
+  background: transparent;
+  padding: 2px 4px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.kg-section-title:focus {
+  background: #fff;
+  border: 1px solid #2d7d46;
+  box-shadow: 0 0 0 2px rgba(45,125,70,0.15);
+}
+
+.kg-section-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.kg-node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px 8px 36px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.15s;
+}
+
+.kg-node:last-child {
+  border-bottom: none;
+}
+
+.kg-node:hover {
+  background: #fafafa;
+}
+
+.kg-node-icon {
+  display: flex;
+  align-items: center;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.kg-node-title {
+  flex: 1;
+  font-size: 13px;
+  color: #555;
+  border: none;
+  background: transparent;
+  padding: 2px 4px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.kg-node-title:focus {
+  background: #fff;
+  border: 1px solid #2d7d46;
+  box-shadow: 0 0 0 2px rgba(45,125,70,0.15);
+}
+
+.kg-node-type {
+  font-size: 11px;
+  color: #999;
+  background: #f0f0f0;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.kg-node-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.kg-node:hover .kg-node-actions {
+  opacity: 1;
+}
+
+.kg-section:hover .kg-section-header .kg-section-actions {
+  opacity: 1;
+}
+
+.kg-section-header .kg-section-actions {
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.kg-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  background: transparent;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.kg-add-btn:hover {
+  border-color: #2d7d46;
+  color: #2d7d46;
+  background: #f0faf3;
+}
+
+.kg-add-section {
+  margin-top: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.kg-add-node {
+  margin: 4px 0 4px 36px;
+}
+
+.kg-small-btn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+
+.kg-small-btn:hover {
+  background: #f0f0f0;
+}
+
+.kg-small-btn.edit:hover {
+  color: #1565c0;
+  background: #e3f2fd;
+}
+
+.kg-small-btn.delete:hover {
+  color: #c62828;
+  background: #ffebee;
+}
+
+.kg-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.kg-status-badge.draft {
+  background: #fff8e1;
+  color: #f57f17;
+}
+
+.kg-status-badge.confirmed {
+  background: #e8f5e9;
+  color: #2d7d46;
+}
+
+.kg-empty {
+  text-align: center;
+  padding: 40px;
+  color: #999;
+  font-size: 14px;
+}

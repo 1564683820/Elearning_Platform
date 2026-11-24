@@ -1,0 +1,232 @@
+.page {
+  padding: 20rpx 30rpx 60rpx;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+/* 当前会员状态卡 */
+.status-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20rpx;
+  padding: 40rpx;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30rpx;
+}
+
+.status-card.vip_student { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.status-card.vip_teacher { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.status-card.vip_teacher_pro { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+
+.status-icon { font-size: 60rpx; margin-bottom: 10rpx; }
+.status-name { font-size: 36rpx; font-weight: 700; }
+.status-expire { font-size: 24rpx; opacity: 0.85; margin-top: 10rpx; }
+.status-expire.expired { opacity: 0.7; }
+
+/* 分区标题 */
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin: 30rpx 0 20rpx;
+  padding-left: 10rpx;
+  border-left: 6rpx solid #4facfe;
+}
+
+/* 套餐列表 */
+.plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.plan-card {
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  border: 2rpx solid transparent;
+  transition: all 0.3s;
+}
+
+.plan-card.selected {
+  border-color: #4facfe;
+  box-shadow: 0 4rpx 20rpx rgba(79, 172, 254, 0.2);
+}
+
+.plan-header {
+  padding: 30rpx;
+  text-align: center;
+  color: #fff;
+}
+
+.plan-header.vip_student { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.plan-header.vip_teacher { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.plan-header.vip_teacher_pro { background: linear-gradient(135deg, #fa709a, #fee140); }
+
+.plan-name { font-size: 32rpx; font-weight: 600; }
+
+.plan-price {
+  margin: 10rpx 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.price-symbol { font-size: 28rpx; }
+.price-value { font-size: 56rpx; font-weight: 700; }
+.price-unit { font-size: 24rpx; opacity: 0.85; }
+
+.plan-yearly {
+  font-size: 22rpx;
+  opacity: 0.85;
+}
+
+.plan-body { padding: 24rpx; }
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  padding: 8rpx 0;
+  font-size: 26rpx;
+}
+
+.feature-icon {
+  color: #52c41a;
+  font-weight: 700;
+  margin-right: 12rpx;
+  width: 30rpx;
+  text-align: center;
+}
+
+.feature-text { color: #555; }
+
+.plan-footer {
+  padding: 0 24rpx 24rpx;
+  display: flex;
+  gap: 16rpx;
+}
+
+.buy-btn {
+  flex: 1;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  font-size: 26rpx;
+  border-radius: 12rpx;
+  background: #f0f5ff;
+  color: #4facfe;
+  border: none;
+  padding: 0;
+}
+
+.buy-btn.yearly {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+}
+
+/* 兑换码 */
+.redeem-section {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+}
+
+.redeem-input-group {
+  display: flex;
+  gap: 16rpx;
+}
+
+.redeem-input {
+  flex: 1;
+  height: 72rpx;
+  border: 2rpx solid #e8e8e8;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  font-size: 26rpx;
+  font-family: monospace;
+}
+
+.redeem-btn {
+  flex-shrink: 0;
+  height: 72rpx;
+  line-height: 72rpx;
+  padding: 0 30rpx;
+  font-size: 26rpx;
+  border-radius: 12rpx;
+  background: #52c41a;
+  color: #fff;
+  border: none;
+}
+
+.redeem-btn[disabled] {
+  opacity: 0.5;
+}
+
+.redeem-tip {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 12rpx;
+}
+
+/* 订单记录 */
+.order-list {
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.order-item {
+  padding: 24rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-plan { font-size: 28rpx; font-weight: 500; }
+.order-amount { font-size: 28rpx; font-weight: 600; color: #f5222d; }
+
+.order-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8rpx;
+  font-size: 22rpx;
+}
+
+.order-status { color: #999; }
+.order-status.paid { color: #52c41a; }
+.order-status.pending { color: #faad14; }
+.order-status.refunded { color: #f5222d; }
+.order-status.cancelled { color: #999; }
+
+.order-date { color: #ccc; }
+
+.empty-hint {
+  padding: 40rpx;
+  text-align: center;
+  color: #ccc;
+  font-size: 26rpx;
+}
+
+/* 功能限制提示 */
+.limit-info {
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.limit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 24rpx;
+  border-bottom: 2rpx solid #f5f5f5;
+}
+
+.limit-name { font-size: 26rpx; color: #333; }
+.limit-value { font-size: 24rpx; }
+.limit-value.limit { color: #faad14; }
+.limit-value.limit-free { color: #f5222d; }

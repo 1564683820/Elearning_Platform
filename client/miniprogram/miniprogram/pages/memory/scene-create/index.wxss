@@ -1,0 +1,154 @@
+/* 情景记忆视频创建页 */
+
+/* 说明卡片 */
+.intro-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.intro-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.intro-desc {
+  font-size: 24rpx;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* 章节标签 */
+.section-label {
+  font-size: 24rpx;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 16rpx;
+  text-transform: uppercase;
+  letter-spacing: 1rpx;
+}
+
+/* 加载与空状态 */
+.loading-state,
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 0;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  margin-bottom: 20rpx;
+}
+
+.loading-text,
+.empty-text {
+  font-size: 28rpx;
+  color: var(--text-muted);
+  margin-bottom: 12rpx;
+}
+
+.empty-hint {
+  font-size: 24rpx;
+  color: var(--text-light);
+  margin-bottom: 32rpx;
+}
+
+/* 情景列表 */
+.scenario-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+/* 情景卡片 */
+.scenario-card {
+  position: relative;
+  padding: 32rpx;
+  border: 3rpx solid transparent;
+  transition: all 0.2s ease;
+}
+
+.scenario-card.selected {
+  border-color: var(--primary);
+  background: var(--primary-bg);
+}
+
+.scenario-header {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  margin-bottom: 16rpx;
+}
+
+.scenario-type {
+  font-size: 22rpx;
+}
+
+.scenario-date {
+  font-size: 22rpx;
+  color: var(--text-light);
+}
+
+/* 文段预览 */
+.scenario-preview {
+  margin-bottom: 16rpx;
+}
+
+.preview-text {
+  font-size: 26rpx;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 关联单词标签 */
+.scenario-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+/* 选中标记 */
+.scenario-check {
+  position: absolute;
+  top: 16rpx;
+  right: 16rpx;
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check-icon {
+  font-size: 24rpx;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* 创建按钮 */
+.create-btn {
+  margin: 40rpx 0 48rpx;
+}
+
+.create-btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-icon {
+  font-size: 28rpx;
+}
+
+/* 内容区重载 - 去除padding干扰 */
+.content-area {
+  padding: 0;
+}

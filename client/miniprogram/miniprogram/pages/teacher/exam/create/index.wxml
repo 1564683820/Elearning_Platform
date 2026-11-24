@@ -1,0 +1,189 @@
+<view class="page">
+  <!-- 步骤指示器 -->
+  <view class="step-indicator">
+    <view class="step {{step >= 1 ? 'active' : ''}} {{step === 1 ? 'current' : ''}}">
+      <view class="step-dot"><text class="step-num">1</text></view>
+      <text class="step-label">试卷信息</text>
+    </view>
+    <view class="step-line {{step >= 2 ? 'active' : ''}}"></view>
+    <view class="step {{step >= 2 ? 'active' : ''}} {{step === 2 ? 'current' : ''}}">
+      <view class="step-dot"><text class="step-num">2</text></view>
+      <text class="step-label">题目设置</text>
+    </view>
+  </view>
+
+  <!-- ===== 步骤1: 试卷信息 ===== -->
+  <view class="step-content animate-in" wx:if="{{step === 1}}">
+    <view class="exam-create-hero">
+      <view class="exam-hero-top">
+        <view class="exam-sprout">
+          <view class="exam-sprout-leaf"></view>
+          <view class="exam-sprout-leaf exam-sprout-leaf2"></view>
+        </view>
+        <view class="exam-hero-text">
+          <text class="exam-hero-en">NEW EXAM</text>
+          <text class="exam-hero-title">新建选择题试卷</text>
+          <text class="exam-hero-sub">输入试卷名称，可选上传电子版</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 名称输入 -->
+    <view class="exam-name-card">
+      <text class="exam-name-label">试卷名称</text>
+      <view class="exam-name-input-wrap">
+        <input class="exam-name-input" placeholder="如：五年级英语第三单元测验" value="{{examName}}" bindinput="onExamNameInput" />
+      </view>
+      <view class="exam-name-foot">
+        <view class="exam-name-tip"></view>
+        <text class="exam-name-hint">建议使用清晰易辨的名称</text>
+        <text class="exam-name-count">{{examName.length}}/128</text>
+      </view>
+    </view>
+
+    <!-- 上传电子版（可选） -->
+    <view class="exam-upload-card">
+      <text class="upload-section-title">添加试卷电子版（可选）</text>
+      <text class="upload-section-sub">上传后可用于后续错题对照</text>
+      <view class="upload-body" wx:if="{{!hasPaperFile}}">
+        <view class="upload-area" bindtap="choosePaperFile">
+          <view class="upload-icon-wrap"><text class="upload-icon">+</text></view>
+          <text class="upload-text">选择图片或PDF文件</text>
+          <text class="upload-hint">支持 jpg/png/pdf，≤20MB</text>
+        </view>
+      </view>
+      <view class="file-info" wx:else>
+        <view class="file-info-left">
+          <view class="file-icon"></view>
+          <text class="file-name">已选择文件</text>
+        </view>
+        <button class="file-remove" bindtap="removePaperFile">移除</button>
+      </view>
+    </view>
+
+    <!-- 下一步按钮 -->
+    <view class="exam-actions">
+      <button class="exam-next-btn" bindtap="nextStep1">下一步</button>
+    </view>
+  </view>
+
+  <!-- ===== 步骤2: 题目设置（模板+自定义） ===== -->
+  <scroll-view class="step-content animate-in step2-scroll" scroll-y wx:if="{{step === 2}}">
+    <!-- 模板区 -->
+    <view class="template-section">
+      <view class="template-header">
+        <text class="template-title">选择题模板</text>
+        <text class="template-hint" wx:if="{{templates.length === 0}}">暂无保存的模板</text>
+      </view>
+      <scroll-view class="template-list" scroll-x wx:if="{{templates.length > 0}}">
+        <view
+          class="template-card {{selectedTemplateId === item.id ? 'selected' : ''}}"
+          wx:for="{{templates}}" wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="selectTemplate"
+        >
+          <view class="template-card-top">
+            <text class="template-name">{{item.name}}</text>
+            <view class="template-remove" data-id="{{item.id}}" catchtap="deleteTemplate">
+              <text class="template-remove-icon">×</text>
+            </view>
+          </view>
+          <view class="template-meta">
+            <text>{{item.questionCount}}题 · {{item.optionCount}}选项</text>
+            <text> {{item.uniformScore}}分/题</text>
+          </view>
+          <view class="template-select-badge" wx:if="{{selectedTemplateId === item.id}}">已选</view>
+        </view>
+      </scroll-view>
+      <view class="template-deselect" wx:if="{{selectedTemplateId}}" bindtap="deselectTemplate">
+        <text>取消选择模板</text>
+      </view>
+    </view>
+
+    <!-- 自定义设置区 -->
+    <view class="custom-section">
+      <view class="custom-header">
+        <text class="custom-title">自定义设置</text>
+        <button class="save-template-btn" bindtap="openSaveTemplate">保存为模板</button>
+      </view>
+
+      <!-- 题型选择 -->
+      <view class="setting-card">
+        <text class="setting-label">题型</text>
+        <view class="type-toggle">
+          <text class="type-option {{questionType === 'single' ? 'active' : ''}}" data-value="single" bindtap="onTypeChange">单选题</text>
+          <text class="type-option {{questionType === 'multiple' ? 'active' : ''}}" data-value="multiple" bindtap="onTypeChange">多选题</text>
+        </view>
+      </view>
+
+      <!-- 题量 -->
+      <view class="setting-card row">
+        <text class="setting-label">题量</text>
+        <view class="count-control">
+          <button class="count-btn" bindtap="decreaseCount">−</button>
+          <input class="count-input" type="number" value="{{questionCount}}" bindinput="onQuestionCountInput" />
+          <button class="count-btn" bindtap="increaseCount">+</button>
+        </view>
+      </view>
+
+      <!-- 选项数量 -->
+      <view class="setting-card row">
+        <text class="setting-label">选项数量</text>
+        <view class="count-control">
+          <button class="count-btn" bindtap="decreaseOptionCount">−</button>
+          <input class="count-input" type="number" value="{{optionCount}}" bindinput="onOptionCountInput" />
+          <button class="count-btn" bindtap="increaseOptionCount">+</button>
+        </view>
+      </view>
+
+      <!-- 分值 -->
+      <view class="setting-card row">
+        <text class="setting-label">每题分值</text>
+        <view class="score-control">
+          <input class="score-input" type="number" value="{{uniformScore}}" bindinput="onScoreInput" />
+          <text class="score-unit">分</text>
+        </view>
+      </view>
+
+      <!-- 预览 -->
+      <view class="preview-card">
+        <view class="preview-header">
+          <text class="preview-title">设置预览</text>
+        </view>
+        <view class="preview-options">
+          <view class="preview-option"><text class="preview-opt-label">题型</text><text class="preview-opt-val">{{questionType === 'single' ? '单选题' : '多选题'}}</text></view>
+          <view class="preview-option"><text class="preview-opt-label">题目数量</text><text class="preview-opt-val">{{questionCount}} 题</text></view>
+          <view class="preview-option"><text class="preview-opt-label">选项数量</text><text class="preview-opt-val">{{optionCount}} 个</text></view>
+          <view class="preview-option"><text class="preview-opt-label">每题分值</text><text class="preview-opt-val">{{uniformScore}} 分</text></view>
+        </view>
+        <view class="preview-total">
+          <text class="preview-total-label">总分</text>
+          <text class="preview-total-val">{{totalScore}} 分</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 完成按钮 -->
+    <view class="finish-area">
+      <view class="form-actions">
+        <button class="btn-secondary" bindtap="prevStep">上一步</button>
+        <button class="btn-primary" bindtap="confirmCreate" disabled="{{creating}}">
+          {{creating ? '创建中...' : '完成'}}
+        </button>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 保存模板弹窗 -->
+  <view class="modal-mask" wx:if="{{showSaveTemplate}}" bindtap="closeSaveTemplate">
+    <view class="modal-box" catchtap="">
+      <text class="modal-title">保存为模板</text>
+      <text class="modal-desc">将当前题目设置保存为模板，下次可直接使用</text>
+      <input class="modal-input" placeholder="输入模板名称" value="{{saveTemplateName}}" bindinput="onTemplateNameInput" />
+      <view class="modal-btns">
+        <button class="modal-btn cancel" bindtap="closeSaveTemplate">取消</button>
+        <button class="modal-btn confirm" bindtap="confirmSaveTemplate">保存</button>
+      </view>
+    </view>
+  </view>
+</view>

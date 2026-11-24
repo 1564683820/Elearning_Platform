@@ -1,0 +1,220 @@
+<view class="page">
+  <!-- 顶部导航栏 -->
+  <view class="nav-bar" style="padding-top: {{statusBarHeight}}px;">
+    <view class="nav-back" bindtap="goBack">
+      <text class="nav-back-icon">◀</text>
+    </view>
+    <view class="nav-info">
+      <text class="nav-title">{{pageTitle}}</text>
+      <text class="nav-page">第 {{currentPageNum}} 页</text>
+    </view>
+    <view class="nav-menu" bindtap="onOpenSidebar">
+      <text class="nav-menu-icon">☰</text>
+    </view>
+  </view>
+
+  <!-- 侧边目录 -->
+  <view class="sidebar-wrap {{sidebarOpen ? 'show' : ''}}">
+    <view class="sidebar-mask" catchtap="onCloseSidebar"></view>
+    <view class="sidebar-panel">
+      <view class="sidebar-header">
+        <text class="sidebar-title">页面目录</text>
+        <view class="sidebar-close" catchtap="onCloseSidebar">
+          <text class="sidebar-close-icon">✕</text>
+        </view>
+      </view>
+      <scroll-view class="sidebar-list" scroll-y enhanced show-scrollbar="{{false}}">
+        <view
+          class="sidebar-item {{item.page_number === currentPageNum ? 'active' : ''}}"
+          wx:for="{{pageList}}"
+          wx:key="id"
+          data-page="{{item.page_number}}"
+          catchtap="goToPage"
+        >
+          <text class="sidebar-page">第 {{item.page_number}} 页</text>
+          <text class="sidebar-check" wx:if="{{item.page_number === currentPageNum}}">✓</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- Swiper 翻页区 -->
+  <swiper
+    class="page-swiper"
+    current="{{swiperIndex}}"
+    bindchange="onSwiperChange"
+    circular="{{false}}"
+    duration="300"
+  >
+    <swiper-item wx:for="{{pageItems}}" wx:key="pageId" wx:for-item="pg">
+      <view class="page-content">
+        <!-- 插图区域（含动画联动） -->
+        <view class="page-image-section" wx:if="{{pg.image_url || pg.animation_url || pg.background_anim_url || currentCharAnimUrl}}">
+          <view class="image-wrap anim-image-wrap" bindtap="onTapImage" data-pageid="{{pg.pageId}}">
+            <!-- 动图状态指示器（调试用，确认数据是否传到了前端） -->
+            <view class="anim-debug-badge" wx:if="{{index === swiperIndex}}">
+              <text class="anim-debug-icon"></text>
+            </view>
+            <!-- 背景微动图：仅当前页默认显示（持续循环），音频播放时 currentBgAnimUrl 也可激活 -->
+            <image
+              class="bg-animation active"
+              src="{{pg.background_anim_url}}"
+              mode="aspectFill"
+              wx:if="{{pg.background_anim_url && index === swiperIndex}}"
+            />
+            <!-- 音频播放时的背景微动覆盖（由 _playAudio 设置 currentBgAnimUrl） -->
+            <image
+              class="bg-animation audio-bg-overlay"
+              src="{{currentBgAnimUrl}}"
+              mode="aspectFill"
+              wx:if="{{playbackActive && currentBgAnimUrl && index === swiperIndex}}"
+            />
+            <!-- 静态插图：始终显示，由 CSS 控制当有背景动图时淡化 -->
+            <image
+              class="page-image {{pg.background_anim_url && index === swiperIndex ? 'faded' : ''}}"
+              src="{{pg.image_url}}"
+              mode="widthFix"
+              wx:if="{{pg.image_url}}"
+            />
+            <!-- 角色说话微动图（当前句子说话角色，音频播放时由 sentencechange 事件驱动） -->
+            <image
+              class="char-animation {{currentCharAnimUrl ? 'show' : ''}}"
+              src="{{currentCharAnimUrl}}"
+              mode="aspectFill"
+              wx:if="{{currentCharAnimUrl}}"
+            />
+            <!-- 整页微动图（点击触发，播放3秒后消失） -->
+            <image
+              class="page-animation {{pg.animationPlaying ? 'playing' : ''}}"
+              src="{{pg.animation_url}}"
+              mode="aspectFill"
+              wx:if="{{pg.animationPlaying}}"
+            />
+            <!-- 角色名浮层（当前谁在说话） -->
+            <view class="speaker-overlay {{currentSpeaker ? 'show' : ''}}" wx:if="{{currentSpeaker}}">
+              <text class="speaker-label">{{currentSpeaker}}</text>
+              <text class="speaker-talk-icon"></text>
+            </view>
+            <!-- 点击看动画提示（仅在有整页动画且未播放且未朗读时显示） -->
+            <view class="play-anim-hint" wx:if="{{pg.animation_url && !pg.animationPlaying && !playbackActive}}">
+              <text class="play-anim-icon">▶</text>
+              <text class="play-anim-text">点我看动画</text>
+            </view>
+          </view>
+        </view>
+
+        <!-- 课文文字区域 -->
+        <scroll-view class="page-text-section" scroll-y enhanced show-scrollbar="{{false}}">
+          <!-- 情况1：无句子数据，显示提示 -->
+          <view class="debug-hint" wx:if="{{!pg.sentences || pg.sentences.length === 0}}">
+            <text class="debug-hint-text">! 当前页面未提取到课文内容</text>
+          </view>
+
+          <!-- 情况2：有句子数据，逐句显示（可点击播放） -->
+          <block wx:if="{{pg.sentences && pg.sentences.length > 0}}">
+            <view
+              class="sentence-block {{item.highlight ? 'highlight' : ''}} {{item.speaker && currentSpeaker === item.speaker && playbackActive ? 'speaking' : ''}}"
+              wx:for="{{pg.sentences}}"
+              wx:for-item="item"
+              wx:key="index"
+              data-pageid="{{pg.pageId}}"
+              data-sidx="{{index}}"
+              bindtap="onTapSentence"
+            >
+              <text class="sentence-num">{{index + 1}}</text>
+              <view class="sentence-body">
+                <view class="sentence-header">
+                  <text class="sentence-text">{{item.text}}</text>
+                  <text class="sentence-speaker-badge" wx:if="{{item.speaker && item.speaker !== 'narrator'}}">{{item.speaker}}</text>
+                </view>
+                <text class="sentence-cn" wx:if="{{item.cn}}">{{item.cn}}</text>
+              </view>
+              <text class="sentence-audio-icon" wx:if="{{item.audio_url || pg.audio_url}}"></text>
+              <text class="sentence-anim-icon" wx:if="{{item.animation_url}}"></text>
+            </view>
+          </block>
+
+          <!-- 单词标签 -->
+          <view class="word-tags-section" wx:if="{{pg.words && pg.words.length > 0}}">
+            <text class="word-tags-label">文中单词</text>
+            <view class="word-tags">
+              <text
+                class="word-tag"
+                wx:for="{{pg.words}}"
+                wx:key="index"
+                data-word="{{item.word || item}}"
+                bindtap="onTapWord"
+              >{{item.word || item}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </swiper-item>
+  </swiper>
+
+  <!-- 底部工具栏 -->
+  <view class="bottom-toolbar">
+    <view class="toolbar-left">
+      <view class="tool-btn" bindtap="onPrevPage">
+        <text class="tool-icon">◀</text>
+        <text class="tool-label">上一页</text>
+      </view>
+    </view>
+    <view class="toolbar-center">
+      <view class="tool-btn playback-btn {{playbackActive ? 'active' : ''}}" bindtap="onTogglePlayback">
+        <text class="tool-icon">{{playbackActive ? '' : ''}}</text>
+        <text class="tool-label">{{playbackActive ? '停止' : '朗读'}}</text>
+      </view>
+    </view>
+    <view class="toolbar-right">
+      <view class="tool-btn" bindtap="onNextPage">
+        <text class="tool-icon">▶</text>
+        <text class="tool-label">下一页</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 单词弹出卡片 -->
+  <view class="word-popup {{wordPopup.show ? 'show' : ''}}">
+    <view class="popup-mask" bindtap="hideWordPopup"></view>
+    <view class="popup-card">
+      <view class="popup-header">
+        <text class="popup-word">{{wordPopup.word || ''}}</text>
+        <text class="popup-phonetic">{{wordPopup.phonetic || ''}}</text>
+        <view class="popup-close" bindtap="hideWordPopup"><text>✕</text></view>
+      </view>
+      <view class="popup-body">
+        <view class="popup-meaning-row" wx:for="{{wordPopup.meanings || []}}" wx:key="index">
+          <text class="popup-pos">{{item.pos || ''}}</text>
+          <text class="popup-def">{{item.definition || ''}}</text>
+        </view>
+        <view class="popup-trans" wx:if="{{wordPopup.translation}}">
+          <text class="trans-label">翻译：</text>
+          <text class="trans-text">{{wordPopup.translation}}</text>
+        </view>
+      </view>
+      <view class="popup-actions">
+        <view class="popup-btn" bindtap="onPopupAddFavorite" data-word="{{wordPopup.word}}">
+          <text>{{wordPopup.favorited ? '已收藏' : '收藏单词'}}</text>
+        </view>
+        <view class="popup-btn" bindtap="onPopupPlayTTS" data-word="{{wordPopup.word}}">
+          <text>发音</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 全屏加载 -->
+  <view class="loading-mask" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+  </view>
+
+  <!-- 音频播放器组件（监听句子切换事件驱动角色动画） -->
+  <textbook-audio
+    id="textbookAudio"
+    audioUrl="{{currentAudioUrl}}"
+    sentences="{{currentSentences}}"
+    title="{{currentAudioTitle}}"
+    bind:sentencechange="onAudioSentenceChange"
+  />
+</view>

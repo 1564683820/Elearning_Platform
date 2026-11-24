@@ -1,0 +1,61 @@
+原始图像: (1613, 1525, 3)
+矫正后: (3508, 2480, 3), OK=True
+锚点组数: 2
+  组0: 5 锚点
+    行0: top=2055, cy=2077, cx=63, area=1828
+    行1: top=2111, cy=2133, cx=63, area=1785
+    行2: top=2170, cy=2193, cx=64, area=1850
+    行3: top=2226, cy=2250, cx=63, area=1972
+    行4: top=2286, cy=2309, cx=63, area=1798
+  组1: 5 锚点
+    行0: top=2577, cy=2600, cx=63, area=1822
+    行1: top=2633, cy=2656, cx=64, area=1860
+    行2: top=2693, cy=2716, cx=63, area=1829
+    行3: top=2749, cy=2772, cx=64, area=1865
+    行4: top=2809, cy=2831, cx=64, area=1830
+
+选项列X坐标:
+  列0: A=229 B=301 C=373 D=445
+  列1: A=743 B=815 C=887 D=959
+  列2: A=1257 B=1329 C=1401 D=1473
+  列3: A=1771 B=1843 C=1915 D=1987
+
+=== 扫描结果 ===
+方法: anchor_scan
+考号: 
+有效答案: 10
+成功: True
+
+=== 21-30 题对比 (ground truth) ===
+  OK Q21: got=B exp=B conf=0.7829 ratios={'A': 0.2423, 'B': 0.9096, 'C': 0.2357, 'D': 0.2402}
+  OK Q22: got=C exp=C conf=0.7884 ratios={'A': 0.1308, 'B': 0.2375, 'C': 0.9379, 'D': 0.2417}
+  FAIL Q23: got= exp=B conf=0.0000 ratios={}
+  FAIL Q24: got= exp=C conf=0.0000 ratios={}
+  OK Q25: got=C exp=C conf=0.8208 ratios={'A': 0.1843, 'B': 0.1632, 'C': 0.9786, 'D': 0.2036}
+  FAIL Q26: got=D exp=B conf=0.8176 ratios={'A': 0.1463, 'B': 0.1822, 'C': 0.2131, 'D': 1.0}
+  FAIL Q27: got= exp=C conf=0.0000 ratios={}
+  FAIL Q28: got= exp=B conf=0.0000 ratios={}
+  FAIL Q29: got=B exp=C conf=0.5310 ratios={'A': 0.1807, 'B': 0.5761, 'C': 0.4988, 'D': 0.1775}
+  OK Q30: got=C exp=C conf=0.5301 ratios={'A': 0.0, 'B': 0.1784, 'C': 0.5856, 'D': 0.5092}
+
+=== 31-60 题 (应空白) ===
+  FALSE Q33: got=B conf=0.8051 ratios={'A': 0.2131, 'B': 0.9967, 'C': 0.2158, 'D': 0.2313}
+  FALSE Q34: got=C conf=0.8141 ratios={'A': 0.1944, 'B': 0.2122, 'C': 0.9982, 'D': 0.2179}
+  FALSE Q37: got=C conf=0.8148 ratios={'A': 0.1846, 'B': 0.1778, 'C': 0.9284, 'D': 0.201}
+  FALSE Q38: got=D conf=0.8070 ratios={'A': 0.1581, 'B': 0.1763, 'C': 0.214, 'D': 0.9367}
+
+=== 统计 ===
+21-30 正确: 4/10
+  错误 Q23: exp=B, got=
+  错误 Q24: exp=C, got=
+  错误 Q26: exp=B, got=D
+  错误 Q27: exp=C, got=
+  错误 Q28: exp=B, got=
+  错误 Q29: exp=C, got=B
+31-60 误判: 4 题
+  Q33 误识别
+  Q34 误识别
+  Q37 误识别
+  Q38 误识别
+
+总结: 21-30: 4/10, 31-60误判: 4

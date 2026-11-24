@@ -1,0 +1,210 @@
+/* 教学助手小e悬浮窗 — 动画和样式 */
+
+/* ── 呼吸灯 ── */
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(45, 125, 70, 0.4), 0 4px 16px rgba(0, 0, 0, 0.2); }
+  50%      { box-shadow: 0 0 0 10px rgba(45, 125, 70, 0), 0 4px 16px rgba(0, 0, 0, 0.2); }
+}
+
+/* ── 弹窗打开动画 ── */
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+    transform-origin: bottom right;
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: bottom right;
+  }
+}
+
+/* ── 弹窗关闭动画 ── */
+@keyframes dialogOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: bottom right;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.3);
+    transform-origin: bottom right;
+  }
+}
+
+/* ── 淡入 ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── 缩放淡入 ── */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── 光标闪烁（流式回复光标） ── */
+@keyframes blink {
+  from, to { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ── Markdown 样式（在消息气泡内） ── */
+.floating-assistant-markdown p {
+  margin: 0 0 6px;
+}
+.floating-assistant-markdown p:last-child {
+  margin-bottom: 0;
+}
+.floating-assistant-markdown ul,
+.floating-assistant-markdown ol {
+  margin: 4px 0;
+  padding-left: 18px;
+}
+.floating-assistant-markdown li {
+  margin-bottom: 2px;
+}
+.floating-assistant-markdown code {
+  background: #e8e8e8;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.floating-assistant-markdown pre {
+  background: #1a2e1a;
+  color: #e8e8e8;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 12px;
+  margin: 6px 0;
+}
+.floating-assistant-markdown pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+.floating-assistant-markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 6px 0;
+  font-size: 12px;
+}
+.floating-assistant-markdown th,
+.floating-assistant-markdown td {
+  border: 1px solid #d4edda;
+  padding: 4px 8px;
+  text-align: left;
+}
+.floating-assistant-markdown th {
+  background: #e6f7e6;
+  font-weight: 600;
+}
+.floating-assistant-markdown a {
+  color: #2d7d46;
+  text-decoration: underline;
+}
+.floating-assistant-markdown blockquote {
+  border-left: 3px solid #2d7d46;
+  margin: 6px 0;
+  padding: 4px 12px;
+  color: #6b7280;
+  background: #f8faf8;
+  border-radius: 0 6px 6px 0;
+}
+.floating-assistant-markdown hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 8px 0;
+}
+
+/* ── 生成进度组件动画 ── */
+@keyframes genSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes genBarSlide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+
+@keyframes genCursorBlink {
+  from, to { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+/* ── 上传进度弹窗的进度条扫描动画 ── */
+@keyframes barSlide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+
+/* ── 后台上传迷你条淡入（右上角入场） ── */
+@keyframes badgeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── 后台上传迷你条旋转 ── */
+@keyframes badgeSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── 思考动画（脉冲圆点） ── */
+@keyframes thinkPulse {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.4; }
+  50%           { transform: scale(1); opacity: 1; }
+}
+.think-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2d7d46;
+  animation: thinkPulse 1.4s ease-in-out infinite;
+}
+.think-dot2 { animation-delay: 0.2s; }
+.think-dot3 { animation-delay: 0.4s; }
+
+/* ── 检索动画（放大镜脉冲） ── */
+@keyframes searchPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50%      { transform: scale(1.25); opacity: 1; }
+}
+.think-search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: searchPulse 1.2s ease-in-out infinite;
+}
+
+/* ── 生成动画（打字条） ── */
+@keyframes typingBarPulse {
+  0%, 100% { opacity: 0.4; transform: scaleY(0.6); }
+  50%      { opacity: 1; transform: scaleY(1.1); }
+}
+.think-typing-bar {
+  display: inline-block;
+  width: 2.5px;
+  height: 10px;
+  border-radius: 2px;
+  background: #2d7d46;
+  animation: typingBarPulse 0.8s ease-in-out infinite;
+}

@@ -1,0 +1,260 @@
+/* 智能翻译 */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--bg);
+  --gradient: linear-gradient(135deg, #5B9E6F 0%, #7AB88A 100%);
+}
+
+/* 渐变Header - 与qa页一致 */
+.chat-header {
+  background: var(--gradient);
+  padding-right: 40rpx;
+  padding-left: 40rpx;
+  padding-bottom: 0;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 8rpx;
+}
+
+.header-sparkle {
+  font-size: 36rpx;
+  flex-shrink: 0;
+}
+
+.header-center {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  letter-spacing: 1rpx;
+}
+
+.header-subtitle {
+  font-size: 22rpx;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2rpx;
+}
+
+.header-tabs {
+  display: flex;
+  margin-top: 24rpx;
+}
+
+.header-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  font-size: 24rpx;
+  color: rgba(255,255,255,0.65);
+  padding: 20rpx 0;
+  position: relative;
+  border-bottom: 4rpx solid transparent;
+  transition: all 0.2s;
+}
+
+.header-tab.active {
+  color: #FFFFFF;
+  font-weight: 700;
+  border-bottom-color: #FFFFFF;
+}
+
+.tab-icon {
+  font-size: 22rpx;
+}
+
+.translate-scroll {
+  flex: 1;
+  overflow: hidden;
+  padding: 24rpx 40rpx;
+}
+
+/* 翻译方向 */
+.direction-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  margin-bottom: 32rpx;
+  padding: 8rpx 0;
+}
+
+.direction-label {
+  font-size: 26rpx;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 20rpx 0;
+  border-radius: 28rpx;
+  background: #F3F4F6;
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.direction-label.active {
+  color: var(--primary);
+  background: var(--primary-bg);
+}
+
+.direction-switch {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.switch-icon {
+  font-size: 28rpx;
+  color: var(--primary);
+}
+
+/* 翻译卡片 */
+.translate-card {
+  overflow: hidden;
+}
+
+.input-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12rpx;
+}
+
+.card-label {
+  font-size: 22rpx;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.translate-textarea {
+  width: 100%;
+  min-height: 160rpx;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  font-size: 28rpx;
+  line-height: 1.7;
+  box-sizing: border-box;
+}
+
+.input-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  padding-top: 16rpx;
+  border-top: 1rpx solid var(--border-light);
+}
+
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  gap: 6rpx;
+  padding: 12rpx 16rpx;
+  border-radius: 16rpx;
+  background: #F3F4F6;
+  font-size: 22rpx;
+  color: var(--text-secondary);
+}
+
+.toolbar-icon {
+  font-size: 22rpx;
+}
+
+.toolbar-btn-text {
+  font-size: 22rpx;
+}
+
+.char-count {
+  font-size: 22rpx;
+  color: var(--text-light);
+  flex: 1;
+  text-align: right;
+}
+
+.translate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6rpx;
+  padding: 14rpx 24rpx;
+  font-size: 24rpx;
+  border-radius: 24rpx;
+}
+
+/* 输出区 */
+.output-card {
+  background: #F0F4FF;
+  border: 2rpx solid #C7D2FE;
+  margin-top: 24rpx;
+}
+
+.output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
+}
+
+.output-status-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.output-check {
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+  background: var(--success);
+  color: #FFFFFF;
+  font-size: 18rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.output-status {
+  font-size: 22rpx;
+  color: var(--success);
+  font-weight: 600;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 6rpx;
+  padding: 6rpx 12rpx;
+  border-radius: 12rpx;
+  background: #FFFFFF;
+}
+
+.copy-icon {
+  font-size: 20rpx;
+}
+
+.copy-text {
+  font-size: 20rpx;
+  color: var(--text-secondary);
+}
+
+.output-text {
+  font-size: 28rpx;
+  line-height: 1.8;
+  color: var(--text-primary);
+}

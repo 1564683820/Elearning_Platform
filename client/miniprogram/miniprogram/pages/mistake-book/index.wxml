@@ -1,0 +1,172 @@
+<view class="container">
+  <!-- 顶部：分类 Tab + 批量操作入口 -->
+  <view class="tab-bar">
+    <view class="tab-item {{activeTab === 'exam' ? 'active' : ''}}" data-tab="exam" bindtap="onSwitchTab">
+      <text class="tab-icon">📝</text>
+      <text class="tab-label">试卷</text>
+      <text class="tab-count" wx:if="{{tabCounts.exam > 0}}">{{tabCounts.exam > 99 ? '99+' : tabCounts.exam}}</text>
+    </view>
+    <view class="tab-item {{activeTab === 'word' ? 'active' : ''}}" data-tab="word" bindtap="onSwitchTab">
+      <text class="tab-icon">📖</text>
+      <text class="tab-label">单词训练</text>
+      <text class="tab-count" wx:if="{{tabCounts.word > 0}}">{{tabCounts.word > 99 ? '99+' : tabCounts.word}}</text>
+    </view>
+    <view class="tab-item {{activeTab === 'summary' ? 'active' : ''}}" data-tab="summary" bindtap="onSwitchTab">
+      <text class="tab-icon">🤖</text>
+      <text class="tab-label">小e总结</text>
+      <text class="tab-count" wx:if="{{tabCounts.summary > 0}}">{{tabCounts.summary > 99 ? '99+' : tabCounts.summary}}</text>
+    </view>
+  </view>
+
+  <!-- 批量操作工具栏 -->
+  <view class="batch-toolbar" wx:if="{{activeTab !== 'exam'}}">
+    <view class="batch-toolbar-inner">
+      <view class="batch-btn {{batchMode ? 'batch-active' : ''}}" bindtap="onToggleBatch">
+        <text wx:if="{{!batchMode}}">✏️ 批量管理</text>
+        <text wx:else>✔️ 完成</text>
+      </view>
+      <view class="batch-info" wx:if="{{batchMode}}">
+        <text class="select-all" bindtap="onSelectAll">全选</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- ======== 试卷 Tab ======== -->
+  <view class="tab-content" wx:if="{{activeTab === 'exam'}}">
+    <view class="empty-state" wx:if="{{examList.length === 0 && !loading}}">
+      <text class="empty-icon">📝</text>
+      <text class="empty-text">暂无试卷错题</text>
+      <text class="empty-desc">完成试卷后，错题会自动出现在这里</text>
+    </view>
+
+    <view class="exam-item" wx:for="{{examList}}" wx:for-item="exam" wx:key="exam_id" data-id="{{exam.exam_id}}" bindtap="onExamTap">
+      <view class="exam-header">
+        <text class="exam-title">{{exam.exam_title}}</text>
+        <view class="exam-score {{exam.score / exam.max_score >= 0.8 ? 'score-good' : exam.score / exam.max_score >= 0.6 ? 'score-mid' : 'score-bad'}}">
+          {{exam.score}}/{{exam.max_score}}
+        </view>
+      </view>
+      <view class="exam-meta">
+        <text class="exam-date">{{exam.submitted_at}}</text>
+        <text class="exam-wrong">错题 {{exam.wrong_count}} 道</text>
+      </view>
+      <view class="exam-wrong-list">
+        <text class="wrong-tag" wx:for="{{exam.wrong_questions.slice(0, 5)}}" wx:for-item="wq" wx:key="index">
+          第{{wq.index + 1}}题
+        </text>
+        <text class="wrong-tag more" wx:if="{{exam.wrong_count > 5}}">+{{exam.wrong_count - 5}}</text>
+      </view>
+    </view>
+
+    <view class="load-more" wx:if="{{examList.length > 0 && examTotal > examList.length}}" bindtap="onLoadMoreExam">
+      <text>加载更多</text>
+    </view>
+  </view>
+
+  <!-- ======== 单词训练 Tab ======== -->
+  <view class="tab-content" wx:if="{{activeTab === 'word'}}">
+    <view class="empty-state" wx:if="{{wordMistakes.length === 0 && !loading}}">
+      <text class="empty-icon">📖</text>
+      <text class="empty-text">暂无单词错题</text>
+      <text class="empty-desc">完成单词训练后，答错的题目会自动收集到这里</text>
+    </view>
+
+    <view class="word-item {{batchMode ? 'word-item-selectable' : ''}}" wx:for="{{wordMistakes}}" wx:for-item="mw" wx:key="id" data-id="{{mw.id}}" bindtap="{{batchMode ? 'onSelectItem' : ''}}">
+      <view class="word-top">
+        <view class="word-checkbox" wx:if="{{batchMode}}" data-id="{{mw.id}}" bindtap="onSelectItem">
+          <view class="checkbox-box {{selectedIds[mw.id] ? 'checkbox-checked' : ''}}">
+            <text wx:if="{{selectedIds[mw.id]}}" class="checkmark">✓</text>
+          </view>
+        </view>
+        <view class="word-body" wx:if="{{!batchMode}}">
+          <!-- 阅读错题：显示文章原文和翻译 -->
+          <view class="article-section" wx:if="{{mw.type === 6 && mw.article_content}}">
+            <text class="article-section-title">{{mw.article_title || '阅读文章'}}</text>
+            <view class="article-original">
+              <text wx:for="{{mw.article_paragraphs}}" wx:for-item="para" wx:key="index" class="article-para">{{para}}</text>
+            </view>
+            <view class="article-translation" wx:if="{{mw.article_translation}}">
+              <text class="article-trans-label">中文翻译</text>
+              <text class="article-trans-text">{{mw.article_translation}}</text>
+            </view>
+          </view>
+          <text class="word-stem">{{mw.stem}}</text>
+          <view class="word-options" wx:if="{{mw.options.length > 0}}">
+            <text wx:for="{{mw.options}}" wx:for-index="oi" wx:for-item="opt" wx:key="oi"
+                  class="word-option {{letters[oi] === mw.correct_answer || (mw.correct_answer >= 0 && letters[oi] === letters[mw.correct_answer]) ? 'option-correct' : ''}}">
+              {{letters[oi]}}. {{opt}}
+            </text>
+          </view>
+          <view class="word-answer">
+            <text class="answer-correct">✓ 正确答案：{{mw.correct_answer >= 0 && mw.correct_answer < letters.length ? letters[mw.correct_answer] : mw.correct_answer}}</text>
+          </view>
+          <view class="word-meta">
+            <text class="meta-item">错 {{mw.wrong_count}} 次</text>
+            <text class="meta-item">最近：{{mw.last_wrong_at}}</text>
+            <text class="meta-item" wx:if="{{mw.knowledge_point}}">{{mw.knowledge_point}}</text>
+            <text class="meta-item type-tag" wx:if="{{mw.type === 6}}">阅读训练</text>
+          </view>
+        </view>
+      </view>
+      <view class="word-stem" wx:if="{{batchMode}}">{{mw.stem}}</view>
+    </view>
+
+    <view class="load-more" wx:if="{{wordMistakes.length > 0 && wordTotal > wordMistakes.length}}" bindtap="onLoadMoreWord">
+      <text>加载更多</text>
+    </view>
+  </view>
+
+  <!-- ======== 小e总结 Tab ======== -->
+  <view class="tab-content" wx:if="{{activeTab === 'summary'}}">
+    <view class="empty-state" wx:if="{{summaryReports.length === 0 && !loading}}">
+      <text class="empty-icon">🤖</text>
+      <text class="empty-text">暂无小e总结报告</text>
+      <text class="empty-desc">在「智能对话」中向小e发送"总结错题"，报告会自动保存在这里</text>
+    </view>
+
+    <view class="summary-item {{batchMode ? 'summary-item-selectable' : ''}}" wx:for="{{summaryReports}}" wx:for-item="sr" wx:key="id" data-id="{{sr.id}}" bindtap="{{batchMode ? 'onSelectItem' : 'onSummaryTap'}}">
+      <view class="summary-top">
+        <view class="summary-checkbox" wx:if="{{batchMode}}" data-id="{{sr.id}}" bindtap="onSelectItem">
+          <view class="checkbox-box {{selectedIds[sr.id] ? 'checkbox-checked' : ''}}">
+            <text wx:if="{{selectedIds[sr.id]}}" class="checkmark">✓</text>
+          </view>
+        </view>
+        <view class="summary-body">
+          <view class="summary-header">
+            <text class="summary-title">{{sr.title}}</text>
+            <text class="summary-date">{{sr.created_at}}</text>
+          </view>
+          <view class="summary-preview">
+            <text class="summary-excerpt">{{sr.content.slice(0, 100)}}...</text>
+          </view>
+          <view class="summary-footer" wx:if="{{!batchMode}}">
+            <text class="summary-action">查看完整报告 ›</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="load-more" wx:if="{{summaryReports.length > 0 && summaryTotal > summaryReports.length}}" bindtap="onLoadMoreSummary">
+      <text>加载更多</text>
+    </view>
+  </view>
+
+  <!-- 底部批量操作栏 -->
+  <view class="batch-bar {{batchMode ? 'batch-bar-show' : ''}}">
+    <view class="batch-bar-info">
+      <text class="batch-count">已选 {{selectedCount}} 项</text>
+    </view>
+    <view class="batch-bar-actions">
+      <view class="batch-bar-btn batch-bar-delete" bindtap="onBatchDelete">
+        <text wx:if="{{selecting}}">删除中...</text>
+        <text wx:else>删除</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading-overlay" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+</view>

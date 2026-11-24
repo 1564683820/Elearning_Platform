@@ -1,0 +1,6 @@
+Please evaluate the following English conversation, scoring from 1-5 on grammar accuracy, vocabulary appropriateness, and expression naturalness, and give improvement suggestions:
+
+{dialogue_text}
+
+Please return in the following JSON format:
+{{"grammar_score": 1-5, "vocabulary_score": 1-5, "fluency_score": 1-5, "overall_score": 1-5, "feedback": "Overall evaluation and suggestions"}}

@@ -1,0 +1,101 @@
+<view class="page">
+  <!-- 当前会员状态 -->
+  <view class="status-card {{membershipInfo.membership}}">
+    <view class="status-icon">
+      <text wx:if="{{membershipInfo.membership === 'free'}}">免费</text>
+      <text wx:elif="{{membershipInfo.membership === 'vip_student'}}">学生</text>
+      <text wx:elif="{{membershipInfo.membership === 'vip_teacher'}}">教师</text>
+      <text wx:elif="{{membershipInfo.membership === 'vip_teacher_pro'}}">专业</text>
+    </view>
+    <view class="status-name">{{membershipInfo.membership_name}}</view>
+    <view class="status-expire" wx:if="{{membershipInfo.membership_expire && !membershipInfo.is_expired}}">
+      到期时间: {{membershipInfo.membership_expire}}
+    </view>
+    <view class="status-expire expired" wx:elif="{{membershipInfo.is_expired}}">
+      会员已过期，请续费
+    </view>
+    <view class="status-expire" wx:else>
+      开通会员享受更多权益
+    </view>
+  </view>
+
+  <!-- 套餐对比 -->
+  <view class="section-title">选择套餐</view>
+  <view class="plan-list">
+    <view class="plan-card {{selectedPlan === item.id ? 'selected' : ''}}"
+          wx:for="{{plans}}" wx:key="id"
+          data-plan="{{item.id}}"
+          bindtap="onSelectPlan">
+      <view class="plan-header {{item.id}}">
+        <view class="plan-name">{{item.name}}</view>
+        <view class="plan-price">
+          <text class="price-symbol">¥</text>
+          <text class="price-value">{{item.monthly_price}}</text>
+          <text class="price-unit">/月</text>
+        </view>
+        <view class="plan-yearly" wx:if="{{item.yearly_price}}">
+          年付 ¥{{item.yearly_price}}（省 ¥{{item.annual_savings}}）
+        </view>
+      </view>
+      <view class="plan-body">
+        <view class="feature-item" wx:for="{{item.features}}" wx:key="*this">
+          <text class="feature-icon">✓</text>
+          <text class="feature-text">{{featureLabels[item] || item}}</text>
+        </view>
+      </view>
+      <view class="plan-footer">
+        <button class="buy-btn" bindtap="onBuyMonthly">月付 ¥{{item.monthly_price}}</button>
+        <button class="buy-btn yearly" wx:if="{{item.yearly_price}}" bindtap="onBuyYearly">年付 ¥{{item.yearly_price}}</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 兑换码 -->
+  <view class="section-title">兑换码</view>
+  <view class="redeem-section">
+    <view class="redeem-input-group">
+      <input class="redeem-input" placeholder="输入16位兑换码" value="{{redeemCode}}" bindinput="onRedeemCodeInput" maxlength="19" />
+      <button class="redeem-btn" bindtap="onRedeem" disabled="{{!redeemCode || redeeming}}">
+        {{redeeming ? '兑换中...' : '兑换'}}
+      </button>
+    </view>
+    <view class="redeem-tip">若已有兑换码，请输入后点击兑换开通会员</view>
+  </view>
+
+  <!-- 订单记录 -->
+  <view class="section-title">订单记录</view>
+  <view class="order-list">
+    <view class="order-item" wx:for="{{membershipInfo.orders}}" wx:key="id">
+      <view class="order-header">
+        <text class="order-plan">{{item.plan}}</text>
+        <text class="order-amount">¥{{item.amount}}</text>
+      </view>
+      <view class="order-meta">
+        <text class="order-status {{item.payment_status}}">{{paymentStatusMap[item.payment_status] || item.payment_status}}</text>
+        <text class="order-date">{{item.created_at}}</text>
+      </view>
+    </view>
+    <view class="empty-hint" wx:if="{{membershipInfo.orders.length === 0}}">暂无订单记录</view>
+  </view>
+
+  <!-- 功能限制提示 -->
+  <view class="section-title" wx:if="{{membershipInfo.membership === 'free'}}">功能权限说明</view>
+  <view class="limit-info" wx:if="{{membershipInfo.membership === 'free'}}">
+    <view class="limit-row">
+      <text class="limit-name">单词训练</text>
+      <text class="limit-value limit">每日限次</text>
+    </view>
+    <view class="limit-row">
+      <text class="limit-name">情景记忆视频</text>
+      <text class="limit-value limit-free">免费用户不可用</text>
+    </view>
+    <view class="limit-row">
+      <text class="limit-name">教材点读</text>
+      <text class="limit-value limit">每日 3 页</text>
+    </view>
+    <view class="limit-row">
+      <text class="limit-name">AI视频演绎</text>
+      <text class="limit-value limit">每月 2 次</text>
+    </view>
+  </view>
+</view>

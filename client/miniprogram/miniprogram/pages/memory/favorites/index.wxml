@@ -1,0 +1,128 @@
+<!-- 收藏 -->
+<view class="container">
+  <!-- 页面头部 -->
+  <view class="header-bar">
+    <view class="header-btn" bindtap="onMenuTap">
+      <text class="header-btn-icon">☰</text>
+    </view>
+    <text class="header-title">收藏</text>
+    <view class="header-btn" bindtap="onEditToggle">
+      <text class="header-btn-icon">{{editing ? '完成' : '编辑'}}</text>
+    </view>
+  </view>
+
+  <!-- Tab切换 - 下划线样式 -->
+  <view class="tabs-row">
+    <view class="tab-item {{activeTab === index ? 'active' : ''}}"
+          wx:for="{{tabs}}" wx:key="index"
+          data-index="{{index}}" bindtap="onTabChange">
+      {{item}}
+    </view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-state" wx:if="{{loading}}">
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- ============ 单词收藏列表 (tab=0) ============ -->
+  <view class="fav-list" wx:if="{{activeTab === 0}}">
+    <block wx:for="{{favorites.words}}" wx:key="id" wx:for-index="idx">
+      <view class="fav-item card {{editing ? 'edit-mode' : ''}}">
+        <!-- 编辑模式：复选框 -->
+        <view class="fav-checkbox" wx:if="{{editing}}" bindtap="onSelectItem" data-id="{{item.id}}">
+          <view class="checkbox-box {{selectedIds.indexOf(item.id) > -1 ? 'checked' : ''}}">
+            <text wx:if="{{selectedIds.indexOf(item.id) > -1}}" class="checkbox-icon">✓</text>
+          </view>
+        </view>
+        <!-- 内容区域 -->
+        <view class="fav-item-left" bindtap="{{editing ? 'onSelectItem' : 'onItemTap'}}"
+              data-id="{{item.id}}" data-word="{{item.word}}">
+          <text class="fav-word">{{item.word}}</text>
+          <text class="fav-meaning">{{item.meaning || ''}}</text>
+        </view>
+        <!-- 非编辑模式：删除按钮 -->
+        <view class="fav-item-right" wx:if="{{!editing}}" bindtap="onRemoveFavorite"
+              data-target-type="{{item.target_type}}"
+              data-target-id="{{item.target_id}}">
+          <text class="fav-remove">×</text>
+        </view>
+      </view>
+    </block>
+    <view class="empty-state" wx:if="{{favorites.words.length === 0}}">
+      <text class="empty-icon"></text>
+      <text class="empty-text">暂无单词收藏</text>
+    </view>
+  </view>
+
+  <!-- ============ 文段收藏列表 (tab=2) ============ -->
+  <view class="fav-list" wx:elif="{{activeTab === 2}}">
+    <block wx:for="{{favorites.passages}}" wx:key="id" wx:for-index="idx">
+      <view class="fav-item card {{editing ? 'edit-mode' : ''}}">
+        <!-- 编辑模式：复选框 -->
+        <view class="fav-checkbox" wx:if="{{editing}}" bindtap="onSelectItem" data-id="{{item.id}}">
+          <view class="checkbox-box {{selectedIds.indexOf(item.id) > -1 ? 'checked' : ''}}">
+            <text wx:if="{{selectedIds.indexOf(item.id) > -1}}" class="checkbox-icon">✓</text>
+          </view>
+        </view>
+        <!-- 内容区域：非编辑模式点击查看详情 -->
+        <view class="fav-item-left" bindtap="{{editing ? 'onSelectItem' : 'onViewPassage'}}"
+              data-id="{{item.id}}" data-index="{{idx}}">
+          <text class="fav-word">情景文段 · {{item.passage_type || '通用'}}</text>
+          <text class="fav-meaning">{{item.content ? (item.content.length > 60 ? item.content.slice(0, 60) + '...' : item.content) : ''}}</text>
+        </view>
+        <!-- 非编辑模式：删除按钮 -->
+        <view class="fav-item-right" wx:if="{{!editing}}" bindtap="onRemoveFavorite"
+              data-target-type="{{item.target_type}}"
+              data-target-id="{{item.target_id}}">
+          <text class="fav-remove">×</text>
+        </view>
+      </view>
+    </block>
+    <view class="empty-state" wx:if="{{favorites.passages.length === 0}}">
+      <text class="empty-icon"></text>
+      <text class="empty-text">暂无文段收藏</text>
+    </view>
+  </view>
+
+  <!-- 其他类型空状态（非加载时显示） -->
+  <view class="empty-state" wx:if="{{(activeTab === 1 || activeTab === 3) && !loading}}">
+    <text class="empty-icon"></text>
+    <text class="empty-text">暂无{{tabs[activeTab]}}收藏</text>
+  </view>
+
+  <!-- ============ 编辑模式底部操作栏 ============ -->
+  <view class="edit-bar {{editing ? 'show' : ''}}">
+    <view class="edit-bar-left" bindtap="onSelectAll">
+      <view class="checkbox-box {{selectedIds.length > 0 ? 'checked' : ''}}">
+        <text wx:if="{{selectedIds.length > 0}}" class="checkbox-icon">✓</text>
+      </view>
+      <text class="edit-bar-label">{{selectedIds.length > 0 ? '已选 ' + selectedIds.length + ' 项' : '全选'}}</text>
+    </view>
+    <view class="edit-bar-right {{selectedIds.length > 0 ? 'active' : ''}}" bindtap="onDeleteSelected">
+      <text class="edit-bar-delete">删除 ({{selectedIds.length}})</text>
+    </view>
+  </view>
+
+  <!-- ============ 文段详情弹窗 ============ -->
+  <view class="modal-overlay {{showPassageModal ? 'show' : ''}}" bindtap="onCloseModal">
+    <view class="modal-content" catchtap="onStopPropagation">
+      <view class="modal-header">
+        <text class="modal-title">情景文段</text>
+        <text class="modal-close" bindtap="onCloseModal">×</text>
+      </view>
+      <view class="modal-body">
+        <view class="modal-passage-type" wx:if="{{passageDetail.passage_type}}">
+          类型：{{passageDetail.passage_type}}
+        </view>
+        <view class="modal-passage-text">
+          <text wx:for="{{passageDetail.segments}}" wx:for-item="seg" wx:key="index" class="{{seg.bold ? 'passage-bold' : ''}}">{{seg.text}}</text>
+        </view>
+        <view class="modal-passage-trans" wx:if="{{passageDetail.translation}}">
+          <view class="trans-label">中文翻译</view>
+          <text class="trans-text">{{passageDetail.translation}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

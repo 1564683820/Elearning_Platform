@@ -1,0 +1,33 @@
+<view class="page">
+  <view class="header">
+    <text class="title">学生管理</text>
+    <text class="subtitle">班级: {{className}}</text>
+  </view>
+
+  <view class="invite-card" wx:if="{{inviteCode}}">
+    <text class="invite-label">班级邀请码</text>
+    <text class="invite-code">{{inviteCode}}</text>
+    <view class="invite-actions">
+      <button class="invite-btn copy" bindtap="copyInvite">复制邀请码</button>
+      <button class="invite-btn refresh {{regenerating ? 'disabled' : ''}}" bindtap="onRegenerateInvite">
+        <text wx:if="{{!regenerating}}">刷新邀请码</text>
+        <text wx:else>生成中...</text>
+      </button>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">学生列表 ({{students.length}}人)</text>
+    <view class="student-item" wx:for="{{students}}" wx:key="student_id">
+      <view class="student-info">
+        <text class="student-name">{{item.nickname}}</text>
+        <text class="student-detail">加入{{item.study_days || 0}}天 · 正确率{{item.avg_accuracy || 0}}%</text>
+      </view>
+      <button class="remove-btn" data-id="{{item.student_id}}" bindtap="confirmRemove">移除</button>
+    </view>
+    <view class="empty" wx:if="{{students.length === 0}}">
+      <text>暂无学生加入</text>
+      <text class="empty-hint">将邀请码分享给学生即可加入班级</text>
+    </view>
+  </view>
+</view>

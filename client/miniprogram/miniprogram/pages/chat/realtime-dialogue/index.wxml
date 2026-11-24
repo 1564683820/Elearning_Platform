@@ -1,0 +1,150 @@
+<!-- 实时语音对话页面（REST 模式） -->
+<view class="page">
+  <!-- 顶部导航 -->
+  <view class="header" style="padding-top: {{statusBarHeight}}px;">
+    <view class="header-inner" style="height: {{navBarHeight}}px;">
+      <view class="back-btn" bindtap="onBack">
+        <text class="back-icon">‹</text>
+        <text class="back-text">返回</text>
+      </view>
+      <view class="header-center">
+        <text class="header-title">场景口语对练</text>
+        <text class="header-scene">{{sceneName || '选择场景'}}</text>
+      </view>
+      <view class="status-indicator {{pageStatus}}">
+        <text class="status-dot"></text>
+        <text class="status-text">{{statusText}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 主区域 -->
+  <view class="main-area" style="height: calc(100vh - {{headerHeight}}px - {{bottomBarHeight}}px);">
+    <!-- 场景选择（仅首次进入且无消息时展示） -->
+    <view class="scene-picker" wx:if="{{!hasConversed && messages.length === 0 && pageStatus !== 'uploading' && pageStatus !== 'error'}}">
+      <text class="scene-picker-title">选择练习场景</text>
+      <text class="scene-picker-desc">选择场景后，按住麦克风按钮开始说话</text>
+      <scroll-view class="scene-grid" scroll-x enhanced>
+        <view class="scene-card {{sceneIndex === index ? 'scene-card-active' : ''}}"
+              wx:for="{{sceneList}}" wx:key="id"
+              data-idx="{{index}}" bindtap="onSceneSelect">
+          <text class="scene-card-name">{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- 错误提示 -->
+    <view class="error-card" wx:if="{{pageStatus === 'error' && errorMsg}}">
+      <text class="error-icon">!</text>
+      <text class="error-text">{{errorMsg}}</text>
+      <view class="error-retry" bindtap="onRetry">重试</view>
+    </view>
+
+    <!-- 消息列表 -->
+    <scroll-view class="msg-list" scroll-y scroll-into-view="{{scrollToId}}" scroll-with-animation
+                 wx:if="{{messages.length > 0}}">
+      <view class="msg-scroll-inner">
+        <!-- 系统提示 -->
+        <view class="system-tip">
+          <text class="system-tip-text">点击麦克风开始说话</text>
+        </view>
+
+        <!-- 消息 -->
+        <view class="msg-row {{item.role === 'user' ? 'msg-user' : 'msg-ai'}}"
+              wx:for="{{messages}}" wx:key="index">
+          <!-- AI 头像 -->
+          <view class="msg-avatar avatar-ai" wx:if="{{item.role === 'ai' && !item.isScoreCard}}">
+            <text class="avatar-text">小e</text>
+          </view>
+          <!-- 气泡（普通消息） -->
+          <view class="msg-bubble {{item.role === 'user' ? 'bubble-user' : 'bubble-ai'}}"
+                wx:if="{{!item.isScoreCard && !item.thinking}}"
+                data-idx="{{index}}" bindtap="onToggleText">
+            <text class="msg-time">{{item.time}}</text>
+            <!-- 折叠状态下显示模糊预览 + 提示 -->
+            <view class="collapsed-overlay" wx:if="{{item.collapsed}}">
+              <text class="collapsed-text">点击查看文字</text>
+              <text class="collapsed-icon">{{item.role === 'user' ? '你' : 'AI'}}</text>
+            </view>
+            <!-- 展开后显示完整内容 -->
+            <text class="msg-content" wx:if="{{!item.collapsed}}">{{item.content}}</text>
+          </view>
+          <!-- Thinking 态 -->
+          <view class="msg-bubble bubble-ai" wx:if="{{item.thinking}}">
+            <view class="thinking-wrap">
+              <text class="thinking-label">小e正在听...</text>
+              <view class="thinking-dots">
+                <view class="thinking-dot"></view>
+                <view class="thinking-dot"></view>
+                <view class="thinking-dot"></view>
+              </view>
+            </view>
+          </view>
+          <!-- 评分卡片 -->
+          <view class="score-card" wx:if="{{item.isScoreCard}}" catchtap="noop">
+            <view class="score-header">
+              <text class="score-title">评分报告</text>
+            </view>
+            <view class="score-circle-wrap">
+              <view class="score-circle">
+                <text class="score-number">{{evaluateResult.score || 0}}</text>
+                <text class="score-max">/100</text>
+              </view>
+            </view>
+            <text class="score-feedback" wx:if="{{evaluateResult.feedback}}">{{evaluateResult.feedback}}</text>
+            <view class="score-dims">
+              <view class="score-dim" wx:if="{{evaluateResult.strengths && evaluateResult.strengths.length > 0}}">
+                <text class="dim-label">亮点</text>
+                <text class="dim-item" wx:for="{{evaluateResult.strengths}}" wx:key="index">• {{item}}</text>
+              </view>
+              <view class="score-dim" wx:if="{{evaluateResult.improvements && evaluateResult.improvements.length > 0}}">
+                <text class="dim-label">改进建议</text>
+                <text class="dim-item" wx:for="{{evaluateResult.improvements}}" wx:key="index">• {{item}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 底部锚点 -->
+        <view id="msg-bottom" class="msg-bottom"></view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="bottom-bar" style="height: {{bottomBarHeight}}px; padding-bottom: {{safeBottom}}px;">
+    <!-- 场景名 -->
+    <view class="scene-label">
+      <text class="scene-label-text">{{sceneName || '场景对话'}}</text>
+    </view>
+
+    <!-- 录音/播放状态 -->
+    <view class="mic-area">
+      <!-- 点击开始录音 / 点击停止录音 -->
+      <view class="mic-wrap {{pageStatus === 'recording' ? 'mic-recording' : ''}}"
+            catchtouchmove="noop">
+        <view class="mic-btn {{pageStatus === 'recording' ? 'mic-btn-active' : (pageStatus === 'playing' ? 'mic-btn-playing' : '')}}"
+              bindtap="onRecordTap">
+          <text class="mic-icon">{{pageStatus === 'playing' ? '▶' : (pageStatus === 'recording' ? '◉' : '●')}}</text>
+        </view>
+      </view>
+      <text class="mic-hint">{{micHintText}}</text>
+    </view>
+
+    <!-- 操作按钮 -->
+    <view class="action-area" wx:if="{{messages.length > 0}}">
+      <view class="action-btn end-btn" bindtap="onEndConversation">
+        <view class="end-icon-wrap">
+          <text class="action-icon">★</text>
+        </view>
+        <text class="action-text">结束</text>
+      </view>
+      <view class="action-btn clear-btn" bindtap="onClear">
+        <view class="clear-icon-wrap">
+          <text class="action-icon">×</text>
+        </view>
+        <text class="action-text">清空</text>
+      </view>
+    </view>
+  </view>
+</view>

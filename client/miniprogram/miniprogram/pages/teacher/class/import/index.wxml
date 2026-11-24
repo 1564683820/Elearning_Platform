@@ -1,0 +1,73 @@
+<view class="page">
+  <view class="header">
+    <text class="title">导入花名册</text>
+    <text class="class-name">班级: {{className}}</text>
+  </view>
+
+  <!-- 格式说明 -->
+  <view class="format-card">
+    <text class="format-title">Excel 格式要求</text>
+    <text class="format-subtitle">导入后自动创建学生账号（账号=教师账号+序号4位）</text>
+    <view class="format-table">
+      <view class="format-row header">
+        <text>A列: 序号</text>
+        <text>B列: 姓名</text>
+        <text>C列: 考号</text>
+      </view>
+      <view class="format-row">
+        <text>1</text>
+        <text>张三</text>
+        <text>0001</text>
+      </view>
+      <view class="format-row">
+        <text>2</text>
+        <text>李四</text>
+        <text>0002</text>
+      </view>
+      <view class="format-row">
+        <text>3</text>
+        <text>王五</text>
+        <text>0003</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 导入按钮 -->
+  <view class="upload-area">
+    <button class="btn-upload" bindtap="chooseFile" disabled="{{importing}}">
+      <text wx:if="{{importing}}">导入中...</text>
+      <text wx:else>选择 Excel 文件</text>
+    </button>
+    <text class="upload-hint">支持 .xlsx / .xls 格式，文件大小不超过 5MB</text>
+  </view>
+
+  <!-- 导入结果 -->
+  <view class="result-card" wx:if="{{importResult}}">
+    <view class="result-icon"><view class="check-med"></view></view>
+    <text class="result-text">导入成功！</text>
+    <text class="result-detail">成功导入 {{importResult.imported || 0}} 名</text>
+    <text class="result-detail" wx:if="{{importResult.skipped > 0}}">跳过重复 {{importResult.skipped}} 名</text>
+    <text class="result-detail account-text">自动创建登录账号: {{createdAccountCount || 0}} 个</text>
+    <!-- 已导入学生清单（含账号） -->
+    <view class="imported-list" wx:if="{{importResult.items && importResult.items.length > 0}}">
+      <view class="imported-item" wx:for="{{importResult.items}}" wx:key="exam_number">
+        <text class="imported-name">{{item.student_name}}</text>
+        <text class="imported-exam">考号: {{item.exam_number}}</text>
+        <text class="imported-account" wx:if="{{item.created_account}}">账号: {{item.created_account}}</text>
+        <text class="imported-account empty" wx:else>账号: 未创建</text>
+      </view>
+    </view>
+    <view class="result-actions">
+      <button class="btn-primary" bindtap="viewStudents">查看学生列表</button>
+      <button class="btn-secondary" bindtap="goBack">返回班级</button>
+    </view>
+  </view>
+
+  <!-- 错误提示 -->
+  <view class="error-card" wx:if="{{errorMsg}}">
+    <view class="error-icon"><view class="cross-med"></view></view>
+    <text class="error-text">{{errorMsg}}</text>
+    <text class="error-hint">请检查表格格式重新上传</text>
+    <button class="btn-retry" bindtap="chooseFile">重新上传</button>
+  </view>
+</view>

@@ -1,0 +1,91 @@
+<!-- 阅读训练 -->
+<view class="page">
+  <!-- 自定义Header -->
+  <view class="custom-header" style="padding-top: {{navBarTop}}px;">
+    <view class="header-inner" style="height: {{navBarHeight}}px; padding-left: {{navPadLeft}}px; padding-right: {{navPadRight}}px;">
+      <view class="header-btn" bindtap="onBack">
+        <text class="header-btn-icon">‹</text>
+      </view>
+      <text class="header-title">阅读训练</text>
+      <view class="header-btn" bindtap="onSettingsTap">
+        <text class="header-btn-icon">⚙</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 进度 -->
+  <view class="article-card" wx:if="{{loading}}">正在加载…</view>
+  <view wx:elif="{{mode === 'list'}}">
+    <view class="article-card" wx:if="{{!materials.length}}">暂无阅读材料</view>
+    <view class="article-card" wx:for="{{materials}}" wx:key="id" data-id="{{item.id}}" bindtap="onSelectArticle">
+      <text class="question-text">{{item.title}}</text>
+      <text class="source-text">{{item.source}} · {{item.word_count}} 词</text>
+    </view>
+    <button bindtap="loadMaterials">刷新材料</button>
+  </view>
+  <view class="article-card" wx:elif="{{mode === 'result'}}">
+    <text class="question-text">阅读训练完成</text>
+    <text>答对 {{correctCount}} / {{totalQuestions}} 题 · 用时 {{timer}}</text>
+    <button bindtap="onBack">返回材料列表</button>
+  </view>
+  <block wx:else>
+  <view class="progress-section">
+    <view class="progress-info">
+      <text class="progress-label">{{currentArticle.title}} · 题目 {{currentQuestion + 1}}/{{totalQuestions}}</text>
+      <text class="timer">{{timer}}</text>
+    </view>
+    <view class="progress-bar">
+      <view class="progress-bar-fill" style="width: {{totalQuestions ? (currentQuestion + (answered ? 1 : 0)) * 100 / totalQuestions : 0}}%;"></view>
+    </view>
+  </view>
+
+  <!-- 文章 -->
+  <scroll-view scroll-y class="article-scroll">
+    <view class="article-card">
+      <view class="article-source">
+        <text class="source-icon"></text>
+        <text class="source-text">{{currentArticle.source || currentArticle.title}}</text>
+      </view>
+      <view class="article-body">
+        <text class="article-paragraph">{{currentArticle.content}}</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 题目 -->
+  <view wx:if="{{mode === 'article'}}" class="article-card">
+    <button wx:if="{{totalQuestions}}" bindtap="onStartQuiz">开始答题（{{totalQuestions}} 题）</button>
+    <text wx:else>本篇暂无配套题目，可返回选择其他材料。</text>
+  </view>
+  <view class="question-section" wx:if="{{mode === 'question'}}">
+    <view class="question-card-inline">
+      <text class="question-text">{{currentQuestion + 1}}. {{question.stem}}</text>
+      <view class="options-list">
+        <view class="quiz-option {{answered && selectedIndex === index ? (index === question.correctIndex ? 'correct' : 'wrong') : ''}} {{answered && index === question.correctIndex ? 'correct' : ''}}"
+              wx:for="{{question.options}}" wx:key="index"
+              data-index="{{index}}" bindtap="onSelectOption">
+          <view class="option-content">
+            <view class="option-letter">{{['A','B','C','D'][index]}}</view>
+            <text class="option-text">{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <text wx:if="{{submitting}}">正在保存答案…</text>
+
+  <!-- 解析 -->
+  <view class="analysis-card" wx:if="{{showAnalysis}}">
+    <view class="analysis-header">
+      <text class="analysis-icon"></text>
+      <text class="analysis-title">答案解析</text>
+    </view>
+    <text class="analysis-answer">正确答案：{{['A','B','C','D'][question.correctIndex]}}</text>
+    <text class="analysis-explain">{{question.explanation}}</text>
+    <view class="next-btn" bindtap="onNextQuestion">
+      <text class="next-btn-text">下一题</text>
+      <text class="next-btn-arrow">→</text>
+    </view>
+  </view>
+  </block>
+</view>

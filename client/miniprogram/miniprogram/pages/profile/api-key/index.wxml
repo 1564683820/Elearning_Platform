@@ -1,0 +1,91 @@
+<!-- API Key 配置 -->
+<view class="page">
+  <!-- 自定义Header -->
+  <view class="custom-header" style="padding-top: {{navBarTop || statusBarHeight}}px;">
+    <view class="header-inner" style="height: {{navBarHeight}}px; padding-left: {{navPadLeft}}px; padding-right: {{navPadRight}}px;">
+      <view class="header-btn" bindtap="onBack">
+        <text class="header-btn-icon">‹</text>
+      </view>
+      <text class="header-title">API Key 配置</text>
+      <view class="header-spacer"></view>
+    </view>
+  </view>
+
+  <!-- 内容区 -->
+  <scroll-view scroll-y class="content-scroll">
+
+    <!-- ===== 智能对话 API ===== -->
+    <view class="section-divider">
+      <view class="section-dot" style="background:#5B9E6F;"></view>
+      <text class="section-title">智能对话 API</text>
+    </view>
+    <view class="form-card card">
+      <text class="form-label">API Key</text>
+      <view class="input-row">
+        <input class="form-input" placeholder="输入对话 API Key"
+               value="{{chatApiKey}}" bindinput="onChatApiKeyInput"
+               password="{{!showChatKey}}" />
+        <view class="eye-btn" bindtap="onToggleChatKey">
+          <text class="eye-icon">{{showChatKey ? '隐藏' : '显示'}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="form-card card">
+      <text class="form-label">Base URL</text>
+      <view class="input-row">
+        <input class="form-input" placeholder="https://api.example.com/v1"
+               value="{{chatBaseUrl}}" bindinput="onChatBaseUrlInput" />
+      </view>
+    </view>
+    <view class="form-card card">
+      <text class="form-label">模型名称</text>
+      <view class="input-row">
+        <input class="form-input" placeholder="例如：gpt-3.5-turbo"
+               value="{{chatModelName}}" bindinput="onChatModelNameInput" />
+      </view>
+    </view>
+    <view class="btn-outline test-btn" bindtap="onTestChatConnection">
+      <text>测试对话连接</text>
+    </view>
+
+    <!-- ===== 视频演绎 API ===== -->
+    <view class="section-divider" style="margin-top:40rpx;">
+      <view class="section-dot" style="background:#E67E22;"></view>
+      <text class="section-title">视频演绎 API</text>
+    </view>
+    <view class="form-card card">
+      <text class="form-label">API Key</text>
+      <view class="input-row">
+        <input class="form-input" placeholder="输入视频演绎 API Key"
+               value="{{videoApiKey}}" bindinput="onVideoApiKeyInput"
+               password="{{!showVideoKey}}" />
+        <view class="eye-btn" bindtap="onToggleVideoKey">
+          <text class="eye-icon">{{showVideoKey ? '隐藏' : '显示'}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="form-card card">
+      <text class="form-label">Base URL</text>
+      <view class="input-row">
+        <input class="form-input" placeholder="https://api.example.com/v1"
+               value="{{videoBaseUrl}}" bindinput="onVideoBaseUrlInput" />
+      </view>
+    </view>
+    <view class="form-card card">
+      <text class="form-label">模型名称</text>
+      <view class="input-row">
+        <input class="form-input" placeholder="例如：gpt-4o"
+               value="{{videoModelName}}" bindinput="onVideoModelNameInput" />
+      </view>
+    </view>
+    <view class="btn-outline test-btn" bindtap="onTestVideoConnection">
+      <text>测试视频连接</text>
+    </view>
+
+    <!-- 保存按钮 -->
+    <view class="btn-primary save-btn" bindtap="onSave">
+      <text wx:if="{{!saving}}">保存配置</text>
+      <text wx:else>保存中...</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,120 @@
+version: '3'
+
+tasks:
+  default:
+    cmds:
+      - task --list
+
+  setup:
+    desc: Install backend and Web dependencies
+    cmds:
+      - task: harness
+        vars: {COMMAND: setup}
+
+  dev-web:
+    desc: Start the Web admin
+    dir: client
+    cmds:
+      - npm run dev
+
+  dev-h5:
+    desc: Start the H5 client
+    cmds:
+      - task: require-h5
+      - task: start-h5
+
+  dev:
+    desc: Start Web and H5 together
+    cmds:
+      - task: require-h5
+      - task: start-frontends
+
+  dev-backend:
+    desc: Check database connections and start FastAPI
+    cmds:
+      - task: harness
+        vars: {COMMAND: dev-backend}
+
+  dev-worker:
+    desc: Check teaching prerequisites and start the worker
+    cmds:
+      - task: harness
+        vars: {COMMAND: dev-worker}
+
+  check-database:
+    desc: Check both databases with read-only queries
+    cmds:
+      - task: harness
+        vars: {COMMAND: check-database}
+
+  check-teaching:
+    desc: Check teaching environment readiness
+    cmds:
+      - task: harness
+        vars: {COMMAND: check-teaching}
+
+  lint:
+    desc: Validate the Harness project structure
+    cmds:
+      - pwsh -NoProfile -File .harness/scripts/validate.ps1
+
+  test:
+    desc: Check backend Python syntax
+    cmds:
+      - task: harness
+        vars: {COMMAND: test}
+
+  unit:
+    desc: Run backend unit tests
+    cmds:
+      - task: harness
+        vars: {COMMAND: unit}
+
+  typecheck:
+    desc: Type-check the Web project
+    cmds:
+      - task: harness
+        vars: {COMMAND: typecheck}
+
+  build:
+    desc: Build the Web production bundle
+    dir: client
+    cmds:
+      - npm run build
+
+  build-h5:
+    desc: Build the H5 production bundle
+    dir: client/h5
+    cmds:
+      - npm run build
+
+  verify:
+    desc: Run Harness lint, Python syntax checks, and Web type checks
+    cmds:
+      - task: lint
+      - task: test
+      - task: typecheck
+
+  harness:
+    internal: true
+    cmds:
+      - pwsh -NoProfile -File harness.ps1 {{.COMMAND}}
+
+  require-h5:
+    internal: true
+    cmds:
+      - >-
+        pwsh -NoProfile -Command 'if (-not (Test-Path -LiteralPath "client/h5/package.json" -PathType Leaf)) {
+        throw "H5 is not available yet. Expected client/h5/package.json." };
+        if (-not (Get-Content -Raw -LiteralPath "client/h5/package.json" | ConvertFrom-Json).scripts.dev) {
+        throw "H5 package.json must define scripts.dev." }'
+
+  start-h5:
+    internal: true
+    dir: client/h5
+    cmds:
+      - npm run dev
+
+  start-frontends:
+    internal: true
+    deps: [dev-web, start-h5]

@@ -1,0 +1,141 @@
+<!-- 视频演绎创建页 — 选课文 → 选角色 → 生成 -->
+<view class="page">
+  <view class="page-header">
+    <text class="page-title">创建演绎视频</text>
+    <text class="page-subtitle">选择课文和角色，AI 生成生动的朗读视频</text>
+  </view>
+
+  <!-- 步骤指示器 -->
+  <view class="steps">
+    <view class="step {{currentStep >= 1 ? 'active' : ''}}">
+      <view class="step-num">1</view>
+      <text class="step-label">选择课文</text>
+    </view>
+    <view class="step-line {{currentStep >= 2 ? 'active' : ''}}"></view>
+    <view class="step {{currentStep >= 2 ? 'active' : ''}}">
+      <view class="step-num">2</view>
+      <text class="step-label">选择角色</text>
+    </view>
+    <view class="step-line {{currentStep >= 3 ? 'active' : ''}}"></view>
+    <view class="step {{currentStep >= 3 ? 'active' : ''}}">
+      <view class="step-num">3</view>
+      <text class="step-label">生成预览</text>
+    </view>
+  </view>
+
+  <!-- Step 1: 选择课文 -->
+  <view class="section" wx:if="{{currentStep === 1}}">
+    <view class="section-title">选择教材和课文</view>
+
+    <view class="selector-group">
+      <view class="select-row">
+        <text class="select-label">教材版本</text>
+        <picker mode="selector" range="{{versions}}" bindchange="onVersionChange">
+          <view class="select-value">{{selectedVersion || '请选择'}}</view>
+        </picker>
+      </view>
+      <view class="select-row">
+        <text class="select-label">年级</text>
+        <picker mode="selector" range="{{grades}}" bindchange="onGradeChange">
+          <view class="select-value {{!selectedVersion ? 'disabled' : ''}}">{{selectedGrade || '请先选择教材'}}</view>
+        </picker>
+      </view>
+      <view class="select-row">
+        <text class="select-label">学期</text>
+        <picker mode="selector" range="{{semesters}}" bindchange="onSemesterChange">
+          <view class="select-value {{!selectedGrade ? 'disabled' : ''}}">{{selectedSemester || '请先选择年级'}}</view>
+        </picker>
+      </view>
+      <view class="select-row">
+        <text class="select-label">单元</text>
+        <picker mode="selector" range="{{units}}" bindchange="onUnitChange">
+          <view class="select-value {{!selectedSemester ? 'disabled' : ''}}">{{selectedUnitName || '请先选择学期'}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <button class="next-btn" bindtap="onGoStep2" disabled="{{!selectedUnitId}}">下一步：选择角色</button>
+  </view>
+
+  <!-- Step 2: 选择角色 -->
+  <view class="section" wx:elif="{{currentStep === 2}}">
+    <view class="section-title">选择演绎角色</view>
+
+    <view class="character-grid">
+      <view
+        class="character-card {{selectedCharacter === item.character_key ? 'active' : ''}}"
+        wx:for="{{characters}}"
+        wx:key="character_key"
+        data-key="{{item.character_key}}"
+        bindtap="onSelectCharacter"
+      >
+        <image class="char-img" src="{{item.image_url || '/images/character-default.png'}}" mode="aspectFill" />
+        <text class="char-name">{{item.name}}</text>
+        <text class="char-desc">{{item.description}}</text>
+        <view class="char-check" wx:if="{{selectedCharacter === item.character_key}}">✓</view>
+      </view>
+    </view>
+
+    <view class="custom-upload">
+      <text class="upload-label">或上传自定义角色图片</text>
+      <button class="upload-btn" bindtap="onUploadCharacter">
+        {{characterImageUrl ? '已上传 ✓' : '上传图片'}}
+      </button>
+    </view>
+
+    <view class="step-actions">
+      <button class="prev-btn" bindtap="onGoStep1">上一步</button>
+      <button class="next-btn" bindtap="onGoStep3" disabled="{{!selectedCharacter}}">下一步：生成预览</button>
+    </view>
+  </view>
+
+  <!-- Step 3: 生成预览 -->
+  <view class="section" wx:elif="{{currentStep === 3}}">
+    <view class="section-title">预览并生成</view>
+
+    <!-- 视频标题 -->
+    <view class="input-group">
+      <text class="input-label">视频标题（选填）</text>
+      <input class="text-input" placeholder="例如：Unit 1 Hello!的朗读视频" value="{{videoTitle}}" bindinput="onTitleInput" />
+    </view>
+
+    <!-- 角色预览 -->
+    <view class="preview-card">
+      <image class="preview-img" src="{{characterPreviewUrl}}" mode="aspectFill" />
+      <view class="preview-info">
+        <text class="preview-character">{{selectedCharacterName}}</text>
+        <text class="preview-unit">{{selectedVersion || ''}} · {{selectedUnitName || ''}}</text>
+      </view>
+    </view>
+
+    <!-- 课文内容预览 -->
+    <view class="section-title">课文内容（{{textContent.length}}字）</view>
+    <view class="text-preview">
+      <text>{{textContent}}</text>
+    </view>
+
+    <!-- 分镜预览（加载时显示） -->
+    <view class="script-preview" wx:if="scriptScenes && scriptScenes.length > 0">
+      <view class="section-title">AI 分镜脚本（{{scriptScenes.length}} 段）</view>
+      <view class="scene-list">
+        <view class="scene-item" wx:for="{{scriptScenes}}" wx:key="index" wx:for-index="idx">
+          <view class="scene-num">{{idx + 1}}</view>
+          <view class="scene-content">
+            <text class="scene-text">{{item.spoken_text}}</text>
+            <view class="scene-meta">
+              <text class="scene-emotion">{{item.emotion}}</text>
+              <text class="scene-duration">{{item.duration_sec || 3}}秒</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="step-actions">
+      <button class="prev-btn" bindtap="onGoStep2">上一步</button>
+      <button class="generate-btn" bindtap="onGenerate" loading="{{generating}}" disabled="{{generating}}">
+        {{generating ? 'AI 生成中...' : '生成视频'}}
+      </button>
+    </view>
+  </view>
+</view>

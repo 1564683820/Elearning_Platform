@@ -1,0 +1,127 @@
+<!-- 学习报告 -->
+<view class="page">
+  <!-- 加载状态 -->
+  <view class="loading-wrap" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+    <text class="loading-text">正在生成学习报告...</text>
+  </view>
+
+  <!-- 错误状态 -->
+  <view class="error-wrap" wx:elif="{{error}}">
+    <text class="error-text">{{error}}</text>
+    <view class="retry-btn" bindtap="onLoadReport">重新加载</view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-wrap" wx:elif="{{!report}}">
+    <text class="empty-icon"></text>
+    <text class="empty-text">暂无学习数据</text>
+    <text class="empty-hint">开始学习后将自动生成报告</text>
+  </view>
+
+  <!-- 报告内容 -->
+  <scroll-view scroll-y class="report-scroll" wx:else>
+    <view class="report-content">
+
+      <!-- 顶部概览卡片 -->
+      <view class="overview-card">
+        <view class="overview-top">
+          <text class="overview-name">{{report.nickname || '学习者'}}</text>
+          <text class="overview-period">{{report.period_start}} ~ {{report.period_end}}</text>
+        </view>
+        <view class="overview-grid">
+          <view class="ov-item">
+            <text class="ov-value">{{report.study_days}}</text>
+            <text class="ov-label">学习天数</text>
+          </view>
+          <view class="ov-item">
+            <text class="ov-value">{{report.total_words}}</text>
+            <text class="ov-label">总词汇量</text>
+          </view>
+          <view class="ov-item">
+            <text class="ov-value">{{report.total_training}}</text>
+            <text class="ov-label">训练次数</text>
+          </view>
+          <view class="ov-item">
+            <text class="ov-value">{{report.total_exams}}</text>
+            <text class="ov-label">考试次数</text>
+          </view>
+        </view>
+        <view class="overall-accuracy">
+          <view class="accuracy-ring">
+            <view class="ring-circle" style="background: conic-gradient(var(--primary) 0% {{report.overall_accuracy}}%, #E8EDF0 {{report.overall_accuracy}}% 100%);">
+              <view class="ring-inner">
+                <text class="ring-value">{{report.overall_accuracy}}%</text>
+                <text class="ring-label">综合正确率</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 各模块正确率 -->
+      <view class="section-card" wx:if="{{report.module_breakdown && report.module_breakdown.length > 0}}">
+        <view class="section-title">各模块正确率</view>
+        <view class="module-list">
+          <view class="module-item" wx:for="{{report.module_breakdown}}" wx:key="name">
+            <view class="module-info">
+              <text class="module-name">{{item.name}}</text>
+              <text class="module-value {{item.accuracy < 60 ? 'low' : item.accuracy < 80 ? 'mid' : 'high'}}">{{item.accuracy}}%</text>
+            </view>
+            <view class="module-bar">
+              <view class="bar-fill {{item.accuracy < 60 ? 'low' : item.accuracy < 80 ? 'mid' : 'high'}}"
+                    style="width: {{item.accuracy}}%"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 薄弱知识点 -->
+      <view class="section-card" wx:if="{{report.weakness_points && report.weakness_points.length > 0}}">
+        <view class="section-title">薄弱知识点</view>
+        <view class="weakness-list">
+          <view class="weakness-item" wx:for="{{report.weakness_points}}" wx:key="point">
+            <view class="weakness-left">
+              <text class="weakness-icon">⚠️</text>
+              <view class="weakness-info">
+                <text class="weakness-name">{{item.point}}</text>
+                <text class="weakness-detail">正确率 {{item.accuracy}}% · 出现 {{item.count}} 次</text>
+              </view>
+            </view>
+            <view class="weakness-badge danger">{{item.accuracy}}%</view>
+          </view>
+        </view>
+      </view>
+
+      <!-- AI 学习建议 -->
+      <view class="section-card" wx:if="{{report.improvement_suggestions && report.improvement_suggestions.length > 0}}">
+        <view class="section-title">
+          <text>AI 学习建议</text>
+          <text class="section-subtitle">基于你的学习数据智能生成</text>
+        </view>
+        <view class="suggestion-list">
+          <view class="suggestion-item" wx:for="{{report.improvement_suggestions}}" wx:key="*this" data-index="{{index}}">
+            <text class="suggestion-bullet">{{index + 1}}</text>
+            <text class="suggestion-text">{{item}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 每日趋势（简化：最近7天） -->
+      <view class="section-card" wx:if="{{report.daily_trend && report.daily_trend.length > 0}}">
+        <view class="section-title">学习趋势</view>
+        <view class="trend-chart">
+          <view class="trend-bar-wrap" wx:for="{{report.daily_trend}}" wx:key="date" wx:for-item="day">
+            <view class="trend-bar-item">
+              <view class="trend-bar-fill" style="height: {{day.count > 0 ? (day.count / maxDailyCount * 120 + 8) : 8}}rpx;">
+                <text class="trend-bar-value" wx:if="{{day.count > 0}}">{{day.count}}</text>
+              </view>
+            </view>
+            <text class="trend-bar-label">{{day.label}}</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,10 @@
+<!-- 底部导航栏 -->
+<view class="footer-tabs">
+  <view class="tab-item {{activeIndex === index ? 'active' : ''}}"
+        wx:for="{{tabs}}" wx:key="index"
+        data-index="{{index}}" catchtap="onTabTap">
+    <text class="tab-icon">{{TAB_ICONS[tabs[index].icon] || '●'}}</text>
+    <text class="tab-text">{{item.text}}</text>
+    <view class="tab-indicator" wx:if="{{activeIndex === index}}"></view>
+  </view>
+</view>

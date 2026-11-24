@@ -1,0 +1,9 @@
+{
+  "name": "import-dict",
+  "version": "1.0.0",
+  "description": "Batch import ECDICT words to CloudBase MySQL",
+  "main": "index.js",
+  "dependencies": {
+    "@cloudbase/node-sdk": "latest"
+  }
+}

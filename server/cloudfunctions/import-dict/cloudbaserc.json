@@ -1,0 +1,18 @@
+{
+  "envId": "cloud1-d0g0f3q7g8d2bb58f",
+  "version": "2.0",
+  "functions": [
+    {
+      "name": "import-dict",
+      "handler": "index.main",
+      "runtime": "Nodejs16.13",
+      "timeout": 60,
+      "memorySize": 512,
+      "envVariables": {},
+      "vpc": {
+        "vpcId": "",
+        "subnetId": ""
+      }
+    }
+  ]
+}

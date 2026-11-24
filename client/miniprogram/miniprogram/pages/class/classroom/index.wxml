@@ -1,0 +1,359 @@
+<view class="page">
+  <!-- 顶部导航 -->
+  <view class="top-bar">
+    <button class="back-btn" bindtap="onBack">‹ 返回</button>
+    <text class="top-title">{{title}}</text>
+    <view class="page-indicator">{{currentPage}} / {{totalPages}}</view>
+  </view>
+
+  <!-- PPT 展示区（居中） -->
+  <view class="ppt-area">
+    <view class="ppt-container">
+      <view class="ppt-page">
+        <text class="ppt-page-label">第 {{currentPage}} 页 / 共 {{totalPages}} 页</text>
+
+        <scroll-view class="ppt-page-scroll" scroll-y wx:if="{{currentSlide}}">
+          <!-- 标题页 -->
+          <block wx:if="{{currentSlide.type === 'title'}}">
+            <view class="slide-title">
+              <text class="slide-title-main">{{currentSlide.content.main_title || currentSlide.title}}</text>
+              <text class="slide-title-sub" wx:if="{{currentSlide.content.subtitle}}">{{currentSlide.content.subtitle}}</text>
+              <text class="slide-title-grade" wx:if="{{currentSlide.content.grade}}">{{currentSlide.content.grade}}</text>
+            </view>
+          </block>
+
+          <!-- 学习目标 -->
+          <block wx:elif="{{currentSlide.type === 'objective'}}">
+            <view class="slide-section">
+              <text class="slide-section-title">{{currentSlide.title || '学习目标'}}</text>
+              <view class="slide-list">
+                <view class="slide-list-item" wx:for="{{currentSlide.content.items || []}}" wx:key="index">
+                  <text class="list-bullet">●</text>
+                  <text class="list-text">{{item}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+
+          <!-- 词汇展示 -->
+          <block wx:elif="{{currentSlide.type === 'vocabulary'}}">
+            <view class="slide-section">
+              <text class="slide-section-title">{{currentSlide.title || '词汇'}}</text>
+              <view class="word-grid">
+                <view class="word-card" wx:for="{{currentSlide.content.words || []}}" wx:key="index">
+                  <text class="word-text">{{item.word}}</text>
+                  <text class="word-phonetic" wx:if="{{item.phonetic}}">{{item.phonetic}}</text>
+                  <text class="word-translation">{{item.translation}}</text>
+                  <text class="word-example" wx:if="{{item.example}}">{{item.example}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+
+          <!-- 对话练习 -->
+          <block wx:elif="{{currentSlide.type === 'dialogue'}}">
+            <view class="slide-section">
+              <text class="slide-section-title">{{currentSlide.title || '对话练习'}}</text>
+              <view class="dialogue-list">
+                <view class="dialogue-item {{item.speaker === 'A' ? 'dialogue-left' : 'dialogue-right'}}" wx:for="{{currentSlide.content.dialogues || []}}" wx:key="index">
+                  <text class="dialogue-speaker">{{item.speaker}}</text>
+                  <text class="dialogue-text">{{item.text}}</text>
+                  <text class="dialogue-translation" wx:if="{{item.translation}}">{{item.translation}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+
+          <!-- 语法讲解 -->
+          <block wx:elif="{{currentSlide.type === 'grammar'}}">
+            <view class="slide-section">
+              <text class="slide-section-title">{{currentSlide.title || '语法讲解'}}</text>
+              <view class="grammar-list">
+                <view class="grammar-item" wx:for="{{currentSlide.content.points || []}}" wx:key="index">
+                  <text class="grammar-rule">{{item.rule}}</text>
+                  <text class="grammar-example">{{item.example}}</text>
+                  <text class="grammar-explanation" wx:if="{{item.explanation}}">{{item.explanation}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+
+          <!-- 课堂练习 -->
+          <block wx:elif="{{currentSlide.type === 'practice'}}">
+            <view class="slide-section">
+              <text class="slide-section-title">{{currentSlide.title || '课堂练习'}}</text>
+              <view class="practice-list">
+                <view class="practice-item" wx:for="{{currentSlide.content.questions || []}}" wx:key="index">
+                  <text class="practice-stem">{{index + 1}}. {{item.stem}}</text>
+                  <view class="practice-options">
+                    <text class="practice-option" wx:for="{{item.options || []}}" wx:key="idx">{{optionLetters[idx]}}. {{item}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+
+          <!-- 互动活动 -->
+          <block wx:elif="{{currentSlide.type === 'interactive'}}">
+            <view class="slide-section">
+              <text class="slide-section-title">{{currentSlide.title || '互动活动'}}</text>
+              <text class="activity-desc">{{currentSlide.content.description}}</text>
+              <view class="slide-list">
+                <view class="slide-list-item" wx:for="{{currentSlide.content.steps || []}}" wx:key="index">
+                  <text class="list-bullet">{{index + 1}}.</text>
+                  <text class="list-text">{{item}}</text>
+                </view>
+              </view>
+            </view>
+          </block>
+
+          <!-- AI 互动 -->
+          <block wx:elif="{{currentSlide.type === 'ai_interaction'}}">
+            <view class="slide-section">
+              <text class="slide-section-title">{{currentSlide.title || '人机互动'}}</text>
+              <text class="ai-prompt" wx:if="{{currentSlide.content.prompt}}">{{currentSlide.content.prompt}}</text>
+            </view>
+          </block>
+
+          <!-- 总结回顾 -->
+          <block wx:elif="{{currentSlide.type === 'summary'}}">
+            <view class="slide-section">
+              <text class="slide-section-title">{{currentSlide.title || '总结回顾'}}</text>
+              <view class="slide-list">
+                <view class="slide-list-item" wx:for="{{currentSlide.content.key_points || []}}" wx:key="index">
+                  <text class="list-bullet">✓</text>
+                  <text class="list-text">{{item}}</text>
+                </view>
+              </view>
+              <text class="homework-text" wx:if="{{currentSlide.content.homework}}">
+                📝 作业：{{currentSlide.content.homework}}
+              </text>
+            </view>
+          </block>
+
+          <!-- 未知类型兜底 -->
+          <view class="slide-fallback" wx:else>
+            <text class="slide-title-main">{{currentSlide.title || ''}}</text>
+            <text class="slide-fallback-json">{{JSON.stringify(currentSlide.content, null, 2)}}</text>
+          </view>
+        </scroll-view>
+
+        <text class="ppt-page-empty" wx:else>暂无 PPT 内容</text>
+
+        <!-- 左右翻页 -->
+        <view class="ppt-nav left" bindtap="onPrevPage" wx:if="{{currentPage > 1}}">
+          <text class="nav-arrow">‹</text>
+        </view>
+        <view class="ppt-nav right" bindtap="onNextPage" wx:if="{{currentPage < totalPages}}">
+          <text class="nav-arrow">›</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部互动区 -->
+  <view class="bottom-area">
+    <!-- 消息列表 -->
+    <view class="message-list" wx:if="{{messages.length > 0}}">
+      <view class="message-item" wx:for="{{messages}}" wx:key="id">
+        <text class="msg-sender">{{item.student_name || '同学'}}</text>
+        <text class="msg-content">{{item.content}}</text>
+        <text class="msg-time">{{item.timestamp ? item.timestamp.slice(11, 19) : ''}}</text>
+      </view>
+    </view>
+
+    <!-- 互动按钮行 -->
+    <view class="interaction-bar">
+      <button class="interact-btn" bindtap="sendMessage">
+        <text class="interact-icon">💬</text>
+        <text>留言</text>
+      </button>
+      <button class="interact-btn" bindtap="onQuizClick">
+        <text class="interact-icon">✏️</text>
+        <text>答题</text>
+      </button>
+      <button class="interact-btn ai-btn" bindtap="onAIChatClick">
+        <text class="interact-icon ai-btn-icon">AI</text>
+        <text>AI 提问</text>
+      </button>
+      <button class="interact-btn" bindtap="showVote">
+        <text class="interact-icon">📊</text>
+        <text>投票</text>
+      </button>
+    </view>
+
+    <!-- 留言输入区 -->
+    <view class="message-input-area">
+      <input class="msg-input" placeholder="输入留言..." value="{{msgText}}" bindinput="onMsgInput" />
+      <button class="send-btn" bindtap="sendMessage">发送</button>
+    </view>
+  </view>
+
+  <!-- ========== 弹窗：答题/投票 ========== -->
+  <view class="modal-mask" wx:if="{{showInteraction}}" bindtap="onCloseModal">
+    <view class="modal-content" catchtap="preventClose">
+      <view class="modal-header">
+        <text class="modal-title">
+          {{interactionType === 'quiz_list' ? '答题中' : 
+            interactionType === 'quiz_answer' ? '课堂答题' : 
+            interactionType === 'quiz_results' ? '答题统计' : '投票'}}
+        </text>
+        <text class="modal-close" bindtap="onCloseModal">✕</text>
+      </view>
+
+      <!-- ===== 答题列表视图 ===== -->
+      <block wx:if="{{interactionType === 'quiz_list'}}">
+        <text class="quiz-list-hint" wx:if="{{quizList.length === 0}}">
+          暂无活跃答题，等待老师发布...
+        </text>
+        <scroll-view scroll-y class="quiz-list-scroll" wx:else>
+          <view
+            class="quiz-list-item"
+            wx:for="{{quizList}}"
+            wx:key="id"
+            data-id="{{item.id}}"
+            bindtap="onQuizItemSelect"
+          >
+            <view class="quiz-list-left">
+              <text class="quiz-list-q">{{item.question}}</text>
+              <text class="quiz-list-meta">{{item.total_answers}} 人已答</text>
+            </view>
+            <text class="quiz-list-arrow">›</text>
+          </view>
+        </scroll-view>
+      </block>
+
+      <!-- ===== 答题回答视图 ===== -->
+      <block wx:elif="{{interactionType === 'quiz_answer'}}">
+        <text class="modal-question" wx:if="{{interactionData}}">{{interactionData.question}}</text>
+
+        <view class="option-list" wx:if="{{interactionData}}">
+          <view
+            class="option-item {{userChoice === index ? 'selected' : ''}} {{submitted ? (index === userChoice ? 'chosen' : '') : ''}}"
+            wx:for="{{interactionData.options}}" wx:key="index"
+            data-index="{{index}}"
+            bindtap="onOptionSelect"
+          >
+            <view class="option-radio {{userChoice === index ? 'checked' : ''}}">
+              <view class="radio-dot" wx:if="{{userChoice === index}}"></view>
+            </view>
+            <text class="option-label">{{optionLetters[index]}}.</text>
+            <text class="option-text">{{item}}</text>
+          </view>
+        </view>
+
+        <view class="quiz-btn-row">
+          <button class="back-list-btn" bindtap="onBackToQuizList">返回列表</button>
+          <button
+            class="submit-btn {{(userChoice === null || submitted || submitting) ? 'btn-disabled' : ''}}"
+            bindtap="onSubmitChoice"
+            wx:if="{{!submitted}}"
+            disabled="{{submitting}}"
+          >
+            {{submitting ? '提交中...' : '提交答案'}}
+          </button>
+          <text class="submitted-tip" wx:if="{{submitted}}">✓ 已提交，正在查看统计...</text>
+        </view>
+      </block>
+
+      <!-- ===== 答题统计视图 ===== -->
+      <block wx:elif="{{interactionType === 'quiz_results'}}">
+        <text class="modal-question" wx:if="{{quizResults}}">{{quizResults.question}}</text>
+
+        <view class="stats-area" wx:if="{{quizResults}}">
+          <view class="stats-header">
+            <text class="stats-count">共 {{quizResults.total_answers}} 人参与</text>
+            <text class="stats-correct" wx:if="{{quizResults.correct_count !== undefined}}">正确率 {{quizResults.correctRate}}%</text>
+          </view>
+
+          <view class="stats-list">
+            <view class="stats-item" wx:for="{{quizResults.options}}" wx:key="index">
+              <view class="stats-row">
+                <text class="stats-label">{{optionLetters[index]}}.</text>
+                <text class="stats-option-text">{{item}}</text>
+                <text class="stats-count-num">{{quizResults.option_counts[index]}}票</text>
+              </view>
+              <view class="stats-bar-bg">
+                <view
+                  class="stats-bar-fill {{userChoice === index ? 'bar-mine' : ''}}"
+                  style="width: {{quizResults.total_answers > 0 ? (quizResults.option_counts[index] / quizResults.total_answers * 100) : 0}}%"
+                ></view>
+              </view>
+            </view>
+          </view>
+
+          <text class="stats-refresh-hint">统计每 3 秒自动刷新</text>
+        </view>
+
+        <view class="quiz-btn-row">
+          <button class="back-list-btn" bindtap="onBackToQuizList">返回列表</button>
+          <button class="submit-btn" bindtap="onCloseModal">关闭</button>
+        </view>
+      </block>
+
+      <!-- ===== 投票视图 ===== -->
+      <block wx:elif="{{interactionType === 'vote'}}">
+        <text class="modal-question" wx:if="{{interactionData}}">{{interactionData.question}}</text>
+
+        <view class="option-list" wx:if="{{interactionData}}">
+          <view
+            class="option-item {{userChoice === index ? 'selected' : ''}} {{submitted ? (index === userChoice ? 'chosen' : '') : ''}}"
+            wx:for="{{interactionData.options}}" wx:key="index"
+            data-index="{{index}}"
+            bindtap="onOptionSelect"
+          >
+            <view class="option-radio {{userChoice === index ? 'checked' : ''}}">
+              <view class="radio-dot" wx:if="{{userChoice === index}}"></view>
+            </view>
+            <text class="option-text">{{item}}</text>
+          </view>
+        </view>
+
+        <button class="submit-btn" bindtap="onSubmitChoice" wx:if="{{!submitted}}">
+          提交选择
+        </button>
+        <text class="submitted-tip" wx:if="{{submitted}}">已提交，等待老师结束互动</text>
+      </block>
+    </view>
+  </view>
+
+  <!-- ========== AI 问答弹窗 ========== -->
+  <view class="ai-modal-mask" wx:if="{{showAIChat}}" bindtap="onCloseAIChat">
+    <view class="ai-chat-modal" catchtap="preventClose">
+      <view class="ai-chat-header">
+        <view class="ai-chat-header-left">
+          <text class="ai-chat-title">AI 问答</text>
+          <text class="ai-chat-context" wx:if="{{currentSlide}}">{{currentSlide.title || currentSlide.type || '当前页'}}</text>
+        </view>
+        <text class="modal-close" bindtap="onCloseAIChat">✕</text>
+      </view>
+
+      <scroll-view class="ai-chat-body" scroll-y scroll-into-view="{{aiScrollToId}}" scroll-with-animation upper-threshold="50">
+        <view
+          class="ai-msg-wrap {{item.role === 'user' ? 'ai-msg-right' : 'ai-msg-left'}}"
+          wx:for="{{aiMessages}}" wx:key="index"
+        >
+          <view class="ai-msg-avatar">{{item.role === 'user' ? '我' : 'AI'}}</view>
+          <view class="ai-msg-bubble {{item.role === 'user' ? 'bubble-user' : 'bubble-ai'}}">
+            <rich-text class="ai-msg-content" wx:if="{{!item.thinking}}" nodes="{{item.contentRendered}}"></rich-text>
+            <view class="ai-thinking-row" wx:else>
+              <text class="ai-thinking-dot">•</text>
+              <text class="ai-thinking-dot">•</text>
+              <text class="ai-thinking-dot">•</text>
+            </view>
+          </view>
+        </view>
+        <view id="ai-msg-bottom"></view>
+      </scroll-view>
+
+      <view class="ai-chat-footer">
+        <input class="ai-chat-input" placeholder="输入关于PPT内容的问题..." value="{{aiInput}}" bindinput="onAIInput" />
+        <button
+          class="ai-chat-send {{(!aiInput.trim() || aiSending) ? 'send-disabled' : ''}}"
+          bindtap="onAISend"
+          disabled="{{aiSending}}"
+        >{{aiSending ? '…' : '发送'}}</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,74 @@
+<!-- 文字场景对话页面 -->
+<view class="page">
+  <!-- 顶部导航 -->
+  <view class="header" style="padding-top: {{statusBarHeight}}px;">
+    <view class="header-inner" style="height: {{navBarHeight}}px;">
+      <view class="back-btn" bindtap="onBack">
+        <text class="back-icon">‹</text>
+        <text class="back-text">返回</text>
+      </view>
+      <view class="header-center">
+        <text class="header-icon">{{sceneIcon}}</text>
+        <text class="header-title">{{sceneName || '场景对话'}}</text>
+      </view>
+      <view class="header-indicator">
+        <text class="indicator-dot"></text>
+        <text class="indicator-text">文字</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 消息列表 -->
+  <scroll-view class="msg-scroll" scroll-y scroll-into-view="{{scrollToId}}" scroll-with-animation enhanced
+               style="height: calc(100vh - {{headerHeight}}px - 120rpx);">
+    <view class="msg-list">
+      <!-- 场景提示 -->
+      <view class="scene-tip" wx:if="{{messages.length <= 1}}">
+        <text class="scene-tip-icon">{{sceneIcon}}</text>
+        <text class="scene-tip-title">{{sceneName}} - 场景对话</text>
+        <text class="scene-tip-desc">与小e进行场景角色扮演，在真实语境中练习英语。用英语发送消息，小e会以场景角色的身份回复你。</text>
+      </view>
+
+      <!-- 消息 -->
+      <view class="msg-row {{item.role === 'ai' ? 'msg-ai' : 'msg-user'}}"
+            wx:for="{{messages}}" wx:key="index">
+        <!-- AI 头像 -->
+        <view class="msg-avatar avatar-ai" wx:if="{{item.role === 'ai'}}">
+          <text class="avatar-text">小e</text>
+        </view>
+        <!-- 消息气泡 -->
+        <view class="msg-bubble {{item.role === 'ai' ? 'bubble-ai' : 'bubble-user'}}">
+          <!-- thinking 占位 -->
+          <view class="thinking-wrap" wx:if="{{item.thinking}}">
+            <text class="thinking-label">小e正在思考</text>
+            <view class="thinking-dots">
+              <view class="thinking-dot"></view>
+              <view class="thinking-dot"></view>
+              <view class="thinking-dot"></view>
+            </view>
+          </view>
+          <!-- 实际内容 -->
+          <text class="msg-content" wx:elif="{{!item.thinking}}">{{item.content}}</text>
+          <!-- 流式光标 -->
+          <text class="stream-cursor" wx:if="{{!item.thinking && item.role === 'ai' && index === messages.length - 1 && sending}}">|</text>
+        </view>
+      </view>
+
+      <!-- 底部锚点 -->
+      <view id="msg-bottom" class="msg-bottom"></view>
+    </view>
+  </scroll-view>
+
+  <!-- 输入栏 -->
+  <view class="input-bar" style="padding-bottom: {{safeBottom}}px;">
+    <view class="input-wrap">
+      <input class="chat-input" placeholder="{{sending ? '小e正在回复...' : '用英语输入你的回复...'}}"
+             value="{{inputValue}}" bindinput="onInput"
+             disabled="{{sending}}"
+             confirm-type="send" bindconfirm="onSend" />
+    </view>
+    <view class="send-btn {{sending ? 'send-disabled' : ''}}" bindtap="onSend">
+      <text class="send-icon">{{sending ? '…' : '➤'}}</text>
+    </view>
+  </view>
+</view>

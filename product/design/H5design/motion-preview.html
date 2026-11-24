@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>批卷 H5 · 动效预览</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #edf5eb;
+    --surface: #fafdf6;
+    --ink: #17372b;
+    --muted: #476358;
+    --primary: #20694f;
+    --mint: #dceee0;
+    --lime: #beeb9e;
+    --line: #d3e2d5;
+    --selection: #c4e2cbab;
+    --focus: #2c765a;
+    --ease: cubic-bezier(.22, 1, .36, 1);
+    --tab-duration: 240ms;
+    --select-duration: 180ms;
+    --press-duration: 120ms;
+    font: 15px/1.5 "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { min-width: 290px; margin: 0; color: var(--ink); background: #e4ede5; }
+  button { color: inherit; font: inherit; cursor: pointer; }
+  button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+  svg { display: block; width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .device { position: relative; max-width: 396px; min-height: 100vh; min-height: 100dvh; margin: auto; padding: 29px 24px 115px; background: var(--bg); overflow: hidden; isolation: isolate; }
+  h1 { margin: 3px 0 23px; font-size: 30px; line-height: 1.18; }
+  h2 { margin: 0 0 7px; font-size: 21px; line-height: 1.3; }
+  p { margin: 0; }
+  .panel[data-motion="tab"] { animation: panel-in 160ms var(--ease) both; }
+  .panel[data-motion="forward"] { animation: forward-in 220ms var(--ease) both; }
+  .panel[data-motion="back"] { animation: back-in 180ms var(--ease) both; }
+  @keyframes panel-in { from { opacity: 0; transform: translateY(4px); } }
+  @keyframes forward-in { from { opacity: 0; transform: translateX(16px); } }
+  @keyframes back-in { from { opacity: 0; transform: translateX(-10px); } }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; margin-top: 18px; padding: 19px 6px; border: 1px solid var(--line); border-radius: 22px; background: var(--mint); }
+  .stats div { display: grid; gap: 3px; padding-left: 17px; }
+  .stats div + div { border-left: 1px solid var(--line); }
+  .stats strong { font-size: 31px; line-height: 1.16; font-variant-numeric: tabular-nums; }
+  .stats span, .small { color: var(--muted); font-size: 13px; }
+  .prompts { display: grid; gap: 9px; margin-top: 26px; }
+  .prompts h2 { margin-bottom: 4px; font-size: 15px; }
+  .prompt, .paper-link { display: flex; align-items: center; width: 100%; min-height: 48px; gap: 11px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); text-align: left; font-weight: 650; transition: background-color var(--press-duration) var(--ease), transform var(--press-duration) var(--ease); }
+  .prompt svg, .paper-link svg { flex: none; color: var(--primary); width: 17px; }
+  .prompt svg:last-child, .paper-link svg:last-child { margin-left: auto; transform: rotate(-90deg); }
+  .paper-link span { display: grid; gap: 2px; }
+  .paper-link span small { color: var(--muted); font-weight: 500; }
+  .profile { display: flex; gap: 15px; align-items: center; padding: 17px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); }
+  .avatar { display: grid; width: 45px; height: 45px; place-items: center; border-radius: 50%; color: var(--primary); background: var(--mint); font-weight: 800; }
+  .profile p { font-weight: 750; }
+  .page-header { display: flex; gap: 12px; align-items: center; margin-bottom: 17px; }
+  .page-header h1 { margin: 0; }
+  .back { display: grid; flex: 0 0 38px; height: 38px; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--primary); background: var(--surface); }
+  .back svg { transform: rotate(90deg); }
+  .review-block { margin-top: 18px; padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
+  .home-toolbar { display: flex; justify-content: flex-end; margin-bottom: 32px; }
+  .chat-composer { position: fixed; right: max(24px, calc((100vw - 348px) / 2)); bottom: calc(max(16px, env(safe-area-inset-bottom)) + 76px); left: max(24px, calc((100vw - 348px) / 2)); display: grid; gap: 8px; z-index: 2; }
+  .compose-row { display: flex; align-items: center; padding: 4px 7px 4px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+  .compose-row input { min-width: 0; flex: 1; border: 0; background: transparent; color: var(--ink); font: inherit; }
+  .compose-row button { flex: none; width: 42px; height: 42px; border: 0; border-radius: 50%; background: transparent; color: var(--primary); }
+  .compose-row .send { width: 36px; height: 36px; background: var(--primary); color: white; }
+  .compose-row button svg { margin: auto; }
+  .attachment-line { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 12px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); overflow-wrap: anywhere; }
+  .attachment-line button { min-width: 40px; min-height: 40px; border: 0; border-radius: 12px; background: var(--mint); }
+  .attachment-actions { display: grid; gap: 9px; }
+  .attachment-actions .paper-link svg:last-child { margin-left: 0; transform: none; }
+  .icon-button { display: grid; width: 48px; height: 48px; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 15px; color: var(--primary); background: var(--surface); transition: transform var(--press-duration) var(--ease); }
+  .icon-button:active { transform: scale(.98); }
+  .chat-question { width: fit-content; max-width: 93%; margin: 24px 0 0 auto; padding: 10px 14px; border-radius: 15px 15px 4px 15px; background: var(--mint); }
+  .history-drawer { inset: 0 max(0px, calc((100vw - 396px) / 2)) 0 auto; width: min(320px, calc(100% - 56px)); max-height: none; height: 100%; margin: 0; padding: 27px 19px max(17px, env(safe-area-inset-bottom)); border-radius: 26px 0 0 26px; }
+  .history-drawer::before { content: none; }
+  .history-drawer[open] { display: flex; flex-direction: column; gap: 16px; animation: drawer-in 240ms var(--ease) both; }
+  .history-drawer[data-closing][open] { animation: drawer-out 190ms var(--ease) both; }
+  .history-drawer[data-closing][open]::backdrop { animation-duration: 190ms; }
+  @keyframes drawer-in { from { transform: translateX(100%); } }
+  @keyframes drawer-out { to { transform: translateX(100%); } }
+  .history-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .history-header h2 { margin: 0; }
+  .history-header .icon-button { width: 44px; height: 44px; background: var(--bg); }
+  .history-actions { display: grid; gap: 7px; overflow-y: auto; }
+  .drawer-button { display: flex; align-items: center; gap: 11px; width: 100%; min-height: 46px; padding: 8px 12px; border: 1px solid transparent; border-radius: 15px; background: transparent; text-align: left; transition: background-color var(--press-duration) var(--ease); }
+  .drawer-button svg { flex: none; width: 19px; color: var(--primary); }
+  .drawer-button strong, .drawer-button small { display: block; }
+  .drawer-button small { color: var(--muted); }
+  .drawer-button[aria-current="true"], .new-chat { background: var(--mint); }
+  .drawer-footer { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--line); }
+  .drawer-footer .drawer-button { border-color: var(--line); background: var(--bg); }
+  .drawer-footer svg:last-child { margin-left: auto; transform: rotate(-90deg); }
+  .skill-heading { margin-top: 26px; }
+  .skills { display: grid; gap: 10px; margin: 16px 0; padding: 0; list-style: none; }
+  .skills li { display: flex; align-items: center; gap: 13px; padding: 11px 14px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); }
+  .skills li div { min-width: 0; }
+  .skills li :is(strong, small) { display: block; overflow-wrap: anywhere; }
+  .skills li small { color: var(--muted); }
+  .skills li svg { flex: none; color: var(--primary); }
+  .settings-upload { position: fixed; right: max(24px, calc((100vw - 348px) / 2)); bottom: max(22px, env(safe-area-inset-bottom)); left: max(24px, calc((100vw - 348px) / 2)); }
+  .file-button { display: flex; align-items: center; gap: 11px; width: 100%; min-height: 55px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); text-align: left; }
+  .file-button svg { flex: none; width: 20px; color: var(--primary); }
+  .file-button span { overflow-wrap: anywhere; }
+  .file-button strong { margin-left: auto; color: var(--primary); font-size: 13px; }
+  .file-hint { min-height: 25px; margin-top: 11px; font-size: 13px; }
+  .file-hint[data-error="true"] { color: #8f4032; }
+  .button:disabled { color: var(--muted); border-color: var(--line); background: var(--mint); cursor: default; }
+  .anchor { position: relative; z-index: 2; }
+  .trigger, .menu button { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 46px; padding: 0 14px; text-align: left; }
+  .trigger { border: 1px solid var(--line); border-radius: 16px; background: var(--surface); transition: border-color var(--select-duration) var(--ease), box-shadow var(--select-duration) var(--ease); }
+  .trigger[aria-expanded="true"] { border-color: var(--primary); box-shadow: 0 0 0 2px #20694f19; }
+  .trigger svg { flex: none; width: 17px; transition: transform var(--select-duration) var(--ease); }
+  .trigger[aria-expanded="true"] svg { transform: rotate(180deg); }
+  .menu { position: absolute; top: calc(100% + 6px); width: 100%; padding: 5px; background: var(--surface); border: 1px solid var(--line); border-radius: 15px; box-shadow: 0 8px 21px #163f3024; transform-origin: top; opacity: 0; visibility: hidden; transform: translateY(-4px) scale(.985); transition: opacity var(--select-duration) var(--ease), transform var(--select-duration) var(--ease), visibility 0s linear var(--select-duration); }
+  .menu.open { opacity: 1; visibility: visible; transform: translateY(0) scale(1); transition-delay: 0s; }
+  .menu button { border: 0; border-radius: 10px; background: transparent; transition: background-color var(--press-duration) var(--ease); }
+  .menu button[aria-selected="true"] { color: var(--primary); background: var(--mint); font-weight: 700; }
+  .menu button[aria-selected="true"]::after { content: "✓"; color: var(--primary); }
+  .menu button:focus-visible { outline-offset: -2px; }
+  .row { display: flex; align-items: center; gap: 9px; margin-top: 16px; }
+  .choice { flex: 1; min-height: 44px; border: 1px solid var(--line); border-radius: 11px; background: var(--surface); transition: background-color 150ms var(--ease), color 150ms var(--ease), transform var(--press-duration) var(--ease); }
+  .choice[aria-pressed="true"] { color: white; border-color: var(--primary); background: var(--primary); }
+  .choice:active, .button:active, .prompt:active, .paper-link:active { transform: scale(.98); }
+  .button { min-height: 46px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); font-weight: 700; transition: transform var(--press-duration) var(--ease); }
+  .primary { color: white; border-color: var(--primary); background: var(--primary); }
+  .choice-row { margin-top: 22px; }
+  .preview-action { width: 100%; margin-top: 20px; }
+  .summary { display: grid; gap: 7px; margin-top: 17px; padding: 15px 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); animation: panel-in 160ms var(--ease) both; }
+  .summary small { color: var(--muted); }
+  .tabs { --active: 0; position: fixed; right: max(18px, calc((100vw - 360px) / 2)); bottom: max(16px, env(safe-area-inset-bottom)); left: max(18px, calc((100vw - 360px) / 2)); z-index: 3; display: grid; grid-template-columns: repeat(3, 1fr); padding: 6px; border: 1px solid #ffffffa8; border-radius: 999px; background: #f6fff13d; box-shadow: 0 4px 16px #163f302c; -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); }
+  .tabs::before { position: absolute; top: 7px; bottom: 7px; left: 7px; width: calc((100% - 14px) / 3); border-radius: inherit; background: var(--selection); content: ""; transform: translateX(calc(var(--active) * 100%)); transition: transform var(--tab-duration) var(--ease); }
+  .tabs button { position: relative; display: grid; justify-items: center; gap: 3px; min-height: 49px; padding: 4px 0; border: 0; background: transparent; color: var(--muted); font-size: 12px; transition: color 160ms var(--ease); }
+  .tabs button[aria-selected="true"] { color: var(--primary); font-weight: 800; }
+  .glow { position: fixed; bottom: 2px; left: calc(50% - 20px); width: 180px; height: 84px; border-radius: 50%; background: var(--mint); pointer-events: none; }
+  dialog { position: fixed; inset: auto 0 0; width: min(100%, 396px); max-width: none; margin: 0 auto; padding: 33px 24px max(23px, env(safe-area-inset-bottom)); border: 0; border-radius: 28px 28px 0 0; color: var(--ink); background: var(--surface); }
+  dialog[open] { animation: sheet-in 260ms var(--ease) both; }
+  dialog[open]::backdrop { background: #102d2475; animation: fade-in 200ms var(--ease) both; }
+  dialog[data-closing][open] { animation: sheet-out 200ms var(--ease) both; }
+  dialog[data-closing][open]::backdrop { animation: fade-out 200ms var(--ease) both; }
+  dialog::before { position: absolute; top: 11px; left: calc(50% - 17px); width: 34px; height: 4px; border-radius: 3px; background: #8ca996; content: ""; }
+  dialog p { color: var(--muted); }
+  .sheet-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 12px; }
+  .sheet-heading h2 { margin: 0; }
+  dialog .button { flex: 1; }
+  .sheet-icon { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 13px; color: var(--primary); background: var(--mint); }
+  @keyframes sheet-in { from { opacity: 0; transform: translateY(28px); } }
+  @keyframes sheet-out { to { opacity: 0; transform: translateY(28px); } }
+  @keyframes fade-in { from { opacity: 0; } }
+  @keyframes fade-out { to { opacity: 0; } }
+  [hidden] { display: none !important; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; transition-delay: 0s !important; }
+  }
+</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute">
+  <symbol id="home-icon" viewBox="0 0 24 24"><path d="M3 10 12 3l9 7v10H3zM9 20v-6h6v6"/></symbol>
+  <symbol id="files-icon" viewBox="0 0 24 24"><path d="M9 3h7l4 4v13H9zM16 3v5h4M5 7H4v15h12M12 12h5m-5 4h5"/></symbol>
+  <symbol id="user-icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/></symbol>
+  <symbol id="chevron-icon" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="check-icon" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="sidebar-icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M15 4v16m-7-11 3 3-3 3"/></symbol>
+  <symbol id="chat-icon" viewBox="0 0 24 24"><path d="M20 12a3 3 0 0 1-3 3H9l-5 4V6h13a3 3 0 0 1 3 3Z"/></symbol>
+  <symbol id="plus-icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="settings-icon" viewBox="0 0 24 24"><path d="m12 3 2 3 3-.2.8 3 2.7 1.7v3l-2.7 1.7-.8 3-3-.2-2 3-2-3-3 .2-.8-3L3.5 13.5v-3l2.7-1.7.8-3 3 .2Z"/><circle cx="12" cy="12" r="2.7"/></symbol>
+  <symbol id="skill-icon" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7Zm7 0v5h4m-7 4-2 2 2 2m3-4 2 2-2 2"/></symbol>
+  <symbol id="upload-icon" viewBox="0 0 24 24"><path d="M12 16V4m-4 4 4-4 4 4M4 16v4h16v-4"/></symbol>
+</svg>
+<main class="device">
+  <section class="panel" id="home" role="tabpanel" aria-labelledby="tab-home">
+    <div class="home-toolbar">
+      <button class="icon-button" id="open-history" type="button" aria-label="打开聊天记录" aria-haspopup="dialog" aria-controls="history-drawer"><svg aria-hidden="true"><use href="#sidebar-icon"/></svg></button>
+    </div>
+    <div class="prompts">
+      <h2>推荐问题</h2>
+      <button class="prompt" type="button" data-question>最近哪些题最容易错？<svg aria-hidden="true"><use href="#chevron-icon"/></svg></button>
+      <button class="prompt" type="button" data-question>10 月随堂测第 8 题错在哪？<svg aria-hidden="true"><use href="#chevron-icon"/></svg></button>
+    </div>
+    <p class="chat-question" id="chat-question" hidden></p>
+    <p class="summary" id="analysis" role="status" hidden></p>
+    <form class="chat-composer" id="question-form">
+      <div class="attachment-line" id="attachment-line" hidden><span id="attachment-name"></span><button id="remove-attachment" type="button" aria-label="移除附件">×</button></div>
+      <p id="attachment-error" role="status" hidden></p>
+      <div class="compose-row">
+        <input id="question-input" aria-label="输入问题" placeholder="输入问题…" maxlength="1000">
+        <button id="open-attachments" type="button" aria-label="添加文件或图片" aria-haspopup="dialog"><svg aria-hidden="true"><use href="#plus-icon"/></svg></button>
+        <button class="send" type="submit" aria-label="发送"><svg aria-hidden="true" style="transform: rotate(180deg)"><use href="#chevron-icon"/></svg></button>
+      </div>
+    </form>
+  </section>
+  <section class="panel" id="papers" role="tabpanel" aria-labelledby="tab-papers" hidden>
+    <h1>试卷</h1>
+    <button class="paper-link" id="paper-link" type="button">
+      <svg aria-hidden="true"><use href="#files-icon"/></svg>
+      <span>10 月随堂测 <small>八年级 2 班 · 待复核 2 份</small></span>
+      <svg aria-hidden="true"><use href="#chevron-icon"/></svg>
+    </button>
+  </section>
+  <section class="panel" id="paper-detail" aria-labelledby="paper-title" hidden>
+    <div class="page-header">
+      <button class="back" id="back-to-papers" type="button" aria-label="返回试卷">
+        <svg aria-hidden="true"><use href="#chevron-icon"/></svg>
+      </button>
+      <h1 id="paper-title" tabindex="-1">10 月随堂测</h1>
+    </div>
+    <section class="review-block" aria-labelledby="review-title">
+      <h2 id="review-title">核对第 8 题</h2>
+      <p class="small">识别 B / D · 标准 D</p>
+      <div class="row choice-row" aria-label="确认作答" role="group">
+        <button class="choice" type="button" aria-pressed="false">A</button>
+        <button class="choice" type="button" aria-pressed="true">B</button>
+        <button class="choice" type="button" aria-pressed="false">C</button>
+        <button class="choice" type="button" aria-pressed="false">D</button>
+      </div>
+      <button class="button primary preview-action" type="button" data-open="grade">确认更正</button>
+      <p class="summary" id="result" role="status" hidden></p>
+    </section>
+  </section>
+  <section class="panel" id="me" role="tabpanel" aria-labelledby="tab-me" hidden>
+    <h1>我的</h1>
+    <div class="profile"><span class="avatar" aria-hidden="true">周</span><div><p>周老师</p><span class="small">zhou.teacher</span></div></div>
+    <button class="button preview-action" type="button" data-open="logout">退出登录</button>
+  </section>
+  <section class="panel" id="assistant-settings" aria-labelledby="settings-title" hidden>
+    <div class="page-header">
+      <button class="back" id="back-to-history" type="button" aria-label="返回聊天记录"><svg aria-hidden="true"><use href="#chevron-icon"/></svg></button>
+      <h1 id="settings-title" tabindex="-1">问答助手设置</h1>
+    </div>
+    <h2 class="skill-heading">技能</h2>
+    <ul class="skills" id="skill-list"></ul>
+    <p class="summary" id="skill-status" role="status" hidden></p>
+    <button class="button primary settings-upload" id="open-skill" type="button">上传 Skill</button>
+  </section>
+  <div class="glow" aria-hidden="true"></div>
+  <nav class="tabs" aria-label="主页导航" role="tablist">
+    <button id="tab-home" type="button" role="tab" aria-controls="home" aria-selected="true"><svg aria-hidden="true"><use href="#home-icon"/></svg>首页</button>
+    <button id="tab-papers" type="button" role="tab" aria-controls="papers" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#files-icon"/></svg>试卷</button>
+    <button id="tab-me" type="button" role="tab" aria-controls="me" aria-selected="false" tabindex="-1"><svg aria-hidden="true"><use href="#user-icon"/></svg>我的</button>
+  </nav>
+  <dialog id="confirmation-sheet" aria-labelledby="dialog-title" aria-describedby="dialog-copy">
+    <div class="sheet-heading"><div class="sheet-icon"><svg aria-hidden="true"><use href="#check-icon"/></svg></div><h2 id="dialog-title"></h2></div>
+    <p id="dialog-copy"></p>
+    <div class="row"><button class="button" id="cancel" type="button">取消</button><button class="button primary" id="confirm" type="button"></button></div>
+  </dialog>
+  <dialog class="history-drawer" id="history-drawer" aria-labelledby="history-title">
+    <header class="history-header">
+      <h2 id="history-title">聊天记录</h2>
+      <button class="icon-button" id="close-history" type="button" aria-label="关闭侧栏"><svg aria-hidden="true"><use href="#sidebar-icon"/></svg></button>
+    </header>
+    <button class="drawer-button new-chat" id="new-chat" type="button"><svg aria-hidden="true"><use href="#plus-icon"/></svg><strong>新对话</strong></button>
+    <div class="history-actions" id="history-list"></div>
+    <div class="drawer-footer"><button class="drawer-button" id="open-settings" type="button"><svg aria-hidden="true"><use href="#settings-icon"/></svg><strong>问答助手设置</strong><svg aria-hidden="true"><use href="#chevron-icon"/></svg></button></div>
+  </dialog>
+  <dialog id="skill-sheet" aria-labelledby="skill-title">
+    <div class="sheet-heading"><div class="sheet-icon"><svg aria-hidden="true"><use href="#upload-icon"/></svg></div><h2 id="skill-title">上传 Skill</h2></div>
+    <button class="file-button" id="browse-skill" type="button"><svg aria-hidden="true"><use href="#skill-icon"/></svg><span id="skill-file-name">选择文件</span><strong id="browse-label">浏览</strong></button>
+    <input id="skill-file" type="file" accept=".md,.markdown" hidden>
+    <p class="file-hint" id="skill-hint" role="status">支持 .md 或 .markdown</p>
+    <div class="row"><button class="button" id="cancel-skill" type="button">取消</button><button class="button primary" id="submit-skill" type="button" disabled>上传</button></div>
+  </dialog>
+  <dialog id="attachment-sheet" aria-labelledby="attachment-title">
+    <h2 id="attachment-title">添加附件</h2>
+    <div class="attachment-actions">
+      <button class="paper-link" type="button" data-picker="attach-document"><svg aria-hidden="true"><use href="#files-icon"/></svg>上传文件</button>
+      <button class="paper-link" type="button" data-picker="attach-image"><svg aria-hidden="true"><use href="#upload-icon"/></svg>上传图片</button>
+    </div>
+    <input id="attach-document" type="file" accept=".pdf,.docx,.txt" hidden>
+    <input id="attach-image" type="file" accept=".jpg,.jpeg,.png,.webp" hidden>
+    <div class="row"><button class="button" id="cancel-attachment" type="button">取消</button></div>
+  </dialog>
+</main>
+<script>
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const tabBar = document.querySelector('.tabs');
+  const tabGlow = document.querySelector('.glow');
+  const choices = [...document.querySelectorAll('.choice')];
+  const panels = [...document.querySelectorAll('.panel')];
+  const dialog = document.querySelector('#confirmation-sheet');
+  const dialogCopy = document.querySelector('#dialog-copy');
+  const confirm = document.querySelector('#confirm');
+  const result = document.querySelector('#result');
+  const analysis = document.querySelector('#analysis');
+  const chatQuestion = document.querySelector('#chat-question');
+  const prompts = document.querySelector('.prompts');
+  const paperLink = document.querySelector('#paper-link');
+  const historyDrawer = document.querySelector('#history-drawer');
+  const historyList = document.querySelector('#history-list');
+  const historyTrigger = document.querySelector('#open-history');
+  const settingsTrigger = document.querySelector('#open-settings');
+  const skillSheet = document.querySelector('#skill-sheet');
+  const skillList = document.querySelector('#skill-list');
+  const skillTrigger = document.querySelector('#open-skill');
+  const skillFile = document.querySelector('#skill-file');
+  const skillHint = document.querySelector('#skill-hint');
+  const skillSubmit = document.querySelector('#submit-skill');
+  const skillStatus = document.querySelector('#skill-status');
+  const attachmentSheet = document.querySelector('#attachment-sheet');
+  const attachTrigger = document.querySelector('#open-attachments');
+  const attachmentLine = document.querySelector('#attachment-line');
+  const attachmentName = document.querySelector('#attachment-name');
+  const attachmentError = document.querySelector('#attachment-error');
+  const questionInput = document.querySelector('#question-input');
+  const sessions = [
+    { scope: 0, title: '第 8 题错选分析', question: '第 8 题主要错选了什么？', answer: '24 份中有 10 份错选了 B。', date: '今天 16:24' },
+    { scope: 0, title: '哪几题需要讲评？', question: '哪三题正确率最低？', answer: '第 8、13、4 题正确率最低。', date: '昨天' },
+    { scope: 1, title: 'Unit 3 周练复盘', question: '哪些题需要讲评？', answer: '优先讲解第 6、9、8 题。', date: '10 月 20 日' },
+  ];
+  const skills = [
+    { name: '讲评建议', file: 'lesson-review.md' },
+    { name: '错题归因', file: 'error-analysis.md' },
+  ];
+  let activeChoice = 'B';
+  let attachment = null;
+  let activeSession = null;
+  let pendingFile = null;
+  let pendingSkill = null;
+  let dialogKind = '';
+  let dialogTrigger = null;
+
+  function showPanel(panelId, motion) {
+    panels.forEach((panel) => {
+      if (panel.id === panelId && panel.hidden) panel.dataset.motion = motion;
+      panel.hidden = panel.id !== panelId;
+    });
+    tabBar.hidden = tabGlow.hidden = panelId === 'paper-detail' || panelId === 'assistant-settings';
+  }
+
+  function setTab(index, focus = false) {
+    tabBar.style.setProperty('--active', index);
+    tabs.forEach((tab, position) => {
+      const selected = index === position;
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+    });
+    showPanel(tabs[index].getAttribute('aria-controls'), 'tab');
+    if (focus) tabs[index].focus();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => setTab(index));
+    tab.addEventListener('keydown', (event) => {
+      const step = { ArrowLeft: -1, ArrowRight: 1 }[event.key];
+      if (!step) return;
+      event.preventDefault();
+      setTab((index + step + tabs.length) % tabs.length, true);
+    });
+  });
+
+  paperLink.addEventListener('click', () => {
+    showPanel('paper-detail', 'forward');
+    document.querySelector('#paper-title').focus({ preventScroll: true });
+  });
+  document.querySelector('#back-to-papers').addEventListener('click', () => {
+    showPanel('papers', 'back');
+    paperLink.focus({ preventScroll: true });
+  });
+
+  function showSession(session) {
+    activeSession = session;
+    if (session) {
+      chatQuestion.textContent = session.question;
+      analysis.textContent = session.answer;
+    }
+    chatQuestion.hidden = analysis.hidden = !session;
+    prompts.hidden = Boolean(session);
+  }
+
+  choices.forEach((choice) => choice.addEventListener('click', () => {
+    activeChoice = choice.textContent.trim();
+    choices.forEach((item) => item.setAttribute('aria-pressed', String(item === choice)));
+  }));
+
+  function sendQuestion(question) {
+    if (!question) { questionInput.focus(); return; }
+    let answer = '示例知识库未匹配到相关资料。请补充卷名、日期或题干。';
+    if (/10\s*月随堂测.*第\s*8\s*题/.test(question)) {
+      answer = '10 月随堂测第 8 题共有 24 份有效答卷，9 份答对，10 份错选 B。依据：10 月随堂测 · 第 8 题统计。';
+    } else if (/最近|跨卷|容易错/.test(question)) {
+      answer = '示例历史批改中，10 月随堂测第 8 题和 Unit 3 周练第 6 题失分较集中。依据：两份试卷的逐题统计。';
+    }
+    if (attachment) answer = '已随问题附上「' + attachment.name + '」。此预览演示附件发送。';
+    const session = { title: question, question, answer, date: '刚刚' };
+    sessions.unshift(session);
+    showSession(session);
+    questionInput.value = '';
+    updateAttachment(null);
+  }
+
+  document.querySelector('#question-form').addEventListener('submit', (event) => {
+    event.preventDefault();
+    sendQuestion(questionInput.value.trim());
+  });
+  document.querySelectorAll('[data-question]').forEach((button) => button.addEventListener('click', () => {
+    sendQuestion(button.textContent.trim());
+  }));
+
+  document.querySelectorAll('[data-open]').forEach((button) => button.addEventListener('click', () => {
+    dialogTrigger = button;
+    dialogKind = button.dataset.open;
+    const grading = dialogKind === 'grade';
+    document.querySelector('#dialog-title').textContent = grading ? '确认本题填涂？' : '退出当前账号？';
+    dialogCopy.hidden = !grading;
+    if (grading) dialogCopy.textContent = '第 8 题 · ' + activeChoice;
+    confirm.textContent = grading ? '确认更正' : '退出登录';
+    dialog.showModal();
+  }));
+
+  function closeOverlay(overlay, animation, afterClose) {
+    if (!overlay.open || overlay.hasAttribute('data-closing')) return;
+    overlay.setAttribute('data-closing', '');
+    function finishClose(event) {
+      if (event.target !== overlay || event.pseudoElement || event.animationName !== animation) return;
+      overlay.removeEventListener('animationend', finishClose);
+      overlay.close();
+      overlay.removeAttribute('data-closing');
+      afterClose();
+    }
+    overlay.addEventListener('animationend', finishClose);
+  }
+
+  function bindDismiss(overlay, button, close) {
+    button.addEventListener('click', close);
+    overlay.addEventListener('cancel', (event) => {
+      event.preventDefault();
+      close();
+    });
+    overlay.addEventListener('click', (event) => {
+      if (event.target !== overlay) return;
+      const bounds = overlay.getBoundingClientRect();
+      if (event.clientY < bounds.top || event.clientY > bounds.bottom || event.clientX < bounds.left || event.clientX > bounds.right) close();
+    });
+  }
+
+  function updateAttachment(file) {
+    attachment = file;
+    attachmentName.textContent = file?.name || '';
+    attachmentLine.hidden = !file;
+    attachmentError.hidden = true;
+  }
+
+  function hideAttachments() {
+    closeOverlay(attachmentSheet, 'sheet-out', () => attachTrigger.focus({ preventScroll: true }));
+  }
+
+  attachTrigger.addEventListener('click', () => attachmentSheet.showModal());
+  bindDismiss(attachmentSheet, document.querySelector('#cancel-attachment'), hideAttachments);
+  document.querySelector('#remove-attachment').addEventListener('click', () => updateAttachment(null));
+  document.querySelectorAll('[data-picker]').forEach((button) => {
+    const input = document.getElementById(button.dataset.picker);
+    button.addEventListener('click', () => {
+      input.value = '';
+      input.click();
+    });
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      if (!file) return;
+      const supported = input.accept.split(',').some((ext) => file.name.toLowerCase().endsWith(ext));
+      if (supported && file.size > 0) updateAttachment(file);
+      else {
+        attachmentError.textContent = '请重新选择受支持的非空文件。';
+        attachmentError.hidden = false;
+      }
+      hideAttachments();
+    });
+  });
+
+  function hideDialog() {
+    closeOverlay(dialog, 'sheet-out', () => dialogTrigger?.focus({ preventScroll: true }));
+  }
+
+  bindDismiss(dialog, document.querySelector('#cancel'), hideDialog);
+  confirm.addEventListener('click', () => {
+    if (dialogKind === 'grade') {
+      result.textContent = '已确认第 8 题填涂为 ' + activeChoice;
+      result.hidden = false;
+    }
+    hideDialog();
+  });
+
+  function icon(symbol) {
+    const namespace = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(namespace, 'svg');
+    const use = document.createElementNS(namespace, 'use');
+    svg.setAttribute('aria-hidden', 'true');
+    use.setAttribute('href', symbol);
+    svg.append(use);
+    return svg;
+  }
+
+  function showHistory(focusSettings = false) {
+    historyList.replaceChildren();
+    for (const session of sessions) {
+      const row = document.createElement('button');
+      const text = document.createElement('span');
+      const title = document.createElement('strong');
+      const date = document.createElement('small');
+      row.type = 'button';
+      row.className = 'drawer-button';
+      row.setAttribute('aria-current', String(session === activeSession));
+      title.textContent = session.title;
+      date.textContent = session.date;
+      text.append(title, date);
+      row.append(icon('#chat-icon'), text);
+      row.addEventListener('click', () => {
+        showSession(session);
+        hideHistory();
+      });
+      historyList.append(row);
+    }
+    historyDrawer.showModal();
+    if (focusSettings) settingsTrigger.focus({ preventScroll: true });
+  }
+
+  function hideHistory() {
+    closeOverlay(historyDrawer, 'drawer-out', () => historyTrigger.focus({ preventScroll: true }));
+  }
+
+  historyTrigger.addEventListener('click', () => showHistory());
+  bindDismiss(historyDrawer, document.querySelector('#close-history'), hideHistory);
+  document.querySelector('#new-chat').addEventListener('click', () => {
+    showSession(null);
+    questionInput.value = '';
+    updateAttachment(null);
+    hideHistory();
+  });
+  settingsTrigger.addEventListener('click', () => {
+    closeOverlay(historyDrawer, 'drawer-out', () => {
+      showPanel('assistant-settings', 'forward');
+      document.querySelector('#settings-title').focus({ preventScroll: true });
+    });
+  });
+  document.querySelector('#back-to-history').addEventListener('click', () => {
+    showPanel('home', 'back');
+    showHistory(true);
+  });
+
+  function renderSkillList() {
+    skillList.replaceChildren();
+    for (const skill of skills) {
+      const row = document.createElement('li');
+      const info = document.createElement('div');
+      const name = document.createElement('strong');
+      const file = document.createElement('small');
+      name.textContent = skill.name;
+      file.textContent = skill.file;
+      info.append(name, file);
+      row.append(icon('#skill-icon'), info);
+      skillList.append(row);
+    }
+  }
+
+  function skillFeedback(message, error = false) {
+    skillHint.textContent = message;
+    skillHint.dataset.error = String(error);
+    skillSubmit.disabled = !pendingSkill;
+  }
+
+  function setSkillFileName(file) {
+    document.querySelector('#skill-file-name').textContent = file?.name || '选择文件';
+    document.querySelector('#browse-label').textContent = file ? '更换' : '浏览';
+  }
+
+  function hideSkillSheet() {
+    closeOverlay(skillSheet, 'sheet-out', () => skillTrigger.focus({ preventScroll: true }));
+  }
+
+  skillTrigger.addEventListener('click', () => {
+    pendingFile = pendingSkill = null;
+    skillFile.value = '';
+    setSkillFileName(null);
+    skillFeedback('支持 .md 或 .markdown');
+    skillSheet.showModal();
+  });
+  document.querySelector('#browse-skill').addEventListener('click', () => skillFile.click());
+  bindDismiss(skillSheet, document.querySelector('#cancel-skill'), hideSkillSheet);
+  skillFile.addEventListener('change', async () => {
+    const [file] = skillFile.files;
+    if (!file || !skillSheet.open) return;
+    setSkillFileName(file);
+    pendingFile = file;
+    pendingSkill = null;
+    if (!/\.(md|markdown)$/i.test(file.name)) {
+      skillFeedback('文件格式不支持。请选择 .md 或 .markdown。', true);
+      return;
+    }
+    if (skills.some((skill) => skill.file.toLowerCase() === file.name.toLowerCase())) {
+      skillFeedback('已存在同名文件，请更换文件。', true);
+      return;
+    }
+    skillFeedback('正在检查文件…');
+    try {
+      const content = await file.text();
+      if (pendingFile !== file || !skillSheet.open) return;
+      const frontmatter = /^\uFEFF?---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/.exec(content)?.[1];
+      const name = /^name:[ \t]*(.+)$/m.exec(frontmatter || '')?.[1].trim().replace(/^(['"])(.*)\1$/, '$2');
+      if (!name) {
+        skillFeedback('Skill 缺少 name 字段。', true);
+        return;
+      }
+      pendingSkill = { name, file: file.name };
+      skillFeedback('');
+    } catch {
+      if (pendingFile === file && skillSheet.open) skillFeedback('无法读取文件，请重新选择。', true);
+    }
+  });
+  skillSubmit.addEventListener('click', () => {
+    if (!pendingSkill || skillSheet.hasAttribute('data-closing')) return;
+    skills.unshift(pendingSkill);
+    renderSkillList();
+    skillStatus.textContent = '已添加「' + pendingSkill.name + '」';
+    skillStatus.hidden = false;
+    hideSkillSheet();
+  });
+  renderSkillList();
+</script>
+</html>

@@ -1,0 +1,137 @@
+<view class="page">
+  <!-- 加载中 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-spinner"></view>
+  </view>
+
+  <block wx:else>
+    <!-- 顶部窄条 -->
+    <view class="top-bar">
+      <view class="top-bar-line"></view>
+      <view class="top-bar-row">
+        <text class="top-bar-title">我的</text>
+      </view>
+    </view>
+
+    <!-- 个人信息卡片 -->
+    <view class="profile-card">
+      <view class="profile-card-left">
+        <view class="profile-avatar">
+          <text class="profile-avatar-text">{{(profile && profile.nickname) ? profile.nickname.slice(0,1) : '?'}}</text>
+        </view>
+      </view>
+      <view class="profile-card-right">
+        <text class="profile-name">{{profile && profile.nickname || '未设置'}}</text>
+        <text class="profile-role">{{profile && profile.email || '教师'}}</text>
+        <view class="profile-stats">
+          <view class="profile-stat">
+            <text class="profile-stat-num">{{profile && profile.class_count || 0}}</text>
+            <text class="profile-stat-lbl">班级</text>
+          </view>
+          <view class="profile-stat-divider"></view>
+          <view class="profile-stat">
+            <text class="profile-stat-num">{{profile && profile.student_count || 0}}</text>
+            <text class="profile-stat-lbl">学生</text>
+          </view>
+          <view class="profile-stat-divider"></view>
+          <view class="profile-stat">
+            <text class="profile-stat-num">{{profile && profile.exam_count || 0}}</text>
+            <text class="profile-stat-lbl">试卷</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 功能菜单 — 杂志列表 -->
+    <view class="menu-section">
+      <view class="menu-section-label">设置</view>
+      <view class="menu-card">
+        <view class="menu-item" bindtap="openNicknameEdit">
+          <view class="menu-icon icon-person"></view>
+          <view class="menu-text-group">
+            <text class="menu-title">个人信息</text>
+            <text class="menu-sub">修改昵称与密码</text>
+          </view>
+          <view class="menu-arrow"></view>
+        </view>
+        <view class="menu-item" bindtap="goToMyClasses">
+          <view class="menu-icon icon-building"></view>
+          <view class="menu-text-group">
+            <text class="menu-title">我的班级</text>
+            <text class="menu-sub">{{profile && profile.class_count || 0}} 个班级</text>
+          </view>
+          <view class="menu-arrow"></view>
+        </view>
+        <view class="menu-item" bindtap="goToHelp">
+          <view class="menu-icon icon-help"></view>
+          <view class="menu-text-group">
+            <text class="menu-title">使用帮助</text>
+            <text class="menu-sub">功能介绍与常见问题</text>
+          </view>
+          <view class="menu-arrow"></view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 退出登录 -->
+    <view class="logout-section">
+      <button class="logout-btn" bindtap="logout">
+        <view class="icon-logout"></view>
+        <text>退出登录</text>
+      </button>
+    </view>
+
+    <text class="version">教学批卷助手 v2.0.0</text>
+  </block>
+
+  <!-- 修改昵称弹窗 -->
+  <view class="modal-overlay {{showNicknameDialog ? 'modal-show' : ''}}" bindtap="closeNicknameEdit">
+    <view class="modal-sheet" catchtap="">
+      <view class="modal-handle"></view>
+      <view class="modal-header">
+        <text class="modal-title">修改昵称</text>
+        <button class="modal-close" bindtap="closeNicknameEdit">
+          <view class="close-icon"></view>
+        </button>
+      </view>
+      <view class="modal-body">
+        <view class="form-field">
+          <text class="form-label">新昵称</text>
+          <input class="form-input" placeholder="输入新昵称" value="{{newNickname}}" bindinput="onNicknameInput" />
+        </view>
+        <button class="modal-btn" bindtap="saveNickname">保存修改</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 修改密码弹窗 -->
+  <view class="modal-overlay {{showPwdDialog ? 'modal-show' : ''}}" bindtap="closePwdEdit">
+    <view class="modal-sheet" catchtap="">
+      <view class="modal-handle"></view>
+      <view class="modal-header">
+        <text class="modal-title">修改密码</text>
+        <button class="modal-close" bindtap="closePwdEdit">
+          <view class="close-icon"></view>
+        </button>
+      </view>
+      <view class="modal-body">
+        <view class="form-field">
+          <text class="form-label">旧密码</text>
+          <input class="form-input" type="password" placeholder="输入旧密码" value="{{oldPwd}}" bindinput="onOldPwdInput" />
+        </view>
+        <view class="form-field">
+          <text class="form-label">新密码</text>
+          <input class="form-input" type="password" placeholder="至少6位" value="{{newPwd}}" bindinput="onNewPwdInput" />
+        </view>
+        <view class="form-field">
+          <text class="form-label">确认新密码</text>
+          <input class="form-input" type="password" placeholder="再次输入" value="{{confirmPwd}}" bindinput="onConfirmPwdInput" />
+        </view>
+        <button class="modal-btn" bindtap="savePassword">确认修改</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部 TabBar -->
+  <custom-tab-bar activeIndex="2"></custom-tab-bar>
+</view>
